@@ -1,0 +1,24 @@
+{
+  "name": "fundamental_v3",
+  "version": "1.0.0",
+  "description": "fundamental",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavlo-serhiichuk/fundamental_v3.git"
+  },
+  "keywords": [
+    "ts",
+    "react",
+    "webpack"
+  ],
+  "author": "Po",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavlo-serhiichuk/fundamental_v3/issues"
+  },
+  "homepage": "https://github.com/pavlo-serhiichuk/fundamental_v3#readme"
+}
