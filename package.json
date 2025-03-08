@@ -1,7 +1,7 @@
 {
-  "name": "fundamental_v3",
+  "name": "fundamental_FE_v3",
   "version": "1.0.0",
-  "description": "fundamental",
+  "description": "ts, react, webpack etc.",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
