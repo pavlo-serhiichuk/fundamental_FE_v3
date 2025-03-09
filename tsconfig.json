@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    // the compiled folder adress - doesn't matter couse we compile with Webpack
+    "outDir": "./dist/",
+    //can use "any" only where you need it
+    "noImplicitAny": true,
+    "module": "ESNext",
+    //compile to standart
+    "target": "es5",
+    "jsx": "react",
+    //allows to handle js files also
+    "allowJs": true,
+    "moduleResolution": "node",
+    //allows to work with packages that uses "common js" as usual - import Something from 'something'
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}

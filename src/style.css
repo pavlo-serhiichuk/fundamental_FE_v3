@@ -8,6 +8,5 @@
 .hello {
     color: red;
     font-family: 'MyFont';
-    background-image: url('./notes.png');
     background-repeat: no-repeat;
 }
