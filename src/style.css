@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./fonts/RobotoCondensed-ExtraLight.ttf') format('ttf'),
+    url('./fonts/RobotoCondensed-Light.ttf') format('ttf');
+    font-style: normal;
+}
+
+.hello {
+    color: red;
+    font-family: 'MyFont';
+    background-image: url('./notes.png');
+    background-repeat: no-repeat;
+}
