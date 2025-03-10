@@ -1,5 +1,6 @@
+import s from './style.module.scss'
 import {createRoot} from 'react-dom/client'
-import './style.scss'
+
 const root = createRoot(document.getElementById('root'))
 
-root.render(<div className={'content'}>DIV</div>)
+root.render(<div className={s.content}>DIV</div>)

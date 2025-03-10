@@ -20,7 +20,7 @@ export function getWebpackConfig(options: ConfigOptions): Configuration {
     resolve: getResolvers(),
     devServer: getDevServer(options),
     module: {
-      rules: getLoaders()
+      rules: getLoaders(options)
     },
   }
 }
