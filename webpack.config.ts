@@ -4,9 +4,8 @@ import {ConfigEnv, ConfigPaths} from './config/build/configOptions'
 import path from 'path'
 
 export default (env: ConfigEnv) => {
-  console.log(env)
   const paths: ConfigPaths = {
-    entryPath: path.resolve(__dirname, 'src', 'index.ts'),
+    entryPath: path.resolve(__dirname, 'src', 'index.tsx'),
     distPath: path.resolve(__dirname, 'dist'),
     htmlPath: path.resolve(__dirname, 'public', 'index.html')
   }

@@ -7,7 +7,7 @@
     "module": "ESNext",
     //compile to standart
     "target": "es5",
-    "jsx": "react",
+    "jsx": "react-jsx",
     //allows to handle js files also
     "allowJs": true,
     "moduleResolution": "node",
