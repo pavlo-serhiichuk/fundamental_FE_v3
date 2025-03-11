@@ -1,0 +1,15 @@
+@use 'fonts/fonts';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font: var(--font-16);
+}
+
+input, button, textarea, select {
+    margin: 0;
+    font: inherit;
+    background-color: transparent;
+    border-radius: 6px;
+    padding: 0 6px;
+}

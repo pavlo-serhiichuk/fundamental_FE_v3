@@ -1,0 +1,65 @@
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  src: url("/src/styles/fonts/Inter-Bold.ttf") format('ttf');
+}
+//
+@font-face {
+  font-family: "Inter";
+  font-weight: 500;
+  src: url("/src/styles/fonts/Inter-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url("/src/styles/fonts/Inter-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 300;
+  src: url("/src/styles/fonts/Inter-Light.ttf");
+}
+
+:root {
+  --font-family-main: 'Inter', 'Arial', sans-serif;
+  --font-family-600: 'InterBold', 'Arial', sans-serif;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+
+  --font-size-12: 12px;
+  --font-line-14: 14px;
+  --font-12: var(--font-size-12) / var(--font-line-14) var(--font-family-main);
+  --font-12-500: var(--font-weight-500) --font-12;
+  --font-12-600: var(--font-weight-600) --font-12;
+
+  --font-size-14: 14px;
+  --font-line-17: 17px;
+  --font-14: var(--font-size-14) / var(--font-line-17) var(--font-family-main);
+  --font-14-500: var(--font-weight-500) var(--font-14);
+  --font-14-600: var(--font-weight-600) var(--font-14);
+
+  --font-size-16: 16px;
+  --font-line-24: 24px;
+  --font-16: var(--font-size-16) / var(--font-line-24) var(--font-family-main);
+  --font-16-500: var(--font-weight-500) var(--font-16);
+  --font-16-bold: var(--font-weight-600) var(--font-16);
+
+  --font-size-18: 18px;
+  --font-line-18: 28px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+  --font-l-500: var(--font-weight-500) var(--font-l);
+  --font-l-bold: var(--font-weight-600) var(--font-l);
+
+  --font-size-24: 24px;
+  --font-line-28: 28px;
+  --font-24: var(--font-size-24) / var(--font-line-28) var(--font-family-main);
+  --font-24-500: var(--font-weight-500) var(--font-24);
+  --font-24-600: var(--font-weight-600) var(--font-24);
+
+  --font-size-26: 26px;
+  --font-line-30: 30px;
+  --font-26: var(--font-size-26) / var(--font-line-30) var(--font-family-main);
+  --font-26-600: var(--font-weight-600) var(--font-26);
+}
