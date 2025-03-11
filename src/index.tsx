@@ -1,6 +1,7 @@
-import s from './style.module.scss'
 import {createRoot} from 'react-dom/client'
+import {BrowserRouter} from 'react-router-dom'
+import {Content} from './Content'
 
 const root = createRoot(document.getElementById('root'))
 
-root.render(<div className={s.content}>DIV</div>)
+root.render(<BrowserRouter><Content /></BrowserRouter>)
