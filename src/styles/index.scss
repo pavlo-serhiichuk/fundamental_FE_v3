@@ -7,8 +7,7 @@
 .app {
   height: 100vh;
   font: var(--font-m);
-  //background-color: var(--content-bg);
-  background-color: red;
+  background-color: var(--content-bg);
   color: var(--content-text-color);
   overflow: scroll;
 }

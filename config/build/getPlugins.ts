@@ -8,8 +8,8 @@ export function getPlugins(paths: ConfigPaths): WebpackPluginInstance[] {
     new HTMLWebpackPlugin({ template:  paths.htmlPath}),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:8].css',
-      chunkFilename: '[name].[contenthash:8].css'
+      filename: 'css/[name].[contenthash:10].css'
+      // chunkFilename: 'css/[name].[contenthash:8].css'
     })
   ]
 }

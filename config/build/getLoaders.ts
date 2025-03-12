@@ -27,25 +27,39 @@ export function getLoaders(options: ConfigOptions): RuleSetRule[] {
   //       'sass-loader',
   //     ],
   //   }
+
   const cssLoaders = {
-      test: /\.s[ac]ss$/i,
-      use: [
-        options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-        {
-          loader: 'css-loader',
-          options: {
-            modules: {
-              namedExport: false,
-            }
+    test: /\.s[ac]ss$/, // Apply this rule to all other SCSS files (global styles)
+    exclude: /\.module\.s[ac]ss$/, // Exclude module files
+    use: [
+      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      'css-loader', // No modules enabled here
+      'sass-loader',
+    ],
+  }
+
+  const cssModuleLoaders = {
+    test: /\.module\.s[ac]ss$/, // Only apply CSS Modules to *.module.scss files
+    use: [
+      options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        loader: 'css-loader',
+        options: {
+          modules: {
+            localIdentName: '[name]__[local]--[hash:base64:5]', // Keeps class names readable in dev
+            namedExport: false,
           }
-        },
-        // Compiles Sass to CSS
-        "sass-loader",
-      ],
-    }
+        }
+      },
+      'sass-loader',
+    ],
+  }
+
+
   return [
-    typescriptLoader,
     cssLoaders,
+    cssModuleLoaders,
+    typescriptLoader,
     {
       test: /\.(png|svg|jpg|jpeg|gif)$/i,
       type: 'asset/resource',
