@@ -1,9 +1,9 @@
 import {Suspense} from 'react'
 import {Link, Route, Routes} from 'react-router-dom'
 import {useTheme} from 'shared/hooks/useTheme'
-import {cls} from 'helpers/cls'
-import AboutPage from 'pages/AboutPage/AboutPage'
-import MainPage from 'pages/MainPage/MainPage'
+import {cls} from 'shared/helpers/cls'
+import {AboutPage} from 'pages/AboutPage'
+import {MainPage} from 'pages/MainPage'
 
 export const App = () => {
   const {theme, toggleTheme} = useTheme()
