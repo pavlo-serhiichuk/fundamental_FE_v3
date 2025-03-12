@@ -2,8 +2,9 @@ export type BuildMode = 'production' | 'development'
 
 export interface ConfigPaths {
   entryPath: string
-  distPath: string
+  buildPath: string
   htmlPath: string
+  srcPath: string
 }
 
 export interface ConfigEnv {

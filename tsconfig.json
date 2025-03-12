@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
     // the compiled folder adress - doesn't matter couse we compile with Webpack
-    "outDir": "./dist/",
+    "outDir": "./build/",
     //can use "any" only where you need it
     "noImplicitAny": true,
     "module": "ESNext",
     "lib": ["ESNext", "DOM", "ES6"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     //compile to standart
     "target": "es5",
     "jsx": "react-jsx",
@@ -14,7 +18,7 @@
     "moduleResolution": "node",
     //allows to work with packages that uses "common js" as usual - import Something from 'something'
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
 //    "allowImportingTsExtensions": true
   },
   "ts-node": {

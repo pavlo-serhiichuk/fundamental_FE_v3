@@ -6,8 +6,9 @@ import path from 'path'
 export default (env: ConfigEnv) => {
   const paths: ConfigPaths = {
     entryPath: path.resolve(__dirname, 'src', 'index.tsx'),
-    distPath: path.resolve(__dirname, 'dist'),
-    htmlPath: path.resolve(__dirname, 'public', 'index.html')
+    buildPath: path.resolve(__dirname, 'build'),
+    htmlPath: path.resolve(__dirname, 'public', 'index.html'),
+    srcPath: path.resolve(__dirname, 'src')
   }
 
   const mode = env.mode || 'development'

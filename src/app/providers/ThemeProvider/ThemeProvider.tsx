@@ -4,7 +4,7 @@ import { Children } from 'react';
 
 const defTheme = localStorage.getItem(LS_THEME_KEY) as Theme || 'light'
 
-const ThemeProvider: FC<any> = ({children}) => {
+export const ThemeProvider: FC<any> = ({children}) => {
   const [theme, setTheme] = useState<Theme>(defTheme)
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark': 'light')
@@ -17,5 +17,3 @@ const ThemeProvider: FC<any> = ({children}) => {
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;

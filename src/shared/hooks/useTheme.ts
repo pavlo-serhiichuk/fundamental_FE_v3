@@ -1,4 +1,4 @@
-import {LS_THEME_KEY, Theme, ThemeContext} from './ThemesContext'
+import {LS_THEME_KEY, Theme, ThemeContext} from '../../app/providers/ThemeProvider/ThemesContext'
 import {useContext} from 'react'
 
 interface UseThemeResult {

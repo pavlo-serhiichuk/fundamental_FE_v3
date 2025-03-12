@@ -13,11 +13,11 @@ export function getWebpackConfig(options: ConfigOptions): Configuration {
     devtool: isDev ? 'inline-source-map': undefined,
     output: {
       filename: '[name].[contenthash].js',
-      path: paths.distPath,
+      path: paths.buildPath,
       clean: true
     },
     plugins: getPlugins(paths),
-    resolve: getResolvers(),
+    resolve: getResolvers(options),
     devServer: getDevServer(options),
     module: {
       rules: getLoaders(options)
