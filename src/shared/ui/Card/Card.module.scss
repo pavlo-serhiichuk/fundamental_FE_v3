@@ -1,0 +1,10 @@
+.Card {
+  display: block;
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  box-shadow: var(--box-shadow);
+}
+
+.withPadding {
+  padding: 20px;
+}

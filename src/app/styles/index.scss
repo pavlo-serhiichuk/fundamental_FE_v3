@@ -11,3 +11,12 @@
   color: var(--content-text-color);
   overflow: scroll;
 }
+
+.app-content {
+  display: flex;
+  height: calc(100vh - var(--navbar-height) - 6px);
+}
+
+.page-wrapper {
+  padding: 15px 20px;
+}

@@ -1,23 +1,18 @@
-import {Suspense} from 'react'
-import {Link, Route, Routes} from 'react-router-dom'
 import {useTheme} from 'shared/hooks/useTheme'
-import {cls} from 'shared/helpers/cls'
-import {AboutPage} from 'pages/AboutPage'
-import {MainPage} from 'pages/MainPage'
+import {cls} from 'shared/lib/cls/cls'
+import AppRouter from 'app/providers/router/ui/AppRouter'
+import {Header} from 'widgets/Header'
+import {Sidebar} from 'widgets/Sidebar'
 
 export const App = () => {
-  const {theme, toggleTheme} = useTheme()
+  const {theme} = useTheme()
   return (
     <div className={cls('app', {}, [theme])}>
-        <Link to={'/'}>Main</Link>
-        <Link to={'/about'}>About</Link>
-      <button onClick={toggleTheme}>{theme}</button>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Routes>
-            <Route path={'/about'} element={<AboutPage />} />
-            <Route path={'/'} element={<MainPage />} />
-          </Routes>
-        </Suspense>
+      <Header />
+      <div className={'app-content'}>
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   )
 }

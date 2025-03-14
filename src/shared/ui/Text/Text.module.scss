@@ -1,0 +1,41 @@
+.content {
+  color: var(--content-text-color);
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.warn {
+  color: var(--color-warn);
+}
+
+.text_size_s {
+  p {
+    font: var(--font-m);
+  }
+
+  span {
+    font: var(--font-s);
+  }
+}
+
+.text_size_m {
+  p {
+    font: var(--font-l);
+  }
+
+  span {
+    font: var(--font-m);
+  }
+}
+
+.text_size_l {
+  p {
+    font: var(--font-xl);
+  }
+
+  span {
+    font: var(--font-l);
+  }
+}

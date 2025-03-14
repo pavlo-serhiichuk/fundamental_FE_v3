@@ -16,7 +16,7 @@ export function getWebpackConfig(options: ConfigOptions): Configuration {
       path: paths.buildPath,
       clean: true
     },
-    plugins: getPlugins(paths),
+    plugins: getPlugins(options),
     resolve: getResolvers(options),
     devServer: getDevServer(options),
     module: {
