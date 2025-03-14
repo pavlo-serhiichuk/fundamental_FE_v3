@@ -1,6 +1,7 @@
 import {type ConfigOptions} from './configOptions'
 import {getCssLoader} from './loaders/getCssLoader'
 import {getSvgLoader} from './loaders/getSvgLoader'
+import ReactRefreshTypeScript from 'react-refresh-typescript'
 
 export const getLoaders = (options: ConfigOptions) => {
   const {isDev} = options
@@ -16,11 +17,31 @@ export const getLoaders = (options: ConfigOptions) => {
     ]
   }
 
+  const refreshLoader = {
+    loader: require.resolve('ts-loader'),
+    options: {
+      getCustomTransformers: () => ({
+        before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+      }),
+      transpileOnly: isDev,
+    },
+  }
+
   const tsLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/
-  }
+    use: [
+      {
+        loader: require.resolve('ts-loader'),
+        options: {
+          getCustomTransformers: () => ({
+            before: isDev ? [ReactRefreshTypeScript()] : [],
+          }),
+          transpileOnly: isDev,
+        },
+      },
+    ],
+    exclude: /node_modules/,
+  };
 
   const fontLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -31,6 +52,7 @@ export const getLoaders = (options: ConfigOptions) => {
     fileLoader,
     svgLoader,
     tsLoader,
+    // refreshLoader,
     cssLoader,
     fontLoader
   ]
