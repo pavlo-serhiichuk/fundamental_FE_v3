@@ -10,6 +10,9 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     !options.isDev && new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:10].css',
       chunkFilename: 'css/[name].[contenthash:8].css'
+    }),
+    new webpack.DefinePlugin({
+      __IS_DEV__: options.isDev
     })
   ].filter(Boolean)
 }

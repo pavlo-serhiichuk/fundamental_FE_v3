@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 10px 10px 10px;
+  padding: 10px 10px 13px;
 }
 
 .collapsed {
@@ -23,4 +23,15 @@
 .switchers {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.switchersCollapsed {
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebarLang {
+  margin-bottom: 13px;
 }

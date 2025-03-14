@@ -17,7 +17,7 @@ export const Button = memo((props: ButtonProps) => {
   return (
     <button
       disabled={disabled}
-      className={cls(s.Button, { [s.disabled]: disabled }, [className, s[theme]])}
+      className={cls(s.Button, { [s.disabled]: disabled }, [s[theme], className])}
       {...otherProps}>
       {Children.only(<span>{children}</span>)}
     </button>
