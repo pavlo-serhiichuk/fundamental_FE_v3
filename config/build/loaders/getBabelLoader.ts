@@ -1,11 +1,11 @@
-import { type ConfigOptions } from '../configOptions'
+import {type ConfigOptions} from '../configOptions'
 
-export function getBabelLoader (options: ConfigOptions) {
-  const { isDev } = options
+export function getBabelLoader(options: ConfigOptions) {
+  const {isDev} = options
   const getPlugins = () => {
     const plugins = [['i18next-extract', {
       locales: ['ua', 'en'],
-      keyAsDefaultValue: true
+      keyAsDefaultValue: true,
     }]]
     if (isDev) {
       plugins.push([require.resolve('react-refresh/babel')])
@@ -20,10 +20,10 @@ export function getBabelLoader (options: ConfigOptions) {
       loader: 'babel-loader',
       options: {
         presets: [
-          ['@babel/preset-env', { targets: 'defaults' }]
+          ['@babel/preset-env', {targets: 'defaults'}],
         ],
-        plugins: getPlugins()
-      }
-    }
+        plugins: getPlugins(),
+      },
+    },
   }
 }

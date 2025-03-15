@@ -1,8 +1,8 @@
+import {Configuration} from 'webpack'
 import {ConfigOptions} from './configOptions'
 import {getPlugins} from './getPlugins'
 import {getResolvers} from './getResolvers'
 import {getLoaders} from './getLoaders'
-import {Configuration} from 'webpack'
 import {getDevServer} from './getDevServer'
 
 export function getWebpackConfig(options: ConfigOptions): Configuration {
@@ -10,17 +10,17 @@ export function getWebpackConfig(options: ConfigOptions): Configuration {
   return {
     mode,
     entry: paths.entryPath,
-    devtool: isDev ? 'inline-source-map': undefined,
+    devtool: isDev ? 'inline-source-map' : undefined,
     output: {
       filename: '[name].[contenthash].js',
       path: paths.buildPath,
-      clean: true
+      clean: true,
     },
     plugins: getPlugins(options),
     resolve: getResolvers(options),
     devServer: getDevServer(options),
     module: {
-      rules: getLoaders(options)
+      rules: getLoaders(options),
     },
   }
 }

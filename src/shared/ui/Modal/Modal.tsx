@@ -1,8 +1,10 @@
-import {type FC, type ReactNode, type KeyboardEvent, type MouseEvent, useEffect, useCallback, Children} from 'react'
+import {
+  type FC, type ReactNode, type KeyboardEvent, type MouseEvent, useEffect, useCallback, Children,
+} from 'react'
 import {cls} from 'shared/lib/cls/cls'
-import * as s from './Modal.module.scss'
-import { Portal } from 'shared/ui/Portal/Portal'
+import {Portal} from 'shared/ui/Portal/Portal'
 import {useTheme} from 'shared/hooks/useTheme'
+import * as s from './Modal.module.scss'
 
 interface ModalProps {
   className?: string
@@ -12,9 +14,11 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-  const { className, children, isOpen, onClose } = props
-  const { theme } = useTheme()
-  const mods = { [s.opened]: isOpen }
+  const {
+    className, children, isOpen, onClose,
+  } = props
+  const {theme} = useTheme()
+  const mods = {[s.opened]: isOpen}
 
   const closeHandler = useCallback(() => {
     onClose?.()

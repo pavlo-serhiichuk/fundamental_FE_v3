@@ -5,10 +5,10 @@ type Mods = Record<string, string | boolean>
 //   '123': true
 // }
 
-export function cls (
+export function cls(
   className: string,
   mods: Mods = {},
-  additional: Array<string | undefined> = []
+  additional: Array<string | undefined> = [],
 ): string {
   const modsClasses = Object.entries(mods)
     .filter(([_, value]) => Boolean(value))
@@ -16,6 +16,6 @@ export function cls (
   return [
     className,
     modsClasses,
-    ...additional.filter(Boolean)
+    ...additional.filter(Boolean),
   ].join(' ')
 }

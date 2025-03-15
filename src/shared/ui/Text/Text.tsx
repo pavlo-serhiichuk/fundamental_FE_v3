@@ -1,4 +1,4 @@
-import { type FC, memo } from 'react'
+import {memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import * as s from './Text.module.scss'
 
@@ -13,10 +13,12 @@ interface TextProps {
 }
 
 export const Text = memo((props: TextProps) => {
-  const { className, title, text, theme = 'content', size = 'text_size_m' } = props
+  const {
+    className, title, text, theme = 'content', size = 'text_size_m',
+  } = props
 
   return (
-    <div className={cls('', { [s[theme]]: true }, [className, s[size]])}>
+    <div className={cls('', {[s[theme]]: true}, [className, s[size]])}>
       {title ? <p>{title}</p> : null}
       {text ? <span>{text}</span> : null}
     </div>

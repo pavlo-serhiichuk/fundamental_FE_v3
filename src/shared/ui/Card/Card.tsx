@@ -9,10 +9,10 @@ interface CardProps {
 }
 
 export const Card: FC<CardProps> = (props) => {
-  const { className, withPadding = false, children } = props
+  const {className, withPadding = false, children} = props
 
   return (
-    <div className={cls(s.Card, { [s.withPadding]: withPadding }, [className])}>
+    <div className={cls(s.Card, {[s.withPadding]: withPadding}, [className])}>
       {Children.only(children)}
     </div>
   )

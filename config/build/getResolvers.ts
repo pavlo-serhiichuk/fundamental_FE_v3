@@ -7,6 +7,6 @@ export function getResolvers(options: ConfigOptions): ResolveOptions {
     preferAbsolute: true,
     modules: [options.paths.srcPath, 'node_modules'],
     mainFiles: ['index'],
-    alias: {}
+    alias: {},
   }
 }

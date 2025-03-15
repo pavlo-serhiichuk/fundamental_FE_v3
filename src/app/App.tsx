@@ -9,7 +9,7 @@ export const App = () => {
   return (
     <div className={cls('app', {}, [theme])}>
       <Header />
-      <div className={'app-content'}>
+      <div className="app-content">
         <Sidebar />
         <AppRouter />
       </div>

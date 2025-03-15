@@ -1,7 +1,7 @@
+import ReactRefreshTypeScript from 'react-refresh-typescript'
 import {type ConfigOptions} from './configOptions'
 import {getCssLoader} from './loaders/getCssLoader'
 import {getSvgLoader} from './loaders/getSvgLoader'
-import ReactRefreshTypeScript from 'react-refresh-typescript'
 
 export const getLoaders = (options: ConfigOptions) => {
   const {isDev} = options
@@ -12,9 +12,9 @@ export const getLoaders = (options: ConfigOptions) => {
     test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
-        loader: 'file-loader'
-      }
-    ]
+        loader: 'file-loader',
+      },
+    ],
   }
 
   const tsLoader = {
@@ -31,7 +31,7 @@ export const getLoaders = (options: ConfigOptions) => {
       },
     ],
     exclude: /node_modules/,
-  };
+  }
 
   const fontLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -44,6 +44,6 @@ export const getLoaders = (options: ConfigOptions) => {
     tsLoader,
     // refreshLoader,
     cssLoader,
-    fontLoader
+    fontLoader,
   ]
 }

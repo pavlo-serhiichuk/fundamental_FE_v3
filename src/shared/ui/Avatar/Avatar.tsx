@@ -1,4 +1,4 @@
-import { type CSSProperties, type FC, useMemo } from 'react'
+import {type CSSProperties, type FC, useMemo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 
 interface AvatarProps {
@@ -9,7 +9,9 @@ interface AvatarProps {
 }
 
 export const Avatar: FC<AvatarProps> = (props) => {
-  const { src = '', alt, size, className } = props
+  const {
+    src = '', alt, size, className,
+  } = props
 
   const styles = useMemo<CSSProperties>(() => ({
     minWidth: size,
@@ -18,14 +20,14 @@ export const Avatar: FC<AvatarProps> = (props) => {
     maxHeight: size,
     borderRadius: '50%',
     objectFit: 'cover',
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
   }), [size])
 
   return (
     <div style={styles} className={cls('', {}, [className])}>
       {src
         ? <img style={styles} src={src} alt={alt} />
-        : <div style={styles}/>}
+        : <div style={styles} />}
     </div>
   )
 }

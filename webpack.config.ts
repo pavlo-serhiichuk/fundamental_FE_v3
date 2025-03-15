@@ -1,14 +1,14 @@
 import webpack from 'webpack'
+import path from 'path'
 import {getWebpackConfig} from './config/build/getWebpackConfig'
 import {ConfigEnv, ConfigPaths} from './config/build/configOptions'
-import path from 'path'
 
 export default (env: ConfigEnv) => {
   const paths: ConfigPaths = {
     entryPath: path.resolve(__dirname, 'src', 'index.tsx'),
     buildPath: path.resolve(__dirname, 'build'),
     htmlPath: path.resolve(__dirname, 'public', 'index.html'),
-    srcPath: path.resolve(__dirname, 'src')
+    srcPath: path.resolve(__dirname, 'src'),
   }
 
   const mode = env.mode || 'development'
@@ -19,8 +19,8 @@ export default (env: ConfigEnv) => {
     mode,
     paths,
     isDev,
-    port: PORT
-  });
+    port: PORT,
+  })
 
   return config
 }
