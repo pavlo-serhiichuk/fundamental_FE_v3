@@ -1,5 +1,16 @@
 {
   "About us": "About us",
+  "Go back": "Go back",
   "Lang": "Lang",
-  "Main page": "Main page"
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "Loading 2": "Loading 2",
+  "Loading2": "Loading2",
+  "Main page": "Main page",
+  "Page is not found": "Page is not found"
 }

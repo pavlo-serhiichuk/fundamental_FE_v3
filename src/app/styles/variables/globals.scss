@@ -4,6 +4,7 @@
   --border-radius: 7px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 70px;
+  --page-content-height: calc(100vh - var(--navbar-height) - 30px);
 
   // z-indexes
   --z-index-modal: 10;
