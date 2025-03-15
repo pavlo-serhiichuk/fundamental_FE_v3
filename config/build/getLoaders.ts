@@ -2,6 +2,7 @@ import ReactRefreshTypeScript from 'react-refresh-typescript'
 import {type ConfigOptions} from './configOptions'
 import {getCssLoader} from './loaders/getCssLoader'
 import {getSvgLoader} from './loaders/getSvgLoader'
+import {getBabelLoader} from './loaders/getBabelLoader'
 
 export const getLoaders = (options: ConfigOptions) => {
   const {isDev} = options
@@ -16,6 +17,8 @@ export const getLoaders = (options: ConfigOptions) => {
       },
     ],
   }
+
+  const babelLoader = getBabelLoader(options)
 
   const tsLoader = {
     test: /\.tsx?$/,
@@ -41,8 +44,8 @@ export const getLoaders = (options: ConfigOptions) => {
   return [
     fileLoader,
     svgLoader,
+    babelLoader,
     tsLoader,
-    // refreshLoader,
     cssLoader,
     fontLoader,
   ]

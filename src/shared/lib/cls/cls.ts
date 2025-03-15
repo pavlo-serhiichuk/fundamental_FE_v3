@@ -13,9 +13,10 @@ export function cls(
   const modsClasses = Object.entries(mods)
     .filter(([_, value]) => Boolean(value))
     .map(([className, _]: [string, boolean]) => className).flat(1)
+
   return [
     className,
-    modsClasses,
+    ...modsClasses,
     ...additional.filter(Boolean),
-  ].join(' ')
+  ].join(' ').trim()
 }
