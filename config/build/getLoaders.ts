@@ -17,16 +17,6 @@ export const getLoaders = (options: ConfigOptions) => {
     ]
   }
 
-  const refreshLoader = {
-    loader: require.resolve('ts-loader'),
-    options: {
-      getCustomTransformers: () => ({
-        before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
-      }),
-      transpileOnly: isDev,
-    },
-  }
-
   const tsLoader = {
     test: /\.tsx?$/,
     use: [
