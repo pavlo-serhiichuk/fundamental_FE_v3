@@ -2,6 +2,7 @@ import HTMLWebpackPlugin from 'html-webpack-plugin'
 import webpack, {WebpackPluginInstance} from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 import {ConfigOptions} from './configOptions'
 
 export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
@@ -17,5 +18,8 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     }),
     new webpack.HotModuleReplacementPlugin(),
     options.isDev && new ReactRefreshWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+    }),
   ].filter(Boolean)
 }
