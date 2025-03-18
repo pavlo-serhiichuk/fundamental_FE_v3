@@ -17,13 +17,20 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     setCollapsed((prev) => !prev)
   }
   return (
-    <div className={cls(s.Sidebar, {[s.collapsed]: collapsed}, [className])}>
+    <div data-testid="sidebar" className={cls(s.Sidebar, {[s.collapsed]: collapsed}, [className])}>
       <div />
       <div className={cls(s.switchers, {[s.switchersCollapsed]: collapsed})}>
         <ThemeSwitcher />
         <LangSwitcher className={s.sidebarLang} />
       </div>
-      <Button theme="sidebar-squad-m" className={s.collapseBtn} onClick={onToggle}>{collapsed ? '>' : '<'}</Button>
+      <Button
+        data-testid="sidebar-toggle"
+        theme="sidebar-squad-m"
+        className={s.collapseBtn}
+        onClick={onToggle}
+      >
+        {collapsed ? '>' : '<'}
+      </Button>
     </div>
   )
 }

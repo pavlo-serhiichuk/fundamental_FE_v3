@@ -11,6 +11,6 @@ describe('cls', () => {
     expect(cls('className', {hover: true}, [])).toBe('className hover')
   })
   test('return all', () => {
-    expect(cls('className', {hover: true}, ['class1'])).toBe('className hover class1')
+    expect(cls('className', {hover: true}, ['clear'])).toBe('className hover clear')
   })
 })
