@@ -8,9 +8,9 @@ describe('Button', () => {
     screen.debug()
   })
 
-  // test('render theme=clear', () => {
-  //   render(<Button theme="clear">clear</Button>)
-  //   screen.debug()
-  //   expect(screen.getByTestId('button')).toHaveClass('clear')
-  // })
+  test('render theme=clear', () => {
+    render(<Button theme="clear">clear</Button>)
+    screen.debug()
+    expect(screen.getByTestId('button')).toHaveClass('clear')
+  })
 })

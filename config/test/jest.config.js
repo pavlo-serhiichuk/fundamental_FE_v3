@@ -16,7 +16,7 @@ const config = {
     'node_modules',
   ],
   moduleNameMapper: {
-    '\\.s?css$': 'identity-obj-proxy',
+    '\\.s?css$': path.resolve(__dirname, 'styleMock.ts'),
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
   },
   modulePaths: [
