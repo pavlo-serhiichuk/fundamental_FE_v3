@@ -18,17 +18,13 @@
     "moduleResolution": "node",
     //allows to work with packages that uses "common js" as usual - import Something from 'something'
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true
-//    "allowImportingTsExtensions": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["@testing-library/jest-dom"]
+    //    "allowImportingTsExtensions": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  },
-  "include": [
-    "./config/test/setupTests.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-  ]
+  }
 }
