@@ -11,7 +11,7 @@ const MainPage = () => {
       <div>{t('Main page')}</div>
       <BugButton />
       <br />
-      <Button theme="clear">clear</Button>
+      <Button theme="bordered">clear</Button>
       <br />
       <Button theme="clear" />
     </div>

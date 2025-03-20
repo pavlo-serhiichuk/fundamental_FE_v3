@@ -1,6 +1,7 @@
 .Sidebar {
   position: relative;
   min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
   background-color: var(--sidebar-bg);
   transition: min-width ease-out 0.2s;
   height: calc(100vh - var(--navbar-height));
@@ -12,6 +13,7 @@
 
 .collapsed {
   min-width: var(--sidebar-width-collapsed);
+  max-width: var(--sidebar-width-collapsed);
 }
 
 .collapseBtn {

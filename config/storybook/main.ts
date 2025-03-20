@@ -1,5 +1,4 @@
 // import type {StorybookConfig} from '@storybook/react-webpack5'
-
 import path from 'path'
 import {Configuration, DefinePlugin} from 'webpack'
 import {ConfigPaths} from '../build/configOptions'

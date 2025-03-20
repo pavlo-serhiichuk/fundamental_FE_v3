@@ -21,7 +21,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
       className={cls(s.AppLink, {}, [className, s[theme]])}
       {...otherProps}
     >
-      {Children.only(children)}
+      {Children.only(<span>{children}</span>)}
     </NavLink>
   )
 }
