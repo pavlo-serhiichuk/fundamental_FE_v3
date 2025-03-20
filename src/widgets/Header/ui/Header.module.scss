@@ -1,0 +1,14 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--navbar-bg);
+  height: var(--navbar-height);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}

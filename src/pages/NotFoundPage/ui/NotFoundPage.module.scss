@@ -1,0 +1,15 @@
+.NotFoundPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  font: var(--font-l);
+  height: var(--page-content-height);
+  width: 100%;
+}
+
+.goBack {
+  font: var(--font-m);
+  padding: 10px;
+}

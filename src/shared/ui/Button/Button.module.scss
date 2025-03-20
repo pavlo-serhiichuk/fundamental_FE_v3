@@ -1,0 +1,46 @@
+.Button {
+  cursor: pointer;
+  color: var(--content-text-color);
+  border: none;
+  outline: none;
+}
+
+.clear {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.bordered,
+.cancel {
+  background: none;
+  border: 1px solid var(--content-text-color);
+  padding: 4px 12px;
+  text-align: center;
+}
+
+.sidebar-squad-m,
+.content-squad-m {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+}
+
+.sidebar-squad-m {
+  background-color: var(--sidebar-bg);
+}
+
+.content-squad-m {
+  background-color: var(--content-bg);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cancel {
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}

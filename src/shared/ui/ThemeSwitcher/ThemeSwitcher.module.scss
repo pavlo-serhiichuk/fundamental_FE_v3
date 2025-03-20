@@ -1,0 +1,22 @@
+.ThemeSwitcher {
+  display: block;
+}
+
+.light {
+  svg {
+    // fill: #c3e853;
+    fill: #000;
+  }
+}
+
+.dark {
+  svg {
+    fill: #f7fc2a;
+  }
+}
+
+.green {
+  svg {
+    fill: #000;
+  }
+}
