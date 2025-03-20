@@ -6,7 +6,7 @@ import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 import {ConfigOptions} from './configOptions'
 
 export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new HTMLWebpackPlugin({template: options.paths.htmlPath}),
     new webpack.ProgressPlugin(),
     !options.isDev && new MiniCssExtractPlugin({
@@ -16,10 +16,14 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     new webpack.DefinePlugin({
       __IS_DEV__: options.isDev,
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    options.isDev && new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin({
+  ]
+  if (options.isDev) {
+    plugins.push(new ReactRefreshWebpackPlugin())
+    plugins.push(new webpack.HotModuleReplacementPlugin())
+    plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false,
-    }),
-  ].filter(Boolean)
+    }))
+  }
+
+  return plugins.filter(Boolean)
 }

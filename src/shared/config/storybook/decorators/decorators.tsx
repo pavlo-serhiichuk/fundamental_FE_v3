@@ -9,7 +9,7 @@ import i18nForTests from 'shared/config/i18n/i18nForTests'
 // import {signInReducer} from 'features/SignIn'
 // import {profileReducer} from 'entities/Profile'
 
-export const TranslationDecorator = (Story) => (
+export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
   // Alternative: set useSuspense to false on i18next.options.react when initializing i18next
   <Suspense fallback={<div>...</div>}>
