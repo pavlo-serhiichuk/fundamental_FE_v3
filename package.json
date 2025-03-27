@@ -13,7 +13,8 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "storybook:build": "storybook build --config-dir ./config/storybook"
+    "build-storybook": "storybook build --config-dir ./config/storybook",
+    "chromatic": "npx chromatic --project-token=chpt_7258454dcdf3fa1 --storybook-config-dir=config/storybook"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "@typescript-eslint/parser": "^5.12.1",
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
+    "chromatic": "^11.27.0",
     "css-loader": "^7.1.2",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",

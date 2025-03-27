@@ -32,6 +32,11 @@ jobs:
         run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
+      - name: Publish to Chromatic
+      run: npm run chromatic
+      env:
+        CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
 #        if: always()
 #      - name: screenshot testing
 #        run: npm run test:ui:ci
