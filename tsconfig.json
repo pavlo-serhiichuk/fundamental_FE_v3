@@ -22,6 +22,10 @@
     "types": ["@testing-library/jest-dom"]
     //    "allowImportingTsExtensions": true
   },
+  "include": [
+    "./config/test/setupTests.ts",
+    "global.d.ts"
+  ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
