@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended', 'plugin:react-hooks/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -36,6 +36,10 @@ module.exports = {
     semi: ['error', 'never'],
     'object-curly-spacing': ['error', 'never'],
     'max-len': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
   },
   globals: {
     __IS_DEV__: true,

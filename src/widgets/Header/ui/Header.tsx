@@ -1,8 +1,10 @@
-import {type FC} from 'react'
+import {type FC, useState} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {AppLink} from 'shared/ui/AppLink/AppLink'
 import {useTranslation} from 'react-i18next'
 import * as s from './Header.module.scss'
+import {Button} from '../../../shared/ui/Button/Button'
+import {Modal} from '../../../shared/ui/Modal/Modal'
 
 interface HeaderProps {
   className?: string
@@ -11,12 +13,21 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = (props) => {
   const {t} = useTranslation()
   const {className} = props
+  const [isSignInModalOpen, setIsSignInModalOpen] = useState(false)
+
+  const onCloseSignInModal = () => {
+    setIsSignInModalOpen(false)
+  }
+
+  const onOpen = () => {
+    setIsSignInModalOpen(true)
+  }
 
   return (
     <div className={cls(s.Header, {}, [className])}>
+      <Modal isOpen={isSignInModalOpen} onClose={onCloseSignInModal}>Modal</Modal>
       <div className={s.links}>
-        <AppLink theme="navigation" to="/"><span>{t('Main')}</span></AppLink>
-        <AppLink theme="navigation" to="/about"><span>{t('About')}</span></AppLink>
+        <Button onClick={onOpen} theme="bordered">{t('Sign in')}</Button>
       </div>
     </div>
   )
