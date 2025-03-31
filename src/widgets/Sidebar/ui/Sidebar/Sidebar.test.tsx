@@ -1,15 +1,15 @@
 import {fireEvent, screen} from '@testing-library/react'
-import {renderWithTranslation} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation'
+import {renderTestComponent} from 'shared/lib/tests/renderTestComponent/renderTestComponent'
 import {Sidebar} from './Sidebar'
 
 describe('Sidebar', () => {
   test('render', () => {
-    renderWithTranslation(<Sidebar />)
+    renderTestComponent(<Sidebar />)
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
   })
 
   test('check collapse', () => {
-    renderWithTranslation(<Sidebar />)
+    renderTestComponent(<Sidebar />)
     const toggleBtn = screen.getByTestId('sidebar-toggle')
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
     fireEvent.click(toggleBtn)

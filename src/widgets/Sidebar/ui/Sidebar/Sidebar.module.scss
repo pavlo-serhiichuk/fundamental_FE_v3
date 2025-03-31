@@ -11,9 +11,15 @@
   padding: 10px 10px 13px;
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
 .collapsed {
   min-width: var(--sidebar-width-collapsed);
   max-width: var(--sidebar-width-collapsed);
+  width: var(--sidebar-width-collapsed);
 }
 
 .collapseBtn {

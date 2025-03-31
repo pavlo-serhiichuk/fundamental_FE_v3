@@ -1,0 +1,25 @@
+.SidebarItem {
+  display: inline-flex;
+  padding: 0 28px;
+  height: 50px;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+
+  &:hover {
+    background-color: var(--sidebar-bg-hover);
+  }
+  span {
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all ease-out 0.2s;
+  }
+}
+
+.SidebarItem.collapsed {
+  padding: 0 0 0 15px;
+  span {
+    width: 0;
+  }
+}
