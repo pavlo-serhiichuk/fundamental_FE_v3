@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next'
 // import {type ISidebarItem} from 'widgets/Sidebar/model/types/sidebar'
 import {cls} from 'shared/lib/cls/cls'
 import {AppLink} from 'shared/ui/AppLink/AppLink'
-import {ISidebarItem} from 'model/types/sidebar'
+import {ISidebarItem} from '../../model/types/sidebar'
 import * as s from './SidebarItem.module.scss'
 
 interface SidebarItemProps {
