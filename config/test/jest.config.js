@@ -6,6 +6,9 @@
 const path = require('path')
 /** @type {import('jest').Config} */
 const config = {
+  globals: {
+    __IS_DEV__: true,
+  },
   clearMocks: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>config/test/setupTests.ts'],

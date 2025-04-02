@@ -24,7 +24,9 @@
   },
   "include": [
     "./config/test/setupTests.ts",
-    "global.d.ts"
+    "src/app/types/global.d.ts",
+    //    "./config/test/*",
+    "./src/**/*",
   ],
   "ts-node": {
     "compilerOptions": {
