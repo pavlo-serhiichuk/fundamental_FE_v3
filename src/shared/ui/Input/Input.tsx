@@ -15,7 +15,6 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo((props: InputProps) => {
-  // const { t } = useTranslation()
   const {
     className, label = '', type = 'text', value = '', onChange, readOnly, ...otherProps
   } = props
