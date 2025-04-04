@@ -4,6 +4,7 @@ import {BrowserRouter} from 'react-router-dom'
 import {I18nextProvider} from 'react-i18next'
 import {Theme, ThemeProvider} from 'app/providers'
 import i18nForTests from 'shared/config/i18n/i18nForTests'
+import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 // import {type StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 // import {type ReducersMapObject} from '@reduxjs/toolkit'
 // import {signInReducer} from 'features/SignIn'
@@ -40,20 +41,14 @@ export const RouterDecorator = (Story: any) => (
 //   profile: profileReducer,
 // }
 
-// export const StoreDecorator = (state: DeepPartial<StateSchema>) => (Story: any) => (
-//   <StoreProvider
-//     initialState={state}
-//     asyncReducers={{...defaultAsyncReducers}}
-//   >
-//     <Story />
-//   </StoreProvider>
-// )
-//
-// export const TranslationDecorator = (Story: any) => (
-//   <I18nextProvider i18n={i18nForTests}>
-//     <Story />
-//   </I18nextProvider>
-// )
+export const StoreDecorator = (module: DeepPartial<StateSchema>) => (Story: any) => (
+  <StoreProvider
+    initialState={module}
+    // asyncReducers={{...defaultAsyncReducers}}
+  >
+    <Story />
+  </StoreProvider>
+)
 
 export const PageContentDecorator = (Story: any) => (
   <div className="page-content">

@@ -8,7 +8,7 @@ import './shared/config/i18n/i18n'
 import {StoreProvider} from './app/providers/StoreProvider'
 
 const root = createRoot(document.getElementById('root'))
-console.log('check pull request')
+
 root.render(
   <StoreProvider>
     <BrowserRouter>

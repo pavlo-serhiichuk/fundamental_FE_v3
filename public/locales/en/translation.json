@@ -4,5 +4,6 @@
   "Lang": "En",
   "Loading": "Loading...",
   "Page is not found": "Page is not found",
-  "Sign in": "Sign in"
+  "Sign in": "Sign in",
+  "userIsNotFound": "User is not found. Try latter"
 }

@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
 import {Header} from './Header'
 import 'app/styles/index.scss'
 
@@ -22,9 +22,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {},
+  decorators: [StoreDecorator({})],
+}
+export const PrimarySignedIn: Story = {
+  args: {},
+  decorators: [StoreDecorator({user: {authData: {username: 'username', password: 'password'}}})],
 }
 
 export const PrimaryDark: Story = {
   args: {},
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('dark'), StoreDecorator({})],
 }

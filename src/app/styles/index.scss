@@ -4,10 +4,16 @@
 @use 'variables/globals';
 @use 'fonts/fonts';
 
-.app {
+.app,
+.app_modal {
   height: 100vh;
-  background-color: var(--content-bg);
   overflow: scroll;
+  font: var(--font-16);
+  color: var(--content-text-color);
+}
+
+.app {
+  background-color: var(--content-bg);
 }
 
 .app-content {
