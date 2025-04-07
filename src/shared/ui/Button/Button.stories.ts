@@ -20,15 +20,47 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    children: 'Primary',
+    children: 'Default',
+    theme: 'default',
   },
 }
 
-export const PrimaryDark: Story = {
+export const DefaultDark: Story = {
   args: {
-    children: 'Primary',
+    children: 'Default dark',
+    theme: 'default',
+  },
+  decorators: [ThemeDecorator('dark')],
+}
+
+export const Clear: Story = {
+  args: {
+    children: 'Clear',
+    theme: 'clear',
+  },
+}
+
+export const ClearDark: Story = {
+  args: {
+    children: 'Clear dark',
+    theme: 'clear',
+  },
+  decorators: [ThemeDecorator('dark')],
+}
+
+export const SidebarSquad: Story = {
+  args: {
+    children: '>',
+    theme: 'sidebar-squad-m',
+  },
+}
+
+export const SidebarSquadDark: Story = {
+  args: {
+    children: '<',
+    theme: 'sidebar-squad-m',
   },
   decorators: [ThemeDecorator('dark')],
 }

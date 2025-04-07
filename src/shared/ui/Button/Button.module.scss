@@ -3,6 +3,10 @@
   color: var(--content-text-color);
 }
 
+.default {
+  color: var(--content-text-color);
+}
+
 .clear {
   padding: 0;
   background: none;
@@ -22,6 +26,7 @@
 .content-squad-m {
   height: 40px;
   width: 40px;
+  border: none;
   border-radius: 6px;
 }
 
@@ -36,6 +41,7 @@
 .disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  border: none;
 }
 
 .cancel {
