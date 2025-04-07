@@ -2,26 +2,44 @@ import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input/Input'
 import {Button} from 'shared/ui/Button/Button'
-import {useSelector} from 'react-redux'
-import {getSignInData} from 'features/SignIn/module/selectors/getSignInData/getSignInData'
-import {signInActions} from 'features/SignIn/module/slice/signInSlice'
+import {useSelector, useStore} from 'react-redux'
+import {
+  getSignInError,
+  getSignInIsLoading,
+  getSignInPassword,
+  getSignInUsername,
+} from 'features/SignIn/module/selectors/getSignInSelectors'
+import {signInActions, signInReducer} from 'features/SignIn/module/slice/signInSlice'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {fetchSignIn} from 'features/SignIn/module/thunks/fetchSignIn'
-import {useCallback} from 'react'
+import {useCallback, useEffect} from 'react'
 import {Text} from 'shared/ui/Text/Text'
+import {ReduxStoreWithReducerManager} from 'app/providers/StoreProvider'
 import * as s from './SignInForm.module.scss'
 
-interface SignInFormProps {
+export interface SignInFormProps {
   className?: string
 }
 
-export const SignInForm = (props: SignInFormProps) => {
+const SignInForm = (props: SignInFormProps) => {
   const {className} = props
   const dispatch = useAppDispatch()
   const {t} = useTranslation()
-  const {
-    username, password, isLoading, error,
-  } = useSelector(getSignInData)
+  const store = useStore() as ReduxStoreWithReducerManager
+  const username = useSelector(getSignInUsername)
+  const password = useSelector(getSignInPassword)
+  const isLoading = useSelector(getSignInIsLoading)
+  const error = useSelector(getSignInError)
+
+  useEffect(() => {
+    store.dispatch({type: '@INIT loginForm'})
+    store.reducerManager.add('signIn', signInReducer)
+    return () => {
+      store.dispatch({type: '@DESTROY loginForm'})
+      store.reducerManager.remove('signIn')
+    }
+  }, [])
+
   const onChangeUsername = (value: string) => {
     dispatch(signInActions.setUsername(value))
   }
@@ -45,3 +63,5 @@ export const SignInForm = (props: SignInFormProps) => {
     </div>
   )
 }
+
+export default SignInForm

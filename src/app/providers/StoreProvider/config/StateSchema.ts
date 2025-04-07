@@ -11,8 +11,9 @@ import {SignInSchema} from 'features/SignIn'
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
-  // eslint-disable-next-line no-undef
-  signIn: SignInSchema
+
+  // async reducers
+  signIn?: SignInSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
