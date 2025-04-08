@@ -19,6 +19,7 @@ import * as s from './SignInForm.module.scss'
 
 export interface SignInFormProps {
     className?: string
+    onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -26,7 +27,7 @@ const initialReducers: ReducersList = {
 }
 
 const SignInForm = (props: SignInFormProps) => {
-  const {className} = props
+  const {className, onSuccess} = props
   const dispatch = useAppDispatch()
   const {t} = useTranslation()
   const username = useSelector(getSignInUsername)
@@ -41,9 +42,13 @@ const SignInForm = (props: SignInFormProps) => {
     dispatch(signInActions.setPassword(value))
   }
 
-  const onSignIn = useCallback(() => {
-    dispatch(fetchSignIn({username, password}))
-  }, [password, username, dispatch])
+  const onSignIn = useCallback(async () => {
+    const result = await dispatch(fetchSignIn({username, password}))
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [onSuccess, password, username, dispatch])
+
   return (
     <DynamicReducerLoader reducers={initialReducers}>
       <div className={cls(s.SignInForm, {}, [className])}>

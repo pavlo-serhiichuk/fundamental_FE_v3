@@ -13,7 +13,7 @@ export const SignInModal = (props: SignInModalProps) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <Suspense fallback={<Loader />}>
-        <SignInFormAsync />
+        <SignInFormAsync onSuccess={onClose} />
       </Suspense>
     </Modal>
   )
