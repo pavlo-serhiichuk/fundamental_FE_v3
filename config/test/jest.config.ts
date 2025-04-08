@@ -1,19 +1,20 @@
+import path from 'path'
 /**
  * For a detailed explanation regarding each configuration property, visit:
  * https://jestjs.io/docs/configuration
  */
 
-const path = require('path')
 /** @type {import('jest').Config} */
+
 const config = {
   globals: {
     __IS_DEV__: true,
   },
   clearMocks: true,
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>config/test/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/config/test/setupTests.ts'],
   coveragePathIgnorePatterns: [
-    '/node_modules/',
+    '\\\\node_modules\\\\',
   ],
   moduleDirectories: [
     'node_modules',
@@ -21,6 +22,7 @@ const config = {
   moduleNameMapper: {
     '\\.s?css$': path.resolve(__dirname, 'styleMock.ts'),
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    axios: 'axios/dist/node/axios.cjs',
   },
   modulePaths: [
     '<rootDir>src',
@@ -42,4 +44,4 @@ const config = {
   ],
 }
 
-module.exports = config
+export default config

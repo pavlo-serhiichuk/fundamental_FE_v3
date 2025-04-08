@@ -1,61 +1,65 @@
 import {fetchSignIn} from 'features/SignIn/module/thunks/fetchSignIn'
 import {userActions} from 'entities/User'
+import axios from 'axios'
+import {StateSchema} from 'app/providers/StoreProvider'
+import {ThunkDispatch} from '@reduxjs/toolkit'
 import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+
+jest.mock('axios')
+const mockedAxios = jest.mocked(axios, true)
 
 describe('fetchSignIn', () => {
   test('success', async () => {
-    const userData = {password: '1', username: 'user22'}
-
+    const userValue = {password: '111', username: 'test'}
+    mockedAxios.post.mockReturnValue(Promise.resolve({data: userValue}))
     const thunk = new TestAsyncThunk(fetchSignIn)
-    thunk.api.post.mockReturnValue(Promise.resolve({data: userData}))
-    const result: any = await thunk.callThunk({username: 'user22', password: '111'})
-
-    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userData))
+    const result = await thunk.callThunk(userValue)
+    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue))
     expect(thunk.dispatch).toHaveBeenCalledTimes(3)
+    expect(mockedAxios.post).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
   })
-
   test('error', async () => {
-    // eslint-disable-next-line prefer-promise-reject-errors
-
+    const userValue = {password: '111', username: 'test'}
+    mockedAxios.post.mockReturnValue(Promise.resolve({status: 403}))
     const thunk = new TestAsyncThunk(fetchSignIn)
-    // eslint-disable-next-line prefer-promise-reject-errors
-    thunk.api.post.mockReturnValue(Promise.reject({status: 403}))
-    const result: any = await thunk.callThunk({username: 'user22', password: '111'})
-
-    expect(thunk.dispatch).toHaveBeenCalledTimes(2)
+    const result = await thunk.callThunk(userValue)
+    expect(thunk.dispatch).toHaveBeenCalledTimes(3)
+    expect(mockedAxios.post).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('rejected')
   })
-  // -- by hands --
-  // let dispatch: Dispatch | any
-  // let getState: () => StateSchema
-  //
-  // beforeEach(() => {
-  //   dispatch = jest.fn()
-  //   getState = jest.fn()
-  // })
-  //
-  // test('signIn success', async () => {
-  //   const userData = { id: '14', username: 'user22' }
-  //   mockedAxios.post.mockReturnValue(Promise.resolve({ data: userData }))
-  //   const action = fetchSignIn({ username: '123', password: '123' })
-  //   const result = await action(dispatch, getState, undefined)
-  //
-  //   expect(dispatch).toHaveBeenCalledWith(userActions.setUserAuthData(userData))
-  //   expect(dispatch).toHaveBeenCalledTimes(3)
-  //   expect(mockedAxios.post).toHaveBeenCalled()
-  //   expect(result.meta.requestStatus).toBe('fulfilled')
-  //   // expect().toEqual()
-  // })
-  // test('signIn failed', async () => {
-  //   mockedAxios.post.mockReturnValue(Promise.reject({ status: 403 }))
-  //   const action = fetchSignIn({ username: '123', password: '123' })
-  //   const result = await action(dispatch, getState, undefined)
-  //
-  //   expect(dispatch).toHaveBeenCalledTimes(2)
-  //   expect(mockedAxios.post).toHaveBeenCalled()
-  //   expect(result.meta.requestStatus).toBe('rejected')
-  //   expect(result.payload).toBe('User is not found. Try latter')
-  // })
-  // -- by hands --
 })
+
+// by hands
+// jest.mock('axios')
+// const mockedAxios = jest.mocked(axios, true)
+//
+// describe('fetchSignIn', () => {
+//   let dispatch: ThunkDispatch<StateSchema, any, any>
+//   let getState: () => StateSchema
+//   beforeEach(() => {
+//     dispatch = jest.fn()
+//     getState = jest.fn()
+//   })
+//   test('success', async () => {
+//     // мокаємо респонс
+//     const userValue = {password: '111', username: 'test'}
+//     mockedAxios.post.mockReturnValue(Promise.resolve({data: userValue}))
+//     const action = fetchSignIn(userValue)
+//     const result = await action(dispatch, getState, undefined)
+//     expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue))
+//     expect(dispatch).toHaveBeenCalledTimes(3)
+//     expect(mockedAxios.post).toHaveBeenCalled()
+//     expect(result.meta.requestStatus).toBe('fulfilled')
+//   })
+//
+//   test('error', async () => {
+//     // мокаємо респонс
+//     const userValue = {password: '111', username: 'test'}
+//     mockedAxios.post.mockReturnValue(Promise.resolve({status: 403}))
+//     const action = fetchSignIn(userValue)
+//     const result = await action(dispatch, getState, undefined)
+//     // expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue))
+//     expect(result.meta.requestStatus).toBe('rejected')
+//   })
+// })

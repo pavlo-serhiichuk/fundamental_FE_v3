@@ -5,6 +5,8 @@ import {I18nextProvider} from 'react-i18next'
 import {Theme, ThemeProvider} from 'app/providers'
 import i18nForTests from 'shared/config/i18n/i18nForTests'
 import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
+import {ReducersMapObject} from '@reduxjs/toolkit'
+import {signInReducer} from 'features/SignIn'
 // import {type StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 // import {type ReducersMapObject} from '@reduxjs/toolkit'
 // import {signInReducer} from 'features/SignIn'
@@ -36,15 +38,18 @@ export const RouterDecorator = (Story: any) => (
   </BrowserRouter>
 )
 
-// const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
-//   signIn: signInReducer,
-//   profile: profileReducer,
-// }
+const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+  signIn: signInReducer,
+  // profile: profileReducer,
+}
 
-export const StoreDecorator = (module: DeepPartial<StateSchema>) => (Story: any) => (
+export const StoreDecorator = (
+  initialState: DeepPartial<StateSchema>,
+  asyncReducers: DeepPartial<ReducersMapObject<StateSchema>>,
+) => (Story: any) => (
   <StoreProvider
-    initialState={module}
-    // asyncReducers={{...defaultAsyncReducers}}
+    initialState={initialState}
+    asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}
   >
     <Story />
   </StoreProvider>

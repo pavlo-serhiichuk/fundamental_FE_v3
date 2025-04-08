@@ -19,7 +19,7 @@
     //allows to work with packages that uses "common js" as usual - import Something from 'something'
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["@testing-library/jest-dom"]
+    "types": ["node","@testing-library/jest-dom"]
     //    "allowImportingTsExtensions": true
   },
   "include": [

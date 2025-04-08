@@ -1,9 +1,9 @@
+import axios from 'axios'
+import i18n from 'i18next'
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {type User, userActions} from 'entities/User'
 import {AUTH_USER_DATA} from 'shared/const/localStorage'
 import {ThunkConfig} from 'app/providers/StoreProvider/config/StateSchema'
-import axios from 'axios'
-import i18n from 'i18next'
 
 interface FetchSignInProps {
   username: string
