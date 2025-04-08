@@ -1,8 +1,6 @@
 import {fetchSignIn} from 'features/SignIn/module/thunks/fetchSignIn'
 import {userActions} from 'entities/User'
 import axios from 'axios'
-import {StateSchema} from 'app/providers/StoreProvider'
-import {ThunkDispatch} from '@reduxjs/toolkit'
 import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
 
 jest.mock('axios')
