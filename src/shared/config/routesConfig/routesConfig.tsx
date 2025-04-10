@@ -1,10 +1,12 @@
 import {MainPage} from 'pages/MainPage'
 import {AboutPage} from 'pages/AboutPage'
 import {NotFoundPage} from 'pages/NotFoundPage'
+import {ProfilePage} from 'pages/ProfilePage'
 
 export enum AppRouteNames {
   MAIN = 'main',
   ABOUT = 'about',
+  PROFILE = 'profile',
   NOT_FOUND = 'not_found',
 }
 
@@ -13,6 +15,7 @@ export type AppRouteType = Record<AppRouteNames, string>
 export const RoutePaths: AppRouteType = {
   [AppRouteNames.MAIN]: '/',
   [AppRouteNames.ABOUT]: '/about',
+  [AppRouteNames.PROFILE]: '/profile/',
   [AppRouteNames.NOT_FOUND]: '*',
 }
 
@@ -30,5 +33,9 @@ export const routesConfig: RoutesConfigType = {
   [AppRouteNames.NOT_FOUND]: {
     path: RoutePaths.not_found,
     element: <NotFoundPage />,
+  },
+  [AppRouteNames.PROFILE]: {
+    path: `${RoutePaths.profile}:id`,
+    element: <ProfilePage />,
   },
 }

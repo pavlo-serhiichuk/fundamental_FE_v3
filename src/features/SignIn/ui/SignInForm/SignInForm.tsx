@@ -12,9 +12,9 @@ import {
 import {signInActions, signInReducer} from 'features/SignIn/module/slice/signInSlice'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {fetchSignIn} from 'features/SignIn/module/thunks/fetchSignIn'
-import {useCallback} from 'react'
+import {memo, useCallback, useMemo} from 'react'
 import {Text} from 'shared/ui/Text/Text'
-import DynamicReducerLoader, {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import * as s from './SignInForm.module.scss'
 
 export interface SignInFormProps {
@@ -26,7 +26,7 @@ const initialReducers: ReducersList = {
   signIn: signInReducer,
 }
 
-const SignInForm = (props: SignInFormProps) => {
+const SignInForm = memo((props: SignInFormProps) => {
   const {className, onSuccess} = props
   const dispatch = useAppDispatch()
   const {t} = useTranslation()
@@ -35,12 +35,12 @@ const SignInForm = (props: SignInFormProps) => {
   const isLoading = useSelector(getSignInIsLoading)
   const error = useSelector(getSignInError)
 
-  const onChangeUsername = (value: string) => {
+  const onChangeUsername = useCallback((value: string) => {
     dispatch(signInActions.setUsername(value))
-  }
-  const onChangePassword = (value: string) => {
+  }, [])
+  const onChangePassword = useCallback((value: string) => {
     dispatch(signInActions.setPassword(value))
-  }
+  }, [])
 
   const onSignIn = useCallback(async () => {
     const result = await dispatch(fetchSignIn({username, password}))
@@ -48,7 +48,7 @@ const SignInForm = (props: SignInFormProps) => {
       onSuccess()
     }
   }, [onSuccess, password, username, dispatch])
-
+  const btnDisabled = useMemo(() => isLoading || !username || !password, [isLoading, password, username])
   return (
     <DynamicReducerLoader reducers={initialReducers}>
       <div className={cls(s.SignInForm, {}, [className])}>
@@ -59,10 +59,10 @@ const SignInForm = (props: SignInFormProps) => {
         {error && <Text text={error} theme="error" />}
         <Input placeholder="Enter username..." value={username} onChange={onChangeUsername} />
         <Input placeholder="Enter password..." value={password} onChange={onChangePassword} />
-        <Button theme="bordered" onClick={onSignIn} disabled={isLoading}>{t('Apply')}</Button>
+        <Button theme="bordered" onClick={onSignIn} disabled={btnDisabled}>{t('Apply')}</Button>
       </div>
     </DynamicReducerLoader>
   )
-}
+})
 
 export default SignInForm

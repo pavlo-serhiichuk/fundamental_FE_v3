@@ -1,36 +1,23 @@
-import {type FC, useState} from 'react'
+import {type FC, memo, useState} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {Button} from 'shared/ui/Button/Button'
 import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import {LangSwitcher} from 'shared/ui/LandSwitcher/LangSwitcher'
-import AboutUsIcon from 'shared/assets/icons/about_us.svg'
-import MainIcon from 'shared/assets/icons/main.svg'
-import ProfileIcon from 'shared/assets/icons/profile.svg'
-import ArticlesIcon from 'shared/assets/icons/articles.svg'
-import {RoutePaths} from '../../../../shared/config/routesConfig/routesConfig'
+import {useSelector} from 'react-redux'
 import {ISidebarItem} from '../../model/types/sidebar'
 import * as s from './Sidebar.module.scss'
 import {SidebarItem} from '../SidebarItem/SidebarItem'
+import {getSidebarItems} from '../../model/selectors/getSidebarItems'
 
 interface SidebarProps {
-  className?: string
+    className?: string
 }
 
-const sidebarItems: ISidebarItem[] = [
-  {
-    name: 'About us',
-    path: RoutePaths.about,
-    Icon: AboutUsIcon,
-  }, {
-    name: 'Main',
-    path: RoutePaths.main,
-    Icon: MainIcon,
-  },
-]
-
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar: FC<SidebarProps> = memo((props) => {
   const {className} = props
   const [collapsed, setCollapsed] = useState(false)
+  const sidebarItems = useSelector(getSidebarItems)
+
   const onToggle = () => {
     setCollapsed((prev) => !prev)
   }
@@ -55,4 +42,4 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </Button>
     </div>
   )
-}
+})

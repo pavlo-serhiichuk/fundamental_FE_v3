@@ -15,6 +15,7 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: options.isDev,
+      __API__: JSON.stringify(options.apiUrl),
     }),
   ]
   if (options.isDev) {

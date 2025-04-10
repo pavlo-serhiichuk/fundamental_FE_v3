@@ -557,13 +557,13 @@
   "profiles": [
     {
       "id": "1",
-      "name": "Admin",
+      "name": "Adminator",
       "lastname": "Adminovych",
       "age": 28,
       "country": "Poland",
       "currency": "USD",
       "username": "pasha",
-      "avatar": "https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg"
+      "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
     {
       "id": "2",
@@ -573,7 +573,7 @@
       "country": "Ukraine",
       "currency": "USD",
       "username": "pasha",
-      "avatar": "https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg"
+      "avatar": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.gamestar.de%2Fartikel%2Fheiliges-kanonenrohr-die-story-von-avatar-4-haut-jetzt-schon-alle-beteiligten-um-sagt-james-cameron%2C3405449.html&psig=AOvVaw3ba3-1I0Lo5j90W0-L0Gh3&ust=1744208699651000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCICo6_HRyIwDFQAAAAAdAAAAABAJ"
     }
   ]
 }

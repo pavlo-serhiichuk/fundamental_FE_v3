@@ -17,4 +17,5 @@ export interface ConfigOptions {
   paths: ConfigPaths
   isDev: boolean
   port: number
+  apiUrl: string
 }

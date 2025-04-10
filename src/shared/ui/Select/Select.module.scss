@@ -1,0 +1,14 @@
+.SelectWrapper {
+  display: inline-flex;
+  gap: 20px;
+  align-items: center;
+
+  select {
+    background: none;
+    outline: none;
+    border: 1px solid var(--content-text-color);
+    padding: 4px 12px;
+    text-align: center;
+    color: var(--content-text-color);
+  }
+}
