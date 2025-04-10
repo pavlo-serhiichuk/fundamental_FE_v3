@@ -9,7 +9,8 @@ export interface ConfigPaths {
 
 export interface ConfigEnv {
   mode?: BuildMode,
-  port?: number
+  port?: number,
+  apiUrl?: string
 }
 
 export interface ConfigOptions {
