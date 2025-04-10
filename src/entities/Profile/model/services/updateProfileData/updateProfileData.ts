@@ -4,13 +4,11 @@ import {getProfileForm} from 'entities/Profile'
 import {validateProfileForm} from 'entities/Profile/model/services/validateProfileForm/validateProfileForm'
 import {type Profile, ValidationError} from '../../types/ProfileSchema'
 
-// eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<string | ValidationError[]>>(
   'profile/updateProfileData',
-  async (payload, thunkAPI) => {
+  async (_, thunkAPI) => {
     const {extra, getState} = thunkAPI
     const form = getProfileForm(getState())
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const validationErrors = validateProfileForm(form!)
 
     if (validationErrors.length) {
