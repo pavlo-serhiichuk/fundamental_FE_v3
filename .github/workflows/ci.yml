@@ -1,4 +1,4 @@
-name: linting, testing, building
+name: Linting, Testing CI Pipeline with Chromatic
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   pipeline:
+    name: CI + Chromatic
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -16,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -23,7 +26,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
-        run: npm ci  # Changed from `npm install`
+        run: npm ci
 
       - name: Build production project
         run: npm run build:prod
@@ -39,3 +42,8 @@ jobs:
 
       - name: Build Storybook
         run: npm run build-storybook
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
