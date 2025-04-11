@@ -28,14 +28,12 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
     this.navigate = jest.fn()
   }
 
-  async callThunk(arg: Arg) {
-    const action = this.actionCreator(arg)
-    const result = await action(
+  async callThunk(arg?: Arg) {
+    const action = this.actionCreator(arg as Arg)
+    return action(
       this.dispatch,
       this.getState,
       {api: this.api, navigate: this.navigate},
     )
-
-    return result
   }
 }
