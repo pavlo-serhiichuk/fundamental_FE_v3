@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strict": true,
     // the compiled folder adress - doesn't matter couse we compile with Webpack
     "outDir": "./build/",
     //can use "any" only where you need it

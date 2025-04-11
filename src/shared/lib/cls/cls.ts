@@ -1,5 +1,5 @@
 // Record is a regular object but with limited amount of values
-type Mods = Record<string, string | boolean>
+export type Mods = Record<string, string | boolean>
 
 // const a: Mods = {
 //   '123': true
@@ -12,7 +12,7 @@ export function cls(
 ): string {
   const modsClasses = Object.entries(mods)
     .filter(([_, value]) => Boolean(value))
-    .map(([className, _]: [string, boolean]) => className).flat(1)
+    .map(([className, _]: [string, string | boolean]) => className).flat(1)
 
   return [
     className,

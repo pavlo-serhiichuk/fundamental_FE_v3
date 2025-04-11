@@ -88,8 +88,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
           label={t('Age')}
           onChange={onChangeAge}
         />
-        <CountrySelect readonly={!!readonly} />
-        <CurrencySelect readonly={!!readonly} />
+        <CountrySelect readonly={readonly} />
+        <CurrencySelect readonly={readonly} />
       </div>
     </div>
   )

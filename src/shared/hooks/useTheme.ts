@@ -12,7 +12,7 @@ export function useTheme(): UseThemeResult {
     const newTheme = theme === 'light' ? 'dark' : 'light'
 
     localStorage.setItem(LS_THEME_KEY, newTheme)
-    setTheme(newTheme)
+    setTheme?.(newTheme)
   }
-  return {theme, toggleTheme}
+  return {theme: theme || 'light', toggleTheme}
 }

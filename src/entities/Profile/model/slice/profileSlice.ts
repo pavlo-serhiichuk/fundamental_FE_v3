@@ -33,12 +33,10 @@ const profileSlice = createSlice({
       })
       .addCase(fetchProfileData.fulfilled, (state: ProfileSchema, action: PayloadAction<Profile>) => {
         state.isLoading = false
-        console.log('here 1')
         state.data = action.payload
         state.form = action.payload
       })
       .addCase(fetchProfileData.rejected, (state: ProfileSchema, action: any) => {
-        console.log('here 2')
         state.isLoading = false
         state.validationErrors = action.payload
       })

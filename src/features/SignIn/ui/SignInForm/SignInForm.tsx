@@ -37,13 +37,17 @@ const SignInForm = memo((props: SignInFormProps) => {
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(signInActions.setUsername(value))
-  }, [])
+  }, [dispatch])
+
   const onChangePassword = useCallback((value: string) => {
     dispatch(signInActions.setPassword(value))
-  }, [])
+  }, [dispatch])
 
   const onSignIn = useCallback(async () => {
-    const result = await dispatch(fetchSignIn({username, password}))
+    const requestData = {
+      password: password || '', username: username || '',
+    }
+    const result = await dispatch(fetchSignIn(requestData))
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess()
     }

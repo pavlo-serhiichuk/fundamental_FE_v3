@@ -1,7 +1,7 @@
 import {
   type FC, type ReactNode, type KeyboardEvent, type MouseEvent, useEffect, useCallback, Children,
 } from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls, Mods} from 'shared/lib/cls/cls'
 import {Portal} from 'shared/ui/Portal/Portal'
 import {useTheme} from 'shared/hooks/useTheme'
 import * as s from './Modal.module.scss'
@@ -18,7 +18,7 @@ export const Modal: FC<ModalProps> = (props) => {
     className, children, isOpen, onClose,
   } = props
   const {theme} = useTheme()
-  const mods = {[s.opened]: isOpen}
+  const mods: Mods = {[s.opened]: isOpen}
 
   const closeHandler = useCallback(() => {
     onClose?.()

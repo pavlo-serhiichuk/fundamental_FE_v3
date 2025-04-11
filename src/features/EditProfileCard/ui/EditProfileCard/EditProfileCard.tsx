@@ -37,7 +37,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = (props) => {
       {id === user?.id ? <EditProfileHeader /> : null}
       <ProfileCard
         form={form}
-        readonly={!!readonly}
+        readonly={readonly}
         onChangeFirstName={onChangeFirstName}
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}

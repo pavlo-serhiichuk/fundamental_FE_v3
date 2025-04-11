@@ -5,12 +5,9 @@ import {I18nextProvider} from 'react-i18next'
 import {Theme, ThemeProvider} from 'app/providers/ThemeProvider'
 import i18nForTests from 'shared/config/i18n/i18nForTests'
 import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
-import {ReducersMapObject} from '@reduxjs/toolkit'
 import {signInReducer} from 'features/SignIn'
-// import {type StateSchema, StoreProvider} from 'app/providers/StoreProvider'
-// import {type ReducersMapObject} from '@reduxjs/toolkit'
-// import {signInReducer} from 'features/SignIn'
-// import {profileReducer} from 'entities/Profile'
+import {profileReducer} from 'entities/Profile'
+import {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -38,14 +35,14 @@ export const RouterDecorator = (Story: any) => (
   </BrowserRouter>
 )
 
-const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
+const defaultAsyncReducers: ReducersList = {
   signIn: signInReducer,
-  // profile: profileReducer,
+  profile: profileReducer,
 }
 
 export const StoreDecorator = (
   initialState: DeepPartial<StateSchema>,
-  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>,
+  asyncReducers?: ReducersList,
 ) => (Story: any) => (
   <StoreProvider
     initialState={initialState}

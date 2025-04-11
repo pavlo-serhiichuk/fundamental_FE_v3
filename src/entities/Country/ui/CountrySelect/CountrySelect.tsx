@@ -21,7 +21,7 @@ export const CountrySelect = memo(({readonly}: CountrySelectProps) => {
 
   return (
     <Select
-      readonly={!!readonly}
+      readonly={readonly}
       selectName="Country"
       value={form?.country}
       options={countriesOptions}

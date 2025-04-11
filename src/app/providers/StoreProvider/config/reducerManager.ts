@@ -10,7 +10,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
 
   return {
     getReducerMap: () => reducers,
-    reduce: (state: StateSchema, action: Action) => {
+    reduce: (state: DeepPartial<StateSchema>, action: Action) => {
       if (keysToRemove.length > 0) {
         state = {...state}
         keysToRemove.forEach((key) => {
@@ -18,7 +18,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         })
         keysToRemove = []
       }
-      return combinedReducer(state, action)
+      return combinedReducer(state as any, action)
     },
 
     add: (key: StateSchemaKey, reducer: Reducer) => {

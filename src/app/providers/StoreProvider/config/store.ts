@@ -1,10 +1,11 @@
-import {configureStore, type ReducersMapObject} from '@reduxjs/toolkit'
+import {configureStore, Reducer, type ReducersMapObject} from '@reduxjs/toolkit'
 import {counterReducer} from 'entities/Counter'
 import {userReducer} from 'entities/User'
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager'
 import {$api} from 'shared/api/api'
 import {NavigateOptions} from 'react-router/dist/lib/context'
 import {To} from '@remix-run/router'
+import {CombinedState} from '@reduxjs/toolkit/query'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
 
 export function createReduxStore(
@@ -25,8 +26,9 @@ export function createReduxStore(
     navigate,
   }
 
-  const store = configureStore<StateSchema>({
-    reducer: reducerManager.reduce,
+  const store = configureStore({
+    // @ts-ignore
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
       thunk: {

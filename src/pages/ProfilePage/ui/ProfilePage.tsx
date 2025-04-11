@@ -5,17 +5,17 @@ import {useParams} from 'react-router-dom'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import DynamicReducerLoader, {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import {AppDispatch} from 'app/providers/StoreProvider'
 
 const reducers: ReducersList = {
   profile: profileReducer,
 }
 
 const ProfilePage = () => {
-  const dispatch = useAppDispatch()
+  const dispatch: AppDispatch = useAppDispatch()
   const {id} = useParams<{ id: string }>()
 
   useInitialEffect(() => {
-    console.log('id', id)
     if (id) {
       dispatch(fetchProfileData(id))
     }
