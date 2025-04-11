@@ -6,19 +6,19 @@ import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 import {ConfigOptions} from './configOptions'
 
 export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
-  const plugins = [
+  const plugins: WebpackPluginInstance[] = [
     new HTMLWebpackPlugin({template: options.paths.htmlPath}),
     new webpack.ProgressPlugin(),
-    !options.isDev && new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:10].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }),
     new webpack.DefinePlugin({
       __IS_DEV__: options.isDev,
       __API__: JSON.stringify(options.apiUrl),
     }),
   ]
   if (options.isDev) {
+    plugins.push(new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:10].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
+    }))
     plugins.push(new ReactRefreshWebpackPlugin())
     plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new BundleAnalyzerPlugin({
