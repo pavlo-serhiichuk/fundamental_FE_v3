@@ -15,15 +15,17 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     }),
   ]
   if (options.isDev) {
-    plugins.push(new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:10].css',
-      chunkFilename: 'css/[name].[contenthash:8].css',
-    }))
     plugins.push(new ReactRefreshWebpackPlugin())
     plugins.push(new webpack.HotModuleReplacementPlugin())
     plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false,
     }))
+    if (!options.isDev) {
+      plugins.push(new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash:10].css',
+        chunkFilename: 'css/[name].[contenthash:8].css',
+      }))
+    }
   }
 
   return plugins.filter(Boolean)
