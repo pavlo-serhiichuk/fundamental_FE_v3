@@ -4,7 +4,7 @@ import {getProfileForm} from 'entities/Profile'
 import {validateProfileForm} from 'entities/Profile/model/services/validateProfileForm/validateProfileForm'
 import {type Profile, ValidationError} from '../../types/ProfileSchema'
 
-export const updateProfileData = createAsyncThunk<Profile, string, ThunkConfig<string | ValidationError[]>>(
+export const updateProfileData = createAsyncThunk<Profile, undefined, ThunkConfig<string | ValidationError[]>>(
   'profile/updateProfileData',
   async (_, thunkAPI) => {
     const {extra, getState} = thunkAPI

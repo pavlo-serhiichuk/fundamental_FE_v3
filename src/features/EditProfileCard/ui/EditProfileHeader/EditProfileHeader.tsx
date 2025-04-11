@@ -16,7 +16,7 @@ interface EditProfileHeaderProps {
 
 export const EditProfileHeader: FC<EditProfileHeaderProps> = (props) => {
   const {t} = useTranslation()
-  const {className} = props
+  const {className = ''} = props
   const dispatch = useAppDispatch()
   const readonly = useSelector(getProfileReadonly)
   const validationErrors = useSelector(getProfileValidationErrors)

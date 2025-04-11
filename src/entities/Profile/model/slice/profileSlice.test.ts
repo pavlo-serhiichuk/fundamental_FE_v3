@@ -43,7 +43,7 @@ describe('profileSlice.test', () => {
     }
     expect(profileReducer(
           state as ProfileSchema,
-          updateProfileData.pending('', undefined, undefined),
+          updateProfileData.pending('', undefined, ''),
     )).toEqual({isUpdating: true, validationErrors: []})
   })
 
@@ -55,7 +55,7 @@ describe('profileSlice.test', () => {
     }
     expect(profileReducer(
             state as ProfileSchema,
-            updateProfileData.fulfilled(profileMockForm, '', undefined, undefined),
+            updateProfileData.fulfilled(profileMockForm, '', undefined, ''),
     )).toEqual({isUpdating: false, readonly: true, data: profileMockForm})
   })
 })

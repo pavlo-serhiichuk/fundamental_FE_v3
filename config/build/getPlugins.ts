@@ -20,12 +20,13 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     plugins.push(new BundleAnalyzerPlugin({
       openAnalyzer: false,
     }))
-    if (!options.isDev) {
-      plugins.push(new MiniCssExtractPlugin({
-        filename: 'css/[name].[contenthash:10].css',
-        chunkFilename: 'css/[name].[contenthash:8].css',
-      }))
-    }
+  }
+
+  if (!options.isDev) {
+    plugins.push(new MiniCssExtractPlugin({
+      filename: 'css/[name].[contenthash:10].css',
+      chunkFilename: 'css/[name].[contenthash:8].css',
+    }))
   }
 
   return plugins.filter(Boolean)
