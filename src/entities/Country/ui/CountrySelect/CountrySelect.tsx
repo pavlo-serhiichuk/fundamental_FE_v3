@@ -8,22 +8,20 @@ import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 interface CountrySelectProps {
   className?: string
   readonly?: boolean
+  value?: Country
+  onChange?: (value: Country) => void
 }
 
-const countriesOptions: Country[] = Object.keys(countries) as Country[]
+const countriesOptions = Object.entries(countries).map(([value, content]) => ({value, content}))
 
-export const CountrySelect = memo(({readonly}: CountrySelectProps) => {
-  const form = useSelector(getProfileForm)
-  const dispatch = useAppDispatch()
-  const onChange = (value: Country) => {
-    dispatch(profileActions.updateProfileForm({country: value}))
-  }
+export const CountrySelect = memo((props: CountrySelectProps) => {
+  const {readonly, value, onChange} = props
 
   return (
     <Select
       readonly={readonly}
       selectName="Country"
-      value={form?.country}
+      value={value}
       options={countriesOptions}
       onChange={onChange}
     />

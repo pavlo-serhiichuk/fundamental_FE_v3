@@ -3,11 +3,12 @@ import {useSelector} from 'react-redux'
 import {Input} from 'shared/ui/Input/Input'
 import {getProfileError, getProfileLoading, type Profile} from 'entities/Profile'
 import {CountrySelect} from 'entities/Country/ui/CountrySelect/CountrySelect'
-import {CurrencySelect} from 'entities/Currency'
+import {Currency, CurrencySelect} from 'entities/Currency'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {Text} from 'shared/ui/Text/Text'
 import {Loader} from 'shared/ui/Loader/Loader'
 import {cls} from 'shared/lib/cls/cls'
+import {Country} from 'entities/Country'
 import * as s from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
@@ -18,6 +19,8 @@ interface ProfileCardProps {
   onChangeLastname?: (value: string) => void
   onChangeAge?: (value: string) => void
   onChangeAvatar?: (value: string) => void
+  onChangeCurrency?: (value: Currency) => void
+  onChangeCountry?: (value: Country) => void
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -30,6 +33,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeLastname,
     onChangeAge,
     onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
   } = props
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
@@ -67,29 +72,29 @@ export const ProfileCard = (props: ProfileCardProps) => {
           )
           : null}
         <Input
-          readOnly={!!readonly}
+          readOnly={readonly}
           value={form?.name || ''}
           placeholder={t('Your name...')}
           onChange={onChangeFirstName}
           label={t('Name')}
         />
         <Input
-          readOnly={!!readonly}
+          readOnly={readonly}
           value={form?.lastname || ''}
           placeholder={t('Your lastname...')}
           label={t('Lastname')}
           onChange={onChangeLastname}
         />
         <Input
-          readOnly={!!readonly}
+          readOnly={readonly}
           value={form?.age || ''}
           type="number"
           placeholder={t('Your age...')}
           label={t('Age')}
           onChange={onChangeAge}
         />
-        <CountrySelect readonly={readonly} />
-        <CurrencySelect readonly={readonly} />
+        <CountrySelect readonly={readonly} value={form?.country} onChange={onChangeCountry} />
+        <CurrencySelect readonly={readonly} value={form?.currency} onChange={onChangeCurrency} />
       </div>
     </div>
   )

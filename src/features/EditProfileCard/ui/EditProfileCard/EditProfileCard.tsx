@@ -7,6 +7,8 @@ import {getProfileReadonly} from 'entities/Profile/model/selectors/getProfileRea
 import {useParams} from 'react-router-dom'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {getUserAuthData} from 'entities/User/module/selectors/getUserAuthData'
+import type {Currency} from 'entities/Currency'
+import {Country} from 'entities/Country'
 
 interface EditProfileCardProps {
   className?: string
@@ -31,7 +33,12 @@ export const EditProfileCard: FC<EditProfileCardProps> = (props) => {
   const onChangeAvatar = useCallback((value: string) => {
     dispatch(profileActions.updateProfileForm({avatar: value}))
   }, [dispatch])
-
+  const onChangeCurrency = useCallback((value: Currency) => {
+    dispatch(profileActions.updateProfileForm({currency: value}))
+  }, [])
+  const onChangeCountry = useCallback((value: Country) => {
+    dispatch(profileActions.updateProfileForm({country: value}))
+  }, [])
   return (
     <>
       {id === user?.id ? <EditProfileHeader /> : null}
@@ -42,6 +49,8 @@ export const EditProfileCard: FC<EditProfileCardProps> = (props) => {
         onChangeLastname={onChangeLastname}
         onChangeAge={onChangeAge}
         onChangeAvatar={onChangeAvatar}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
       />
     </>
   )
