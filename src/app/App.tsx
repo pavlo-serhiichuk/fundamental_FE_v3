@@ -3,14 +3,14 @@ import {cls} from 'shared/lib/cls/cls'
 import AppRouter from 'app/providers/router/ui/AppRouter'
 import {Header} from 'widgets/Header'
 import {Sidebar} from 'widgets/Sidebar'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {useEffect} from 'react'
-import {userActions} from 'entities/User'
+import {getUserInited, userActions} from 'entities/User'
 
 export const App = () => {
   const {theme} = useTheme()
   const dispatch = useDispatch()
-
+  const inited = useSelector(getUserInited)
   useEffect(() => {
     dispatch(userActions.initAuthData())
   }, [dispatch])
@@ -20,7 +20,7 @@ export const App = () => {
       <Header />
       <div className="app-content">
         <Sidebar />
-        <AppRouter />
+        {inited && <AppRouter />}
       </div>
     </div>
   )
