@@ -6,7 +6,7 @@ import {updateProfileData} from 'entities/Profile/model/services/updateProfileDa
 
 describe('profileSlice.test', () => {
   test('test setReadonly', () => {
-    const state: DeepPartial<ProfileSchema> = {readonly: true}
+    const state = {readonly: true}
     expect(profileReducer(
             state as ProfileSchema,
             profileActions.setReadonly(),
@@ -14,7 +14,7 @@ describe('profileSlice.test', () => {
   })
 
   test('test update profile form', () => {
-    const state: DeepPartial<ProfileSchema> = {form: profileMockForm}
+    const state = {form: profileMockForm}
     expect(profileReducer(
             state as ProfileSchema,
             profileActions.updateProfileForm({lastname: 'new lastname'}),
@@ -56,6 +56,8 @@ describe('profileSlice.test', () => {
     expect(profileReducer(
             state as ProfileSchema,
             updateProfileData.fulfilled(profileMockForm, '', undefined, ''),
-    )).toEqual({isUpdating: false, readonly: true, data: profileMockForm})
+    )).toEqual({
+      isUpdating: false, readonly: true, data: profileMockForm, form: profileMockForm, validationErrors: [],
+    })
   })
 })

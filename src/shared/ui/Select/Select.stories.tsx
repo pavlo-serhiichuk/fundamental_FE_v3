@@ -4,12 +4,18 @@ import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
 import {Select} from './Select'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const options = [
+  {value: 'foo 1', content: 'foo 1'},
+  {value: 'foo 2', content: 'foo 2'},
+  {value: 'foo 3', content: 'foo 3'},
+]
+
 const meta = {
   title: 'shared/Select',
   component: Select,
   args: {
     selectName: 'Select name',
-    options: ['option 1', 'option 2', 'option 3'],
+    options,
     onClick: fn(),
     onDoubleClick: fn(() => {
       alert('double')

@@ -47,7 +47,9 @@ const profileSlice = createSlice({
       .addCase(updateProfileData.fulfilled, (state: ProfileSchema, action: PayloadAction<Profile>) => {
         state.isUpdating = false
         state.data = action.payload
+        state.form = action.payload
         state.readonly = true
+        state.validationErrors = []
       })
       .addCase(updateProfileData.rejected, (state: ProfileSchema, action: any) => {
         state.isUpdating = false
