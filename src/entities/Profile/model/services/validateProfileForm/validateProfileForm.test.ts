@@ -1,5 +1,5 @@
 import {profileMockState} from 'entities/Profile/model/slice/profileState'
-import {type Profile} from 'entities/Profile'
+import {type Profile, ValidationError} from 'entities/Profile'
 import {validateProfileForm} from './validateProfileForm'
 
 describe('validateProfileForm.test', () => {
@@ -7,8 +7,8 @@ describe('validateProfileForm.test', () => {
     const form: Profile = {...profileMockState.form}
     expect(validateProfileForm(form)).toEqual([])
   })
-  test('with empty fields', () => {
+  test('with empty lastname', () => {
     const form: Profile = {...profileMockState.form, lastname: ''}
-    expect(validateProfileForm(form)).not.toEqual([])
+    expect(validateProfileForm(form)).toEqual([ValidationError.LASTNAME_ERROR])
   })
 })
