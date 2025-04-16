@@ -6,6 +6,9 @@ import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import DynamicReducerLoader, {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import {AppDispatch} from 'app/providers/StoreProvider'
+import {useSelector} from 'react-redux'
+import {getProfileReadonly} from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
+import {ProfileCard} from 'features/ProfileCard'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -14,6 +17,7 @@ const reducers: ReducersList = {
 const ProfilePage = () => {
   const dispatch: AppDispatch = useAppDispatch()
   const {id} = useParams<{ id: string }>()
+  const readonly = useSelector(getProfileReadonly)
 
   useInitialEffect(() => {
     if (id) {
@@ -23,7 +27,7 @@ const ProfilePage = () => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <EditProfileCard />
+      {readonly ? <ProfileCard /> : <EditProfileCard />}
     </DynamicReducerLoader>
   )
 }

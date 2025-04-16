@@ -5,5 +5,10 @@
   "Loading": "Loading...",
   "Page is not found": "Page is not found",
   "Sign in": "Sign in",
-  "userIsNotFound": "User is not found. Try latter"
+  "userIsNotFound": "User is not found. Try latter",
+  "SERVER_ERROR": "Server error.",
+  "FIRSTNAME_ERROR": "Enter your firstname.",
+  "LASTNAME_ERROR":  "Enter your lastname.",
+  "AGE_ERROR": "Enter you age.",
+  "AVATAR_ERROR":  "Enter your avatar image source."
 }

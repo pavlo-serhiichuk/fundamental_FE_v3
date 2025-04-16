@@ -1,25 +1,50 @@
 @font-face {
-  font-family: Inter;
+  font-family: 'Inter';
   font-weight: 600;
-  src: url("/src/app/styles/fonts/Inter-Bold.ttf") format('ttf');
+  font-style: normal;
+  src: url('/src/app/styles/fonts/Inter-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: 'Inter';
+  font-weight: 600;
+  font-style: italic;
+  src: url('/src/app/styles/fonts/Inter_18pt-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
   font-weight: 500;
-  src: url("/src/app/styles/fonts/Inter-Medium.ttf");
+  font-style: normal;
+  src: url('/src/app/styles/fonts/Inter-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-style: italic;
+  src: url('/src/app/styles/fonts/Inter_18pt-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
   font-weight: 400;
-  src: url("/src/app/styles/fonts/Inter-Regular.ttf");
+  font-style: normal;
+  src: url('/src/app/styles/fonts/Inter-Regular.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: Inter;
+  font-family: 'Inter';
   font-weight: 300;
-  src: url("/src/app/styles/fonts/Inter-Light.ttf");
+  font-style: normal;
+  src: url('/src/app/styles/fonts/Inter-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-weight: 300;
+  font-style: italic;
+  src: url('/src/app/styles/fonts/Inter_18pt-LightItalic.ttf') format('truetype');
 }
 
 :root {
@@ -47,6 +72,10 @@
   --font-18: var(--font-size-18) / var(--font-line-26) var(--font-family-main);
   --font-18-500: var(--font-weight-500) var(--font-18);
   --font-18-bold: var(--font-weight-600) var(--font-18);
+  --font-size-20: 20px;
+  --font-20: var(--font-size-20) / var(--font-line-26) var(--font-family-main);
+  --font-20-500: var(--font-weight-500) var(--font-20);
+  --font-20-bold: var(--font-weight-600) var(--font-20);
   --font-size-24: 24px;
   --font-line-28: 28px;
   --font-24: var(--font-size-24) / var(--font-line-28) var(--font-family-main);

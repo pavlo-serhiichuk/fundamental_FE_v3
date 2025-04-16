@@ -10,6 +10,7 @@ const config = {
   globals: {
     __IS_DEV__: true,
     __API__: true,
+    __PROJECT__: 'jest',
   },
   clearMocks: true,
   testEnvironment: 'jsdom',

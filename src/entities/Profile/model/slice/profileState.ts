@@ -20,7 +20,7 @@ export const profileMockForm: Profile = {
   country: 'Ukraine',
   currency: 'UAH',
   username: 'Username',
-  avatar: 'https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg',
+  avatar: 'https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none',
 }
 
 export const profileMockState: ProfileSchema = {

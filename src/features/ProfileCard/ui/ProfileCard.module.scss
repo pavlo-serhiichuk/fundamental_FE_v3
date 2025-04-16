@@ -1,0 +1,18 @@
+.ProfileCard {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 20px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.header {
+  display: inline-flex;
+  width: 100%;
+  gap: 20px;
+}
+.location {
+  display: flex;
+  flex-direction: row;
+}

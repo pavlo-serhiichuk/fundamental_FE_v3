@@ -22,7 +22,7 @@
 
 .text_size_m {
   p {
-    font: var(--font-24);
+    font: var(--font-20);
   }
 
   span {
@@ -37,5 +37,15 @@
 
   span {
     font: var(--font-16);
+  }
+}
+
+.normal-fs {
+  font-style: normal;
+}
+
+.italic-fs {
+  p {
+    font-style: italic;
   }
 }

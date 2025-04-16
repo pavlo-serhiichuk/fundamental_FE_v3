@@ -18,10 +18,5 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Empty: Story = {args: {}}
-
-export const EmptyDark: Story = {
-  decorators: [ThemeDecorator('dark')],
-}
-
-export const WithData: Story = {args: {}, decorators: StoreDecorator({profile: profileMockState})}
+export const WithData: Story = {args: {}, decorators: [StoreDecorator({profile: profileMockState})]}
+export const WithDataDark: Story = {args: {}, decorators: [ThemeDecorator('dark'), StoreDecorator({profile: profileMockState})]}

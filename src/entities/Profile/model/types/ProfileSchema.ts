@@ -19,6 +19,7 @@ export interface Profile {
   currency?: Currency
   username?: string
   avatar?: string
+  status?: string
 }
 export interface ProfileSchema {
   form?: Profile
