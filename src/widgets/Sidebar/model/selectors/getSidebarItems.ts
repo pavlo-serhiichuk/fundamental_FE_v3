@@ -20,7 +20,7 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   ]
 
   if (userData) {
-    sidebarItems.push({
+    sidebarItems.unshift({
       name: 'Profile',
       path: RoutePaths.profile + userData.id,
       Icon: ProfileIcon,

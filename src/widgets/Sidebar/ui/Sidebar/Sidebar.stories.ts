@@ -14,10 +14,14 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const NoAuth: Story = {
   decorators: [StoreDecorator({})],
 }
 
-export const PrimaryDark: Story = {
+export const NoAuthDark: Story = {
   decorators: [ThemeDecorator('dark'), StoreDecorator({})],
+}
+
+export const Auth: Story = {
+  decorators: [StoreDecorator({user: {authData: {}}})],
 }
