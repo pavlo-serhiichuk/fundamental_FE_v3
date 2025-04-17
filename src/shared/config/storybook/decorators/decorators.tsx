@@ -8,6 +8,7 @@ import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 import {signInReducer} from 'features/SignIn'
 import {profileReducer} from 'entities/Profile'
 import {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import {articleDetailsReducer} from 'entities/Article'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -38,6 +39,7 @@ export const RouterDecorator = (Story: any) => (
 const defaultAsyncReducers: ReducersList = {
   signIn: signInReducer,
   profile: profileReducer,
+  articleDetails: articleDetailsReducer,
 }
 
 export const StoreDecorator = (

@@ -1,0 +1,27 @@
+import {type Meta, type StoryObj} from '@storybook/react'
+import {getArticleDetailsMockState} from 'entities/Article/model/slice/articleState'
+import {StoreDecorator} from 'shared/config/storybook/decorators/decorators'
+import {ArticleDetailsSchema} from '../../model/types/ArticleDetailsSchema'
+import {ArticleDetails} from './ArticleDetails'
+
+// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
+const mockData: ArticleDetailsSchema = getArticleDetailsMockState(false)
+
+const meta = {
+  title: 'entities/ArticleDetails',
+  component: ArticleDetails,
+  decorators: [StoreDecorator({articleDetails: mockData})],
+} as Meta<typeof ArticleDetails>
+
+export default meta
+type Story = StoryObj<typeof meta>
+
+export const WithData: Story = {}
+
+export const IsLoading: Story = {
+  decorators: [StoreDecorator({articleDetails: {isLoading: true}})],
+}
+
+export const Error: Story = {
+  decorators: [StoreDecorator({articleDetails: {error: 'serverError'}})],
+}

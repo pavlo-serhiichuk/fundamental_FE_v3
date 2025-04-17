@@ -1,0 +1,15 @@
+.CommentCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 19px;
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  color: var(--comment-text-color);
+}

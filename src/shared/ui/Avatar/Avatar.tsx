@@ -4,13 +4,13 @@ import {cls} from 'shared/lib/cls/cls'
 interface AvatarProps {
   className?: string
   src: string | undefined
-  alt: string
+  alt: string | undefined
   size: number
 }
 
 export const Avatar: FC<AvatarProps> = (props) => {
   const {
-    src = '', alt, size, className,
+    src = '', alt = 'default', size, className,
   } = props
 
   const styles = useMemo<CSSProperties>(() => ({
@@ -24,7 +24,7 @@ export const Avatar: FC<AvatarProps> = (props) => {
   }), [size])
 
   return (
-    <div style={styles} className={cls('', {}, [className])}>
+    <div className={cls('', {}, [className])}>
       {src
         ? <img style={styles} src={src} alt={alt} />
         : <div style={styles} />}

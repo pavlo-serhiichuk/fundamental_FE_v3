@@ -8,6 +8,9 @@ import {type AxiosInstance} from 'axios'
 import {type To} from '@remix-run/router'
 import {SignInSchema} from 'features/SignIn'
 import {ProfileSchema} from 'entities/Profile'
+import {ArticleDetailsSchema} from 'entities/Article'
+import {AddComment} from 'features/AddCommentForm'
+import {ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -16,6 +19,9 @@ export interface StateSchema {
   // async reducers
   signIn?: SignInSchema
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema
+  addCommentForm?: AddComment
+  articleDetailsComments?: ArticleDetailsCommentsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

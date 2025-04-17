@@ -1,13 +1,12 @@
 import React, {Suspense} from 'react'
 import {Route, Routes} from 'react-router-dom'
 import {AppRoutesProps, routesConfig} from 'shared/config/routesConfig/routesConfig'
-import {PageLoader} from 'widgets/PageLoader/PageLoader'
 import {RequireAuth} from 'app/providers/router/ui/RequireAuth'
 
 const AppRouter = () => {
   const renderWithProtection = (route: AppRoutesProps) => {
     const element = (
-      <Suspense fallback={<PageLoader />}>
+      <Suspense fallback={<div />}>
         {route.element}
       </Suspense>
     )

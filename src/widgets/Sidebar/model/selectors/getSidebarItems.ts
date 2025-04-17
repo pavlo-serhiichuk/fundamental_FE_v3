@@ -5,6 +5,7 @@ import AboutUsIcon from 'shared/assets/icons/about_us.svg'
 import MainIcon from 'shared/assets/icons/main.svg'
 import ProfileIcon from 'shared/assets/icons/profile.svg'
 import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
+import ArticlesIcon from 'shared/assets/icons/articles.svg'
 
 export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   const sidebarItems: ISidebarItem[] = [
@@ -21,18 +22,17 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
 
   if (userData) {
     sidebarItems.unshift({
+      name: 'Articles',
+      path: RoutePaths.articles,
+      Icon: ArticlesIcon,
+    })
+
+    sidebarItems.unshift({
       name: 'Profile',
       path: RoutePaths.profile + userData.id,
       Icon: ProfileIcon,
-      authOnly: true,
     })
   }
-  // {
-  // name: 'Articles',
-  // path: RoutePaths.articles,
-  // Icon: ArticlesIcon,
-  // authOnly: true
-  // }
 
   return sidebarItems
 })

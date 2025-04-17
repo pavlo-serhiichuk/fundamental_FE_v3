@@ -1,0 +1,21 @@
+import {type FC, memo} from 'react'
+import {cls} from 'shared/lib/cls/cls'
+import {type ArticleImageBlock} from 'entities/Article'
+import {Text} from 'shared/ui/Text/Text'
+import * as s from './ArticleBlockImageComponent.module.scss'
+
+interface ArticleBlockImageComponentProps {
+  className?: string
+  block: ArticleImageBlock
+}
+
+export const ArticleBlockImageComponent = memo((props: ArticleBlockImageComponentProps) => {
+  const {className, block} = props
+
+  return (
+    <div className={cls(s.ArticleBlockImageComponent, {}, [className])}>
+      <img src={block.src} alt={block.title} />
+      <Text text={block.title} />
+    </div>
+  )
+})
