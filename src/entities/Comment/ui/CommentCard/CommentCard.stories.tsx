@@ -8,7 +8,7 @@ const comment = {
   text: 'comment text',
   user: {
     id: '1',
-    name: 'name of the user',
+    username: 'aggression',
     age: 28,
     role: 'ADMIN',
     avatar: 'https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg',

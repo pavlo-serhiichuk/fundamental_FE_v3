@@ -1,20 +1,18 @@
 import {type FC} from 'react'
+import {useParams} from 'react-router-dom'
+import {useSelector} from 'react-redux'
 import {cls} from 'shared/lib/cls/cls'
-import {CommentList} from 'entities/Comment/ui/CommentList/CommentList'
+import {CommentList} from 'entities/Comment'
 import {
   articleDetailsCommentsReducer,
   getArticleComments,
-} from 'features/ArticleDetailsComments/model/slice/articleDetailsCommentsSlice'
-import {
   fetchArticleCommentsById,
-} from 'features/ArticleDetailsComments/model/services/fetchArticleCommentsById/fetchArticleCommentsById'
+  getArticleDetailsCommentsLoading,
+} from 'features/ArticleDetailsComments'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {useParams} from 'react-router-dom'
-import {useSelector} from 'react-redux'
-import {getArticleDetailsCommentsLoading} from 'features/ArticleDetailsComments/model/selectors/articleDetailsSelectors'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
-import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import {getArticleDetailsError} from 'entities/Article'
+import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import * as s from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
@@ -36,12 +34,13 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (props) =
   useInitialEffect(async () => {
     dispatch(fetchArticleCommentsById(id))
   })
+
   if (articleError) {
     return null
   }
 
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
+    <DynamicReducerLoader reducers={reducers}>
       <div className={cls(s.ArticleDetailsComments, {}, [className])}>
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </div>
