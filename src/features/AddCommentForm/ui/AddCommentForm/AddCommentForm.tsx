@@ -10,7 +10,7 @@ import {getUserAuthData} from 'entities/User'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {getArticleDetailsError} from 'entities/Article'
 import {getAddCommentFormText} from '../../module/selectors/getAddCommentFormSelectors'
-import {addCommentFormSliceActions, addCommentFormSliceReducer} from '../../module/slice/addCommentFormSlice'
+import {addCommentFormSliceActions, addCommentFormReducer} from '../../module/slice/addCommentFormSlice'
 import * as s from './AddCommentForm.module.scss'
 
 export interface AddCommentFormProps {
@@ -19,7 +19,7 @@ export interface AddCommentFormProps {
 }
 
 const reducers: ReducersList = {
-  addCommentForm: addCommentFormSliceReducer,
+  addCommentForm: addCommentFormReducer,
 }
 
 const AddCommentForm: FC<AddCommentFormProps> = (props) => {

@@ -23,3 +23,7 @@
     width: 0;
   }
 }
+
+.selected {
+  background-color: var(--sidebar-bg-hover);
+}

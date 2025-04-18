@@ -20,9 +20,9 @@ export const Text = memo((props: TextProps) => {
   } = props
 
   return (
-    <div className={cls('', {[s[theme]]: true}, [className, s[size], s[fontStyle]])}>
-      {title ? <p>{title}</p> : null}
-      {text ? <span>{text}</span> : null}
+    <div data-testid="text-wrapper-el" className={cls('', {[s[theme]]: true}, [className, s[size], s[fontStyle]])}>
+      {title ? <p data-testid="title-el">{title}</p> : null}
+      {text ? <span data-testid="text-el">{text}</span> : null}
     </div>
   )
 })
