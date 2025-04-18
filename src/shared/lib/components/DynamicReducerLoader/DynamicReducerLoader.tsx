@@ -33,12 +33,7 @@ const DynamicReducerLoader = (props: DynamicReducerLoaderProps) => {
       }
     }
   }, [reducers, removeAfterUnmount, store])
-  return (
-    <>
-      {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-      {Children.only(<>{children}</>)}
-    </>
-  )
+  return children
 }
 
 export default DynamicReducerLoader

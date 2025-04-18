@@ -2,14 +2,14 @@ import {type ThunkConfig} from 'app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {getAddCommentFormText} from 'features/AddCommentForm/module/selectors/getAddCommentFormSelectors'
 import {getUserAuthData} from 'entities/User'
-import {getArticleDetailsData} from 'entities/Article'
+import {getArticleDetailsData} from 'pages/ArticleDetailsPage'
 import {
   fetchArticleCommentsById,
 } from 'features/ArticleDetailsComments/model/services/fetchArticleCommentsById/fetchArticleCommentsById'
 import {addCommentFormSliceActions} from 'features/AddCommentForm/module/slice/addCommentFormSlice'
 
 export const sendArticleComment = createAsyncThunk<void, undefined, ThunkConfig<string>>(
-  'article/sendArticleComment',
+  'articleDetails/sendArticleComment',
   async (_, thunkAPI) => {
     const {extra} = thunkAPI
     const commentText = getAddCommentFormText(thunkAPI.getState())

@@ -1,11 +1,11 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {type ArticleDetailsSchema} from 'entities/Article/model/types/ArticleDetailsSchema'
-import {fetchArticleById} from 'entities/Article/model/services/fetchArticleById/fetchArticleById'
 import {type Article} from 'entities/Article'
-import {articleInitialState} from 'entities/Article/model/slice/articleState'
+import {type ArticleDetailsSchema} from '../types/ArticleDetailsSchema'
+import {fetchArticleById} from '../services/fetchArticleById/fetchArticleById'
+import {articleInitialState} from './articleState'
 
 export const articleDetailsSlice = createSlice({
-  name: 'articleSlice',
+  name: 'articleDetailsSlice',
   initialState: articleInitialState,
   reducers: {
     // set: (state, action: PayloadAction) => {},
@@ -27,5 +27,5 @@ export const articleDetailsSlice = createSlice({
   },
 })
 
-export const {actions: articleSliceActions} = articleDetailsSlice
+export const {actions: articleDetailsActions} = articleDetailsSlice
 export const {reducer: articleDetailsReducer} = articleDetailsSlice

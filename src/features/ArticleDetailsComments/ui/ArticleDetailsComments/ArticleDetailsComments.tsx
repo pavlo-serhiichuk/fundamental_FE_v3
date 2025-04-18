@@ -11,7 +11,7 @@ import {
 } from 'features/ArticleDetailsComments'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
-import {getArticleDetailsError} from 'entities/Article'
+import {getArticleDetailsError} from 'pages/ArticleDetailsPage'
 import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import * as s from './ArticleDetailsComments.module.scss'
 

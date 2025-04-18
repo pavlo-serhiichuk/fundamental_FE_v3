@@ -8,9 +8,10 @@ import {type AxiosInstance} from 'axios'
 import {type To} from '@remix-run/router'
 import {SignInSchema} from 'features/SignIn'
 import {ProfileSchema} from 'entities/Profile'
-import {ArticleDetailsSchema} from 'entities/Article'
 import {AddComment} from 'features/AddCommentForm'
 import {ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments'
+import {ArticlesSchema} from 'pages/ArticlesPage/module/types/ArticlesSchema'
+import {ArticleDetailsSchema} from 'pages/ArticleDetailsPage'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -22,6 +23,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   addCommentForm?: AddComment
   articleDetailsComments?: ArticleDetailsCommentsSchema
+  articles?: ArticlesSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

@@ -1,4 +1,4 @@
-import {type Article} from './article'
+import {Article} from 'entities/Article'
 
 export interface ArticleDetailsSchema {
   data?: Article

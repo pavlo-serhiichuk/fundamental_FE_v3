@@ -2,9 +2,10 @@ import {type FC, useCallback} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {AddCommentForm} from 'features/AddCommentForm'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {ArticleDetails, sendArticleComment} from 'entities/Article'
 import {ArticleDetailsComments} from 'features/ArticleDetailsComments'
+import {sendArticleComment} from 'pages/ArticleDetailsPage'
 import * as s from './ArticleDetailsPage.module.scss'
+import {ArticleDetails} from '../ArticleDetails/ArticleDetails'
 
 interface ArticlesPageProps {
   className?: string

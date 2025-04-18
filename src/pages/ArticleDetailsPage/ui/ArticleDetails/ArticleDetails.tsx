@@ -1,30 +1,29 @@
 import {memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {fetchArticleById} from 'entities/Article/model/services/fetchArticleById/fetchArticleById'
 import {useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import {
-  type ArticleBlock,
-  ArticleBlockType,
-  articleDetailsReducer,
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsLoading,
-} from 'entities/Article'
-import {ArticleDetailsSkeleton} from 'entities/Article/ui/ArticleDetails/ArticleDetailsSkeleton'
+import {type ArticleBlock, ArticleBlockType} from 'entities/Article'
 import {Text} from 'shared/ui/Text/Text'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {ArticleBlockTextComponent} from 'entities/Article/ui/ArticleBlockTextComponent/ArticleBlockTextComponent'
-import {ArticleBlockImageComponent} from 'entities/Article/ui/ArticleBlockImageComponent/ArticleBlockImageComponent'
-import {ArticleBlockCodeComponent} from 'entities/Article/ui/ArticleBlockCodeComponent/ArticleBlockCodeComponent'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import {Icon} from 'shared/ui/Icon/Icon'
+import {articleDetailsReducer} from 'pages/ArticleDetailsPage/model/slice/articleDetailsSlice'
+import {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsLoading,
+} from '../../model/selectors/getArticleDetailsData'
+import {ArticleBlockCodeComponent} from '../ArticleBlockCodeComponent/ArticleBlockCodeComponent'
+import {ArticleBlockImageComponent} from '../ArticleBlockImageComponent/ArticleBlockImageComponent'
+import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent'
+import {ArticleDetailsSkeleton} from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
+import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById'
 
 interface ArticleDetailsProps {
   className?: string

@@ -3,7 +3,7 @@ import {createAsyncThunk} from '@reduxjs/toolkit'
 import {type Article} from 'entities/Article/model/types/article'
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<string>>(
-  'article/fetchArticleById',
+  'articleDetails/fetchArticleById',
   async (articleId, thunkAPI) => {
     const {extra} = thunkAPI
     try {
