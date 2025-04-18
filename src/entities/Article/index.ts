@@ -9,3 +9,5 @@ export {
   getArticleDetailsLoading,
   getArticleDetailsError,
 } from './model/selectors/getArticleDetailsData'
+export {sendArticleComment} from './model/services/sendArticleComment/sendArticleComment'
+export {ArticleDetails} from './ui/ArticleDetails/ArticleDetails'

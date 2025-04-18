@@ -12,4 +12,7 @@
   align-items: start;
   gap: 10px;
   color: var(--comment-text-color);
+  &:hover {
+    opacity: 0.8;
+  }
 }

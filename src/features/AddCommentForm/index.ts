@@ -1,2 +1,2 @@
 export type {AddComment} from './module/types/addComment'
-export {AddCommentForm} from './ui/AddCommentForm/AddCommentForm'
+export {AddCommentFormAsync as AddCommentForm} from './ui/AddCommentForm/AddCommentForm.async'

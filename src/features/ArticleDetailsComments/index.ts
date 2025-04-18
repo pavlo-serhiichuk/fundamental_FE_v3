@@ -5,3 +5,4 @@ export {
   articleDetailsCommentsReducer,
   getArticleComments,
 } from './model/slice/articleDetailsCommentsSlice'
+export {ArticleDetailsComments} from './ui/ArticleDetailsComments/ArticleDetailsComments'
