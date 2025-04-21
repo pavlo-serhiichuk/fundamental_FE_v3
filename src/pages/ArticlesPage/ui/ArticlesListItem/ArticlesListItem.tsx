@@ -1,7 +1,7 @@
 import {memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articles'
+import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesListTypes'
 import {Article, ArticleBlockType, ArticleTextBlock} from 'entities/Article'
 import {useSelector} from 'react-redux'
 import {getArticlesView} from 'pages/ArticlesPage/module/selectors/getArticlesView'
@@ -32,7 +32,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
   if (articlesView === ArticlesView.BIG) {
     viewClassName = articlesView || ArticlesView.BIG
     const textBlocks = article.blocks?.filter((block) => block.type === ArticleBlockType.TEXT)
-    console.log(articlesView, viewClassName)
+
     return (
       <Card className={cls(s.ArticlesListItem, {}, [className, s[viewClassName]])}>
         <div className={s.titleWrapper}>
@@ -50,15 +50,17 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <img src={article.image} alt={article.title} />
         </div>
         <div className={s.paragraphs}>
-          {textBlocks?.map((block) => (
-            <div>{block.paragraphs}</div>
+          {textBlocks?.map((block, index) => (
+            <div key={index}>{block.paragraphs}</div>
           ))}
         </div>
         <Button className={s.readMore} theme="bordered" onClick={onClickCard}>{t('Read more')}</Button>
       </Card>
     )
   }
+
   viewClassName = articlesView || ArticlesView.SMALL
+
   return (
     <Card
       className={cls(s.ArticlesListItem, {}, [className, s[viewClassName]])}
