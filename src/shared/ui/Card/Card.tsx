@@ -22,7 +22,7 @@ export const Card: FC<CardProps> = (props) => {
       className={cls(s.Card, mods, [className])}
       {...otherProps}
     >
-      {Children.only(children)}
+      {Children.only(<>{children}</>)}
     </div>
   )
 }

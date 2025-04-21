@@ -1,3 +1,5 @@
+import {User} from 'entities/User'
+
 export enum ArticleBlockType {
   CODE = 'CODE',
   TEXT = 'TEXT',
@@ -40,4 +42,5 @@ export interface Article {
   userId?: string
   type?: ArticleTopicType[]
   blocks?: ArticleBlock[]
+  user?: User
 }

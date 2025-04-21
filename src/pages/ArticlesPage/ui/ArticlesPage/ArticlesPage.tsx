@@ -5,16 +5,16 @@ import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {ArticlesList} from 'pages/ArticlesPage/ui/ArticlesList/ArticlesList'
 import DynamicReducerLoader, {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {articlesReducer} from 'pages/ArticlesPage/module/slice/articlesSlice'
+import {articlesListReducer} from 'pages/ArticlesPage/module/slice/articlesListSlice'
+import {fetchArticlesList} from 'pages/ArticlesPage/module/services/fetchArticlesList/fetchArticlesList'
 import * as s from './ArticlesPage.module.scss'
-import {fetchArticles} from '../../module/services/fetchAllArticles/fetchArticles'
 
 interface ArticlesPageProps {
   className?: string
 }
 
 const reducers: ReducersList = {
-  articles: articlesReducer,
+  articlesList: articlesListReducer,
 }
 
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
@@ -23,7 +23,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const {className} = props
 
   useInitialEffect(() => {
-    dispatch(fetchArticles())
+    dispatch(fetchArticlesList())
   })
 
   return (

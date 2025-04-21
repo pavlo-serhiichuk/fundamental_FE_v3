@@ -1,4 +1,5 @@
-import {ArticleBlockType, type ArticleDetailsSchema} from 'entities/Article'
+import {ArticleBlockType} from 'entities/Article'
+import {ArticleDetailsSchema} from '../types/ArticleDetailsSchema'
 
 export const articleInitialState: ArticleDetailsSchema = {
   isLoading: false,

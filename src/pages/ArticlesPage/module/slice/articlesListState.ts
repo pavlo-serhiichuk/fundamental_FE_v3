@@ -5,7 +5,7 @@ export const articlesInitialState: ArticlesSchema = {
   isLoading: false,
   error: undefined,
   data: undefined,
-  articlesView: ArticlesView.SMALL,
+  articlesView: ArticlesView.BIG,
 }
 
 export const articlesMockState: ArticlesSchema = {

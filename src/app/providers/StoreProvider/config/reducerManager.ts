@@ -8,6 +8,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
   let combinedReducer = combineReducers(reducers)
   let keysToRemove: StateSchemaKey[] = []
 
+  // @ts-ignore
   return {
     getReducerMap: () => reducers,
     reduce: (state: DeepPartial<StateSchema>, action: Action) => {
@@ -39,16 +40,3 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
     },
   }
 }
-//
-// const staticReducers = {
-//   users: usersReducer,
-//   posts: postsReducer,
-// }
-//
-// export function configureStore(initialState) {
-//   const reducerManager = createReducerManager(staticReducers)
-//
-//   const store = createStore(reducerManager.reduce, initialState)
-//
-//   store.reducerManager = reducerManager
-// }
