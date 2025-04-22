@@ -5,7 +5,8 @@ import {useSelector} from 'react-redux'
 import {getArticlesView} from 'pages/ArticlesPage/module/selectors/getArticlesView'
 import {Article} from 'entities/Article'
 import {ArticlesListItem} from 'pages/ArticlesPage/ui/ArticlesListItem/ArticlesListItem'
-import {getArticlesList} from 'pages/ArticlesPage/module/slice/articlesListSlice'
+import {getArticlesList} from 'pages/ArticlesPage/module/slice/articlesPageSlice'
+import {Loader} from 'shared/ui/Loader/Loader'
 import {getArticlesIsLoading} from '../../module/selectors/getArticlesIsLoading'
 import * as s from './ArticlesList.module.scss'
 
@@ -19,10 +20,11 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   const articles = useSelector(getArticlesList.selectAll)
   const isLoading = useSelector(getArticlesIsLoading)
   const articlesView = useSelector(getArticlesView)
-
-  if (!articles.length && isLoading) {
-    return null
+  if (!articles.length || isLoading) {
+    console.log('here 1')
+    return <Loader />
   }
+  console.log('here 2')
 
   const renderArticle = (article: Article) => (
     <ArticlesListItem article={article} key={article.id} />

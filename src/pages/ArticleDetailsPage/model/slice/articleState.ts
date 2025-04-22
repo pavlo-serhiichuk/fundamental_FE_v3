@@ -20,6 +20,7 @@ export const getArticleDetailsMockState = (isLoading = false, error: string | un
     type: [
       'ECONOMICS',
     ],
+    user: {username: 'username'},
     blocks: [
       {
         id: '1',

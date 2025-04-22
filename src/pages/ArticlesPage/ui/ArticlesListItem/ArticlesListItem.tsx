@@ -1,7 +1,7 @@
 import {memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesListTypes'
+import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
 import {Article, ArticleBlockType, ArticleTextBlock} from 'entities/Article'
 import {useSelector} from 'react-redux'
 import {getArticlesView} from 'pages/ArticlesPage/module/selectors/getArticlesView'
@@ -41,17 +41,17 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
               <Avatar src={article.user?.avatar} size={30} alt={article.user?.username} />
               <span>{article.user?.username}</span>
             </div>
-            <div className={s.created}>{article.created}</div>
+            <div className={s.created}>{article?.created}</div>
           </div>
-          <Text title={article.title} size="text_size_l" className={s.title} />
-          <Text text={article.type?.join(', ')} fontStyle="italic-fs" className={s.topics} />
+          <Text title={article?.title} size="text_size_l" className={s.title} />
+          <Text text={article?.type?.join(', ')} fontStyle="italic-fs" className={s.topics} />
         </div>
         <div className={s.image}>
-          <img src={article.image} alt={article.title} />
+          <img src={article?.image} alt={article?.title} />
         </div>
         <div className={s.paragraphs}>
           {textBlocks?.map((block, index) => (
-            <div key={index}>{block.paragraphs}</div>
+            <div key={index}>{block?.paragraphs}</div>
           ))}
         </div>
         <Button className={s.readMore} theme="bordered" onClick={onClickCard}>{t('Read more')}</Button>

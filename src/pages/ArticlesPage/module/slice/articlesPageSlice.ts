@@ -1,8 +1,8 @@
 import {createEntityAdapter, createSlice, type PayloadAction} from '@reduxjs/toolkit'
 import {type Article} from 'entities/Article'
-import {articlesInitialState} from 'pages/ArticlesPage/module/slice/articlesListState'
-import {ArticlesListSchema} from 'pages/ArticlesPage/module/types/ArticlesListSchema'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesListTypes'
+import {articlesListInitialState} from 'pages/ArticlesPage/module/slice/articlesPageState'
+import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
+import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
 import {fetchArticlesList} from 'pages/ArticlesPage/module/services/fetchArticlesList/fetchArticlesList'
 import type {StateSchema} from 'app/providers/StoreProvider'
 
@@ -14,9 +14,9 @@ export const getArticlesList = articlesListAdapter.getSelectors<StateSchema>(
   (state: any) => state.articlesList || articlesListAdapter.getInitialState(),
 )
 
-export const articlesListSlice = createSlice({
+export const articlesPageSlice = createSlice({
   name: 'articlesSlice',
-  initialState: articlesInitialState,
+  initialState: articlesListInitialState,
   reducers: {
     setArticlesView: (state, action: PayloadAction<ArticlesView>) => {
       state.articlesView = action.payload
@@ -24,7 +24,7 @@ export const articlesListSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state: ArticlesListSchema) => {
+      .addCase(fetchArticlesList.pending, (state: ArticlesPageSchema) => {
         state.error = undefined
         state.isLoading = true
       })
@@ -32,12 +32,12 @@ export const articlesListSlice = createSlice({
         state.isLoading = false
         articlesListAdapter.setAll(state, action.payload)
       })
-      .addCase(fetchArticlesList.rejected, (state: ArticlesListSchema, action: PayloadAction<string | undefined>) => {
+      .addCase(fetchArticlesList.rejected, (state: ArticlesPageSchema, action: PayloadAction<string | undefined>) => {
         state.isLoading = false
         state.error = action.payload
       })
   },
 })
 
-export const {actions: articlesListActions} = articlesListSlice
-export const {reducer: articlesListReducer} = articlesListSlice
+export const {actions: articlesPageActions} = articlesPageSlice
+export const {reducer: articlesPageReducer} = articlesPageSlice

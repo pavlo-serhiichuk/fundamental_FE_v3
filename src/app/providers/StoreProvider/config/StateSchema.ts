@@ -10,7 +10,7 @@ import {SignInSchema} from 'features/SignIn'
 import {ProfileSchema} from 'entities/Profile'
 import {AddComment} from 'features/AddCommentForm'
 import {ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments'
-import {ArticlesListSchema} from 'pages/ArticlesPage/module/types/ArticlesListSchema'
+import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
 import {ArticleDetailsSchema} from 'pages/ArticleDetailsPage'
 
 export interface StateSchema {
@@ -23,7 +23,7 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema
   addCommentForm?: AddComment
   articleDetailsComments?: ArticleDetailsCommentsSchema
-  articlesList?: ArticlesListSchema
+  articlesPage?: ArticlesPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

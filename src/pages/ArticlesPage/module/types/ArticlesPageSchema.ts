@@ -1,8 +1,8 @@
 import {Article} from 'entities/Article'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesListTypes'
 import {EntityState} from '@reduxjs/toolkit'
+import {ArticlesView} from './articlesPageTypes'
 
-export interface ArticlesListSchema extends EntityState<Article, string>{
+export interface ArticlesPageSchema extends EntityState<Article, string>{
   isLoading?: boolean
   error?: string | undefined
   articlesView: ArticlesView

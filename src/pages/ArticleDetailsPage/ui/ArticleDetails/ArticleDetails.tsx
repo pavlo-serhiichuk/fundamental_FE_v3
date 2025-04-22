@@ -47,7 +47,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       dispatch(fetchArticleById(id))
     }
   })
-
+  console.log('articleDetails', articleDetails)
   const renderBlocks = (block: ArticleBlock) => {
     switch (block.type) {
     case ArticleBlockType.TEXT:
