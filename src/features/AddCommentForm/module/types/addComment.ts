@@ -1,4 +1,4 @@
 export interface AddCommentForm {
   error?: string
-  text: string
+  text?: string
 }

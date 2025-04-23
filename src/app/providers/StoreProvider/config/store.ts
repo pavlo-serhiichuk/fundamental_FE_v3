@@ -4,7 +4,8 @@ import {userReducer} from 'entities/User'
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager'
 import {$api} from 'shared/api/api'
 import {CombinedState} from '@reduxjs/toolkit/query'
-import {changeListViewReducer} from 'features/ChangeListView/module/slice/changeListViewSlice'
+import {scrollRecoverReducer} from 'features/ScrollRecover'
+import {changeListViewReducer} from 'features/ChangeListView'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
 
 export function createReduxStore(
@@ -16,6 +17,7 @@ export function createReduxStore(
     counter: counterReducer,
     user: userReducer,
     listView: changeListViewReducer,
+    scrollRecover: scrollRecoverReducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)

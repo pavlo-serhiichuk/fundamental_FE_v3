@@ -9,7 +9,7 @@ import {AppDispatch} from 'app/providers/StoreProvider'
 import {useSelector} from 'react-redux'
 import {getProfileReadonly} from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import {ProfileCard} from 'features/ProfileCard'
-import {Page} from 'shared/ui/Page/Page'
+import {Page} from 'widgets/Page/Page'
 
 const reducers: ReducersList = {
   profile: profileReducer,

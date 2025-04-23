@@ -4,7 +4,7 @@ import {AddCommentForm} from 'features/AddCommentForm'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {ArticleDetailsComments} from 'features/ArticleDetailsComments'
 import {sendArticleComment} from 'pages/ArticleDetailsPage'
-import {Page} from 'shared/ui/Page/Page'
+import {Page} from 'widgets/Page/Page'
 import * as s from './ArticleDetailsPage.module.scss'
 import {ArticleDetails} from '../ArticleDetails/ArticleDetails'
 

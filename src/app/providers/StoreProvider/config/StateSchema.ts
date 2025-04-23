@@ -13,11 +13,13 @@ import {ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments'
 import {ArticleDetailsSchema} from 'pages/ArticleDetailsPage'
 import {ArticlesPageSchema} from 'pages/ArticlesPage'
 import {ListViewSchema} from 'features/ChangeListView'
+import {ScrollRecoverSchema} from 'features/ScrollRecover/module/types/ScrollRecoverSchema'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
   listView: ListViewSchema
+  scrollRecover: ScrollRecoverSchema
 
   // async reducers
   signIn?: SignInSchema
