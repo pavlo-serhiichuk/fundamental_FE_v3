@@ -20,7 +20,6 @@ export const fetchSignIn = createAsyncThunk<User, FetchSignInProps, ThunkConfig<
       const response = await extra.api.post('/login', payload)
       localStorage.setItem(AUTH_USER_DATA, JSON.stringify(response.data))
       dispatch(userActions.setAuthData(response.data))
-      extra.navigate?.('/about')
       if (!response.data) {
         throw new Error()
       }

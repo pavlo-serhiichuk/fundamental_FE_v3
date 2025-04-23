@@ -11,6 +11,7 @@ import {getArticlesPageHasMore} from 'pages/ArticlesPage/module/selectors/getArt
 import {getArticlesIsLoading} from 'pages/ArticlesPage/module/selectors/getArticlesIsLoading'
 import {getArticlesPageNumber} from 'pages/ArticlesPage/module/selectors/getArticlesPageNumber'
 import {getArticlesPageLimit} from 'pages/ArticlesPage/module/selectors/getArticlesPageLimit'
+import {fetchNextArticlesList} from 'pages/ArticlesPage/module/services/fetchNextArticlesList/fetchNextArticlesList'
 import {ArticlesList} from '../ArticlesList/ArticlesList'
 import {articlesPageActions, articlesPageReducer} from '../../module/slice/articlesPageSlice'
 import {fetchArticlesList} from '../../module/services/fetchArticlesList/fetchArticlesList'
@@ -28,21 +29,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const dispatch = useAppDispatch()
   const {className} = props
   const listView = useSelector(getListView)
-  const hasMore = useSelector(getArticlesPageHasMore)
-  const pageNumber = useSelector(getArticlesPageNumber)
-  const limit = useSelector(getArticlesPageLimit)
-  const isLoading = useSelector(getArticlesIsLoading)
+
   useInitialEffect(() => {
     dispatch(articlesPageActions.initArticlesPageState(listView))
-    dispatch(fetchArticlesList({page: pageNumber}))
+    dispatch(fetchArticlesList())
   })
 
   const onScrollEnd = useCallback(() => {
-    if (hasMore && !isLoading && pageNumber) {
-      dispatch(articlesPageActions.setPageNumber(pageNumber + 1))
-      dispatch(fetchArticlesList({page: pageNumber + 1}))
-    }
-  }, [hasMore, pageNumber, limit, dispatch, isLoading])
+    dispatch(fetchNextArticlesList())
+  }, [dispatch])
 
   return (
     <DynamicReducerLoader reducers={reducers}>

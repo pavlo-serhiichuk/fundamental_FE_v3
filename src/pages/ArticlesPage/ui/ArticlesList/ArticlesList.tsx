@@ -26,7 +26,7 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   return (
     <div className={cls(s.ArticlesList, {}, [className, s[listView as string]])}>
       {articles.map(renderArticle)}
-      {!articles.length || isLoading && <Loader />}
+      {(!articles.length || isLoading) && <Loader />}
     </div>
   )
 })

@@ -39,7 +39,11 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <div className={s.userWrapper}>
             <div className={s.userInfo}>
               <Avatar src={article.user?.avatar} size={30} alt={article.user?.username} />
-              <span>{article.user?.username}</span>
+              <span>
+                {article.user?.username}
+                {' '}
+                {article.id}
+              </span>
             </div>
             <div className={s.created}>{article?.created}</div>
           </div>
