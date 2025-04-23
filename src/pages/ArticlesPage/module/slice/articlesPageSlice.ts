@@ -20,6 +20,7 @@ export const articlesPageSlice = createSlice({
   reducers: {
     initArticlesPageState: (state: ArticlesPageSchema, action: PayloadAction<ListView>) => {
       state.limit = action.payload === ListView.SMALL ? 12 : 4
+      state._inited = true
     },
     setPageNumber: (state: ArticlesPageSchema, action: PayloadAction<number>) => {
       state.pageNumber = action.payload

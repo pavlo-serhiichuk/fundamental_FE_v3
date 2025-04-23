@@ -9,6 +9,7 @@ export const articlesListInitialState: ArticlesPageSchema = {
   error: undefined,
   pageNumber: 1,
   hasMore: true,
+  _inited: false,
 }
 
 export const articlesListMockState: ArticlesPageSchema = {

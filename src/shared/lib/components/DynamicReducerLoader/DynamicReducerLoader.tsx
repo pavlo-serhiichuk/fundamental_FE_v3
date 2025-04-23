@@ -20,9 +20,13 @@ const DynamicReducerLoader = (props: DynamicReducerLoaderProps) => {
     reducers, children, removeAfterUnmount = true,
   } = props
   useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap()
     Object.entries(reducers).forEach(([reducerName, reducer]) => {
-      store.reducerManager.add(reducerName as StateSchemaKey, reducer)
-      store.dispatch({type: `@INIT ${reducerName}`})
+      const mounted = mountedReducers[reducerName as StateSchemaKey]
+      if (!mounted) {
+        store.reducerManager.add(reducerName as StateSchemaKey, reducer)
+        store.dispatch({type: `@INIT ${reducerName}`})
+      }
     })
     return () => {
       if (removeAfterUnmount) {

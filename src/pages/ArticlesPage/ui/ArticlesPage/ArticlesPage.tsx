@@ -12,6 +12,7 @@ import {getArticlesIsLoading} from 'pages/ArticlesPage/module/selectors/getArtic
 import {getArticlesPageNumber} from 'pages/ArticlesPage/module/selectors/getArticlesPageNumber'
 import {getArticlesPageLimit} from 'pages/ArticlesPage/module/selectors/getArticlesPageLimit'
 import {fetchNextArticlesList} from 'pages/ArticlesPage/module/services/fetchNextArticlesList/fetchNextArticlesList'
+import {initArticlesList} from 'pages/ArticlesPage/module/services/initArticlesList/initArticlesList'
 import {ArticlesList} from '../ArticlesList/ArticlesList'
 import {articlesPageActions, articlesPageReducer} from '../../module/slice/articlesPageSlice'
 import {fetchArticlesList} from '../../module/services/fetchArticlesList/fetchArticlesList'
@@ -28,11 +29,9 @@ const reducers: ReducersList = {
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const dispatch = useAppDispatch()
   const {className} = props
-  const listView = useSelector(getListView)
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initArticlesPageState(listView))
-    dispatch(fetchArticlesList())
+    dispatch(initArticlesList())
   })
 
   const onScrollEnd = useCallback(() => {
@@ -40,7 +39,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   }, [dispatch])
 
   return (
-    <DynamicReducerLoader reducers={reducers}>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onScrollEnd} className={cls(s.ArticlesPage, {}, [className])}>
         <div className={s.controllers}>
           <div />

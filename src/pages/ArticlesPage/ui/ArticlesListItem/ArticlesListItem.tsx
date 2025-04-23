@@ -41,8 +41,6 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
               <Avatar src={article.user?.avatar} size={30} alt={article.user?.username} />
               <span>
                 {article.user?.username}
-                {' '}
-                {article.id}
               </span>
             </div>
             <div className={s.created}>{article?.created}</div>
