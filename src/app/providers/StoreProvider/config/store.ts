@@ -6,6 +6,7 @@ import {$api} from 'shared/api/api'
 import {NavigateOptions} from 'react-router/dist/lib/context'
 import {To} from '@remix-run/router'
 import {CombinedState} from '@reduxjs/toolkit/query'
+import {changeListViewReducer} from 'features/ChangeListView/module/slice/changeListViewSlice'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
 
 export function createReduxStore(
@@ -17,6 +18,7 @@ export function createReduxStore(
     ...asyncReducers,
     counter: counterReducer,
     user: userReducer,
+    listView: changeListViewReducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)

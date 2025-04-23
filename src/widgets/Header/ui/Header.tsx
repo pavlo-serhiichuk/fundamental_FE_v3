@@ -34,11 +34,11 @@ export const Header: FC<HeaderProps> = (props) => {
 
   if (authData) {
     return (
-      <div className={cls(s.Header, {}, [className])}>
+      <header className={cls(s.Header, {}, [className])}>
         <div className={s.links}>
           <Button onClick={onSignOut} theme="bordered">{t('Sign out')}</Button>
         </div>
-      </div>
+      </header>
     )
   }
 

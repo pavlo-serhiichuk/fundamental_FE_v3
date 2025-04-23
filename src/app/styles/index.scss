@@ -22,9 +22,3 @@
   height: calc(100vh - var(--navbar-height) - 6px);
 }
 
-.page-wrapper {
-  padding: 15px 20px;
-  width: 100%;
-  height: calc(100vh - var(--header-height) - 40px);
-  overflow: scroll;
-}

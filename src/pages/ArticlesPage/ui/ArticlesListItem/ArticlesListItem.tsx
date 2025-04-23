@@ -2,9 +2,8 @@ import {memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
-import {Article, ArticleBlockType, ArticleTextBlock} from 'entities/Article'
+import {Article, ArticleBlockType} from 'entities/Article'
 import {useSelector} from 'react-redux'
-import {getArticlesView} from 'pages/ArticlesPage/module/selectors/getArticlesView'
 import {Card} from 'shared/ui/Card/Card'
 import {Icon} from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/eye.svg'
@@ -13,6 +12,7 @@ import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {Text} from 'shared/ui/Text/Text'
 import {Button} from 'shared/ui/Button/Button'
+import {getListView, ListView} from 'features/ChangeListView'
 import * as s from './ArticlesListItem.module.scss'
 
 interface ArticlesListItemProps {
@@ -23,14 +23,14 @@ interface ArticlesListItemProps {
 export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
   const {className, article} = props
   const {t} = useTranslation()
-  const articlesView = useSelector(getArticlesView)
+  const listView = useSelector(getListView)
   let viewClassName
   const navigate = useNavigate()
   const onClickCard = () => {
     navigate(RoutePaths.articleDetails + article.id)
   }
-  if (articlesView === ArticlesView.BIG) {
-    viewClassName = articlesView || ArticlesView.BIG
+  if (listView === ListView.BIG) {
+    viewClassName = listView || ArticlesView.BIG
     const textBlocks = article.blocks?.filter((block) => block.type === ArticleBlockType.TEXT)
 
     return (
@@ -59,7 +59,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     )
   }
 
-  viewClassName = articlesView || ArticlesView.SMALL
+  viewClassName = listView || ArticlesView.SMALL
 
   return (
     <Card

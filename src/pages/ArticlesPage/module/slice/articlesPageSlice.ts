@@ -1,25 +1,28 @@
 import {createEntityAdapter, createSlice, type PayloadAction} from '@reduxjs/toolkit'
 import {type Article} from 'entities/Article'
-import {articlesListInitialState} from 'pages/ArticlesPage/module/slice/articlesPageState'
-import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
-import {fetchArticlesList} from 'pages/ArticlesPage/module/services/fetchArticlesList/fetchArticlesList'
 import type {StateSchema} from 'app/providers/StoreProvider'
+import {ListView} from 'features/ChangeListView'
+import {articlesListInitialState} from './articlesPageState'
+import {fetchArticlesList} from '../services/fetchArticlesList/fetchArticlesList'
+import {ArticlesPageSchema} from '../types/ArticlesPageSchema'
 
 const articlesListAdapter = createEntityAdapter({
   selectId: (article: Article) => article.id || '',
 })
 
 export const getArticlesList = articlesListAdapter.getSelectors<StateSchema>(
-  (state: any) => state.articlesList || articlesListAdapter.getInitialState(),
+  (state: any) => state.articlesPage || articlesListAdapter.getInitialState(),
 )
 
 export const articlesPageSlice = createSlice({
   name: 'articlesSlice',
   initialState: articlesListInitialState,
   reducers: {
-    setArticlesView: (state, action: PayloadAction<ArticlesView>) => {
-      state.articlesView = action.payload
+    initArticlesPageState: (state: ArticlesPageSchema, action: PayloadAction<ListView>) => {
+      state.limit = action.payload === ListView.SMALL ? 12 : 4
+    },
+    setPageNumber: (state: ArticlesPageSchema, action: PayloadAction<number>) => {
+      state.pageNumber = action.payload
     },
   },
   extraReducers: (builder) => {
@@ -30,7 +33,11 @@ export const articlesPageSlice = createSlice({
       })
       .addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<Article[]>) => {
         state.isLoading = false
-        articlesListAdapter.setAll(state, action.payload)
+        if (action.payload.length) {
+          articlesListAdapter.addMany(state, action.payload)
+        } else {
+          state.hasMore = false
+        }
       })
       .addCase(fetchArticlesList.rejected, (state: ArticlesPageSchema, action: PayloadAction<string | undefined>) => {
         state.isLoading = false
@@ -39,5 +46,7 @@ export const articlesPageSlice = createSlice({
   },
 })
 
-export const {actions: articlesPageActions} = articlesPageSlice
-export const {reducer: articlesPageReducer} = articlesPageSlice
+export const {
+  reducer: articlesPageReducer,
+  actions: articlesPageActions,
+} = articlesPageSlice

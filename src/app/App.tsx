@@ -6,6 +6,7 @@ import {Sidebar} from 'widgets/Sidebar'
 import {useDispatch, useSelector} from 'react-redux'
 import {useEffect} from 'react'
 import {getUserInited, userActions} from 'entities/User'
+import {changeListViewActions} from 'features/ChangeListView/module/slice/changeListViewSlice'
 
 export const App = () => {
   const {theme} = useTheme()
@@ -13,6 +14,7 @@ export const App = () => {
   const inited = useSelector(getUserInited)
   useEffect(() => {
     dispatch(userActions.initAuthData())
+    dispatch(changeListViewActions.initListView())
   }, [dispatch])
 
   return (

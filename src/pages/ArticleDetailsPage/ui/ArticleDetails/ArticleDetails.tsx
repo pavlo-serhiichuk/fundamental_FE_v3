@@ -1,7 +1,7 @@
 import {memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {useParams} from 'react-router-dom'
+import {useNavigate, useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {type ArticleBlock, ArticleBlockType} from 'entities/Article'
 import {Text} from 'shared/ui/Text/Text'
@@ -13,6 +13,8 @@ import EyeIcon from 'shared/assets/icons/eye.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import {Icon} from 'shared/ui/Icon/Icon'
 import {articleDetailsReducer} from 'pages/ArticleDetailsPage/model/slice/articleDetailsSlice'
+import {Button} from 'shared/ui/Button/Button'
+import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -41,13 +43,17 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const error = useSelector(getArticleDetailsError)
   const {className} = props
   const {id} = useParams<{ id: string | undefined }>()
-
+  const navigate = useNavigate()
   useInitialEffect(() => {
     if (id) {
       dispatch(fetchArticleById(id))
     }
   })
-  console.log('articleDetails', articleDetails)
+
+  const onClick = () => {
+    navigate(RoutePaths.articles)
+  }
+
   const renderBlocks = (block: ArticleBlock) => {
     switch (block.type) {
     case ArticleBlockType.TEXT:
@@ -70,6 +76,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     case !!articleDetails:
       return (
         <div>
+          <Button onClick={onClick} theme="bordered">
+            {'< '}
+            Return back
+          </Button>
           <Avatar
             size={200}
             src={articleDetails?.image}

@@ -10,12 +10,14 @@ import {SignInSchema} from 'features/SignIn'
 import {ProfileSchema} from 'entities/Profile'
 import {AddComment} from 'features/AddCommentForm'
 import {ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments'
-import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
 import {ArticleDetailsSchema} from 'pages/ArticleDetailsPage'
+import {ArticlesPageSchema} from 'pages/ArticlesPage'
+import {ListViewSchema} from 'features/ChangeListView'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  listView: ListViewSchema
 
   // async reducers
   signIn?: SignInSchema

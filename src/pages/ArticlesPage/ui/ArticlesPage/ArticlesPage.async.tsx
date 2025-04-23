@@ -2,6 +2,6 @@ import {lazy} from 'react'
 
 export const ArticlesPageAsync = lazy(() => new Promise(
   (resolve: any) => {
-    setTimeout(() => resolve(import('./ArticlesPage')), 1400)
+    setTimeout(() => resolve(import('./ArticlesPage')), 400)
   },
 ))

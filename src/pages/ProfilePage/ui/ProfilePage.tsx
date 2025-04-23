@@ -9,6 +9,7 @@ import {AppDispatch} from 'app/providers/StoreProvider'
 import {useSelector} from 'react-redux'
 import {getProfileReadonly} from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import {ProfileCard} from 'features/ProfileCard'
+import {Page} from 'shared/ui/Page/Page'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -27,7 +28,9 @@ const ProfilePage = () => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      {readonly ? <ProfileCard /> : <EditProfileCard />}
+      <Page>
+        {readonly ? <ProfileCard /> : <EditProfileCard />}
+      </Page>
     </DynamicReducerLoader>
   )
 }

@@ -4,6 +4,7 @@ import {AddCommentForm} from 'features/AddCommentForm'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {ArticleDetailsComments} from 'features/ArticleDetailsComments'
 import {sendArticleComment} from 'pages/ArticleDetailsPage'
+import {Page} from 'shared/ui/Page/Page'
 import * as s from './ArticleDetailsPage.module.scss'
 import {ArticleDetails} from '../ArticleDetails/ArticleDetails'
 
@@ -18,13 +19,15 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
   const onSendComment = useCallback(() => {
     dispatch(sendArticleComment())
   }, [dispatch])
-
+  const onScrollEnd = () => {
+    console.log('end')
+  }
   return (
-    <div className={cls(s.ArticleDetailsPage, {}, [className])}>
+    <Page onScrollEnd={onScrollEnd} className={cls(s.ArticleDetailsPage, {}, [className])}>
       <ArticleDetails />
       <AddCommentForm sendComment={onSendComment} />
       <ArticleDetailsComments />
-    </div>
+    </Page>
   )
 }
 

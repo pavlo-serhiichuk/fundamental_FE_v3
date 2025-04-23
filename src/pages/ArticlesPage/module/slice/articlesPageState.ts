@@ -1,5 +1,4 @@
 import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
 import {getArticleDetailsMockState} from 'pages/ArticleDetailsPage/model/slice/articleState'
 import {Article} from 'entities/Article'
 
@@ -8,17 +7,21 @@ export const articlesListInitialState: ArticlesPageSchema = {
   entities: {},
   isLoading: false,
   error: undefined,
-  articlesView: ArticlesView.BIG,
+  pageNumber: 1,
+  hasMore: true,
 }
 
 export const articlesListMockState: ArticlesPageSchema = {
   isLoading: false,
   error: undefined,
-  ids: ['1', '2', '3'],
+  ids: ['1', '2', '3', '4', '5', '6', '7'],
   entities: {
     1: getArticleDetailsMockState().data as Article,
     2: getArticleDetailsMockState().data as Article,
     3: getArticleDetailsMockState().data as Article,
+    4: getArticleDetailsMockState().data as Article,
+    5: getArticleDetailsMockState().data as Article,
+    6: getArticleDetailsMockState().data as Article,
+    7: getArticleDetailsMockState().data as Article,
   },
-  articlesView: ArticlesView.SMALL,
 }
