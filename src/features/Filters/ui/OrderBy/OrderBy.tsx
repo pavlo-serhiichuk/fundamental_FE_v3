@@ -11,10 +11,11 @@ import * as s from './OrderBy.module.scss'
 
 interface SortByOrderProps {
   className?: string
+  fetchData?: () => void
 }
 
 export const OrderBy = memo((props: SortByOrderProps) => {
-  const {className} = props
+  const {className, fetchData} = props
   const {t} = useTranslation()
   const order = useSelector(getFiltersOrder)
   const dispatch = useAppDispatch()
@@ -31,6 +32,7 @@ export const OrderBy = memo((props: SortByOrderProps) => {
 
   const onChange = useCallback((value: OrderType) => {
     dispatch(filtersActions.setOrder(value))
+    fetchData?.()
   }, [dispatch, order])
 
   return (

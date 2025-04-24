@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
 import {ChangeListView} from './ChangeListView'
 import 'app/styles/index.scss'
 
@@ -14,10 +14,9 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>;
 
-export const NoAuth: Story = {
-  decorators: [],
+export const Primary: Story = {
+  decorators: [StoreDecorator({})],
 }
-
-export const NoAuthDark: Story = {
-  decorators: [ThemeDecorator('dark')],
+export const PrimaryDark: Story = {
+  decorators: [ThemeDecorator('dark'), StoreDecorator({})],
 }

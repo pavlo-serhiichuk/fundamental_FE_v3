@@ -28,9 +28,12 @@ export const articlesPageSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state: ArticlesPageSchema) => {
+      .addCase(fetchArticlesList.pending, (state: ArticlesPageSchema, action) => {
         state.error = undefined
         state.isLoading = true
+        if (action.meta.arg?.replace) {
+          articlesListAdapter.removeAll(state)
+        }
       })
       .addCase(fetchArticlesList.fulfilled, (state, action) => {
         state.isLoading = false

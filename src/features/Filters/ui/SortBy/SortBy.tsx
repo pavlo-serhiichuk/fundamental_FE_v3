@@ -11,10 +11,11 @@ import * as s from './SortBy.module.scss'
 
 interface SortByParamProps {
   className?: string
+  fetchData?: () => void
 }
 
 export const SortBy = memo((props: SortByParamProps) => {
-  const {className} = props
+  const {className, fetchData} = props
   const {t} = useTranslation()
   const sortField = useSelector(getFiltersSortBy)
   const dispatch = useAppDispatch()
@@ -31,10 +32,11 @@ export const SortBy = memo((props: SortByParamProps) => {
       value: SortByParams.DATE,
       content: t('date'),
     },
-  ]), [])
+  ]), [sortField])
 
   const onChange = useCallback((value: SortByParams) => {
     dispatch(filtersActions.setSortField(value))
+    fetchData?.()
   }, [dispatch, sortField])
 
   return (

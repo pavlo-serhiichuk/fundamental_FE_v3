@@ -17,6 +17,8 @@ import {
   getFiltersSortBy,
 } from 'features/Filters/module/selectors/getFiltersState'
 import {fetchArticlesList} from 'pages/ArticlesPage/module/services/fetchArticlesList/fetchArticlesList'
+import {useDebounce} from 'shared/hooks/useDebounce'
+import {getArticlesPageInited} from 'pages/ArticlesPage/module/selectors/getArticlesPageInited'
 import {ArticlesList} from '../ArticlesList/ArticlesList'
 import {articlesPageActions, articlesPageReducer} from '../../module/slice/articlesPageSlice'
 import * as s from './ArticlesPage.module.scss'
@@ -35,15 +37,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const order = useSelector(getFiltersOrder)
   const sortBy = useSelector(getFiltersSortBy)
   const searchValue = useSelector(getFiltersSearchValue)
-
   useInitialEffect(() => {
     dispatch(initArticlesList())
   })
 
-  useEffect(() => {
+  const fetchFilteredArticlesList = useDebounce(() => {
+    console.log('reenter')
     dispatch(articlesPageActions.setPageNumber(1))
     dispatch(fetchArticlesList({replace: true}))
-  }, [order, sortBy, searchValue])
+  }, 500)
 
   const onScrollEnd = useCallback(() => {
     dispatch(fetchNextArticlesList())
@@ -54,12 +56,12 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
       <Page onScrollEnd={onScrollEnd} className={cls(s.ArticlesPage, {}, [className])}>
         <div className={s.controllers}>
           <div className={s.sortWrapper}>
-            <OrderBy />
-            <SortBy />
+            <OrderBy fetchData={fetchFilteredArticlesList} />
+            <SortBy fetchData={fetchFilteredArticlesList} />
           </div>
           <ChangeListView />
         </div>
-        <SearchByName />
+        <SearchByName fetchData={fetchFilteredArticlesList} />
         <ArticlesList />
       </Page>
     </DynamicReducerLoader>
