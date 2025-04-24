@@ -32,12 +32,16 @@ export const articlesPageSlice = createSlice({
         state.error = undefined
         state.isLoading = true
       })
-      .addCase(fetchArticlesList.fulfilled, (state, action: PayloadAction<Article[]>) => {
+      .addCase(fetchArticlesList.fulfilled, (state, action) => {
         state.isLoading = false
-        if (action.payload.length) {
-          articlesListAdapter.addMany(state, action.payload)
+        // @ts-ignore
+        state.hasMore = action.payload.length >= state.limit
+        state._inited = true
+
+        if (action.meta.arg?.replace) {
+          articlesListAdapter.setAll(state, action.payload)
         } else {
-          state.hasMore = false
+          articlesListAdapter.addMany(state, action.payload)
         }
       })
       .addCase(fetchArticlesList.rejected, (state: ArticlesPageSchema, action: PayloadAction<string | undefined>) => {

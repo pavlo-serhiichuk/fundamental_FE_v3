@@ -17,7 +17,7 @@ interface SelectProps {
   readonly?: boolean
 }
 
-export const Select = memo((props: SelectProps) => {
+export const Select = (props: SelectProps) => {
   const {t} = useTranslation()
   const {
     className, options, onChange, selectName, value, readonly,
@@ -41,4 +41,4 @@ export const Select = memo((props: SelectProps) => {
       </select>
     </div>
   )
-})
+}

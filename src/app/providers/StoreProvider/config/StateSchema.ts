@@ -14,13 +14,14 @@ import {ArticleDetailsSchema} from 'pages/ArticleDetailsPage'
 import {ArticlesPageSchema} from 'pages/ArticlesPage'
 import {ListViewSchema} from 'features/ChangeListView'
 import {ScrollRecoverSchema} from 'features/ScrollRecover/module/types/ScrollRecoverSchema'
+import {FiltersSchema} from 'features/Filters'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
   listView: ListViewSchema
   scrollRecover: ScrollRecoverSchema
-
+  filters: FiltersSchema
   // async reducers
   signIn?: SignInSchema
   profile?: ProfileSchema

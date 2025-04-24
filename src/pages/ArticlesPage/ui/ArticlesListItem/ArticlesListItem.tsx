@@ -56,7 +56,13 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
             <div key={index}>{block?.paragraphs}</div>
           ))}
         </div>
-        <Button className={s.readMore} theme="bordered" onClick={onClickCard}>{t('Read more')}</Button>
+        <div className={s.bottom}>
+          <Button theme="bordered" onClick={onClickCard}>{t('Read more')}</Button>
+          <span className={s.views}>
+            <span>{article.views}</span>
+            <Icon Svg={EyeIcon} />
+          </span>
+        </div>
       </Card>
     )
   }

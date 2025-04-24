@@ -53,8 +53,16 @@
     max-height: 200px;
     overflow: hidden;
   }
-  .readMore {
-    margin: 20px;
+  .bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .views {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }
 
