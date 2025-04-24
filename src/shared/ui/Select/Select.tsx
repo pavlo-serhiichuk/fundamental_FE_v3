@@ -3,21 +3,21 @@ import {useTranslation} from 'react-i18next'
 import {cls} from 'shared/lib/cls/cls'
 import * as s from './Select.module.scss'
 
-export interface SelectOption {
-  value: string
+export interface SelectOption<T extends string> {
+  value: T
   content: string
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string
-  options: SelectOption[]
-  onChange?: (value: any) => void
-  value?: any
+  options: SelectOption<T>[]
+  onChange?: (value: T) => void
+  value?: T
   selectName: string
   readonly?: boolean
 }
 
-export const Select = (props: SelectProps) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const {t} = useTranslation()
   const {
     className, options, onChange, selectName, value, readonly,
@@ -28,7 +28,7 @@ export const Select = (props: SelectProps) => {
   )), [options])
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value)
+    onChange?.(e.target.value as T)
   }
   return (
     <div className={cls(s.SelectWrapper, {}, [className])}>

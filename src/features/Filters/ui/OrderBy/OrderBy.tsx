@@ -3,7 +3,7 @@ import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
 import {getFiltersOrder} from 'features/Filters/module/selectors/getFiltersState'
-import {Select} from 'shared/ui/Select/Select'
+import {Select, SelectOption} from 'shared/ui/Select/Select'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {filtersActions} from 'features/Filters'
 import {type OrderType} from '../../module/types/FiltersSchema'
@@ -18,7 +18,7 @@ export const OrderBy = memo((props: SortByOrderProps) => {
   const {t} = useTranslation()
   const order = useSelector(getFiltersOrder)
   const dispatch = useAppDispatch()
-  const options = useMemo(() => ([
+  const options = useMemo<SelectOption<OrderType>[]>(() => ([
     {
       value: 'asc',
       content: t('ascend'),
@@ -27,7 +27,7 @@ export const OrderBy = memo((props: SortByOrderProps) => {
       value: 'desc',
       content: t('descend'),
     },
-  ]), [])
+  ]), [order])
 
   const onChange = useCallback((value: OrderType) => {
     dispatch(filtersActions.setOrder(value))
@@ -35,7 +35,7 @@ export const OrderBy = memo((props: SortByOrderProps) => {
 
   return (
     <div className={cls(s.SortByOrder, {}, [className])}>
-      <Select selectName={t('Order by')} options={options} value={order} onChange={onChange} />
+      <Select<OrderType> selectName={t('Order by')} options={options} value={order} onChange={onChange} />
     </div>
   )
 })

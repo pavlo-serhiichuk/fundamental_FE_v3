@@ -11,6 +11,7 @@ import {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicRe
 import {articleDetailsReducer} from 'pages/ArticleDetailsPage'
 import {articlesPageReducer} from 'pages/ArticlesPage/module/slice/articlesPageSlice'
 import {changeListViewReducer} from 'features/ChangeListView/module/slice/changeListViewSlice'
+import {filtersReducer} from 'features/Filters'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -44,6 +45,7 @@ const defaultAsyncReducers: ReducersList = {
   articleDetails: articleDetailsReducer,
   articlesPage: articlesPageReducer,
   listView: changeListViewReducer,
+  filters: filtersReducer,
 }
 
 export const StoreDecorator = (

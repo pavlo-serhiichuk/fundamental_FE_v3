@@ -12,7 +12,7 @@ interface CountrySelectProps {
   onChange?: (value: Country) => void
 }
 
-const countriesOptions = Object.entries(countries).map(([value, content]) => ({value, content}))
+const countriesOptions = Object.entries(countries).map(([value, content]) => ({value, content} as {value: Country, content: Country}))
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
   const {readonly, value, onChange} = props

@@ -9,11 +9,11 @@ import {countries} from 'entities/Country'
 interface CurrencySelectProps {
   className?: string
   readonly?: boolean
-  value?: string
+  value?: Currency
   onChange?: (value: Currency) => void
 }
 
-const currenciesOptions = Object.entries(currencies).map(([value, content]) => ({value, content}))
+const currenciesOptions = Object.entries(currencies).map(([value, content]) => ({value, content} as {value: Currency, content: Currency}))
 
 export const CurrencySelect = memo(({readonly, onChange, value}: CurrencySelectProps) => (
   <Select
