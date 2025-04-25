@@ -10,17 +10,12 @@ import {ArticlesFilters} from 'pages/ArticlesPage/ui/ArticlesFilters/ArticlesFil
 import {ArticlesList} from '../ArticlesList/ArticlesList'
 import {articlesPageReducer} from '../../module/slice/articlesPageSlice'
 
-interface ArticlesPageProps {
-  className?: string
-}
-
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
 }
 
-const ArticlesPage: FC<ArticlesPageProps> = (props) => {
+const ArticlesPage = () => {
   const dispatch = useAppDispatch()
-  const {className} = props
   const [searchParams] = useSearchParams()
 
   useInitialEffect(() => {
