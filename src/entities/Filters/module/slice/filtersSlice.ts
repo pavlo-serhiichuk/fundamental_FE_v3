@@ -5,7 +5,7 @@ import {SortByType} from '../types/FiltersSchema'
 
 const initialState: FiltersSchema = {
   searchValue: '',
-  order: 'asc',
+  orderBy: 'asc',
   sortBy: SortByType.DATE,
   topicType: 'ALL',
 }
@@ -14,13 +14,13 @@ export const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setOrder: (state: FiltersSchema, action: PayloadAction<OrderByType>) => {
-      state.order = action.payload
+    setOrderBy: (state: FiltersSchema, action: PayloadAction<OrderByType>) => {
+      state.orderBy = action.payload
     },
     setSearchValue: (state: FiltersSchema, action: PayloadAction<string>) => {
       state.searchValue = action.payload
     },
-    setSortField: (state: FiltersSchema, action: PayloadAction<SortByType>) => {
+    setSortBy: (state: FiltersSchema, action: PayloadAction<SortByType>) => {
       state.sortBy = action.payload
     },
     setTopicType: (state: FiltersSchema, action: PayloadAction<ArticleTopicType>) => {

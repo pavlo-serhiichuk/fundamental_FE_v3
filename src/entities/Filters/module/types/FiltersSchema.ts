@@ -11,8 +11,8 @@ export enum SortByType {
 export type TopicType = ArticleTopicType
 
 export interface FiltersSchema {
-  order: OrderByType
-  sortBy: SortByType
-  searchValue: string
-  topicType: TopicType
+  orderBy?: OrderByType
+  sortBy?: SortByType
+  searchValue?: string
+  topicType?: TopicType
 }

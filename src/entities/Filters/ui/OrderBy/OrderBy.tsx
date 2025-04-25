@@ -17,7 +17,7 @@ interface SortByOrderProps {
 export const OrderBy = memo((props: SortByOrderProps) => {
   const {className, fetchData} = props
   const {t} = useTranslation()
-  const order = useSelector(getFiltersOrder)
+  const orderBy = useSelector(getFiltersOrder)
   const dispatch = useAppDispatch()
   const options = useMemo<SelectOption<OrderByType>[]>(() => ([
     {
@@ -28,16 +28,16 @@ export const OrderBy = memo((props: SortByOrderProps) => {
       value: 'desc',
       content: t('descend'),
     },
-  ]), [order])
+  ]), [t])
 
   const onChange = useCallback((value: OrderByType) => {
-    dispatch(filtersActions.setOrder(value))
+    dispatch(filtersActions.setOrderBy(value))
     fetchData?.()
-  }, [dispatch, order])
+  }, [dispatch, fetchData])
 
   return (
     <div className={cls(s.SortByOrder, {}, [className])}>
-      <Select<OrderByType> selectName={t('Order by')} options={options} value={order} onChange={onChange} />
+      <Select<OrderByType> selectName={t('Order by')} options={options} value={orderBy} onChange={onChange} />
     </div>
   )
 })

@@ -35,7 +35,7 @@ export const SortBy = memo((props: SortByParamProps) => {
   ]), [sortField])
 
   const onChange = useCallback((value: SortByType) => {
-    dispatch(filtersActions.setSortField(value))
+    dispatch(filtersActions.setSortBy(value))
     fetchData?.()
   }, [dispatch, sortField])
 
