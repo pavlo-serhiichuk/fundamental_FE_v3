@@ -1,3 +1,5 @@
+import {ArticleTopicType} from 'entities/Article'
+
 export type OrderByType = 'asc' | 'desc'
 
 export enum SortByType {
@@ -6,8 +8,11 @@ export enum SortByType {
   NAME = 'title'
 }
 
+export type TopicType = ArticleTopicType
+
 export interface FiltersSchema {
   order: OrderByType
   sortBy: SortByType
   searchValue: string
+  topicType: TopicType
 }

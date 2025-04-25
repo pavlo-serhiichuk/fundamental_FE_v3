@@ -5,7 +5,7 @@ import {OrderBy} from './OrderBy'
 import 'app/styles/index.scss'
 
 const meta = {
-  title: 'features/Filters/OrderBy',
+  title: 'entities/Filters/OrderBy',
   component: OrderBy,
   tags: ['autodocs'],
   args: {onClick: fn()},

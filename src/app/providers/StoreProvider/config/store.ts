@@ -6,7 +6,7 @@ import {$api} from 'shared/api/api'
 import {CombinedState} from '@reduxjs/toolkit/query'
 import {scrollRecoverReducer} from 'features/ScrollRecover'
 import {changeListViewReducer} from 'features/ChangeListView'
-import {filtersReducer} from 'features/Filters'
+import {filtersReducer} from 'entities/Filters'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
 
 export function createReduxStore(

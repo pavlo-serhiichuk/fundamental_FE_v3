@@ -6,7 +6,7 @@ export enum ArticleBlockType {
   IMAGE = 'IMAGE'
 }
 
-export type ArticleTopicType = 'SCIENCE' | 'IT' | 'FICTION' | 'ECONOMICS'
+export type ArticleTopicType = 'ALL' | 'SCIENCE' | 'IT' | 'FICTION' | 'ECONOMICS'
 
 export interface ArticleBlockBase {
   id: string

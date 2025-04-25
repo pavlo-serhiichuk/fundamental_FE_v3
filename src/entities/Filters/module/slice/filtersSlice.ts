@@ -1,4 +1,5 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
+import {ArticleTopicType} from 'entities/Article'
 import type {FiltersSchema, OrderByType} from '../types/FiltersSchema'
 import {SortByType} from '../types/FiltersSchema'
 
@@ -6,6 +7,7 @@ const initialState: FiltersSchema = {
   searchValue: '',
   order: 'asc',
   sortBy: SortByType.DATE,
+  topicType: 'ALL',
 }
 
 export const filtersSlice = createSlice({
@@ -20,6 +22,9 @@ export const filtersSlice = createSlice({
     },
     setSortField: (state: FiltersSchema, action: PayloadAction<SortByType>) => {
       state.sortBy = action.payload
+    },
+    setTopicType: (state: FiltersSchema, action: PayloadAction<ArticleTopicType>) => {
+      state.topicType = action.payload
     },
   },
 })
