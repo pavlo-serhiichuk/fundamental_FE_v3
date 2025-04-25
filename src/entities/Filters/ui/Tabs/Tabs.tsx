@@ -25,6 +25,7 @@ export const Tabs = (props: TabsProps) => {
   const {
     className,
     fetchData,
+    page,
   } = props
   const {t} = useTranslation()
   const dispatch = useAppDispatch()
@@ -36,7 +37,7 @@ export const Tabs = (props: TabsProps) => {
     {value: 'ECONOMICS', content: t('Economics')},
     {value: 'SCIENCE', content: t('Science')},
   ]), [])
-  const options: TabOption<TopicType>[] = AppRouteNames.ARTICLES ? articleOptions : []
+  const options: TabOption<TopicType>[] = page === AppRouteNames.ARTICLES ? articleOptions : []
 
   const onChangeTab = useCallback((value: TopicType) => () => {
     dispatch(filtersActions.setTopicType(value))
