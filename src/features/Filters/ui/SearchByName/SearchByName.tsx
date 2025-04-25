@@ -6,7 +6,7 @@ import {getFiltersSearchValue} from 'features/Filters/module/selectors/getFilter
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {filtersActions} from 'features/Filters'
 import {Input} from 'shared/ui/Input/Input'
-import {useDebounce} from 'shared/hooks/useDebounce'
+import {useSearchParams} from 'react-router-dom'
 import * as s from './SearchByName.module.scss'
 
 interface SortByParamProps {
@@ -22,7 +22,6 @@ export const SearchByName = memo((props: SortByParamProps) => {
 
   const onChange = useCallback((value: string) => {
     dispatch(filtersActions.setSearchValue(value))
-    // useDebounce(() => fetchData?.(), 500)
     fetchData?.()
   }, [dispatch, searchValue])
 

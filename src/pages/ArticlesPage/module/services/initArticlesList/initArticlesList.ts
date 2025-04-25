@@ -4,15 +4,22 @@ import {fetchArticlesList} from 'pages/ArticlesPage/module/services/fetchArticle
 import {articlesPageActions} from 'pages/ArticlesPage/module/slice/articlesPageSlice'
 import {getArticlesPageInited} from 'pages/ArticlesPage/module/selectors/getArticlesPageInited'
 import {getListView} from 'features/ChangeListView'
+import {filtersActions, OrderByType, SortByType} from 'features/Filters'
 
-export const initArticlesList = createAsyncThunk<void, undefined, ThunkConfig<string>>(
+export const initArticlesList = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
   'articlesPage/initArticlesList',
-  async (_, thunkAPI) => {
+  async (searchParams, thunkAPI) => {
     const {dispatch, getState} = thunkAPI
     const inited = getArticlesPageInited(getState())
     const listView = getListView(getState())
 
     if (!inited) {
+      const orderByFromUrl = searchParams.get('orderBy')
+      const sortByFromUrl = searchParams.get('sortBy')
+      const searchValueFromUrl = searchParams.get('searchValue')
+      if (orderByFromUrl) dispatch(filtersActions.setOrder(orderByFromUrl as OrderByType))
+      if (sortByFromUrl) dispatch(filtersActions.setSortField(sortByFromUrl as SortByType))
+      if (searchValueFromUrl) dispatch(filtersActions.setSearchValue(searchValueFromUrl))
       dispatch(articlesPageActions.initArticlesPageState(listView))
       dispatch(fetchArticlesList())
     }

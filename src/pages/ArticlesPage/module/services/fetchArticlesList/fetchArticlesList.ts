@@ -8,6 +8,8 @@ import {
   getFiltersSearchValue,
   getFiltersSortBy,
 } from 'features/Filters/module/selectors/getFiltersState'
+import {addQueryParam} from 'shared/lib/addueryParam/addQueryParam'
+import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
 
 interface FetchArticlesListProps {
   replace?: boolean
@@ -20,9 +22,8 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
     const pageNumber = getArticlesPageNumber(getState())
     const limit = getArticlesPageLimit(getState())
     const searchValue = getFiltersSearchValue(getState())
-    const order = getFiltersOrder(getState())
+    const orderBy = getFiltersOrder(getState())
     const sortBy = getFiltersSortBy(getState())
-
     try {
       const response = await extra.api.get('/articles', {
         params: {
@@ -30,10 +31,11 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
           _page: pageNumber,
           _limit: limit,
           title_like: searchValue,
-          _order: order,
+          _order: orderBy,
           _sort: sortBy,
         },
       })
+      addQueryParam({orderBy, sortBy, searchValue}, RoutePaths.articles)
       return response.data
     } catch (e) {
       return thunkAPI.rejectWithValue('error')

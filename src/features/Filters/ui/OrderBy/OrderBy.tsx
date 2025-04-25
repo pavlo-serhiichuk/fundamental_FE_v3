@@ -6,7 +6,7 @@ import {getFiltersOrder} from 'features/Filters/module/selectors/getFiltersState
 import {Select, SelectOption} from 'shared/ui/Select/Select'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {filtersActions} from 'features/Filters'
-import {type OrderType} from '../../module/types/FiltersSchema'
+import {type OrderByType} from '../../module/types/FiltersSchema'
 import * as s from './OrderBy.module.scss'
 
 interface SortByOrderProps {
@@ -19,7 +19,7 @@ export const OrderBy = memo((props: SortByOrderProps) => {
   const {t} = useTranslation()
   const order = useSelector(getFiltersOrder)
   const dispatch = useAppDispatch()
-  const options = useMemo<SelectOption<OrderType>[]>(() => ([
+  const options = useMemo<SelectOption<OrderByType>[]>(() => ([
     {
       value: 'asc',
       content: t('ascend'),
@@ -30,14 +30,14 @@ export const OrderBy = memo((props: SortByOrderProps) => {
     },
   ]), [order])
 
-  const onChange = useCallback((value: OrderType) => {
+  const onChange = useCallback((value: OrderByType) => {
     dispatch(filtersActions.setOrder(value))
     fetchData?.()
   }, [dispatch, order])
 
   return (
     <div className={cls(s.SortByOrder, {}, [className])}>
-      <Select<OrderType> selectName={t('Order by')} options={options} value={order} onChange={onChange} />
+      <Select<OrderByType> selectName={t('Order by')} options={options} value={order} onChange={onChange} />
     </div>
   )
 })

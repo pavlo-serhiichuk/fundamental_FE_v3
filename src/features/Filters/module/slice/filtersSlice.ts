@@ -1,24 +1,24 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import type {FiltersSchema, OrderType} from '../types/FiltersSchema'
-import {SortByParams} from '../types/FiltersSchema'
+import type {FiltersSchema, OrderByType} from '../types/FiltersSchema'
+import {SortByType} from '../types/FiltersSchema'
 
 const initialState: FiltersSchema = {
   searchValue: '',
   order: 'asc',
-  sortBy: SortByParams.DATE,
+  sortBy: SortByType.DATE,
 }
 
 export const filtersSlice = createSlice({
   name: 'filters',
   initialState,
   reducers: {
-    setOrder: (state: FiltersSchema, action: PayloadAction<OrderType>) => {
+    setOrder: (state: FiltersSchema, action: PayloadAction<OrderByType>) => {
       state.order = action.payload
     },
     setSearchValue: (state: FiltersSchema, action: PayloadAction<string>) => {
       state.searchValue = action.payload
     },
-    setSortField: (state: FiltersSchema, action: PayloadAction<SortByParams>) => {
+    setSortField: (state: FiltersSchema, action: PayloadAction<SortByType>) => {
       state.sortBy = action.payload
     },
   },

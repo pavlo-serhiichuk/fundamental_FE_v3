@@ -1,13 +1,13 @@
-export type OrderType = 'asc' | 'desc'
+export type OrderByType = 'asc' | 'desc'
 
-export enum SortByParams {
+export enum SortByType {
   DATE = 'created',
   VIEWS = 'views',
   NAME = 'title'
 }
 
 export interface FiltersSchema {
-  order: OrderType
-  sortBy: SortByParams
+  order: OrderByType
+  sortBy: SortByType
   searchValue: string
 }

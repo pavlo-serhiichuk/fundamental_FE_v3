@@ -6,7 +6,7 @@ import {getFiltersSortBy} from 'features/Filters/module/selectors/getFiltersStat
 import {Select, SelectOption} from 'shared/ui/Select/Select'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {filtersActions} from 'features/Filters'
-import {SortByParams} from '../../module/types/FiltersSchema'
+import {SortByType} from '../../module/types/FiltersSchema'
 import * as s from './SortBy.module.scss'
 
 interface SortByParamProps {
@@ -19,22 +19,22 @@ export const SortBy = memo((props: SortByParamProps) => {
   const {t} = useTranslation()
   const sortField = useSelector(getFiltersSortBy)
   const dispatch = useAppDispatch()
-  const options = useMemo<SelectOption<SortByParams>[]>(() => ([
+  const options = useMemo<SelectOption<SortByType>[]>(() => ([
     {
-      value: SortByParams.NAME,
+      value: SortByType.NAME,
       content: t('name'),
     },
     {
-      value: SortByParams.VIEWS,
+      value: SortByType.VIEWS,
       content: t('views'),
     },
     {
-      value: SortByParams.DATE,
+      value: SortByType.DATE,
       content: t('date'),
     },
   ]), [sortField])
 
-  const onChange = useCallback((value: SortByParams) => {
+  const onChange = useCallback((value: SortByType) => {
     dispatch(filtersActions.setSortField(value))
     fetchData?.()
   }, [dispatch, sortField])
