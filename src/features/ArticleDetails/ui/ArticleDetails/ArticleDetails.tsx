@@ -3,7 +3,13 @@ import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {useNavigate, useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import {type ArticleBlock, ArticleBlockType} from 'entities/Article'
+import {
+  type ArticleBlock,
+  ArticleBlockCodeComponent,
+  ArticleBlockImageComponent,
+  ArticleBlockTextComponent,
+  ArticleBlockType,
+} from 'entities/Article'
 import {Text} from 'shared/ui/Text/Text'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
@@ -12,20 +18,17 @@ import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import {Icon} from 'shared/ui/Icon/Icon'
-import {articleDetailsReducer} from 'pages/ArticleDetailsPage/model/slice/articleDetailsSlice'
+import {articleDetailsReducer} from 'features/ArticleDetails/model/slice/articleDetailsSlice'
 import {Button} from 'shared/ui/Button/Button'
 import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsLoading,
-} from '../../model/selectors/getArticleDetailsData'
-import {ArticleBlockCodeComponent} from '../ArticleBlockCodeComponent/ArticleBlockCodeComponent'
-import {ArticleBlockImageComponent} from '../ArticleBlockImageComponent/ArticleBlockImageComponent'
-import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent'
+} from 'features/ArticleDetails/model/selectors/getArticleDetailsData'
+import {fetchArticleById} from 'features/ArticleDetails/model/services/fetchArticleById/fetchArticleById'
 import {ArticleDetailsSkeleton} from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
-import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById'
 
 interface ArticleDetailsProps {
   className?: string

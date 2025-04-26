@@ -5,4 +5,5 @@ export {
   articleDetailsCommentsReducer,
   getArticleComments,
 } from './model/slice/articleDetailsCommentsSlice'
+export {sendArticleComment} from './model/services/sendArticleComment/sendArticleComment'
 export {ArticleDetailsComments} from './ui/ArticleDetailsComments/ArticleDetailsComments'

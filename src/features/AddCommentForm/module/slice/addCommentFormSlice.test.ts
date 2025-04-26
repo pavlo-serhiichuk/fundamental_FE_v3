@@ -1,12 +1,12 @@
 import {addCommentFormReducer, addCommentFormSliceActions} from './addCommentFormSlice'
-import {AddCommentForm} from '../types/addComment'
+import {AddCommentSchema} from '../types/addComment'
 
 describe('AddCommentFormSlice', () => {
   test('set text', () => {
-    const state: DeepPartial<AddCommentForm> = {text: ''}
+    const state: DeepPartial<AddCommentSchema> = {text: ''}
     expect(
       addCommentFormReducer(
-      state as AddCommentForm,
+      state as AddCommentSchema,
       addCommentFormSliceActions.setText('comment'),
       ),
     ).toEqual({text: 'comment'})

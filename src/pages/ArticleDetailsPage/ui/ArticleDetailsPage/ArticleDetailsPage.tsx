@@ -2,11 +2,10 @@ import {type FC, useCallback} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {AddCommentForm} from 'features/AddCommentForm'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {ArticleDetailsComments} from 'features/ArticleDetailsComments'
-import {sendArticleComment} from 'pages/ArticleDetailsPage'
+import {ArticleDetailsComments, sendArticleComment} from 'features/ArticleDetailsComments'
 import {Page} from 'widgets/Page/Page'
+import {ArticleDetails} from 'features/ArticleDetails'
 import * as s from './ArticleDetailsPage.module.scss'
-import {ArticleDetails} from '../ArticleDetails/ArticleDetails'
 
 interface ArticlesPageProps {
   className?: string
@@ -14,18 +13,10 @@ interface ArticlesPageProps {
 
 const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
   const {className} = props
-  const dispatch = useAppDispatch()
 
-  const onSendComment = useCallback(() => {
-    dispatch(sendArticleComment())
-  }, [dispatch])
-  const onScrollEnd = () => {
-    console.log('end')
-  }
   return (
-    <Page onScrollEnd={onScrollEnd} className={cls(s.ArticleDetailsPage, {}, [className])}>
+    <Page className={cls(s.ArticleDetailsPage, {}, [className])}>
       <ArticleDetails />
-      <AddCommentForm sendComment={onSendComment} />
       <ArticleDetailsComments />
     </Page>
   )

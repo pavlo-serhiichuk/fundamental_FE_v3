@@ -1,4 +1,4 @@
-import {type FC} from 'react'
+import {type FC, useCallback} from 'react'
 import {useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {cls} from 'shared/lib/cls/cls'
@@ -7,12 +7,13 @@ import {
   articleDetailsCommentsReducer,
   getArticleComments,
   fetchArticleCommentsById,
-  getArticleDetailsCommentsLoading,
+  getArticleDetailsCommentsLoading, sendArticleComment,
 } from 'features/ArticleDetailsComments'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
-import {getArticleDetailsError} from 'pages/ArticleDetailsPage'
+import {getArticleDetailsError} from 'features/ArticleDetails'
 import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import {AddCommentForm} from 'features/AddCommentForm'
 import * as s from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
@@ -31,6 +32,10 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (props) =
   const comments = useSelector(getArticleComments.selectAll)
   const articleError = useSelector(getArticleDetailsError)
 
+  const onSendComment = useCallback(() => {
+    dispatch(sendArticleComment())
+  }, [dispatch])
+
   useInitialEffect(async () => {
     dispatch(fetchArticleCommentsById(id))
   })
@@ -42,6 +47,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (props) =
   return (
     <DynamicReducerLoader reducers={reducers}>
       <div className={cls(s.ArticleDetailsComments, {}, [className])}>
+        <AddCommentForm sendComment={onSendComment} />
         <CommentList comments={comments} isLoading={commentsIsLoading} />
       </div>
     </DynamicReducerLoader>

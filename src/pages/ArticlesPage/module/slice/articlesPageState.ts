@@ -1,5 +1,5 @@
 import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
-import {getArticleDetailsMockState} from 'pages/ArticleDetailsPage/model/slice/articleState'
+import {getArticleDetailsMockState} from 'features/ArticleDetails/model/slice/articleState'
 import {Article} from 'entities/Article'
 
 export const articlesListInitialState: ArticlesPageSchema = {

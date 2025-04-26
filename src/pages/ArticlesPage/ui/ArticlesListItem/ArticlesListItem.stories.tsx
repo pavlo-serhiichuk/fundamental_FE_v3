@@ -5,7 +5,7 @@ import {ArticlesListItem} from './ArticlesListItem'
 import 'app/styles/index.scss'
 import {articlesListMockState} from 'pages/ArticlesPage/module/slice/articlesPageState'
 import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
-import {getArticleDetailsMockState} from 'pages/ArticleDetailsPage/model/slice/articleState'
+import {getArticleDetailsMockState} from 'features/ArticleDetails/model/slice/articleState'
 import {ListView} from 'features/ChangeListView'
 
 const meta = {
