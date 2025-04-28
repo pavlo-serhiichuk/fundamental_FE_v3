@@ -18,12 +18,12 @@ import * as s from './ArticlesListItem.module.scss'
 interface ArticlesListItemProps {
   className?: string
   article: Article
+  listView?: ListView
 }
 
 export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
-  const {className, article} = props
+  const {className, article, listView} = props
   const {t} = useTranslation()
-  const listView = useSelector(getListView)
   let viewClassName
   const navigate = useNavigate()
   const onClickCard = () => {

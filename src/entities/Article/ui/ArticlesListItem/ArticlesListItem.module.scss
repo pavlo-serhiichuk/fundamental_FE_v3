@@ -67,7 +67,7 @@
 }
 
 .SMALL {
-  width: 300px;
+  min-width: 300px;
   position: relative;
   overflow: hidden;
   transition: all 0.2s;
@@ -88,7 +88,7 @@
   }
 
   .image {
-    width: 300px;
+    min-width: 300px;
     height: 200px;
     display: flex;
     justify-content: center;

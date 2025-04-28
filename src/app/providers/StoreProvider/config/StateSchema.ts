@@ -15,6 +15,7 @@ import {ScrollRecoverSchema} from 'features/ScrollRecover/module/types/ScrollRec
 import {FiltersSchema} from 'entities/Filters'
 import {ArticleDetailsSchema} from 'features/ArticleDetails'
 import {AddCommentSchema} from 'features/AddCommentForm'
+import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage/module/types/ArticleDetailsPageSchema'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -25,9 +26,8 @@ export interface StateSchema {
   // async reducers
   signIn?: SignInSchema
   profile?: ProfileSchema
-  articleDetails?: ArticleDetailsSchema
   addCommentForm?: AddCommentSchema
-  articleDetailsComments?: ArticleDetailsCommentsSchema
+  articleDetailsPage?: ArticleDetailsPageSchema
   articlesPage?: ArticlesPageSchema
 }
 

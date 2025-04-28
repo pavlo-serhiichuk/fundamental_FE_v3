@@ -3,7 +3,7 @@ export {fetchArticleCommentsById} from './model/services/fetchArticleCommentsByI
 export {getArticleDetailsCommentsLoading} from './model/selectors/articleDetailsSelectors'
 export {
   articleDetailsCommentsReducer,
-  getArticleComments,
+  getArticleDetailsComments,
 } from './model/slice/articleDetailsCommentsSlice'
 export {sendArticleComment} from './model/services/sendArticleComment/sendArticleComment'
 export {ArticleDetailsComments} from './ui/ArticleDetailsComments/ArticleDetailsComments'

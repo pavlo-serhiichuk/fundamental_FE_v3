@@ -7,8 +7,11 @@ import {fetchNextArticlesList} from 'pages/ArticlesPage/module/services/fetchNex
 import {initArticlesList} from 'pages/ArticlesPage/module/services/initArticlesList/initArticlesList'
 import {useSearchParams} from 'react-router-dom'
 import {ArticlesFilters} from 'pages/ArticlesPage/ui/ArticlesFilters/ArticlesFilters'
-import {ArticlesList} from '../ArticlesList/ArticlesList'
-import {articlesPageReducer} from '../../module/slice/articlesPageSlice'
+import {ArticlesList} from 'entities/Article/ui/ArticlesList/ArticlesList'
+import {useSelector} from 'react-redux'
+import {getArticlesIsLoading} from 'pages/ArticlesPage/module/selectors/getArticlesIsLoading'
+import {getListView} from 'features/ChangeListView'
+import {articlesPageReducer, getArticlesList} from '../../module/slice/articlesPageSlice'
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -17,6 +20,9 @@ const reducers: ReducersList = {
 const ArticlesPage = () => {
   const dispatch = useAppDispatch()
   const [searchParams] = useSearchParams()
+  const isLoading = useSelector(getArticlesIsLoading)
+  const articles = useSelector(getArticlesList.selectAll)
+  const listView = useSelector(getListView)
 
   useInitialEffect(() => {
     dispatch(initArticlesList(searchParams))
@@ -30,7 +36,7 @@ const ArticlesPage = () => {
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onScrollEnd}>
         <ArticlesFilters />
-        <ArticlesList />
+        <ArticlesList isLoading={isLoading} articles={articles} listView={listView} />
       </Page>
     </DynamicReducerLoader>
   )

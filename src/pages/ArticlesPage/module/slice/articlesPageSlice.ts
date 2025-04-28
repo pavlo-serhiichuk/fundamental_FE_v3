@@ -1,7 +1,7 @@
 import {createEntityAdapter, createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {type Article} from 'entities/Article'
 import type {StateSchema} from 'app/providers/StoreProvider'
 import {ListView} from 'features/ChangeListView'
+import {type Article} from '../../../../entities/Article'
 import {articlesListInitialState} from './articlesPageState'
 import {fetchArticlesList} from '../services/fetchArticlesList/fetchArticlesList'
 import {ArticlesPageSchema} from '../types/ArticlesPageSchema'

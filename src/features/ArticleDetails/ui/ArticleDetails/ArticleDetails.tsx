@@ -18,7 +18,6 @@ import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import EyeIcon from 'shared/assets/icons/eye.svg'
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import {Icon} from 'shared/ui/Icon/Icon'
-import {articleDetailsReducer} from 'features/ArticleDetails/model/slice/articleDetailsSlice'
 import {Button} from 'shared/ui/Button/Button'
 import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
 import {
@@ -32,10 +31,6 @@ import * as s from './ArticleDetails.module.scss'
 
 interface ArticleDetailsProps {
   className?: string
-}
-
-const reducers: ReducersList = {
-  articleDetails: articleDetailsReducer,
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
@@ -107,11 +102,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   }
 
   return (
-    <DynamicReducerLoader reducers={reducers}>
-      <div className={cls(s.ArticleDetails, {}, [className])}>
-        <Content />
-      </div>
-    </DynamicReducerLoader>
-
+    <div className={cls(s.ArticleDetails, {}, [className])}>
+      <Content />
+    </div>
   )
 })

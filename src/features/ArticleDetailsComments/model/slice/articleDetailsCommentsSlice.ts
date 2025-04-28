@@ -8,13 +8,13 @@ import {type ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments
 import {type StateSchema} from 'app/providers/StoreProvider'
 import {fetchArticleCommentsById} from '../services/fetchArticleCommentsById/fetchArticleCommentsById'
 
-const commentsAdapter = createEntityAdapter({
-  selectId: (comment: Comment) => comment.id,
+const articleDetailsCommentsAdapter = createEntityAdapter({
+  selectId: (comment: Comment) => comment.id || '',
 })
 
-export const getArticleComments = commentsAdapter.getSelectors<StateSchema>((state: any) => state.articleDetailsComments || commentsAdapter.getInitialState())
+export const getArticleDetailsComments = articleDetailsCommentsAdapter.getSelectors<StateSchema>((state: StateSchema) => state.articleDetailsPage?.comments || articleDetailsCommentsAdapter.getInitialState())
 
-export const articleDetailsCommentsInitialState = commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
+export const articleDetailsCommentsInitialState = articleDetailsCommentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
   ids: [],
   entities: {},
   isLoading: false,
@@ -25,7 +25,7 @@ const articleDetailsCommentsSlice = createSlice({
   name: 'articleDetailsCommentsSlice',
   initialState: articleDetailsCommentsInitialState,
   reducers: {
-    commentsAdded: commentsAdapter.addOne,
+    commentsAdded: articleDetailsCommentsAdapter.addOne,
   },
   extraReducers: (builder) => {
     builder
@@ -35,7 +35,7 @@ const articleDetailsCommentsSlice = createSlice({
       })
       .addCase(fetchArticleCommentsById.fulfilled, (state, action: PayloadAction<Comment[]>) => {
         state.isLoading = false
-        commentsAdapter.setAll(state, action.payload)
+        articleDetailsCommentsAdapter.setAll(state, action.payload)
       })
       .addCase(fetchArticleCommentsById.rejected, (state, action) => {
         state.isLoading = false

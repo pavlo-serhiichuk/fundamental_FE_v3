@@ -8,10 +8,10 @@ import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
 import {signInReducer} from 'features/SignIn'
 import {profileReducer} from 'entities/Profile'
 import {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {articleDetailsReducer} from 'pages/ArticleDetailsPage'
 import {articlesPageReducer} from 'pages/ArticlesPage/module/slice/articlesPageSlice'
 import {changeListViewReducer} from 'features/ChangeListView/module/slice/changeListViewSlice'
 import {filtersReducer} from 'entities/Filters'
+import {articleDetailsPageReducer} from 'pages/ArticleDetailsPage/module/slice/articleDetailsPageReducer'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -42,7 +42,7 @@ export const RouterDecorator = (Story: any) => (
 const defaultAsyncReducers: ReducersList = {
   signIn: signInReducer,
   profile: profileReducer,
-  articleDetails: articleDetailsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
   articlesPage: articlesPageReducer,
   listView: changeListViewReducer,
   filters: filtersReducer,

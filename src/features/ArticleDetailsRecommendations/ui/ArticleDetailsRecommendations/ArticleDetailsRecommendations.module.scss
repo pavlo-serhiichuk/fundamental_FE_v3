@@ -1,0 +1,11 @@
+.ArticleDetailsRecommendations {
+  display: block;
+}
+
+.recommendationsList {
+  padding: 20px 0;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
