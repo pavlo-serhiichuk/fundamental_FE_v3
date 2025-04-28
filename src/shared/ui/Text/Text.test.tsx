@@ -1,5 +1,5 @@
 import {renderTestComponent} from 'shared/lib/tests/renderTestComponent/renderTestComponent'
-import {fireEvent, screen} from '@testing-library/react'
+import {screen} from '@testing-library/react'
 import {Text} from './Text'
 // 'text-wrapper-el'
 // 'title-el'

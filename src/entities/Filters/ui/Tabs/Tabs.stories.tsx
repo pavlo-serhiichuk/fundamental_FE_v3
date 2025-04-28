@@ -1,16 +1,13 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
-import {Tabs, TabsProps} from './Tabs'
+import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
 import 'app/styles/index.scss'
+import {TopicType} from 'entities/Filters'
+import {AppRouteNames} from 'shared/config/routesConfig/routesConfig'
+import {Tabs} from './Tabs'
 
 const args = {
-  options: [
-    {value: 'tab 1', content: 'tab 1 el'},
-    {value: 'tab 2', content: 'tab 2 el'},
-    {value: 'tab 3', content: 'tab 3 el'},
-  ],
-  selected: 'tab 3',
+  page: AppRouteNames.ARTICLES,
   onChangeTab: fn(),
 }
 
@@ -19,6 +16,7 @@ const meta = {
   component: Tabs,
   tags: ['autodocs'],
   args,
+  decorators: [StoreDecorator({filters: {topicType: 'ALL'}})],
 } as Meta<typeof Tabs>
 
 export default meta
