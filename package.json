@@ -4,7 +4,7 @@
   "description": "ts, react, webpack etc.",
   "private": true,
   "scripts": {
-    "build:prod": "webpack --env mode=production apiUrl=https://fundamental-be-v3.vercel.app/api",
+    "build:prod": "webpack --env mode=production apiUrl=https://be1-pavelserhiichuk.b4a.run",
     "build:dev": "webpack --env mode=development",
     "start": "webpack serve --env port=3000",
     "start:dev": "concurrently  \"npm run start:dev:server\" \"npm start\"",
