@@ -22,7 +22,7 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
     const pageNumber = getArticlesPageNumber(getState())
     const limit = getArticlesPageLimit(getState())
     const searchValue = getFiltersSearchValue(getState())
-    const orderBy = getFiltersOrder(getState())
+    const orderBy = getFiltersOrder(getState()) || 'null'
     const sortBy = getFiltersSortBy(getState())
     const topicType = getFiltersTopicType(getState())
     try {

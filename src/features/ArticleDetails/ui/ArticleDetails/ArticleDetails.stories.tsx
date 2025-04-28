@@ -10,7 +10,7 @@ const mockData: ArticleDetailsSchema = getArticleDetailsMockState(false)
 const meta = {
   title: 'entities/ArticleDetails',
   component: ArticleDetails,
-  decorators: [StoreDecorator({articleDetails: mockData})],
+  decorators: [StoreDecorator({articleDetailsPage: {details: mockData}})],
 } as Meta<typeof ArticleDetails>
 
 export default meta
@@ -19,9 +19,9 @@ type Story = StoryObj<typeof meta>
 export const WithData: Story = {}
 
 export const IsLoading: Story = {
-  decorators: [StoreDecorator({articleDetails: {isLoading: true}})],
+  decorators: [StoreDecorator({articleDetailsPage: {details: {isLoading: true}}})],
 }
 
 export const Error: Story = {
-  decorators: [StoreDecorator({articleDetails: {error: 'serverError'}})],
+  decorators: [StoreDecorator({articleDetailsPage: {details: {error: 'serverError'}}})],
 }

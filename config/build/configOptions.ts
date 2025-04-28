@@ -5,6 +5,8 @@ export interface ConfigPaths {
   buildPath: string
   htmlPath: string
   srcPath: string
+  locales: string
+  buildLocales: string
 }
 
 export interface ConfigEnv {

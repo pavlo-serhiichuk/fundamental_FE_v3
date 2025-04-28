@@ -35,9 +35,18 @@ export const OrderBy = memo((props: SortByOrderProps) => {
     fetchData?.()
   }, [dispatch, fetchData])
 
+  // if (!orderBy) {
+  //   return null
+  // }
+
   return (
     <div className={cls(s.SortByOrder, {}, [className])}>
-      <Select<OrderByType> selectName={t('Order by')} options={options} value={orderBy} onChange={onChange} />
+      <Select<OrderByType>
+        selectName={t('Order by')}
+        options={options}
+        value={orderBy}
+        onChange={onChange}
+      />
     </div>
   )
 })

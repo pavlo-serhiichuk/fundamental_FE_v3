@@ -66,6 +66,7 @@
     "babel-loader": "^8.2.3",
     "babel-plugin-i18next-extract": "^0.8.3",
     "chromatic": "^11.27.0",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",

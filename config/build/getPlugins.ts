@@ -5,6 +5,8 @@ import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 import {ConfigOptions} from './configOptions'
 
+const CopyPlugin = require('copy-webpack-plugin')
+
 export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
   const plugins: WebpackPluginInstance[] = [
     new HTMLWebpackPlugin({template: options.paths.htmlPath}),
@@ -13,6 +15,11 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
       __IS_DEV__: options.isDev,
       __API__: JSON.stringify(options.apiUrl),
       __PROJECT__: JSON.stringify(options.project),
+    }),
+    new CopyPlugin({
+      patterns: [
+        {from: options.paths.locales, to: options.paths.buildLocales},
+      ],
     }),
   ]
   if (options.isDev) {

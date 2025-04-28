@@ -4,7 +4,7 @@ import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
 import {Tabs, TabsProps} from './Tabs'
 import 'app/styles/index.scss'
 
-const args: TabsProps<string> = {
+const args = {
   options: [
     {value: 'tab 1', content: 'tab 1 el'},
     {value: 'tab 2', content: 'tab 2 el'},
