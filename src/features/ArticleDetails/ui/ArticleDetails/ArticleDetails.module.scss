@@ -1,0 +1,18 @@
+.ArticleDetails {
+  display: block;
+}
+
+.avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.commonInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.title {
+  margin: 20px 0;
+}

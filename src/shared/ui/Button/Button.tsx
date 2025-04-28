@@ -4,7 +4,7 @@ import {
 import {cls} from 'shared/lib/cls/cls'
 import * as s from './Button.module.scss'
 
-export type ButtonTheme = 'clear' | 'bordered' | 'sidebar-squad-m' | 'content-squad-m' | 'cancel'
+export type ButtonTheme = 'default' | 'clear' | 'bordered' | 'sidebar-squad-m' | 'content-squad-m' | 'cancel'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
@@ -15,7 +15,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = memo((props: ButtonProps) => {
   const {
-    className, theme = 'clear', children, disabled = false, ...otherProps
+    className, theme = 'default', children, disabled = false, ...otherProps
   } = props
 
   return (

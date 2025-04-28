@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended'],
+  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended', 'plugin:react-hooks/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -24,7 +24,7 @@ module.exports = {
     'react/jsx-filename-extension': [2, {extensions: ['.js', '.jsx', '.tsx']}],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 0,
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
@@ -36,8 +36,18 @@ module.exports = {
     semi: ['error', 'never'],
     'object-curly-spacing': ['error', 'never'],
     'max-len': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'no-param-reassign': 0,
+    'no-undef': 0,
+    'react/no-array-index-key': 0,
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true,
+    DeepPartial: 'readonly',
   },
 }

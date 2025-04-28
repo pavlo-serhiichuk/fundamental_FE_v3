@@ -9,17 +9,22 @@ export default (env: ConfigEnv) => {
     buildPath: path.resolve(__dirname, 'build'),
     htmlPath: path.resolve(__dirname, 'public', 'index.html'),
     srcPath: path.resolve(__dirname, 'src'),
+    locales: path.resolve(__dirname, 'public', 'locales'),
+    buildLocales: path.resolve(__dirname, 'build', 'locales'),
   }
 
   const mode = env.mode || 'development'
   const isDev = mode === 'development'
   const PORT = env.port || 3000
-
+  const apiUrl = env.apiUrl || 'http://localhost:8000'
+  const project = 'frontend'
   const config: webpack.Configuration = getWebpackConfig({
     mode,
     paths,
     isDev,
     port: PORT,
+    apiUrl,
+    project,
   })
 
   return config

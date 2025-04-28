@@ -2,12 +2,16 @@ import 'app/styles/index.scss'
 import {Suspense} from 'react'
 import {BrowserRouter} from 'react-router-dom'
 import {I18nextProvider} from 'react-i18next'
-import {Theme, ThemeProvider} from 'app/providers'
+import {Theme, ThemeProvider} from 'app/providers/ThemeProvider'
 import i18nForTests from 'shared/config/i18n/i18nForTests'
-// import {type StateSchema, StoreProvider} from 'app/providers/StoreProvider'
-// import {type ReducersMapObject} from '@reduxjs/toolkit'
-// import {signInReducer} from 'features/SignIn'
-// import {profileReducer} from 'entities/Profile'
+import {StateSchema, StoreProvider} from 'app/providers/StoreProvider'
+import {signInReducer} from 'features/SignIn'
+import {profileReducer} from 'entities/Profile'
+import {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import {articlesPageReducer} from 'pages/ArticlesPage/module/slice/articlesPageSlice'
+import {changeListViewReducer} from 'features/ChangeListView/module/slice/changeListViewSlice'
+import {filtersReducer} from 'entities/Filters'
+import {articleDetailsPageReducer} from 'pages/ArticleDetailsPage/module/slice/articleDetailsPageReducer'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -35,25 +39,26 @@ export const RouterDecorator = (Story: any) => (
   </BrowserRouter>
 )
 
-// const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
-//   signIn: signInReducer,
-//   profile: profileReducer,
-// }
+const defaultAsyncReducers: ReducersList = {
+  signIn: signInReducer,
+  profile: profileReducer,
+  articleDetailsPage: articleDetailsPageReducer,
+  articlesPage: articlesPageReducer,
+  listView: changeListViewReducer,
+  filters: filtersReducer,
+}
 
-// export const StoreDecorator = (state: DeepPartial<StateSchema>) => (Story: any) => (
-//   <StoreProvider
-//     initialState={state}
-//     asyncReducers={{...defaultAsyncReducers}}
-//   >
-//     <Story />
-//   </StoreProvider>
-// )
-//
-// export const TranslationDecorator = (Story: any) => (
-//   <I18nextProvider i18n={i18nForTests}>
-//     <Story />
-//   </I18nextProvider>
-// )
+export const StoreDecorator = (
+  initialState: DeepPartial<StateSchema>,
+  asyncReducers?: ReducersList,
+) => (Story: any) => (
+  <StoreProvider
+    initialState={initialState}
+    asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}
+  >
+    <Story />
+  </StoreProvider>
+)
 
 export const PageContentDecorator = (Story: any) => (
   <div className="page-content">

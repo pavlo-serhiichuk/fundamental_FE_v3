@@ -1,0 +1,15 @@
+.Tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.selected {
+  border: 1px solid var(--content-border);
+  font-weight: bold;
+}

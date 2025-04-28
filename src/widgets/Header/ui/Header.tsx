@@ -1,7 +1,12 @@
-import {type FC} from 'react'
+import {type FC, useCallback, useState} from 'react'
 import {cls} from 'shared/lib/cls/cls'
-import {AppLink} from 'shared/ui/AppLink/AppLink'
 import {useTranslation} from 'react-i18next'
+import {SignInModal} from 'features/SignIn/ui/SignInModal/SignInModal'
+import {Button} from 'shared/ui/Button/Button'
+import {useSelector} from 'react-redux'
+import {getUserAuthData} from 'entities/User/module/selectors/getUserAuthData'
+import {useAppDispatch} from 'shared/hooks/useAppDispatch'
+import {userActions} from 'entities/User'
 import * as s from './Header.module.scss'
 
 interface HeaderProps {
@@ -9,14 +14,39 @@ interface HeaderProps {
 }
 
 export const Header: FC<HeaderProps> = (props) => {
-  const {t} = useTranslation()
   const {className} = props
+  const authData = useSelector(getUserAuthData)
+  const dispatch = useAppDispatch()
+  const {t} = useTranslation()
+  const [isSignInModalOpen, setIsSignInModalOpen] = useState(false)
+
+  const onCloseSignInModal = () => {
+    setIsSignInModalOpen(false)
+  }
+
+  const onOpen = () => {
+    setIsSignInModalOpen(true)
+  }
+
+  const onSignOut = useCallback(() => {
+    dispatch(userActions.logout())
+  }, [dispatch])
+
+  if (authData) {
+    return (
+      <header className={cls(s.Header, {}, [className])}>
+        <div className={s.links}>
+          <Button onClick={onSignOut} theme="bordered">{t('Sign out')}</Button>
+        </div>
+      </header>
+    )
+  }
 
   return (
     <div className={cls(s.Header, {}, [className])}>
+      {isSignInModalOpen && <SignInModal isOpen={isSignInModalOpen} onClose={onCloseSignInModal} />}
       <div className={s.links}>
-        <AppLink theme="navigation" to="/"><span>{t('Main')}</span></AppLink>
-        <AppLink theme="navigation" to="/about"><span>{t('About')}</span></AppLink>
+        <Button onClick={onOpen} theme="bordered">{t('Sign in')}</Button>
       </div>
     </div>
   )

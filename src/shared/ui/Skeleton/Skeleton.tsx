@@ -10,7 +10,7 @@ interface SkeletonProps {
   marginTop?: string | number
 }
 
-export const Skeleton: FC<SkeletonProps> = memo((props) => {
+export const Skeleton = memo((props: SkeletonProps) => {
   const {
     className, height, width, radius, marginTop,
   } = props

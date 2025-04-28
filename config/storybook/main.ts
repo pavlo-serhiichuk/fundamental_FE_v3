@@ -1,13 +1,11 @@
-// import type {StorybookConfig} from '@storybook/react-webpack5'
-import path from 'path'
 import {Configuration, DefinePlugin} from 'webpack'
 import {ConfigPaths} from '../build/configOptions'
 import {getCssLoader} from '../build/loaders/getCssLoader'
 
 const config = {
   stories: [
-    path.resolve(__dirname, '..', '..', 'src', '**/*.mdx'),
-    path.resolve(__dirname, '..', '..', 'src', '**/*.stories.@(js|jsx|mjs|ts|tsx)'),
+    '../../src/**/*.mdx',
+    '../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
   ],
   addons: [
     '@storybook/addon-webpack5-compiler-swc',
@@ -36,14 +34,14 @@ const config = {
       buildPath: '',
       htmlPath: '',
       entryPath: '',
-      srcPath: path.resolve(__dirname, '..', '..', 'src'),
+      srcPath: '../../src',
     }
-    config.resolve?.modules?.push(path.relative(__dirname, paths.srcPath), 'node_modules')
+    config.resolve?.modules?.push(paths.srcPath, 'node_modules')
     config.resolve?.extensions?.push('.ts', '.tsx')
     config.module?.rules?.push(getCssLoader(true))
     // Find and remove the existing rule for handling SVGs
-    // eslint-disable-next-line
-  const fileLoaderRule: any = config.module?.rules?.find((rule: any) => {
+    // @ts-ignore
+    const fileLoaderRule: any = config.module?.rules?.find((rule: any) => {
       if (rule.test) {
         return rule.test?.test('.svg')
       }

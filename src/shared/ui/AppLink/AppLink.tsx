@@ -1,4 +1,4 @@
-import {Children, type FC} from 'react'
+import {Children, type FC, Fragment} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {NavLink, type LinkProps} from 'react-router-dom'
 import * as s from './AppLink.module.scss'
@@ -21,7 +21,8 @@ export const AppLink: FC<AppLinkProps> = (props) => {
       className={cls(s.AppLink, {}, [className, s[theme]])}
       {...otherProps}
     >
-      {Children.only(<span>{children}</span>)}
+      {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+      {Children.only(<>{children}</>)}
     </NavLink>
   )
 }

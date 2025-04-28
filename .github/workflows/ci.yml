@@ -1,38 +1,49 @@
-name: linting, testing, building
+name: Linting, Testing CI Pipeline with Chromatic
+
 on:
   push:
-    branches: [ main ]
+    branches: [main, develop]
   pull_request:
-    branches: [ main ]
+    branches: [develop]
+
 jobs:
   pipeline:
+    name: CI + Chromatic
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm install
-      - name: build production project
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build production project
         run: npm run build:prod
-        if: always()
-      - name: linting typescript
+
+      - name: Lint TypeScript
         run: npm run lint:ts
-        if: always()
-      - name: linting css
+
+      - name: Lint CSS
         run: npm run lint:scss
-      - name: unit testing
-        if: always()
+
+      - name: Run Unit Tests
         run: npm run test:unit
-      - name: build storybook
-        run: npm run storybook:build
-#        if: always()
-#      - name: screenshot testing
-#        run: npm run test:ui:ci
-#        if: always()
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

@@ -1,7 +1,7 @@
 import {
   type FC, type ReactNode, type KeyboardEvent, type MouseEvent, useEffect, useCallback, Children,
 } from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls, Mods} from 'shared/lib/cls/cls'
 import {Portal} from 'shared/ui/Portal/Portal'
 import {useTheme} from 'shared/hooks/useTheme'
 import * as s from './Modal.module.scss'
@@ -18,7 +18,7 @@ export const Modal: FC<ModalProps> = (props) => {
     className, children, isOpen, onClose,
   } = props
   const {theme} = useTheme()
-  const mods = {[s.opened]: isOpen}
+  const mods: Mods = {[s.opened]: isOpen}
 
   const closeHandler = useCallback(() => {
     onClose?.()
@@ -41,7 +41,7 @@ export const Modal: FC<ModalProps> = (props) => {
   }, [isOpen, onKeyDown])
 
   const onClickContent = (e: MouseEvent) => {
-    e.stopPropagation()
+    e?.stopPropagation()
   }
 
   if (!isOpen) {
@@ -50,10 +50,11 @@ export const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={cls(s.Modal, mods, [className, theme])}>
+      <div className={cls(s.Modal, mods, [className, theme, 'app_modal'])}>
         <div onClick={closeHandler} className={s.overlay}>
           <div className={s.content} onClick={onClickContent}>
-            {Children.only(children)}
+            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
+            {Children.only(<>{children}</>)}
           </div>
         </div>
       </div>

@@ -1,15 +1,20 @@
 @use "reset";
 @use 'themes/light';
 @use 'themes/dark';
+@use 'themes/green';
 @use 'variables/globals';
 @use 'fonts/fonts';
 
-.app {
+.app,
+.app_modal {
   height: 100vh;
-  font: var(--font-m);
-  background-color: var(--content-bg);
-  color: var(--content-text-color);
   overflow: scroll;
+  font: var(--font-16);
+  color: var(--content-text-color);
+}
+
+.app {
+  background-color: var(--content-bg);
 }
 
 .app-content {
@@ -17,7 +22,3 @@
   height: calc(100vh - var(--navbar-height) - 6px);
 }
 
-.page-wrapper {
-  padding: 15px 20px;
-  width: 100%;
-}

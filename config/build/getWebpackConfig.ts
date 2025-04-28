@@ -15,6 +15,7 @@ export function getWebpackConfig(options: ConfigOptions): Configuration {
       filename: '[name].[contenthash].js',
       path: paths.buildPath,
       clean: true,
+      publicPath: '/',
     },
     plugins: getPlugins(options),
     resolve: getResolvers(options),

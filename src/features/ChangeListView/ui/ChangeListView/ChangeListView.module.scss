@@ -1,0 +1,10 @@
+.ChangeListView {
+  display: flex;
+  gap: 10px;
+}
+
+.selected {
+  svg {
+    fill: var(--view-selected);
+  }
+}

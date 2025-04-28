@@ -3,9 +3,8 @@ import {Button} from './Button'
 
 describe('Button', () => {
   test('render', () => {
-    render(<Button>def</Button>)
+    render(<Button>button</Button>)
     expect(screen.getByTestId('button')).toBeInTheDocument()
-    screen.debug()
   })
 
   test('render theme=clear', () => {

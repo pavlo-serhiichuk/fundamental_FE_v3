@@ -15,9 +15,14 @@ interface InputProps extends HTMLInputProps {
 }
 
 export const Input = memo((props: InputProps) => {
-  // const { t } = useTranslation()
   const {
-    className, label = '', type = 'text', value = '', onChange, readOnly, ...otherProps
+    className,
+    label = '',
+    type = 'text',
+    value = '',
+    onChange,
+    readOnly,
+    ...otherProps
   } = props
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -25,14 +30,15 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <div className={cls(s.Input, {}, [className])}>
+    <div data-testid="input-wrapper" className={cls(s.Input, {}, [className])}>
       {label ? (
-        <div>
+        <div data-testid="input-label">
           {label}
           :
         </div>
       ) : null}
       <input
+        data-testid="input"
         value={value}
         onChange={onChangeHandler}
         type={type}

@@ -5,11 +5,14 @@ export interface ConfigPaths {
   buildPath: string
   htmlPath: string
   srcPath: string
+  locales: string
+  buildLocales: string
 }
 
 export interface ConfigEnv {
   mode?: BuildMode,
-  port?: number
+  port?: number,
+  apiUrl?: string
 }
 
 export interface ConfigOptions {
@@ -17,4 +20,6 @@ export interface ConfigOptions {
   paths: ConfigPaths
   isDev: boolean
   port: number
+  apiUrl: string
+  project: 'frontend' | 'storybook' | 'jest'
 }

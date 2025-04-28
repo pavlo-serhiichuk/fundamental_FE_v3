@@ -1,0 +1,711 @@
+{
+  "counter": {
+    "number": 23
+  },
+  "articles": [
+    {
+      "id": "1",
+      "title": "You should know how to become a true ninja and change the world",
+      "subtitle": "... and make others lives harder",
+      "image": "https://yt3.googleusercontent.com/ytc/AGIKgqND5OpZ3zBGI_CFfNpPWs1PDQu_OmNG2IFXPcxf=s900-c-k-c0x00ffffff-no-rj",
+      "views": 10023,
+      "created": "28.02.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Стислість – сестра таланту",
+          "paragraphs": [
+            "Пишіть якомога коротший код. Покажіть, наскільки ви розумні. Пишіть якомога коротший код. Покажіть, наскільки ви розумні. Пишіть якомога коротший код. Покажіть, наскільки ви розумні.",
+            "Нехай стислі та неочевидні можливості мови стануть вам посібником.\n\nНаприклад, розглянемо таке застосування тернарного оператора '?'"
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!doctype html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\"\n          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n    <title>Document</title>\n</head>\n<body>\n<div id=\"root\"></div>\n</body>\n</html>"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Стислість – брат таланту",
+          "paragraphs": [
+            "Круто, правда? Якщо ви напишете подібне, розробник, який натрапить на цей рядок і намагатиметься зрозуміти, яке ж значення має i, пізнає неабияку радість. І врешті-решт, прийде до вас за відповідю.",
+            "Скажіть йому, що коротше – це завжди краще. Допоможіть і йому стати на шлях ніндзя."
+          ]
+        },
+        {
+          "id": "35",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "Скажіть йому, що коротше – це завжди краще. Допоможіть і йому стати на шлях ніндзя."
+          ]
+        },
+        {
+          "id": "8",
+          "type": "IMAGE",
+          "src": "https://1.zt.ua/wp-content/uploads/2022/07/js.jpg",
+          "title": "Picture 1 - painted workflow concept"
+        },
+        {
+          "id": "23",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "Екзотична змінна у якості лічильника особоливо доречна, коли тіло циклу займає одну-дві сторінки (чим більше, тим краще). У такому випадку, ті, хто зануриться глибоко у код циклу, не зможуть швидко здогадатись, що змінна x насправді є лічильником."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Become a true warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 103,
+      "created": "01.01.2022",
+      "userId": "1",
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "True samurai",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 1033,
+      "created": "10.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 123,
+      "created": "25.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Samurai",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 5023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Game changer",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 1023,
+      "created": "30.01.2024",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "How to become a true samurai...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "How to become a true warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "How to become a true samurai...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "How to become a true warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "How to become a true fighter...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://streetfighter.com/assets/images/about_chara_5.png",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "How to become a true warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "How to become a true samurai...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "How to become a true Developer and QA...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://www.profguide.io/images/article/a/4/KqdO3bPpEb.jpg",
+      "views": 123,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "ECONOMICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "How to become a true samurai...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "How to become a true Developer...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 1023,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "18",
+      "title": "How to become a true samurai...",
+      "subtitle": "... and make others lives harder",
+      "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
+      "views": 199,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "100",
+      "title": "How to become a true warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "26.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Ніндзя код",
+          "paragraphs": [
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
+            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "101",
+      "title": "How to become a true warrior and change the game",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "102",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "103",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "108",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "104",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "107",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "106",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    },
+    {
+      "id": "105",
+      "title": "Testing article",
+      "subtitle": "... and make others lives harder",
+      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
+      "views": 23,
+      "created": "27.02.2022",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": []
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "some comment",
+      "articleId": "1",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "text": "some comment. comment continuation ",
+      "articleId": "1",
+      "userId": "2"
+    },
+    {
+      "text": "коментар в підтримку",
+      "articleId": "1",
+      "userId": "1",
+      "id": "O3vd0lr"
+    },
+    {
+      "text": "2",
+      "articleId": "1",
+      "userId": "1",
+      "id": "zag2BG5"
+    },
+    {
+      "text": "another one",
+      "articleId": "1",
+      "userId": "1",
+      "id": "W5tYHSE"
+    },
+    {
+      "text": "1",
+      "articleId": "1",
+      "userId": "1",
+      "id": "__LjhZf"
+    },
+    {
+      "text": "1",
+      "articleId": "1",
+      "userId": "1",
+      "id": "eHucGaL"
+    },
+    {
+      "text": "wer",
+      "articleId": "1",
+      "userId": "2",
+      "id": "MCcSAyC"
+    },
+    {
+      "text": "dance",
+      "articleId": "1",
+      "userId": "2",
+      "id": "Kx3zorL"
+    },
+    {
+      "text": "asdf",
+      "articleId": "1",
+      "userId": "2",
+      "id": "c21nxfz"
+    },
+    {
+      "text": "another one",
+      "articleId": "2",
+      "userId": "2",
+      "id": "9A_e3Mc"
+    },
+    {
+      "text": "comment",
+      "articleId": "2",
+      "userId": "1",
+      "id": "UJawJAS"
+    },
+    {
+      "text": "asdf",
+      "articleId": "2",
+      "userId": "1",
+      "id": "sAMB00g"
+    },
+    {
+      "text": "asd",
+      "articleId": "1",
+      "userId": "1",
+      "id": "qy9k1Z9"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "111",
+      "age": 28,
+      "role": "ADMIN",
+      "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "222",
+      "age": 27,
+      "role": "USER",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "1",
+      "name": "Adminator",
+      "lastname": "Adminovych",
+      "age": 28,
+      "country": "Ukraine",
+      "currency": "USD",
+      "username": "pasha",
+      "city": "Irpin",
+      "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
+    },
+    {
+      "id": "2",
+      "name": "popo",
+      "lastname": "Serh",
+      "age": 28,
+      "country": "Ukraine",
+      "currency": "USD",
+      "username": "pasha",
+      "city": "Vinnytsia",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+    }
+  ]
+}

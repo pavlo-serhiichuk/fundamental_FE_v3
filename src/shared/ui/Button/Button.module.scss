@@ -1,8 +1,11 @@
 .Button {
   cursor: pointer;
   color: var(--content-text-color);
-  border: none;
-  outline: none;
+  z-index: 1;
+}
+
+.default {
+  color: var(--content-text-color);
 }
 
 .clear {
@@ -16,7 +19,7 @@
 .cancel {
   background: none;
   border: 1px solid var(--content-text-color);
-  padding: 4px 12px;
+  padding: 4px 10px;
   text-align: center;
 }
 
@@ -24,7 +27,8 @@
 .content-squad-m {
   height: 40px;
   width: 40px;
-  border-radius: 5px;
+  border: none;
+  border-radius: 6px;
 }
 
 .sidebar-squad-m {
@@ -38,6 +42,7 @@
 .disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  border: none;
 }
 
 .cancel {
