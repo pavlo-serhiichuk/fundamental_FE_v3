@@ -1,12 +1,12 @@
 import {type StateSchema} from 'app/providers/StoreProvider'
-import {getSignInInitialState} from 'features/SignIn/module/slice/getSignInInitialState'
+import {getSignInInitialState} from '../slice/getSignInInitialState'
 import {
   getSignInData,
   getSignInUsername,
   getSignInPassword,
   getSignInIsLoading,
   getSignInError,
-} from 'features/SignIn/module/selectors/getSignInSelectors'
+} from '../selectors/getSignInSelectors'
 
 describe('getSignInData', () => {
   test('return value', () => {

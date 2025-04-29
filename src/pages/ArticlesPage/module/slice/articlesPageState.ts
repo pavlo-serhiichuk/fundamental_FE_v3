@@ -1,6 +1,6 @@
-import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
 import {getArticleDetailsMockState} from 'features/ArticleDetails/model/slice/articleState'
 import {Article} from 'entities/Article'
+import {ArticlesPageSchema} from '../types/ArticlesPageSchema'
 
 export const articlesListInitialState: ArticlesPageSchema = {
   ids: [],

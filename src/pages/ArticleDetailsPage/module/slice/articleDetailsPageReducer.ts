@@ -3,8 +3,8 @@ import {articleDetailsCommentsReducer} from 'features/ArticleDetailsComments'
 import {
   articleDetailsRecommendationsReducer,
 } from 'features/ArticleDetailsRecommendations/module/slice/articleDetailsRecomandationsSlice'
-import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage/module/types/ArticleDetailsPageSchema'
-import {combineReducers, Reducer} from '@reduxjs/toolkit'
+import {combineReducers} from '@reduxjs/toolkit'
+import {ArticleDetailsPageSchema} from '../types/ArticleDetailsPageSchema'
 
 export const articleDetailsPageReducer = combineReducers<ArticleDetailsPageSchema>({
 // @ts-ignore

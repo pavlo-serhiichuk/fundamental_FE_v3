@@ -1,15 +1,16 @@
 import {type ThunkConfig} from 'app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {type Article} from 'entities/Article/model/types/article'
-import {getArticlesPageNumber} from 'pages/ArticlesPage/module/selectors/getArticlesPageNumber'
-import {getArticlesPageLimit} from 'pages/ArticlesPage/module/selectors/getArticlesPageLimit'
 import {
   getFiltersOrder,
   getFiltersSearchValue,
-  getFiltersSortBy, getFiltersTopicType,
+  getFiltersSortBy,
+  getFiltersTopicType,
 } from 'entities/Filters'
 import {addQueryParam} from 'shared/lib/addueryParam/addQueryParam'
 import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
+import {getArticlesPageLimit} from '../../selectors/getArticlesPageLimit'
+import {getArticlesPageNumber} from '../../selectors/getArticlesPageNumber'
 
 interface FetchArticlesListProps {
   replace?: boolean

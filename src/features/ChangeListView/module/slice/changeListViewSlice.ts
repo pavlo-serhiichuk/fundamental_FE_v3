@@ -1,6 +1,6 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {ListView, ListViewSchema} from 'features/ChangeListView/module/types/ListViewSchema'
 import {LIST_VIEW} from 'shared/const/localStorage'
+import {ListView, ListViewSchema} from '../types/ListViewSchema'
 
 const initialState: ListViewSchema = {listView: ListView.SMALL}
 

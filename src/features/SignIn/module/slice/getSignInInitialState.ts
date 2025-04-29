@@ -1,4 +1,4 @@
-import {SignInSchema} from 'features/SignIn/module/types/signInSchema'
+import {SignInSchema} from '../types/signInSchema'
 
 export function getSignInInitialState(isWithValue: boolean = false, withError: boolean = false): SignInSchema {
   return {

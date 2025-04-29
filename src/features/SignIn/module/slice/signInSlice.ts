@@ -1,6 +1,6 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {fetchSignIn} from 'features/SignIn/module/thunks/fetchSignIn'
-import {getSignInInitialState} from 'features/SignIn/module/slice/getSignInInitialState'
+import {fetchSignIn} from '../thunks/fetchSignIn'
+import {getSignInInitialState} from './getSignInInitialState'
 import {type SignInSchema} from '../types/signInSchema'
 
 const initialState: SignInSchema = getSignInInitialState()

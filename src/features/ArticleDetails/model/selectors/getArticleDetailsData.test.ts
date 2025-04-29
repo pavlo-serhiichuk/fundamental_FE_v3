@@ -1,11 +1,11 @@
 import {type StateSchema} from 'app/providers/StoreProvider'
 import {
-  ArticleDetailsSchema,
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsLoading,
-} from 'features/ArticleDetails'
+} from './getArticleDetailsData'
 import {getArticleDetailsMockState} from '../slice/articleState'
+import {ArticleDetailsSchema} from '../types/ArticleDetailsSchema'
 
 describe('getArticleDetailsData.test', () => {
   test('get data', () => {

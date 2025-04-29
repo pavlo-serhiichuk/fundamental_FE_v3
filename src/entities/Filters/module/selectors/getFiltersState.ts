@@ -1,5 +1,5 @@
 import {StateSchema} from 'app/providers/StoreProvider'
-import {SortByType} from 'entities/Filters'
+import {SortByType} from '../types/FiltersSchema'
 
 export const getFiltersState = (state: StateSchema) => state.filters
 export const getFiltersOrder = (state: StateSchema) => state.filters?.orderBy

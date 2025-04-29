@@ -1,5 +1,5 @@
-import {profileMockState} from 'entities/Profile/model/slice/profileState'
-import {type Profile, ValidationError} from 'entities/Profile'
+import {profileMockState} from '../../slice/profileState'
+import {type Profile, ValidationError} from '../../types/ProfileSchema'
 import {validateProfileForm} from './validateProfileForm'
 
 describe('validateProfileForm.test', () => {

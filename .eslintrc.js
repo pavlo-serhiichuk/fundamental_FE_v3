@@ -4,7 +4,12 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:storybook/recommended', 'plugin:react-hooks/recommended'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:storybook/recommended',
+    'plugin:react-hooks/recommended',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -16,6 +21,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'by-pavlo-path-checker',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -43,6 +49,7 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 0,
     'react/no-array-index-key': 0,
+    'by-pavlo-path-checker/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
