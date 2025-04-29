@@ -6,6 +6,7 @@ import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {useSelector} from 'react-redux'
 import {AppRouteNames} from 'shared/config/routesConfig/routesConfig'
 import i18n from 'i18next'
+import {HStack} from 'shared/ui/Stack'
 import * as s from './Tabs.module.scss'
 import {TopicType} from '../../module/types/FiltersSchema'
 
@@ -44,7 +45,7 @@ export const Tabs = (props: TabsProps) => {
   }, [dispatch, fetchData])
 
   return (
-    <div className={cls(s.Tabs, {}, [className])}>
+    <HStack gap="10" className={cls('', {}, [className])}>
       {options?.map((option) => (
         <Card
           className={cls(s.tab, {[s.selected]: topicType === option.value})}
@@ -54,6 +55,6 @@ export const Tabs = (props: TabsProps) => {
           {option.content}
         </Card>
       ))}
-    </div>
+    </HStack>
   )
 }

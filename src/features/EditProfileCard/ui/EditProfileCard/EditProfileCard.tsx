@@ -16,6 +16,7 @@ import {Text} from 'shared/ui/Text/Text'
 import {Loader} from 'shared/ui/Loader/Loader'
 import {Button} from 'shared/ui/Button/Button'
 import {updateProfileData} from 'entities/Profile/model/services/updateProfileData/updateProfileData'
+import {HStack, VStack} from 'shared/ui/Stack'
 import * as s from './EditProfileCard.module.scss'
 
 interface EditProfileCardProps {
@@ -74,8 +75,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
 
   return (
     <div className={s.EditProfileCard}>
-      {/* {id === user?.id ? <EditProfileHeader/> : null} */}
-      <div className={s.data}>
+      <VStack gap="10">
         <div className={s.avatarWrapper}>
           <Avatar src={form?.avatar || ''} alt="profile" size={100} />
         </div>
@@ -113,11 +113,11 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
         />
         <CountrySelect readonly={readonly} value={form?.country} onChange={onChangeCountry} />
         <CurrencySelect readonly={readonly} value={form?.currency} onChange={onChangeCurrency} />
-      </div>
-      <div className={s.buttons}>
+      </VStack>
+      <HStack justify="end" gap="8">
         <Button disabled={isUpdating} onClick={onCancel} theme="cancel">{t('Cancel')}</Button>
         <Button disabled={isUpdating} onClick={onSave} theme="bordered">{t('Save')}</Button>
-      </div>
+      </HStack>
     </div>
   )
 }

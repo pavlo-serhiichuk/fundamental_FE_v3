@@ -1,6 +1,6 @@
 import {type ChangeEvent, type InputHTMLAttributes, memo} from 'react'
 import {cls} from 'shared/lib/cls/cls'
-// import { useTranslation } from 'react-i18next'
+import {VStack} from '../Stack'
 import * as s from './Input.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
@@ -30,7 +30,11 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <div data-testid="input-wrapper" className={cls(s.Input, {}, [className])}>
+    <VStack
+      data-testid="input-wrapper"
+      gap="3"
+      className={cls(s.Input, {}, [className])}
+    >
       {label ? (
         <div data-testid="input-label">
           {label}
@@ -40,11 +44,12 @@ export const Input = memo((props: InputProps) => {
       <input
         data-testid="input"
         value={value}
+        className={s.inputEl}
         onChange={onChangeHandler}
         type={type}
         {...otherProps}
         readOnly={readOnly}
       />
-    </div>
+    </VStack>
   )
 })

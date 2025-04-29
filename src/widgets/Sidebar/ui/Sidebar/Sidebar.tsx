@@ -4,6 +4,7 @@ import {Button} from 'shared/ui/Button/Button'
 import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher'
 import {LangSwitcher} from 'shared/ui/LandSwitcher/LangSwitcher'
 import {useSelector} from 'react-redux'
+import {VStack} from 'shared/ui/Stack'
 import {ISidebarItem} from '../../model/types/sidebar'
 import * as s from './Sidebar.module.scss'
 import {SidebarItem} from '../SidebarItem/SidebarItem'
@@ -23,11 +24,11 @@ export const Sidebar = memo((props: SidebarProps) => {
   }
   return (
     <menu data-testid="sidebar" className={cls(s.Sidebar, {[s.collapsed]: collapsed}, [className])}>
-      <div className={s.links}>
+      <VStack>
         {sidebarItems.map((item: ISidebarItem) => (
           <SidebarItem key={item.path} item={item} collapsed={collapsed} />
         ))}
-      </div>
+      </VStack>
       <div className={cls(s.switchers, {[s.switchersCollapsed]: collapsed})}>
         <ThemeSwitcher />
         <LangSwitcher className={s.sidebarLang} />

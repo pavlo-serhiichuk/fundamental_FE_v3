@@ -3,15 +3,15 @@ import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {ArticlesList} from 'entities/Article/ui/ArticlesList/ArticlesList'
 import {useSelector} from 'react-redux'
-import {
-  getArticleDetailsRecommendations,
-} from 'features/ArticleDetailsRecommendations/module/slice/articleDetailsRecomandationsSlice'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
+import {ListView} from 'features/ChangeListView'
 import {
   fetchArticleDetailsRecommendations,
-} from 'features/ArticleDetailsRecommendations/module/services/fetchArticleDetailsRecommendations/fetchArticleDetailsRecommendations'
-import {ListView} from 'features/ChangeListView'
+} from '../../module/services/fetchArticleDetailsRecommendations/fetchArticleDetailsRecommendations'
+import {
+  getArticleDetailsRecommendations,
+} from '../../module/slice/articleDetailsRecomandationsSlice'
 import * as s from './ArticleDetailsRecommendations.module.scss'
 
 interface ArticleDetailsRecommendationsProps {
@@ -26,7 +26,7 @@ export const ArticleDetailsRecommendations = memo((props: ArticleDetailsRecommen
   useInitialEffect(() => {
     dispatch(fetchArticleDetailsRecommendations())
   })
-  // if ()
+
   return (
     <div className={cls(s.ArticleDetailsRecommendations, {}, [className])}>
       <ArticlesList articles={articles} listView={ListView.SMALL} className={s.recommendationsList} />

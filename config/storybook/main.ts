@@ -35,6 +35,8 @@ const config = {
       htmlPath: '',
       entryPath: '',
       srcPath: '../../src',
+      locales: '',
+      buildLocales: '',
     }
     config.resolve?.modules?.push(paths.srcPath, 'node_modules')
     config.resolve?.extensions?.push('.ts', '.tsx')

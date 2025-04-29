@@ -9,6 +9,7 @@ import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/Dyn
 import {getUserAuthData} from 'entities/User'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {getArticleDetailsError} from 'features/ArticleDetails'
+import {HStack} from 'shared/ui/Stack'
 import {getAddCommentFormText} from '../../module/selectors/getAddCommentFormSelectors'
 import {addCommentFormSliceActions, addCommentFormReducer} from '../../module/slice/addCommentFormSlice'
 import * as s from './AddCommentForm.module.scss'
@@ -39,16 +40,17 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <div className={cls(s.AddCommentForm, {}, [className])}>
-        <Avatar src={user?.avatar} alt={user?.username || ''} size={30} />
-        <Input
-          value={text || ''}
-          className={s.commentInput}
-          onChange={onChangeComment}
-          placeholder={t('Add comment:')}
-        />
-        <Button disabled={!text} theme="bordered" onClick={sendComment}>{t('Send')}</Button>
-      </div>
+      <HStack className={s.AddCommentForm} gap="12">
+        <HStack gap="16" max>
+          <Avatar src={user?.avatar} alt={user?.username || ''} size={30} />
+          <Input
+            value={text || ''}
+            onChange={onChangeComment}
+            placeholder={t('Add comment:')}
+          />
+        </HStack>
+        <Button className={s.button} disabled={!text} theme="bordered" onClick={sendComment}>{t('Send')}</Button>
+      </HStack>
     </DynamicReducerLoader>
   )
 }
