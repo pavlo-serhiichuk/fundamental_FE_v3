@@ -47,6 +47,7 @@ export const Header: FC<HeaderProps> = (props) => {
       {isSignInModalOpen && <SignInModal isOpen={isSignInModalOpen} onClose={onCloseSignInModal} />}
       <div className={s.links}>
         <Button onClick={onOpen} theme="bordered">{t('Sign in')}</Button>
+        <Button onClick={onOpen} theme="bordered">{t('Sign in')}</Button>
       </div>
     </div>
   )

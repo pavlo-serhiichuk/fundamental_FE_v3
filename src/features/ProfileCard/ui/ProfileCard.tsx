@@ -1,6 +1,8 @@
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
-import {getProfileData, getProfileError, getProfileLoading, profileActions,} from 'entities/Profile'
+import {
+  getProfileData, getProfileError, getProfileLoading, profileActions,
+} from 'entities/Profile'
 import {Text} from 'shared/ui/Text/Text'
 import {cls} from 'shared/lib/cls/cls'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
@@ -10,8 +12,8 @@ import {useCallback} from 'react'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {getUserAuthData} from 'entities/User'
 import {useParams} from 'react-router-dom'
+import {Skeleton} from 'shared/ui/Skeleton/Skeleton'
 import * as s from './ProfileCard.module.scss'
-import {Skeleton} from "shared/ui/Skeleton/Skeleton";
 
 interface ProfileCardProps {
   readonly?: boolean
@@ -34,7 +36,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (error) {
     return (
       <div className={cls(s.ProfileCard, {}, [className])}>
-        <Text title={error}/>
+        <Text title={error} />
       </div>
     )
   }
@@ -43,10 +45,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <div className={cls(s.ProfileCard, {}, [className])}>
         <div className={s.header}>
           <div>
-            <Skeleton height={70} width={70} radius={'50%'}/>
+            <Skeleton height={70} width={70} radius="50%" />
           </div>
           <div>
-            <Skeleton height={20} width={100}/>
+            <Skeleton height={20} width={100} />
           </div>
         </div>
       </div>
@@ -56,13 +58,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
   return (
     <div className={cls(s.ProfileCard, {}, [className])}>
       <div className={s.header}>
-        <Avatar src={data?.avatar || ''} alt="profile" size={70}/>
+        <Avatar src={data?.avatar || ''} alt="profile" size={70} />
         <div>
-          <Text title={`${data?.name} ${data?.lastname}`}/>
-          <Text title={`${data?.age} ${t('years old')}`} size="text_size_s" fontStyle="italic-fs"/>
+          <Text title={`${data?.firstname} ${data?.lastname}`} />
+          <Text title={`${data?.age} ${t('years old')}`} size="text_size_s" fontStyle="italic-fs" />
           <div className={s.location}>
-            <PinIcon/>
-            <Text title={`${data?.country}, ${data?.city}`} size="text_size_s" fontStyle="italic-fs"/>
+            <PinIcon />
+            <Text title={`${data?.country}, ${data?.city}`} size="text_size_s" fontStyle="italic-fs" />
           </div>
         </div>
       </div>

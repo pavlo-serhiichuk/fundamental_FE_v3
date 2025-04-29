@@ -684,10 +684,10 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     }
   ],
-  "profiles": [
+  "profile": [
     {
       "id": "1",
-      "name": "Adminator",
+      "firstname": "Adminator",
       "lastname": "Adminovych",
       "age": 28,
       "country": "Ukraine",
@@ -698,7 +698,7 @@
     },
     {
       "id": "2",
-      "name": "popo",
+      "firstname": "popo",
       "lastname": "Serh",
       "age": 28,
       "country": "Ukraine",

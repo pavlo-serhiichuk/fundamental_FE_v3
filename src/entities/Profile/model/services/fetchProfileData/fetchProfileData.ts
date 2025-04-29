@@ -7,7 +7,7 @@ export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<Va
   async (articleId, thunkAPI) => {
     const {extra} = thunkAPI
     try {
-      const response = await extra.api.get(`/profiles/${articleId}`)
+      const response = await extra.api.get(`/profile/${articleId}`)
       return response.data
     } catch (e) {
       return thunkAPI.rejectWithValue([ValidationError.SERVER_ERROR])
