@@ -3,7 +3,7 @@ import {type Profile, ValidationError} from '../../types/ProfileSchema'
 export function validateProfileForm(profile: Profile): ValidationError[] {
   const errors: ValidationError[] = []
 
-  if (!profile?.name) {
+  if (!profile?.firstname) {
     errors.push(ValidationError.FIRSTNAME_ERROR)
   }
 

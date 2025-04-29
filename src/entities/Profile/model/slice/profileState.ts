@@ -13,7 +13,7 @@ export const profileInitialState: ProfileSchema = {
 
 export const profileMockForm: Profile = {
   id: '1',
-  name: 'Name',
+  firstname: 'Name',
   lastname: 'Lastname',
   age: 22,
   city: 'City',

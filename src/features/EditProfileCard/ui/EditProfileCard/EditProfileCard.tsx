@@ -1,5 +1,7 @@
 import {type FC, useCallback} from 'react'
-import {getProfileError, getProfileForm, getProfileLoading, getProfileUpdating, profileActions,} from 'entities/Profile'
+import {
+  getProfileError, getProfileForm, getProfileLoading, getProfileUpdating, profileActions,
+} from 'entities/Profile'
 import {useSelector} from 'react-redux'
 import {getProfileReadonly} from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
@@ -30,7 +32,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
   const isUpdating = useSelector(getProfileUpdating)
 
   const onChangeFirstName = useCallback((value: string) => {
-    dispatch(profileActions.updateProfileForm({name: value}))
+    dispatch(profileActions.updateProfileForm({firstname: value}))
   }, [dispatch])
   const onChangeLastname = useCallback((value: string) => {
     dispatch(profileActions.updateProfileForm({lastname: value}))
@@ -89,7 +91,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
           : null}
         <Input
           readOnly={readonly}
-          value={form?.name || ''}
+          value={form?.firstname || ''}
           placeholder={t('Your name...')}
           onChange={onChangeFirstName}
           label={t('Name')}

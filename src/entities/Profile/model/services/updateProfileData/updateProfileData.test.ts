@@ -24,7 +24,7 @@ describe('updateProfileData', () => {
   })
 
   test('validation error', async () => {
-    const thunk = new TestAsyncThunk(updateProfileData, {profile: {form: {...profileMockForm, name: ''}}})
+    const thunk = new TestAsyncThunk(updateProfileData, {profile: {form: {...profileMockForm, firstname: ''}}})
     thunk.api.put.mockReturnValue(Promise.resolve({status: 403}))
     const result = await thunk.callThunk()
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
