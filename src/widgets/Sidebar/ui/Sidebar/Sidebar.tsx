@@ -1,4 +1,4 @@
-import {type FC, memo, useState} from 'react'
+import {memo, useState} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {Button} from 'shared/ui/Button/Button'
 import {ThemeSwitcher} from 'shared/ui/ThemeSwitcher/ThemeSwitcher'

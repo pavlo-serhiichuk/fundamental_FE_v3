@@ -47,8 +47,8 @@ export const Input = memo((props: InputProps) => {
         className={s.inputEl}
         onChange={onChangeHandler}
         type={type}
-        {...otherProps}
         readOnly={readOnly}
+        {...otherProps}
       />
     </VStack>
   )

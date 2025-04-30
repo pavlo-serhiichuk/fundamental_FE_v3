@@ -46,10 +46,10 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
   }, [dispatch])
   const onChangeCurrency = useCallback((value: Currency) => {
     dispatch(profileActions.updateProfileForm({currency: value}))
-  }, [])
+  }, [dispatch])
   const onChangeCountry = useCallback((value: Country) => {
     dispatch(profileActions.updateProfileForm({country: value}))
-  }, [])
+  }, [dispatch])
   const onCancel = useCallback(() => {
     dispatch(profileActions.resetForm())
   }, [dispatch])

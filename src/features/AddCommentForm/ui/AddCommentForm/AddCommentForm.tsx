@@ -1,5 +1,4 @@
 import {type FC} from 'react'
-import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input/Input'
 import {useSelector} from 'react-redux'
@@ -15,7 +14,6 @@ import {addCommentFormSliceActions, addCommentFormReducer} from '../../module/sl
 import * as s from './AddCommentForm.module.scss'
 
 export interface AddCommentFormProps {
-  className?: string
   sendComment: () => void
 }
 
@@ -25,7 +23,7 @@ const reducers: ReducersList = {
 
 const AddCommentForm: FC<AddCommentFormProps> = (props) => {
   const {t} = useTranslation()
-  const {className, sendComment} = props
+  const {sendComment} = props
   const text = useSelector(getAddCommentFormText)
   const user = useSelector(getUserAuthData)
   const dispatch = useAppDispatch()
