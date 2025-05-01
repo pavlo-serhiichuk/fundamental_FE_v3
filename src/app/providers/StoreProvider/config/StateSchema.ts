@@ -8,14 +8,12 @@ import {type AxiosInstance} from 'axios'
 import {type To} from '@remix-run/router'
 import {SignInSchema} from 'features/SignIn'
 import {ProfileSchema} from 'entities/Profile'
-import {ArticleDetailsCommentsSchema} from 'features/ArticleDetailsComments'
 import {ArticlesPageSchema} from 'pages/ArticlesPage'
 import {ListViewSchema} from 'features/ChangeListView'
 import {ScrollRecoverSchema} from 'features/ScrollRecover/module/types/ScrollRecoverSchema'
 import {FiltersSchema} from 'entities/Filters'
-import {ArticleDetailsSchema} from 'features/ArticleDetails'
-import {AddCommentSchema} from 'features/AddCommentForm'
 import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage/module/types/ArticleDetailsPageSchema'
+import {AddCommentSchema} from 'entities/Comment'
 
 export interface StateSchema {
   counter: CounterSchema

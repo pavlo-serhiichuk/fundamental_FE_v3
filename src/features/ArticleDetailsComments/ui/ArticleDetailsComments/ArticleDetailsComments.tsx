@@ -2,9 +2,8 @@ import {type FC, useCallback} from 'react'
 import {useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {cls} from 'shared/lib/cls/cls'
-import {CommentList} from 'entities/Comment'
+import {AddCommentForm, CommentList} from 'entities/Comment'
 import {
-  articleDetailsCommentsReducer,
   getArticleDetailsComments,
   fetchArticleCommentsById,
   getArticleDetailsCommentsLoading, sendArticleComment,
@@ -12,7 +11,6 @@ import {
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import {getArticleDetailsError} from 'features/ArticleDetails'
-import {AddCommentForm} from 'features/AddCommentForm'
 import * as s from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
