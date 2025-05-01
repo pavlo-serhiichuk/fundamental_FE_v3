@@ -7,6 +7,7 @@ import {CombinedState} from '@reduxjs/toolkit/query'
 import {scrollRecoverReducer} from 'features/ScrollRecover'
 import {changeListViewReducer} from 'features/ChangeListView'
 import {filtersReducer} from 'entities/Filters'
+import {rtkApi} from 'shared/api/rtkApi'
 import {StateSchema, ThunkExtraArg} from './StateSchema'
 
 export function createReduxStore(
@@ -20,6 +21,7 @@ export function createReduxStore(
     listView: changeListViewReducer,
     scrollRecover: scrollRecoverReducer,
     filters: filtersReducer,
+    [rtkApi.reducerPath]: rtkApi.reducer,
   }
 
   const reducerManager = createReducerManager(rootReducers)
@@ -36,7 +38,7 @@ export function createReduxStore(
       thunk: {
         extraArgument: extraArg,
       },
-    }),
+    }).concat(rtkApi.middleware),
     devTools: __IS_DEV__,
   })
 

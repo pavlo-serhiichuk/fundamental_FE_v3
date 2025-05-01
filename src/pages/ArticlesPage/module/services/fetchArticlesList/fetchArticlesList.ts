@@ -35,7 +35,7 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
           title_like: searchValue,
           _order: orderBy,
           _sort: sortBy,
-          type: topicType === 'ALL' ? undefined : topicType,
+          type_like: topicType === 'ALL' ? undefined : topicType,
         },
       })
       addQueryParam({

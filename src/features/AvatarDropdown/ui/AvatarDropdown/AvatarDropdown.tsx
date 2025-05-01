@@ -31,7 +31,6 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
     // }] : []),
     {
       content: t('Profile'),
-      // href: getRouteProfile(authData.id || ''),
       onClick: () => { navigate(getRouteProfile(authData.id || '')) },
     },
     {

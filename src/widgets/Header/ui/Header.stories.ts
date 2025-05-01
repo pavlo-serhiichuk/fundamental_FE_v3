@@ -24,12 +24,13 @@ export const Primary: Story = {
   args: {},
   decorators: [StoreDecorator({})],
 }
-export const PrimarySignedIn: Story = {
-  args: {},
-  decorators: [StoreDecorator({user: {authData: {username: 'username', password: 'password'}}})],
-}
 
 export const PrimaryDark: Story = {
   args: {},
   decorators: [ThemeDecorator('dark'), StoreDecorator({})],
+}
+
+export const PrimarySignedIn: Story = {
+  args: {},
+  decorators: [StoreDecorator({user: {authData: {username: 'username', password: 'password'}}})],
 }

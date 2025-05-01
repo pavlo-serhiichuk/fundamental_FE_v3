@@ -14,6 +14,7 @@ import {ScrollRecoverSchema} from 'features/ScrollRecover/module/types/ScrollRec
 import {FiltersSchema} from 'entities/Filters'
 import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage/module/types/ArticleDetailsPageSchema'
 import {AddCommentSchema} from 'entities/Comment'
+import {rtkApi} from 'shared/api/rtkApi'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -27,6 +28,7 @@ export interface StateSchema {
   addCommentForm?: AddCommentSchema
   articleDetailsPage?: ArticleDetailsPageSchema
   articlesPage?: ArticlesPageSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }
 
 export type StateSchemaKey = keyof StateSchema

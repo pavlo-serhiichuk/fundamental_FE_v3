@@ -6,3 +6,4 @@ export {ArticleBlockCodeComponent} from './ui/ArticleBlockCodeComponent/ArticleB
 export {ArticleBlockTextComponent} from './ui/ArticleBlockTextComponent/ArticleBlockTextComponent'
 export {ArticleBlockImageComponent} from './ui/ArticleBlockImageComponent/ArticleBlockImageComponent'
 export {ArticlesListItem} from './ui/ArticlesListItem/ArticlesListItem'
+export {ArticlesList} from './ui/ArticlesList/ArticlesList'

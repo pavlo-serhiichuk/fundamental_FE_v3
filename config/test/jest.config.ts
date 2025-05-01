@@ -44,6 +44,14 @@ const config = {
   testPathIgnorePatterns: [
     '/node_modules/',
   ],
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      openReport: true,
+    }],
+  ],
 }
 
 export default config

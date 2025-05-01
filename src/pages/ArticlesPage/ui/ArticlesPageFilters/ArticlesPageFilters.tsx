@@ -9,9 +9,9 @@ import {AppRouteNames} from 'shared/config/routesConfig/routesConfig'
 import {HStack} from 'shared/ui/Stack'
 import {fetchArticlesList} from '../../module/services/fetchArticlesList/fetchArticlesList'
 import {articlesPageActions} from '../../module/slice/articlesPageSlice'
-import * as s from './ArticlesFilters.module.scss'
+import * as s from './ArticlesPageFilters.module.scss'
 
-export const ArticlesFilters = memo(() => {
+export const ArticlesPageFilters = memo(() => {
   const dispatch = useAppDispatch()
 
   const fetchFilteredArticlesList = useCallback(() => {
@@ -20,6 +20,7 @@ export const ArticlesFilters = memo(() => {
   }, [dispatch])
 
   const debouncedFilteredArticlesList = useDebounce(fetchFilteredArticlesList, 500)
+
   return (
     <div className={cls(s.ArticlesFilters, {})}>
       <HStack justify="between" className={s.controllers}>

@@ -1,16 +1,16 @@
-import {type FC, useCallback} from 'react'
+import {useCallback} from 'react'
 import {useInitialEffect} from 'shared/hooks/useInitialEffect'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import DynamicReducerLoader, {ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import {Page} from 'widgets/Page/Page'
-import {fetchNextArticlesList} from 'pages/ArticlesPage/module/services/fetchNextArticlesList/fetchNextArticlesList'
-import {initArticlesList} from 'pages/ArticlesPage/module/services/initArticlesList/initArticlesList'
 import {useSearchParams} from 'react-router-dom'
-import {ArticlesFilters} from 'pages/ArticlesPage/ui/ArticlesFilters/ArticlesFilters'
-import {ArticlesList} from 'entities/Article/ui/ArticlesList/ArticlesList'
+import {ArticlesList} from 'entities/Article'
 import {useSelector} from 'react-redux'
-import {getArticlesIsLoading} from 'pages/ArticlesPage/module/selectors/getArticlesIsLoading'
 import {getListView} from 'features/ChangeListView'
+import {ArticlesPageFilters} from '../ArticlesPageFilters/ArticlesPageFilters'
+import {getArticlesIsLoading} from '../../module/selectors/getArticlesIsLoading'
+import {initArticlesList} from '../../module/services/initArticlesList/initArticlesList'
+import {fetchNextArticlesList} from '../../module/services/fetchNextArticlesList/fetchNextArticlesList'
 import {articlesPageReducer, getArticlesList} from '../../module/slice/articlesPageSlice'
 
 const reducers: ReducersList = {
@@ -35,7 +35,7 @@ const ArticlesPage = () => {
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onScrollEnd}>
-        <ArticlesFilters />
+        <ArticlesPageFilters />
         <ArticlesList isLoading={isLoading} articles={articles} listView={listView} />
       </Page>
     </DynamicReducerLoader>

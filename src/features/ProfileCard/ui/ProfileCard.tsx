@@ -1,7 +1,10 @@
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
 import {
-  getProfileData, getProfileError, getProfileLoading, profileActions,
+  getProfileData,
+  getProfileError,
+  getProfileLoading,
+  profileActions,
 } from 'entities/Profile'
 import {Text} from 'shared/ui/Text/Text'
 import {cls} from 'shared/lib/cls/cls'
@@ -16,14 +19,13 @@ import {Skeleton} from 'shared/ui/Skeleton/Skeleton'
 import * as s from './ProfileCard.module.scss'
 
 interface ProfileCardProps {
-  readonly?: boolean
   className?: string
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
+  const {className} = props
   const {t} = useTranslation('profile')
   const dispatch = useAppDispatch()
-  const {className} = props
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
   const data = useSelector(getProfileData)

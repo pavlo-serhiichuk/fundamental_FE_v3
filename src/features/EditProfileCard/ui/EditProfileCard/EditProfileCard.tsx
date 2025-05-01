@@ -1,12 +1,16 @@
 import {type FC, useCallback} from 'react'
-import {
-  getProfileError, getProfileForm, getProfileLoading, getProfileUpdating, profileActions,
-} from 'entities/Profile'
 import {useSelector} from 'react-redux'
-import {getProfileReadonly} from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {Currency, CurrencySelect} from 'entities/Currency'
 import {Country} from 'entities/Country'
+import {
+  getProfileError,
+  getProfileForm,
+  getProfileLoading,
+  getProfileUpdating,
+  getProfileReadonly,
+  profileActions,
+} from 'entities/Profile'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
 import {Input} from 'shared/ui/Input/Input'
 import {CountrySelect} from 'entities/Country/ui/CountrySelect/CountrySelect'
