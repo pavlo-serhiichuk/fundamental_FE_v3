@@ -5,22 +5,30 @@ import {ListBoxItem} from 'shared/ui/Popups/ui/ListBox/ListBox'
 import * as s from './CurrencySelect.module.scss'
 
 interface CurrencySelectProps {
-  className?: string
   readonly?: boolean
   value?: Currency
   onChange?: (value: Currency) => void
+  testId: string
 }
 
 const currenciesOptions: ListBoxItem<Currency>[] = Object.entries(currencies).map(([value, content]) => ({value, content} as {value: Currency, content: Currency}))
 
-export const CurrencySelect = memo(({readonly, onChange, value}: CurrencySelectProps) => (
-  <ListBox<Currency>
-    readonly={!!readonly}
-    value={value}
-    items={currenciesOptions}
-    onChange={onChange}
-    label="Currency"
-    direction="bottom right"
-    className={s.CurrencySelect}
-  />
-))
+export const CurrencySelect = memo((props: CurrencySelectProps) => {
+  const {
+    readonly,
+    onChange,
+    value,
+    testId = 'testId',
+  } = props
+  return (
+    <ListBox<Currency>
+      readonly={!!readonly}
+      value={value}
+      items={currenciesOptions}
+      onChange={onChange}
+      label="Currency"
+      className={s.CurrencySelect}
+      testId={`${testId}.CurrencySelect`}
+    />
+  )
+})

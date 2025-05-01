@@ -50,6 +50,7 @@ module.exports = {
     'no-undef': 0,
     'react/no-array-index-key': 0,
     'by-pavlo-path-checker/path-checker': 'error',
+    'class-methods-use-this': 0
   },
   globals: {
     __IS_DEV__: true,

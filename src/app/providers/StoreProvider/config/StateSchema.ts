@@ -22,13 +22,14 @@ export interface StateSchema {
   listView: ListViewSchema
   scrollRecover: ScrollRecoverSchema
   filters: FiltersSchema
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
+
   // async reducers
   signIn?: SignInSchema
   profile?: ProfileSchema
   addCommentForm?: AddCommentSchema
   articleDetailsPage?: ArticleDetailsPageSchema
   articlesPage?: ArticlesPageSchema
-  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 }
 
 export type StateSchemaKey = keyof StateSchema

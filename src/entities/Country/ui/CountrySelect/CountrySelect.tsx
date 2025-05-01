@@ -1,30 +1,30 @@
 import React, {memo} from 'react'
-import {countries, type Country} from 'entities/Country'
 import {ListBox} from 'shared/ui/Popups'
 import {useTranslation} from 'react-i18next'
+import {countries, type Country} from '../../model/Country'
 import * as s from './CountrySelect.module.scss'
 
 interface CountrySelectProps {
-  className?: string
   readonly?: boolean
   value?: Country
+  testId?: string
   onChange?: (value: Country) => void
 }
 
 const countriesOptions = Object.entries(countries).map(([value, content]) => ({value, content} as {value: Country, content: Country}))
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {readonly, value, onChange = () => {}} = props
+  const {
+    readonly,
+    value,
+    onChange = () => {},
+    testId = 'testId',
+  } = props
   const {t} = useTranslation()
   return (
-    // <Select
-    //   readonly={readonly}
-    //   selectName="Country"
-    //   value={value}
-    //   options={countriesOptions}
-    //   onChange={onChange}
-    // />
+    // <div data-testid="testId.CountrySelect.ListBox" />
     <ListBox<Country>
+      testId={`${testId}.CountrySelect`}
       readonly={readonly}
       value={value}
       onChange={onChange}

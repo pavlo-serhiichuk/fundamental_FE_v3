@@ -24,6 +24,7 @@ interface ListBoxProps<T extends string> {
   readonly?: boolean
   direction?: ListBoxDirection
   label?: string
+  testId?: string
 }
 
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
@@ -36,6 +37,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     readonly,
     direction = 'bottom',
     label,
+    testId = 'testId',
   } = props
 
   const renderItem = useCallback((item: ListBoxItem<T>) => (
@@ -56,7 +58,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
         </li>
       )}
     </HListBox.Option>
-  ), [items])
+  ), [])
 
   return (
     <HStack
@@ -64,6 +66,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       gap="8"
       align="center"
       className={className}
+      data-testid={`${testId}.ListBox`}
     >
       {label && (
         <div className={s.label}>{`${label}:`}</div>
@@ -75,7 +78,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
         className={cls(s.ListBox, {}, [])}
       >
         <HListBox.Button as="div" className={s.trigger}>
-          <Button disabled={readonly}>
+          <Button disabled={readonly} theme="bordered">
             <HStack
               align="center"
               justify="between"

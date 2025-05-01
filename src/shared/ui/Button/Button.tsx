@@ -11,17 +11,23 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme
   disabled?: boolean | undefined
   children?: ReactNode
+  testId?: string
 }
 
 export const Button = memo((props: ButtonProps) => {
   const {
-    className, theme = 'default', children, disabled = false, ...otherProps
+    className,
+    theme = 'default',
+    children,
+    disabled = false,
+    testId = 'testId',
+    ...otherProps
   } = props
 
   return (
     <button
       type="button"
-      data-testid="button"
+      data-testid={`${testId}.Button`}
       disabled={disabled}
       className={cls(s.Button, {[s.disabled]: disabled}, [s[theme], className])}
       {...otherProps}

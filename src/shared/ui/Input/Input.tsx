@@ -12,6 +12,7 @@ interface InputProps extends HTMLInputProps {
   label?: string
   value?: string | number
   onChange?: ((value: string) => void) | undefined
+  testId?: string
 }
 
 export const Input = memo((props: InputProps) => {
@@ -22,6 +23,7 @@ export const Input = memo((props: InputProps) => {
     value = '',
     onChange,
     readOnly,
+    testId = 'testId',
     ...otherProps
   } = props
 
@@ -33,7 +35,7 @@ export const Input = memo((props: InputProps) => {
     <VStack
       data-testid="input-wrapper"
       gap="3"
-      className={cls(s.Input, {}, [className])}
+      className={cls(s.Input, {[s.readonly]: !!readOnly}, [className])}
     >
       {label ? (
         <div data-testid="input-label">
@@ -42,7 +44,7 @@ export const Input = memo((props: InputProps) => {
         </div>
       ) : null}
       <input
-        data-testid="input"
+        data-testid={`Input.${testId}`}
         value={value}
         className={s.inputEl}
         onChange={onChangeHandler}

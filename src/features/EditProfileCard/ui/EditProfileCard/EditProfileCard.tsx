@@ -9,6 +9,8 @@ import {
   getProfileLoading,
   getProfileUpdating,
   getProfileReadonly,
+  getProfileValidationErrors,
+  updateProfileData,
   profileActions,
 } from 'entities/Profile'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
@@ -19,7 +21,6 @@ import {cls} from 'shared/lib/cls/cls'
 import {Text} from 'shared/ui/Text/Text'
 import {Loader} from 'shared/ui/Loader/Loader'
 import {Button} from 'shared/ui/Button/Button'
-import {updateProfileData} from 'entities/Profile/model/services/updateProfileData/updateProfileData'
 import {HStack, VStack} from 'shared/ui/Stack'
 import * as s from './EditProfileCard.module.scss'
 
@@ -35,6 +36,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
   const isUpdating = useSelector(getProfileUpdating)
+  const validationErrors = useSelector(getProfileValidationErrors)
 
   const onChangeFirstName = useCallback((value: string) => {
     dispatch(profileActions.updateProfileForm({firstname: value}))
@@ -78,49 +80,61 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
   }
 
   return (
-    <div className={s.EditProfileCard}>
+    <div className={s.EditProfileCard} data-testid="EditProfileCard">
+      {validationErrors?.map((error) => <Text key={error} theme="error" text={t(error)} />)}
       <VStack gap="10">
         <div className={s.avatarWrapper}>
           <Avatar src={form?.avatar || ''} alt="profile" size={100} />
         </div>
-        {!readonly
-          ? (
-            <Input
-              value={form?.avatar || ''}
-              placeholder={t('Your avatar...')}
-              onChange={onChangeAvatar}
-              label={t('Avatar')}
-            />
-          )
-          : null}
         <Input
-          readOnly={readonly}
+          readOnly={isUpdating}
+          value={form?.avatar || ''}
+          placeholder={t('Your avatar...')}
+          onChange={onChangeAvatar}
+          label={t('Avatar')}
+          testId="Avatar"
+        />
+        <Input
+          readOnly={isUpdating}
           value={form?.firstname || ''}
           placeholder={t('Your name...')}
           onChange={onChangeFirstName}
           label={t('Name')}
+          testId="Firstname"
         />
         <Input
-          readOnly={readonly}
+          readOnly={isUpdating}
           value={form?.lastname || ''}
           placeholder={t('Your lastname...')}
           label={t('Lastname')}
           onChange={onChangeLastname}
+          testId="Lastname"
         />
         <Input
-          readOnly={readonly}
+          readOnly={isUpdating}
           value={form?.age || ''}
           type="number"
           placeholder={t('Your age...')}
           label={t('Age')}
           onChange={onChangeAge}
+          testId="Age"
         />
-        <CountrySelect readonly={readonly} value={form?.country} onChange={onChangeCountry} />
-        <CurrencySelect readonly={readonly} value={form?.currency} onChange={onChangeCurrency} />
+        <CountrySelect
+          testId="EditProfileCard"
+          readonly={isUpdating}
+          value={form?.country}
+          onChange={onChangeCountry}
+        />
+        <CurrencySelect
+          readonly={isUpdating}
+          testId="EditProfileCard"
+          value={form?.currency}
+          onChange={onChangeCurrency}
+        />
       </VStack>
       <HStack justify="end" gap="8" className={s.bottom}>
-        <Button disabled={isUpdating} onClick={onCancel} theme="cancel">{t('Cancel')}</Button>
-        <Button disabled={isUpdating} onClick={onSave} theme="bordered">{t('Save')}</Button>
+        <Button testId="EditProfileCard.Cancel" disabled={isUpdating} onClick={onCancel} theme="cancel">{t('Cancel')}</Button>
+        <Button testId="EditProfileCard.Save" disabled={isUpdating} onClick={onSave} theme="bordered">{t('Save')}</Button>
       </HStack>
     </div>
   )
