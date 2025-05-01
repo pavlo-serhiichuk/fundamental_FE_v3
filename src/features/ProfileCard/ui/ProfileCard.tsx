@@ -36,7 +36,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (error) {
     return (
       <div className={cls(s.ProfileCard, {}, [className])}>
-        <Text title={error} />
+        <Text text={error} />
       </div>
     )
   }
@@ -60,11 +60,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <div className={s.header}>
         <Avatar src={data?.avatar || ''} alt="profile" size={70} />
         <div>
-          <Text title={`${data?.firstname} ${data?.lastname}`} />
-          <Text title={`${data?.age} ${t('years old')}`} size="text_size_s" fontStyle="italic-fs" />
+          <Text title={`${data?.firstname} ${data?.lastname}`} size="text_size_s" />
+          <Text text={`${data?.age} ${t('years old')}`} fontStyle="italic-fs" />
           <div className={s.location}>
             <PinIcon />
-            <Text title={`${data?.country}, ${data?.city}`} size="text_size_s" fontStyle="italic-fs" />
+            <Text text={`${data?.country}, ${data?.city}`} size="text_size_m" fontStyle="italic-fs" />
           </div>
         </div>
       </div>

@@ -114,7 +114,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
         <CountrySelect readonly={readonly} value={form?.country} onChange={onChangeCountry} />
         <CurrencySelect readonly={readonly} value={form?.currency} onChange={onChangeCurrency} />
       </VStack>
-      <HStack justify="end" gap="8">
+      <HStack justify="end" gap="8" className={s.bottom}>
         <Button disabled={isUpdating} onClick={onCancel} theme="cancel">{t('Cancel')}</Button>
         <Button disabled={isUpdating} onClick={onSave} theme="bordered">{t('Save')}</Button>
       </HStack>

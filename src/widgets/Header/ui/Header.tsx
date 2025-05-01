@@ -7,6 +7,7 @@ import {useSelector} from 'react-redux'
 import {getUserAuthData} from 'entities/User/module/selectors/getUserAuthData'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {userActions} from 'entities/User'
+import {AvatarDropdown} from 'features/AvatarDropdown'
 import * as s from './Header.module.scss'
 
 interface HeaderProps {
@@ -36,18 +37,18 @@ export const Header: FC<HeaderProps> = (props) => {
     return (
       <header className={cls(s.Header, {}, [className])}>
         <div className={s.links}>
-          <Button onClick={onSignOut} theme="bordered">{t('Sign out')}</Button>
+          <AvatarDropdown />
         </div>
       </header>
     )
   }
 
   return (
-    <div className={cls(s.Header, {}, [className])}>
+    <header className={cls(s.Header, {}, [className])}>
       {isSignInModalOpen && <SignInModal isOpen={isSignInModalOpen} onClose={onCloseSignInModal} />}
       <div className={s.links}>
         <Button onClick={onOpen} theme="bordered">{t('Sign in')}</Button>
       </div>
-    </div>
+    </header>
   )
 }

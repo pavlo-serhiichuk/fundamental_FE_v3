@@ -16,7 +16,8 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build --config-dir ./config/storybook",
-    "chromatic": "npx chromatic --project-token=chpt_7258454dcdf3fa1 --storybook-config-dir=config/storybook"
+    "chromatic": "npx chromatic --project-token=chpt_7258454dcdf3fa1 --storybook-config-dir=config/storybook",
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "repository": {
     "type": "git",
@@ -104,6 +105,7 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.2",
     "@reduxjs/toolkit": "^2.6.1",
     "axios": "^1.8.4",
     "concurrently": "^7.0.0",

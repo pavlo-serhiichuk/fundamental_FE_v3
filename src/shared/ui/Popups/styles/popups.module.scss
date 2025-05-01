@@ -1,0 +1,58 @@
+.popup {
+  position: relative;
+}
+
+.trigger {
+  background: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.active {
+  background: var(--popup-bg-hover);
+  border-radius: 11px;
+  font-weight: bold;
+}
+
+.listBoxTop {
+  bottom: 100%;
+  left: 0;
+  outline: none;
+}
+
+.listBoxBottom {
+  top: 100%;
+  left: 0;
+  outline: none;
+}
+
+.dropdownTopLeft {
+  bottom: 100%;
+  right: 0;
+  outline: none;
+}
+
+.dropdownTopRight {
+  bottom: 100%;
+  left: 0;
+  outline: none;
+}
+
+.dropdownBottomLeft {
+  top: 100%;
+  right: 0;
+  outline: none;
+}
+
+.dropdownBottomRight {
+  top: 100%;
+  left: 0;
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.7;
+}

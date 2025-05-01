@@ -1,0 +1,50 @@
+import {FC, memo, useCallback} from 'react'
+import {useTranslation} from 'react-i18next'
+import {useDispatch, useSelector} from 'react-redux'
+import {getUserAuthData, userActions} from 'entities/User'
+import {Dropdown} from 'shared/ui/Popups'
+import {Avatar} from 'shared/ui/Avatar/Avatar'
+import {getRouteProfile} from 'shared/config/routesConfig/routesConfig'
+import {useNavigate} from 'react-router-dom'
+
+interface AvatarDropdownProps {
+  className?: string;
+}
+
+export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
+  const {t} = useTranslation()
+  const authData = useSelector(getUserAuthData)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const onLogout = useCallback(() => {
+    dispatch(userActions.logout())
+  }, [dispatch])
+
+  if (!authData) {
+    return null
+  }
+
+  const items = [
+    // ...(isAdminPageAvailable ? [{
+    //   content: t('Admin'),
+    //   href: getRouteAdmin()
+    // }] : []),
+    {
+      content: t('Profile'),
+      // href: getRouteProfile(authData.id || ''),
+      onClick: () => { navigate(getRouteProfile(authData.id || '')) },
+    },
+    {
+      content: t('Exit'),
+      onClick: onLogout,
+    },
+  ]
+
+  return (
+    <Dropdown
+      items={items}
+      trigger={<Avatar size={45} src={authData.avatar} alt={authData.username} />}
+      direction="bottom left"
+    />
+  )
+})
