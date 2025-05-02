@@ -126,16 +126,18 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
           onChange={onChangeAge}
           testId="Input.Age"
         />
-        <CountrySelect
-          readonly={isUpdating}
-          value={form?.country}
-          onChange={onChangeCountry}
-        />
-        <CurrencySelect
-          readonly={isUpdating}
-          value={form?.currency}
-          onChange={onChangeCurrency}
-        />
+        <HStack gap="16" className={s.selects}>
+          <CountrySelect
+            readonly={isUpdating}
+            value={form?.country}
+            onChange={onChangeCountry}
+          />
+          <CurrencySelect
+            readonly={isUpdating}
+            value={form?.currency}
+            onChange={onChangeCurrency}
+          />
+        </HStack>
       </VStack>
       <HStack justify="end" gap="8" className={s.bottom}>
         <Button

@@ -3,6 +3,7 @@ import {screen} from '@testing-library/react'
 import {profileMockState} from 'entities/Profile/model/slice/profileState'
 import {profileReducer} from 'entities/Profile'
 import {userEvent} from '@testing-library/user-event'
+import {$api} from 'shared/api/api'
 import {EditProfileCard} from './EditProfileCard'
 
 const options = {
@@ -49,7 +50,12 @@ describe('EditProfileCard', () => {
     expect(screen.getByTestId('EditProfileCard.LASTNAME_ERROR.Text')).toBeInTheDocument()
   })
 
-  test('update request works', () => {
-
+  test('update PUT request works with', async () => {
+    const mockPutRequest = jest.spyOn($api, 'put')
+    renderTestComponent(<EditProfileCard />, options)
+    await userEvent.clear(screen.getByTestId('Input.Firstname'))
+    await userEvent.type(screen.getByTestId('Input.Firstname'), 'Firstname')
+    await userEvent.click(screen.getByTestId('Save.Button'))
+    expect(mockPutRequest).toHaveBeenCalled()
   })
 })
