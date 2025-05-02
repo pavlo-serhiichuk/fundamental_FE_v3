@@ -23,7 +23,7 @@ export const Input = memo((props: InputProps) => {
     value = '',
     onChange,
     readOnly,
-    testId = 'testId',
+    testId,
     ...otherProps
   } = props
 
@@ -44,7 +44,7 @@ export const Input = memo((props: InputProps) => {
         </div>
       ) : null}
       <input
-        data-testid={`Input.${testId}`}
+        data-testid={testId || 'Input'}
         value={value}
         className={s.inputEl}
         onChange={onChangeHandler}

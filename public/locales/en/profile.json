@@ -2,5 +2,10 @@
   "Avatar":  "Avatar",
   "Name": "Name",
   "Lastname":  "Lastname",
-  "Age": "Age"
+  "Age": "Age",
+  "SERVER_ERROR": "Server error.",
+  "FIRSTNAME_ERROR": "Enter your firstname.",
+  "LASTNAME_ERROR":  "Enter your lastname.",
+  "AGE_ERROR": "Enter you age.",
+  "AVATAR_ERROR":  "Enter your avatar image source."
 }

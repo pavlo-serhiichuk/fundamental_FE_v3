@@ -7,7 +7,7 @@ import {Text} from './Text'
 describe('Text', () => {
   test('exist title & text', () => {
     renderTestComponent(<Text text="text" title="title" />)
-    expect(screen.getByTestId('title-el')).toBeInTheDocument()
-    expect(screen.getByTestId('text-el')).toBeInTheDocument()
+    expect(screen.getByTestId('testId.Title')).toBeInTheDocument()
+    expect(screen.getByTestId('testId.Text')).toBeInTheDocument()
   })
 })

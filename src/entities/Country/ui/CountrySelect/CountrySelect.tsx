@@ -7,7 +7,6 @@ import * as s from './CountrySelect.module.scss'
 interface CountrySelectProps {
   readonly?: boolean
   value?: Country
-  testId?: string
   onChange?: (value: Country) => void
 }
 
@@ -18,13 +17,11 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     readonly,
     value,
     onChange = () => {},
-    testId = 'testId',
   } = props
   const {t} = useTranslation()
   return (
-    // <div data-testid="testId.CountrySelect.ListBox" />
     <ListBox<Country>
-      testId={`${testId}.CountrySelect`}
+      testId="CountrySelect"
       readonly={readonly}
       value={value}
       onChange={onChange}

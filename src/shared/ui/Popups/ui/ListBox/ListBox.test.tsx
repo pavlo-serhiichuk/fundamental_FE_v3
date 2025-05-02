@@ -11,6 +11,6 @@ const items = [
 describe('', () => {
   test('', () => {
     renderWithTranslations(<ListBox items={items} defaultValue="Select item..." />)
-    expect(screen.getByTestId('testId.ListBox')).toBeInTheDocument()
+    expect(screen.getByTestId('ListBox')).toBeInTheDocument()
   })
 })

@@ -20,14 +20,14 @@ export const Button = memo((props: ButtonProps) => {
     theme = 'default',
     children,
     disabled = false,
-    testId = 'testId',
+    testId,
     ...otherProps
   } = props
 
   return (
     <button
       type="button"
-      data-testid={`${testId}.Button`}
+      data-testid={testId || 'Button'}
       disabled={disabled}
       className={cls(s.Button, {[s.disabled]: disabled}, [s[theme], className])}
       {...otherProps}

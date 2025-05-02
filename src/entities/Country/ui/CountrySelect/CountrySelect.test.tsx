@@ -5,6 +5,6 @@ import {CountrySelect} from './CountrySelect'
 describe('', () => {
   test('', () => {
     renderWithTranslations(<CountrySelect value="Italy" />)
-    expect(screen.getByTestId('testId.CountrySelect.ListBox')).toBeInTheDocument()
+    expect(screen.getByTestId('CountrySelect')).toBeInTheDocument()
   })
 })

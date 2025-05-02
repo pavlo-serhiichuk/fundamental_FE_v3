@@ -2,5 +2,10 @@
   "Avatar":  "Аватар",
   "Name": "Імя",
   "Lastname":  "Прізвище",
-  "Age": "Вік"
+  "Age": "Вік",
+  "SERVER_ERROR": "Server error.",
+  "FIRSTNAME_ERROR": "Enter your firstname.",
+  "LASTNAME_ERROR":  "Enter your lastname.",
+  "AGE_ERROR": "Enter you age.",
+  "AVATAR_ERROR":  "Enter your avatar image source."
 }

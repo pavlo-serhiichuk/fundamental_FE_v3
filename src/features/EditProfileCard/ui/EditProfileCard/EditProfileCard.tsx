@@ -81,7 +81,14 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
 
   return (
     <div className={s.EditProfileCard} data-testid="EditProfileCard">
-      {validationErrors?.map((error) => <Text key={error} theme="error" text={t(error)} />)}
+      {validationErrors?.map((error) => (
+        <Text
+          key={error}
+          theme="error"
+          text={t(error)}
+          testId={`EditProfileCard.${error}`}
+        />
+      ))}
       <VStack gap="10">
         <div className={s.avatarWrapper}>
           <Avatar src={form?.avatar || ''} alt="profile" size={100} />
@@ -92,7 +99,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
           placeholder={t('Your avatar...')}
           onChange={onChangeAvatar}
           label={t('Avatar')}
-          testId="Avatar"
+          testId="Input.Avatar"
         />
         <Input
           readOnly={isUpdating}
@@ -100,7 +107,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
           placeholder={t('Your name...')}
           onChange={onChangeFirstName}
           label={t('Name')}
-          testId="Firstname"
+          testId="Input.Firstname"
         />
         <Input
           readOnly={isUpdating}
@@ -108,7 +115,7 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
           placeholder={t('Your lastname...')}
           label={t('Lastname')}
           onChange={onChangeLastname}
-          testId="Lastname"
+          testId="Input.Lastname"
         />
         <Input
           readOnly={isUpdating}
@@ -117,24 +124,36 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
           placeholder={t('Your age...')}
           label={t('Age')}
           onChange={onChangeAge}
-          testId="Age"
+          testId="Input.Age"
         />
         <CountrySelect
-          testId="EditProfileCard"
           readonly={isUpdating}
           value={form?.country}
           onChange={onChangeCountry}
         />
         <CurrencySelect
           readonly={isUpdating}
-          testId="EditProfileCard"
           value={form?.currency}
           onChange={onChangeCurrency}
         />
       </VStack>
       <HStack justify="end" gap="8" className={s.bottom}>
-        <Button testId="EditProfileCard.Cancel" disabled={isUpdating} onClick={onCancel} theme="cancel">{t('Cancel')}</Button>
-        <Button testId="EditProfileCard.Save" disabled={isUpdating} onClick={onSave} theme="bordered">{t('Save')}</Button>
+        <Button
+          testId="Cancel.Button"
+          disabled={isUpdating}
+          onClick={onCancel}
+          theme="cancel"
+        >
+          {t('Cancel')}
+        </Button>
+        <Button
+          testId="Save.Button"
+          disabled={isUpdating}
+          onClick={onSave}
+          theme="bordered"
+        >
+          {t('Save')}
+        </Button>
       </HStack>
     </div>
   )

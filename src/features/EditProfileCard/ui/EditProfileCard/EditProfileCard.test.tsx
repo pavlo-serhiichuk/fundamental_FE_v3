@@ -17,12 +17,12 @@ describe('EditProfileCard', () => {
     expect(screen.getByTestId('Input.Firstname')).toBeInTheDocument()
     expect(screen.getByTestId('Input.Lastname')).toBeInTheDocument()
     expect(screen.getByTestId('Input.Age')).toBeInTheDocument()
-    expect(screen.getByTestId('EditProfileCard.CurrencySelect.ListBox')).toBeInTheDocument()
-    expect(screen.getByTestId('EditProfileCard.CountrySelect.ListBox')).toBeInTheDocument()
-    expect(screen.getByTestId('EditProfileCard.Cancel.Button')).toBeInTheDocument()
-    expect(screen.getByTestId('EditProfileCard.Save.Button')).toBeInTheDocument()
+    expect(screen.getByTestId('CurrencySelect')).toBeInTheDocument()
+    expect(screen.getByTestId('CountrySelect')).toBeInTheDocument()
+    expect(screen.getByTestId('Cancel.Button')).toBeInTheDocument()
+    expect(screen.getByTestId('Save.Button')).toBeInTheDocument()
   })
-  test('change input values', async () => {
+  test('change inputs values', async () => {
     renderTestComponent(<EditProfileCard />, options)
     await userEvent.clear(screen.getByTestId('Input.Firstname'))
     await userEvent.clear(screen.getByTestId('Input.Lastname'))
@@ -35,5 +35,21 @@ describe('EditProfileCard', () => {
     expect(screen.getByTestId('Input.Firstname')).toHaveValue('Firstname')
     expect(screen.getByTestId('Input.Lastname')).toHaveValue('Lastname')
     expect(screen.getByTestId('Input.Age')).toHaveValue(30)
+  })
+
+  test('error appears', async () => {
+    renderTestComponent(<EditProfileCard />, options)
+    await userEvent.clear(screen.getByTestId('Input.Firstname'))
+    await userEvent.click(screen.getByTestId('Save.Button'))
+    expect(screen.getByTestId('EditProfileCard.FIRSTNAME_ERROR.Text')).toBeInTheDocument()
+
+    await userEvent.type(screen.getByTestId('Input.Firstname'), 'Firstname')
+    await userEvent.clear(screen.getByTestId('Input.Lastname'))
+    await userEvent.click(screen.getByTestId('Save.Button'))
+    expect(screen.getByTestId('EditProfileCard.LASTNAME_ERROR.Text')).toBeInTheDocument()
+  })
+
+  test('update request works', () => {
+
   })
 })
