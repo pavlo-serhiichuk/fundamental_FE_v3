@@ -4,7 +4,7 @@ import AddCommentForm from './AddCommentForm'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'place/AddCommentForm',
+  title: 'entities/Comment/AddCommentForm',
   component: AddCommentForm,
   decorators: [StoreDecorator({user: {authData: {}}})],
 } as Meta<typeof AddCommentForm>

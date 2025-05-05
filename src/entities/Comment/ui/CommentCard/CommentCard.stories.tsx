@@ -10,7 +10,7 @@ const comment = {
     id: '1',
     username: 'aggression',
     age: 28,
-    role: 'ADMIN',
+    roles: ['ADMIN'],
     avatar: 'https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg',
   },
 } as Comment

@@ -672,15 +672,31 @@
       "username": "admin",
       "password": "111",
       "age": 28,
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
     {
       "id": "2",
       "username": "user",
-      "password": "222",
+      "password": "111",
       "age": 27,
-      "role": "USER",
+      "roles": ["USER"],
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "111",
+      "age": 27,
+      "roles": ["MANAGER"],
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+    },
+    {
+      "id": "3",
+      "username": "user-manager",
+      "password": "111",
+      "age": 27,
+      "roles": ["USER", "MANAGER"],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     }
   ],

@@ -23,18 +23,18 @@ export const TranslationDecorator = (Story: any) => (
   </Suspense>
 )
 
-export const ThemeDecorator = (theme: Theme) => (Story: any) => (
+export const ThemeDecorator = (theme: Theme) => (StoryComponent: any) => (
   <ThemeProvider initialTheme={theme}>
     <div className={`app ${theme}`}>
-      <Story />
+      <StoryComponent />
     </div>
   </ThemeProvider>
 )
 
-export const RouterDecorator = (Story: any) => (
+export const RouterDecorator = (StoryComponent: any) => (
   <BrowserRouter>
     <Suspense fallback="...">
-      <Story />
+      <StoryComponent />
     </Suspense>
   </BrowserRouter>
 )
@@ -51,17 +51,17 @@ const defaultAsyncReducers: ReducersList = {
 export const StoreDecorator = (
   initialState: DeepPartial<StateSchema>,
   asyncReducers?: ReducersList,
-) => (Story: any) => (
+) => (StoryComponent: any) => (
   <StoreProvider
     initialState={initialState}
     asyncReducers={{...defaultAsyncReducers, ...asyncReducers}}
   >
-    <Story />
+    <StoryComponent />
   </StoreProvider>
 )
 
-export const PageContentDecorator = (Story: any) => (
+export const PageContentDecorator = (StoryComponent: any) => (
   <div className="page-content">
-    <Story />
+    <StoryComponent />
   </div>
 )
