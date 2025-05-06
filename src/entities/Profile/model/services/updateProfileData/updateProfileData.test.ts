@@ -1,5 +1,5 @@
 import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {ValidationError} from '../../types/ProfileSchema'
+import {ValidationError} from '../../consts/consts'
 import {updateProfileData} from './updateProfileData'
 import {profileMockState, profileMockForm} from '../../slice/profileState'
 

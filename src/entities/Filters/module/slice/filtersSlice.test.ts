@@ -1,4 +1,5 @@
-import {FiltersSchema, SortByType} from '../types/FiltersSchema'
+import {SortByType} from '../consts/consts'
+import {FiltersSchema} from '../types/FiltersSchema'
 import {filtersActions, filtersReducer} from './filtersSlice'
 
 describe('filtersSlice', () => {

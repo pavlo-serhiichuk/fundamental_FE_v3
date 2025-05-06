@@ -1,13 +1,6 @@
 import {type Country} from 'entities/Country/model/Country'
 import {type Currency} from 'entities/Currency'
-
-export enum ValidationError {
-  SERVER_ERROR = 'SERVER_ERROR',
-  FIRSTNAME_ERROR = 'FIRSTNAME_ERROR',
-  LASTNAME_ERROR = 'LASTNAME_ERROR',
-  AGE_ERROR = 'AGE_ERROR',
-  AVATAR_ERROR = 'AVATAR_ERROR'
-}
+import {ValidationError} from '../consts/consts'
 
 export interface Profile {
   id?: string

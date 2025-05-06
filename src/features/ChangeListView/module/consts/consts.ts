@@ -1,4 +1,4 @@
-export enum ArticlesView {
+export enum ListView {
   BIG = 'BIG',
   SMALL = 'SMALL'
 }

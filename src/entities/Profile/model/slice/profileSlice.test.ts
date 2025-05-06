@@ -1,4 +1,5 @@
-import {type ProfileSchema, ValidationError} from '../types/ProfileSchema'
+import {ValidationError} from '../consts/consts'
+import {type ProfileSchema} from '../types/ProfileSchema'
 import {profileActions, profileReducer} from '../slice/profileSlice'
 import {profileMockForm} from './profileState'
 import {updateProfileData} from '../services/updateProfileData/updateProfileData'

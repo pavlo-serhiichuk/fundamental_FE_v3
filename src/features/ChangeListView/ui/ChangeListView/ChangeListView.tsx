@@ -5,10 +5,10 @@ import SmallListIcon from 'shared/assets/icons/tile.svg'
 import {Button} from 'shared/ui/Button/Button'
 import {Icon} from 'shared/ui/Icon/Icon'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {changeListViewActions} from 'features/ChangeListView/module/slice/changeListViewSlice'
 import {useSelector} from 'react-redux'
-import {getListView} from 'features/ChangeListView'
-import {ListView} from '../../module/types/ListViewSchema'
+import {changeListViewActions} from '../../module/slice/changeListViewSlice'
+import {getListView} from '../../module/selectors/getListView'
+import {ListView} from '../../module/consts/consts'
 import * as s from './ChangeListView.module.scss'
 
 interface ChangeListViewProps {

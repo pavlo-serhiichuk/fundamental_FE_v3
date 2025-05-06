@@ -1,10 +1,5 @@
 import {User} from 'entities/User'
-
-export enum ArticleBlockType {
-  CODE = 'CODE',
-  TEXT = 'TEXT',
-  IMAGE = 'IMAGE'
-}
+import {ArticleBlockType} from '../consts/consts'
 
 export type ArticleTopicType = 'ALL' | 'SCIENCE' | 'IT' | 'FICTION' | 'ECONOMICS'
 

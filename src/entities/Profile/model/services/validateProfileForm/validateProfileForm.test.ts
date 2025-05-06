@@ -1,5 +1,6 @@
+import {ValidationError} from '../../consts/consts'
 import {profileMockState} from '../../slice/profileState'
-import {type Profile, ValidationError} from '../../types/ProfileSchema'
+import {type Profile} from '../../types/ProfileSchema'
 import {validateProfileForm} from './validateProfileForm'
 
 describe('validateProfileForm.test', () => {

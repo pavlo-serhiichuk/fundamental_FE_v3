@@ -1,5 +1,5 @@
 import {type StateSchema} from 'app/providers/StoreProvider'
-import {ValidationError} from '../../types/ProfileSchema'
+import {ValidationError} from '../../consts/consts'
 import {getProfileValidationErrors} from './getProfileValidationErrors'
 import {profileInitialState, profileMockState} from '../../slice/profileState'
 
