@@ -3,4 +3,3 @@ export const currencies = {
   USD: 'USD',
   EUR: 'EUR',
 }
-export type Currency = keyof typeof currencies

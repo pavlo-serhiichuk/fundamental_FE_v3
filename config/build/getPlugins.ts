@@ -3,6 +3,8 @@ import webpack, {WebpackPluginInstance} from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
+import CircularDependencyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
 import {ConfigOptions} from './configOptions'
 
 const CopyPlugin = require('copy-webpack-plugin')
@@ -21,7 +23,21 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
         {from: options.paths.locales, to: options.paths.buildLocales},
       ],
     }),
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        diagnosticOptions: {
+          semantic: true,
+          syntactic: true,
+        },
+        mode: 'write-references',
+      },
+    }),
   ]
+
   if (options.isDev) {
     plugins.push(new ReactRefreshWebpackPlugin())
     plugins.push(new webpack.HotModuleReplacementPlugin())
