@@ -34,8 +34,7 @@ export const Modal: FC<ModalProps> = (props) => {
       <div className={cls(s.Modal, mods, [className, theme, 'app_modal'])}>
         <div onClick={closeHandler} className={s.overlay}>
           <div className={s.content} onClick={onClickContent}>
-            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-            {Children.only(<>{children}</>)}
+            {children}
           </div>
         </div>
       </div>
