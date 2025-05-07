@@ -2,10 +2,10 @@ import {
   type FC, type ReactNode, type KeyboardEvent, type MouseEvent, useEffect, useCallback, Children,
 } from 'react'
 import {cls, Mods} from 'shared/lib/cls/cls'
-import {Portal} from 'shared/ui/Portal/Portal'
 import {useTheme} from 'shared/hooks/useTheme'
 import {useModal} from 'shared/hooks/useModal'
-import * as s from './Modal.module.scss'
+import {Portal} from '../Portal/Portal'
+import * as s from './Drawer.module.scss'
 
 interface ModalProps {
   className?: string
@@ -14,13 +14,14 @@ interface ModalProps {
   onClose?: () => void
 }
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Drawer: FC<ModalProps> = (props) => {
   const {
     className,
     children,
     isOpen,
     onClose,
   } = props
+
   const {closeHandler, onClickContent} = useModal({isOpen, onClose})
   const {theme} = useTheme()
   const mods: Mods = {[s.opened]: isOpen}
@@ -31,11 +32,10 @@ export const Modal: FC<ModalProps> = (props) => {
 
   return (
     <Portal>
-      <div className={cls(s.Modal, mods, [className, theme, 'app_modal'])}>
+      <div className={cls(s.Drawer, mods, [className, theme, 'app_drawer'])}>
         <div onClick={closeHandler} className={s.overlay}>
           <div className={s.content} onClick={onClickContent}>
-            {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-            {Children.only(<>{children}</>)}
+            {children}
           </div>
         </div>
       </div>

@@ -16,7 +16,6 @@ interface NotificationsListProps {
 export const NotificationsList = memo((props: NotificationsListProps) => {
   const {className} = props
   const userId = useSelector(getUserAuthData)?.id
-  const {t} = useTranslation()
   const {data: notifications, isLoading, error} = useFetchNotifications(userId ?? '0', {
     pollingInterval: 5000,
   })
@@ -34,7 +33,12 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
   return (
     <div className={cls(s.NotificationsList, {}, [className])}>
       {notifications?.map(
-        (notification: Notification) => <NotificationsItem notification={notification} key={notification.id} />,
+        (notification: Notification) => (
+          <NotificationsItem
+            notification={notification}
+            key={notification.id}
+          />
+        ),
       )}
     </div>
   )
