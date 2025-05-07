@@ -1,40 +1,60 @@
-import {
-  type KeyboardEvent, type MouseEvent, useCallback, useEffect,
+import React, {
+  RefObject, useCallback, useEffect, useRef, useState,
 } from 'react'
 
 interface UseModalProps {
-  onClose?: () => void;
-  isOpen?: boolean;
+  onClose?: () => void
+  isOpen: boolean | undefined
+  lazy?: boolean | undefined
+  animationDelay: number
 }
 
 export function useModal(props: UseModalProps) {
   const {
     onClose,
     isOpen,
+    animationDelay,
   } = props
-
-  const closeHandler = useCallback(() => {
-    onClose?.()
-  }, [onClose])
-
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler()
-    }
-  }, [closeHandler])
+  const [isClosing, setIsClosing] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null) as RefObject<ReturnType<typeof setTimeout>>
 
   useEffect(() => {
     if (isOpen) {
-      window.addEventListener<any>('keydown', onKeyDown)
+      setIsMounted(true)
+    }
+  }, [isOpen])
+
+  const close = useCallback(() => {
+    if (onClose) {
+      setIsClosing(true)
+      timerRef.current = setTimeout(() => {
+        onClose()
+        setIsClosing(false)
+      }, animationDelay)
+    }
+  }, [animationDelay, onClose])
+
+  const onKeydown: any = useCallback((e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      close()
+    }
+  }, [close])
+
+  useEffect(() => {
+    if (isOpen) {
+      window.addEventListener('keydown', onKeydown)
     }
 
     return () => {
-      window.removeEventListener<any>('keydown', onKeyDown)
+      clearTimeout(timerRef.current)
+      window.removeEventListener('keydown', onKeydown)
     }
-  }, [isOpen, onKeyDown])
+  }, [isOpen, onKeydown])
 
-  const onClickContent = (e: MouseEvent) => {
-    e?.stopPropagation()
+  return {
+    isClosing,
+    isMounted,
+    close,
   }
-  return {closeHandler, onKeyDown, onClickContent}
 }

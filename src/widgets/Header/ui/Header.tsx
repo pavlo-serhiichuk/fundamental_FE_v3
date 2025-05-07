@@ -17,7 +17,6 @@ interface HeaderProps {
 export const Header: FC<HeaderProps> = (props) => {
   const {className} = props
   const authData = useSelector(getUserAuthData)
-  const dispatch = useAppDispatch()
   const {t} = useTranslation()
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false)
 
