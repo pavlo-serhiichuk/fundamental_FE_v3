@@ -723,5 +723,32 @@
       "city": "Vinnytsia",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     }
+  ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Friends request",
+      "description": "Have a good day)",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Friends request",
+      "description": "New articles has been released",
+      "userId": "1",
+      "internalHref": "/articles?orderBy=desc&sortBy=created&searchValue=&topicType=ALL"
+    },
+    {
+      "id": "3",
+      "title": "Friends request",
+      "description": "We celebrate 1 year",
+      "userId": "2"
+    },
+    {
+      "id": "4",
+      "title": "Friends request",
+      "description": "New session is coming!",
+      "userId": "1"
+    }
   ]
 }

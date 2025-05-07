@@ -1,4 +1,4 @@
-import {type FC, useCallback, useState} from 'react'
+import {type FC, useState} from 'react'
 import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {SignInModal} from 'features/SignIn/ui/SignInModal/SignInModal'
@@ -6,8 +6,8 @@ import {Button} from 'shared/ui/Button/Button'
 import {useSelector} from 'react-redux'
 import {getUserAuthData} from 'entities/User/module/selectors/getUserAuthData'
 import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {userActions} from 'entities/User'
 import {AvatarDropdown} from 'features/AvatarDropdown'
+import {NotificationsButton} from 'features/NotificationsButton'
 import * as s from './Header.module.scss'
 
 interface HeaderProps {
@@ -29,14 +29,11 @@ export const Header: FC<HeaderProps> = (props) => {
     setIsSignInModalOpen(true)
   }
 
-  const onSignOut = useCallback(() => {
-    dispatch(userActions.logout())
-  }, [dispatch])
-
   if (authData) {
     return (
       <header className={cls(s.Header, {}, [className])}>
         <div className={s.links}>
+          <NotificationsButton />
           <AvatarDropdown />
         </div>
       </header>

@@ -5,9 +5,9 @@ import {ConfigEnv, ConfigPaths} from './config/build/configOptions'
 
 export default (env: ConfigEnv) => {
   const paths: ConfigPaths = {
-    entryPath: path.resolve(__dirname, 'src', 'index.tsx'),
+    entryPath: path.resolve(__dirname, 'src', 'index.ts.tsx'),
     buildPath: path.resolve(__dirname, 'build'),
-    htmlPath: path.resolve(__dirname, 'public', 'index.html'),
+    htmlPath: path.resolve(__dirname, 'public', 'index.ts.html'),
     srcPath: path.resolve(__dirname, 'src'),
     locales: path.resolve(__dirname, 'public', 'locales'),
     buildLocales: path.resolve(__dirname, 'build', 'locales'),

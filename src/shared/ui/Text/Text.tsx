@@ -15,11 +15,11 @@ interface TextProps {
   testId?: string
 }
 
-type HeaderTagType = 'h1' | 'h2' | 'h3'
+type HeaderTagType = 'h1' | 'h2' | 'h4'
 type MapHeaderTag = Record<TextSize, HeaderTagType>
 
 const mapHeaderTag: MapHeaderTag = {
-  text_size_s: 'h3',
+  text_size_s: 'h4',
   text_size_m: 'h2',
   text_size_l: 'h1',
 }
