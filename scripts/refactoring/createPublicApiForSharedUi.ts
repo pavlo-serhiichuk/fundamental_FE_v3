@@ -1,5 +1,7 @@
+// @ts-ignore
 import {Project} from 'ts-morph'
 import path from 'path'
+
 const project = new Project({})
 
 project.addSourceFilesAtPaths('src/**/*.ts')
@@ -12,13 +14,13 @@ const componentsDirs = sharedUiDirectory?.getDirectories()
 
 function isAbsolute(value: string) {
   const layers = ['app', 'pages', 'entities', 'features', 'widgets', 'shared']
-    return layers.some(layer => value.startsWith(layer))
+  return layers.some((layer) => value.startsWith(layer))
 }
 
-componentsDirs?.forEach((directory) => {
-  const indexFilePath = directory.getPath() + '/index.ts'
+componentsDirs?.forEach((directory: any) => {
+  const indexFilePath = `${directory.getPath()}/index.ts.ts`
   const indexFile = directory.getSourceFile(indexFilePath)
-  if(!indexFile) {
+  if (!indexFile) {
     const sourceCode = `export * from './${directory.getBaseName()}'`
     const file = directory.createSourceFile(indexFilePath, sourceCode, {overwrite: true})
 
@@ -26,10 +28,9 @@ componentsDirs?.forEach((directory) => {
   }
 })
 
-
-files.forEach(sourceFile => {
-   const importDeclarations = sourceFile.getImportDeclarations()
-  importDeclarations.forEach((importDeclaration) => {
+files.forEach((sourceFile: any) => {
+  const importDeclarations = sourceFile.getImportDeclarations()
+  importDeclarations.forEach((importDeclaration: any) => {
     const value = importDeclaration.getModuleSpecifierValue()
     const valueWithoutAlias = value.replace('@/', '')
 
@@ -40,7 +41,7 @@ files.forEach(sourceFile => {
 
     if (isAbsolute(valueWithoutAlias) && isSharedLayer && isUiSlice) {
       const result = valueWithoutAlias.split('/').slice(0, 3).join('/')
-      importDeclaration.setModuleSpecifier('@/' + result)
+      importDeclaration.setModuleSpecifier(`@/${result}`)
     }
   })
 })
