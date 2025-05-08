@@ -4,7 +4,7 @@ import {
 import {cls} from '@/shared/lib/cls/cls'
 import {useTheme} from '@/shared/hooks/useTheme'
 import {useModal} from '@/shared/hooks/useModal'
-import {useAnimationLibs} from '@/shared/lib/components/AnimationProvider'
+import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider'
 import {Portal} from '../Portal/Portal'
 import * as s from './Drawer.module.scss'
 import {Overlay} from '../Overlay'
@@ -98,7 +98,7 @@ const DrawerContent = memo((props: DrawerProps) => {
   )
 })
 
-export const Drawer = (props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const {isLoaded, Spring, Gesture} = useAnimationLibs()
 
   if (!isLoaded) {
@@ -107,3 +107,9 @@ export const Drawer = (props: DrawerProps) => {
 
   return <DrawerContent {...props} />
 }
+
+export const Drawer = (props: DrawerProps) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+)

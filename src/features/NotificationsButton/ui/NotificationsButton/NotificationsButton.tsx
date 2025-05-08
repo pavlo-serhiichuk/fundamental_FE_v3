@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
 import {Button} from '@/shared/ui/Button/Button'
 import {Icon} from '@/shared/ui/Icon/Icon'
@@ -6,7 +7,6 @@ import {Popover} from '@/shared/ui/Popups'
 import {NotificationsList} from '@/entities/Notification'
 import {useDevice} from '@/shared/hooks/useDevice'
 import {Drawer} from '@/shared/ui/Drawer/Drawer'
-import {useState} from 'react'
 import {AnimationProvider} from '@/shared/lib/components/AnimationProvider'
 import * as s from './NotificationsButton.module.scss'
 
@@ -32,11 +32,9 @@ export const NotificationsButton = (props: NotificationsButtonProps) => {
         className={cls(s.NotificationsButton, {}, [className])}
       >
         {trigger}
-        <AnimationProvider>
-          <Drawer isOpen={isOpen} onClose={onClose}>
-            <NotificationsList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer isOpen={isOpen} onClose={onClose}>
+          <NotificationsList />
+        </Drawer>
       </div>
     )
   }
