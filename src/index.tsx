@@ -20,6 +20,7 @@ root.render(
     <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
+          {/* <div>content</div> */}
           <App />
         </ThemeProvider>
       </ErrorBoundary>
