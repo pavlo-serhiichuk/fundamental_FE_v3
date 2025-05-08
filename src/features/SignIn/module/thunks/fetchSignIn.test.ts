@@ -1,6 +1,6 @@
-import {userActions} from 'entities/User'
+import {userActions} from '@/entities/User'
 import axios from 'axios'
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
 import {fetchSignIn} from './fetchSignIn'
 
 jest.mock('axios')

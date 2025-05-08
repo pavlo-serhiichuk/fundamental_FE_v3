@@ -1,9 +1,9 @@
-import {renderTestComponent} from 'shared/lib/tests/renderTestComponent/renderTestComponent'
+import {renderTestComponent} from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
 import {screen} from '@testing-library/react'
-import {profileMockState} from 'entities/Profile/model/slice/profileState'
-import {profileReducer} from 'entities/Profile'
+import {profileMockState} from '@/entities/Profile/model/slice/profileState'
+import {profileReducer} from '@/entities/Profile'
 import {userEvent} from '@testing-library/user-event'
-import {$api} from 'shared/api/api'
+import {$api} from '@/shared/api/api'
 import {EditProfileCard} from './EditProfileCard'
 
 const options = {

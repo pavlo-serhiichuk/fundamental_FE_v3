@@ -1,20 +1,20 @@
-import {CounterSchema} from 'entities/Counter'
-import {UserSchema} from 'entities/User'
+import {CounterSchema} from '@/entities/Counter'
+import {UserSchema} from '@/entities/User'
 import {
   type Action, EnhancedStore, type ReducersMapObject, type Reducer,
 } from '@reduxjs/toolkit'
 import {type NavigateOptions} from 'react-router/dist/lib/context'
 import {type AxiosInstance} from 'axios'
 import {type To} from '@remix-run/router'
-import {SignInSchema} from 'features/SignIn'
-import {ProfileSchema} from 'entities/Profile'
-import {ArticlesPageSchema} from 'pages/ArticlesPage'
-import {ListViewSchema} from 'features/ChangeListView'
-import {ScrollRecoverSchema} from 'features/ScrollRecover/module/types/ScrollRecoverSchema'
-import {FiltersSchema} from 'entities/Filters'
-import {ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage/module/types/ArticleDetailsPageSchema'
-import {AddCommentSchema} from 'entities/Comment'
-import {rtkApi} from 'shared/api/rtkApi'
+import {SignInSchema} from '@/features/SignIn'
+import {ProfileSchema} from '@/entities/Profile'
+import {ArticlesPageSchema} from '@/pages/ArticlesPage'
+import {ListViewSchema} from '@/features/ChangeListView'
+import {ScrollRecoverSchema} from '@/features/ScrollRecover/module/types/ScrollRecoverSchema'
+import {FiltersSchema} from '@/entities/Filters'
+import {ArticleDetailsPageSchema} from '@/pages/ArticleDetailsPage/module/types/ArticleDetailsPageSchema'
+import {AddCommentSchema} from '@/entities/Comment'
+import {rtkApi} from '@/shared/api/rtkApi'
 
 export interface StateSchema {
   counter: CounterSchema

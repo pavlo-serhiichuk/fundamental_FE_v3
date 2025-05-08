@@ -1,7 +1,7 @@
 import {memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
-import {ArticlesList} from 'entities/Article/ui/ArticlesList/ArticlesList'
-import {ListView} from 'features/ChangeListView'
+import {cls} from '@/shared/lib/cls/cls'
+import {ArticlesList} from '@/entities/Article/ui/ArticlesList/ArticlesList'
+import {ListView} from '@/features/ChangeListView'
 import {useFetchArticleDetailsRecommendationsList} from '../../api/recommendationsApi'
 import * as s from './ArticleDetailsRecommendations.module.scss'
 

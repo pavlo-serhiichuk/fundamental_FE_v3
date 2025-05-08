@@ -1,4 +1,4 @@
-import {StateSchema} from 'app/providers/StoreProvider'
+import {StateSchema} from '@/app/providers/StoreProvider'
 import {SortByType} from '../consts/consts'
 
 export const getFiltersState = (state: StateSchema) => state.filters

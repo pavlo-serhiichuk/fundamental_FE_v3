@@ -1,4 +1,5 @@
 import {ResolveOptions} from 'webpack'
+import path from 'path'
 import {ConfigOptions} from './configOptions'
 
 export function getResolvers(options: ConfigOptions): ResolveOptions {
@@ -7,6 +8,8 @@ export function getResolvers(options: ConfigOptions): ResolveOptions {
     preferAbsolute: true,
     modules: [options.paths.srcPath, 'node_modules'],
     mainFiles: ['index'],
-    alias: {},
+    alias: {
+      '@': options.paths.srcPath,
+    },
   }
 }

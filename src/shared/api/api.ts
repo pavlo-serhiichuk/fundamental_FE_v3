@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {AUTH_USER_DATA} from 'shared/const/localStorage'
+import {AUTH_USER_DATA} from '@/shared/const/localStorage'
 // old BE: b4a - https://be1-pavelserhiichuk.b4a.run
 // new BE: vercel - https://fundamental-be-v3-n4clh50z6-pashaserhiichukgmailcoms-projects.vercel.app/api
 export const $api = axios.create({

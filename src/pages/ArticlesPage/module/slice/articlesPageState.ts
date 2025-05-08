@@ -1,4 +1,4 @@
-import {mockArticle} from 'entities/Article'
+import {mockArticle} from '@/entities/Article'
 import {ArticlesPageSchema} from '../types/ArticlesPageSchema'
 
 export const articlesListInitialState: ArticlesPageSchema = {

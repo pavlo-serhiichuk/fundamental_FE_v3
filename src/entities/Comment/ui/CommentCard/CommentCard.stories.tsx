@@ -1,6 +1,6 @@
 import {type Meta, type StoryObj} from '@storybook/react'
-import {type Comment} from 'entities/Comment'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {type Comment} from '@/entities/Comment'
+import {ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
 import {CommentCard} from './CommentCard'
 
 const comment = {

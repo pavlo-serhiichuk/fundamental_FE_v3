@@ -1,4 +1,4 @@
-import {Article} from 'entities/Article'
+import {Article} from '@/entities/Article'
 import {EntityState} from '@reduxjs/toolkit'
 
 export interface ArticlesPageSchema extends EntityState<Article, string> {

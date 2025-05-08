@@ -1,7 +1,7 @@
 import {fn} from '@storybook/test'
 import {type Meta, type StoryObj} from '@storybook/react'
-import {profileMockState} from 'entities/Profile/model/slice/profileState'
-import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {profileMockState} from '@/entities/Profile/model/slice/profileState'
+import {StoreDecorator, ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
 import {ProfileCard} from './ProfileCard'
 
 const meta = {

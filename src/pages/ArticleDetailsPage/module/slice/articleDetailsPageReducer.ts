@@ -1,5 +1,5 @@
-import {articleDetailsReducer} from 'features/ArticleDetails'
-import {articleDetailsCommentsReducer} from 'features/ArticleDetailsComments'
+import {articleDetailsReducer} from '@/features/ArticleDetails'
+import {articleDetailsCommentsReducer} from '@/features/ArticleDetailsComments'
 import {combineReducers} from '@reduxjs/toolkit'
 import {ArticleDetailsPageSchema} from '../types/ArticleDetailsPageSchema'
 

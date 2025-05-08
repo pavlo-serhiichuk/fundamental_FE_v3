@@ -1,7 +1,7 @@
 import {
   Children, type FC, HTMLAttributes, type ReactNode,
 } from 'react'
-import {cls, Mods} from 'shared/lib/cls/cls'
+import {cls, Mods} from '@/shared/lib/cls/cls'
 import * as s from './Card.module.scss'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{

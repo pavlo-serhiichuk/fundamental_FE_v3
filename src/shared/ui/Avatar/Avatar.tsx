@@ -1,5 +1,5 @@
 import {type CSSProperties, type FC, useMemo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 
 interface AvatarProps {
   className?: string

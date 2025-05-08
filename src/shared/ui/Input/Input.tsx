@@ -1,5 +1,5 @@
 import {type ChangeEvent, type InputHTMLAttributes, memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import {VStack} from '../Stack'
 import * as s from './Input.module.scss'
 

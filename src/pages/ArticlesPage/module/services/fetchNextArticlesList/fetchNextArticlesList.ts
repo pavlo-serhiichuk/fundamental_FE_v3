@@ -1,4 +1,4 @@
-import {type ThunkConfig} from 'app/providers/StoreProvider'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {fetchArticlesList} from '../fetchArticlesList/fetchArticlesList'
 import {articlesPageActions} from '../../slice/articlesPageSlice'

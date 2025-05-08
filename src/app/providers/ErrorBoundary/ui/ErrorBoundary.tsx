@@ -1,7 +1,7 @@
 import {
   Component, type ErrorInfo, type ReactNode, Suspense,
 } from 'react'
-import {PageError} from 'widgets/PageError/PageError'
+import {PageError} from '@/widgets/PageError/PageError'
 
 interface Props {
   children?: ReactNode

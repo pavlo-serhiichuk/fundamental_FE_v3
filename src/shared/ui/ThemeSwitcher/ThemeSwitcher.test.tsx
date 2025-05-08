@@ -1,4 +1,4 @@
-import {renderTestComponent} from 'shared/lib/tests/renderTestComponent/renderTestComponent'
+import {renderTestComponent} from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
 import {fireEvent, screen} from '@testing-library/react'
 import {ThemeSwitcher} from './ThemeSwitcher'
 

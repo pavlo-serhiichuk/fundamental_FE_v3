@@ -1,4 +1,4 @@
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
 import {ValidationError} from '../../consts/consts'
 import {fetchProfileData} from './fetchProfileData'
 import {profileMockState, profileMockForm} from '../../slice/profileState'

@@ -1,4 +1,4 @@
-import {type ThunkConfig} from 'app/providers/StoreProvider'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {ValidationError} from '../../consts/consts'
 import {type Profile} from '../../types/ProfileSchema'

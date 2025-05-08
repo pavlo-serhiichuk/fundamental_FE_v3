@@ -1,7 +1,7 @@
 import {
   type ButtonHTMLAttributes, Children, memo, type ReactNode,
 } from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import * as s from './Button.module.scss'
 
 export type ButtonTheme = 'default' | 'clear' | 'bordered' | 'sidebar-squad-m' | 'content-squad-m' | 'cancel'

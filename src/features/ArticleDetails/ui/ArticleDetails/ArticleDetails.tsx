@@ -1,5 +1,5 @@
 import {memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {useNavigate, useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
@@ -9,23 +9,23 @@ import {
   ArticleBlockImageComponent,
   ArticleBlockTextComponent,
   ArticleBlockType,
-} from 'entities/Article'
-import {Text} from 'shared/ui/Text/Text'
-import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {useInitialEffect} from 'shared/hooks/useInitialEffect'
-import DynamicReducerLoader, {type ReducersList} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import EyeIcon from 'shared/assets/icons/eye.svg'
-import CalendarIcon from 'shared/assets/icons/calendar.svg'
-import {Icon} from 'shared/ui/Icon/Icon'
-import {Button} from 'shared/ui/Button/Button'
-import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
+} from '@/entities/Article'
+import {Text} from '@/shared/ui/Text/Text'
+import {Avatar} from '@/shared/ui/Avatar/Avatar'
+import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
+import DynamicReducerLoader, {type ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
+import CalendarIcon from '@/shared/assets/icons/calendar.svg'
+import {Icon} from '@/shared/ui/Icon/Icon'
+import {Button} from '@/shared/ui/Button/Button'
+import {RoutePaths} from '@/shared/config/routesConfig/routesConfig'
 import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsLoading,
-} from 'features/ArticleDetails/model/selectors/getArticleDetailsData'
-import {fetchArticleById} from 'features/ArticleDetails/model/services/fetchArticleById/fetchArticleById'
+} from '@/features/ArticleDetails/model/selectors/getArticleDetailsData'
+import {fetchArticleById} from '@/features/ArticleDetails/model/services/fetchArticleById/fetchArticleById'
 import {ArticleDetailsSkeleton} from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
 

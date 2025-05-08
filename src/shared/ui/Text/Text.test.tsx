@@ -1,4 +1,4 @@
-import {renderTestComponent} from 'shared/lib/tests/renderTestComponent/renderTestComponent'
+import {renderTestComponent} from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
 import {screen} from '@testing-library/react'
 import {Text} from './Text'
 // 'text-wrapper-el'

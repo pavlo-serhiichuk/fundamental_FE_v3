@@ -1,7 +1,7 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
 import {ListBox} from './ListBox'
-import 'app/styles/index.scss'
+import '@/app/styles/index.scss'
 import * as s from './ListBox.module.scss'
 
 const items = [

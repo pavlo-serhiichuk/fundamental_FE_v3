@@ -1,4 +1,4 @@
-import {renderWithTranslations} from 'shared/lib/tests/renderWithTranslations/renderWithTranslations'
+import {renderWithTranslations} from '@/shared/lib/tests/renderWithTranslations/renderWithTranslations'
 import {render, screen} from '@testing-library/react'
 import {ListBox} from './ListBox'
 

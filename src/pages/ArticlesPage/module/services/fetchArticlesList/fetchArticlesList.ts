@@ -1,14 +1,14 @@
-import {type ThunkConfig} from 'app/providers/StoreProvider'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
-import {type Article} from 'entities/Article/model/types/article'
+import {type Article} from '@/entities/Article/model/types/article'
 import {
   getFiltersOrder,
   getFiltersSearchValue,
   getFiltersSortBy,
   getFiltersTopicType,
-} from 'entities/Filters'
-import {addQueryParam} from 'shared/lib/addueryParam/addQueryParam'
-import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
+} from '@/entities/Filters'
+import {addQueryParam} from '@/shared/lib/addueryParam/addQueryParam'
+import {RoutePaths} from '@/shared/config/routesConfig/routesConfig'
 import {getArticlesPageLimit} from '../../selectors/getArticlesPageLimit'
 import {getArticlesPageNumber} from '../../selectors/getArticlesPageNumber'
 

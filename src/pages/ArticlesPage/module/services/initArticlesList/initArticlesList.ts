@@ -1,9 +1,9 @@
-import {type ThunkConfig} from 'app/providers/StoreProvider'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
-import {getListView} from 'features/ChangeListView'
+import {getListView} from '@/features/ChangeListView'
 import {
   filtersActions, OrderByType, SortByType, TopicType,
-} from 'entities/Filters'
+} from '@/entities/Filters'
 import {fetchArticlesList} from '../fetchArticlesList/fetchArticlesList'
 import {articlesPageActions} from '../../slice/articlesPageSlice'
 import {getArticlesPageInited} from '../../selectors/getArticlesPageInited'

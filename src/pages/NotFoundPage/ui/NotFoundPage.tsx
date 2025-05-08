@@ -1,7 +1,7 @@
 import {type FC} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {Button} from 'shared/ui/Button/Button'
+import {Button} from '@/shared/ui/Button/Button'
 import {useNavigate} from 'react-router-dom'
 import * as s from './NotFoundPage.module.scss'
 

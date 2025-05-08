@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
-import 'app/styles/index.scss'
-import {ListView} from 'features/ChangeListView'
+import {ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
+import '@/app/styles/index.scss'
+import {ListView} from '@/features/ChangeListView'
 import {mockArticle} from '../../model/mocks/mockArticle'
 import {ArticlesList} from './ArticlesList'
 

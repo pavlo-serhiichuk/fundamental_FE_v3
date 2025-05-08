@@ -1,5 +1,5 @@
 import {memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import * as s from './Overlay.module.scss'
 
 interface OverlayProps {

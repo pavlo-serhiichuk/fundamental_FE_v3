@@ -1,8 +1,8 @@
 import {ReactNode, useEffect} from 'react'
 import {useStore} from 'react-redux'
-import {ReduxStoreWithReducerManager} from 'app/providers/StoreProvider'
+import {ReduxStoreWithReducerManager} from '@/app/providers/StoreProvider'
 import {Reducer} from '@reduxjs/toolkit'
-import {StateSchemaKey} from 'app/providers/StoreProvider/config/StateSchema'
+import {StateSchemaKey} from '@/app/providers/StoreProvider/config/StateSchema'
 
 export type ReducersList = {
   [name in StateSchemaKey]?: Reducer
@@ -17,7 +17,9 @@ interface DynamicReducerLoaderProps {
 const DynamicReducerLoader = (props: DynamicReducerLoaderProps) => {
   const store = useStore() as ReduxStoreWithReducerManager
   const {
-    reducers, children, removeAfterUnmount = true,
+    reducers,
+    children,
+    removeAfterUnmount = true,
   } = props
   useEffect(() => {
     const mountedReducers = store.reducerManager.getReducerMap()

@@ -1,4 +1,4 @@
-import {type StateSchema} from 'app/providers/StoreProvider'
+import {type StateSchema} from '@/app/providers/StoreProvider'
 import {getProfileData} from './getProfileData'
 import {profileInitialState, profileMockState} from '../../slice/profileState'
 

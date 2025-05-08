@@ -1,8 +1,8 @@
 import {type FC, useCallback} from 'react'
 import {useSelector} from 'react-redux'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {Currency, CurrencySelect} from 'entities/Currency'
-import {Country} from 'entities/Country'
+import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
+import {Currency, CurrencySelect} from '@/entities/Currency'
+import {Country} from '@/entities/Country'
 import {
   getProfileError,
   getProfileForm,
@@ -12,16 +12,16 @@ import {
   getProfileValidationErrors,
   updateProfileData,
   profileActions,
-} from 'entities/Profile'
-import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {Input} from 'shared/ui/Input/Input'
-import {CountrySelect} from 'entities/Country/ui/CountrySelect/CountrySelect'
+} from '@/entities/Profile'
+import {Avatar} from '@/shared/ui/Avatar/Avatar'
+import {Input} from '@/shared/ui/Input/Input'
+import {CountrySelect} from '@/entities/Country/ui/CountrySelect/CountrySelect'
 import {useTranslation} from 'react-i18next'
-import {cls} from 'shared/lib/cls/cls'
-import {Text} from 'shared/ui/Text/Text'
-import {Loader} from 'shared/ui/Loader/Loader'
-import {Button} from 'shared/ui/Button/Button'
-import {HStack, VStack} from 'shared/ui/Stack'
+import {cls} from '@/shared/lib/cls/cls'
+import {Text} from '@/shared/ui/Text/Text'
+import {Loader} from '@/shared/ui/Loader/Loader'
+import {Button} from '@/shared/ui/Button/Button'
+import {HStack, VStack} from '@/shared/ui/Stack'
 import * as s from './EditProfileCard.module.scss'
 
 interface EditProfileCardProps {

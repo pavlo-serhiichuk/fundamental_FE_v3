@@ -1,4 +1,4 @@
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton'
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton'
 import * as s from './ArticleDetails.module.scss'
 
 export const ArticleDetailsSkeleton = () => (

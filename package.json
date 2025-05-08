@@ -126,6 +126,7 @@
     "react-i18next": "^15.4.1",
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.2.1",
-    "react-virtualized": "^9.22.6"
+    "react-virtualized": "^9.22.6",
+    "ts-morph": "^25.0.1"
   }
 }

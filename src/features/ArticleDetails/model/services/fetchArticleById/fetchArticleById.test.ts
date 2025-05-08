@@ -1,4 +1,4 @@
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
 import {ArticleDetailsSchema} from '../../types/ArticleDetailsSchema'
 import {getArticleDetailsMockState} from '../../slice/articleState'
 import {fetchArticleById} from './fetchArticleById'

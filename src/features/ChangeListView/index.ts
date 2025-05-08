@@ -2,4 +2,4 @@ export {changeListViewReducer, changeListViewActions} from './module/slice/chang
 export {ChangeListView} from './ui/ChangeListView/ChangeListView'
 export {getListView} from './module/selectors/getListView'
 export {type ListViewSchema} from './module/types/ListViewSchema'
-export {ListView} from 'features/ChangeListView/module/consts/consts'
+export {ListView} from './module/consts/consts'

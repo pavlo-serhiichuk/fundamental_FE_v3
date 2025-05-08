@@ -1,7 +1,7 @@
 import React, {Suspense} from 'react'
 import {Route, Routes} from 'react-router-dom'
-import {AppRoutesProps, routesConfig} from 'shared/config/routesConfig/routesConfig'
-import {RequireAuth} from 'app/providers/router/ui/RequireAuth'
+import {AppRoutesProps, routesConfig} from '@/shared/config/routesConfig/routesConfig'
+import {RequireAuth} from '@/app/providers/router/ui/RequireAuth'
 
 const AppRouter = () => {
   const renderWithProtection = (route: AppRoutesProps) => {

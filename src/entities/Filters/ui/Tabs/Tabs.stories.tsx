@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
-import 'app/styles/index.scss'
-import {AppRouteNames} from 'shared/config/routesConfig/routesConfig'
+import {StoreDecorator, ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
+import '@/app/styles/index.scss'
+import {AppRouteNames} from '@/shared/config/routesConfig/routesConfig'
 import {Tabs} from './Tabs'
 
 const args = {

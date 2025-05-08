@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
 import {Dropdown} from './Dropdown'
-import 'app/styles/index.scss'
-import {Button} from 'shared/ui/Button/Button'
+import '@/app/styles/index.scss'
+import {Button} from '@/shared/ui/Button/Button'
 
 const items = [
   {value: '123', content: 'content value'},

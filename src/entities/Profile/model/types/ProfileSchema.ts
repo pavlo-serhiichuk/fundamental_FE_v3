@@ -1,5 +1,5 @@
-import {type Country} from 'entities/Country/model/Country'
-import {type Currency} from 'entities/Currency'
+import {type Country} from '@/entities/Country/model/Country'
+import {type Currency} from '@/entities/Currency'
 import {ValidationError} from '../consts/consts'
 
 export interface Profile {

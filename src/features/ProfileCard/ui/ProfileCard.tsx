@@ -5,17 +5,17 @@ import {
   getProfileError,
   getProfileLoading,
   profileActions,
-} from 'entities/Profile'
-import {Text} from 'shared/ui/Text/Text'
-import {cls} from 'shared/lib/cls/cls'
-import {Avatar} from 'shared/ui/Avatar/Avatar'
-import PinIcon from 'shared/assets/icons/map-pin.svg'
-import {Button} from 'shared/ui/Button/Button'
+} from '@/entities/Profile'
+import {Text} from '@/shared/ui/Text/Text'
+import {cls} from '@/shared/lib/cls/cls'
+import {Avatar} from '@/shared/ui/Avatar/Avatar'
+import PinIcon from '@/shared/assets/icons/map-pin.svg'
+import {Button} from '@/shared/ui/Button/Button'
 import {useCallback} from 'react'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {getUserAuthData} from 'entities/User'
+import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
+import {getUserAuthData} from '@/entities/User'
 import {useParams} from 'react-router-dom'
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton'
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton'
 import * as s from './ProfileCard.module.scss'
 
 interface ProfileCardProps {

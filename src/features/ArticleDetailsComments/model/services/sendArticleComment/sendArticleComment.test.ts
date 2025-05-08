@@ -1,5 +1,5 @@
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {StateSchema} from 'app/providers/StoreProvider'
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {StateSchema} from '@/app/providers/StoreProvider'
 import {sendArticleComment} from './sendArticleComment'
 
 const mockState: DeepPartial<StateSchema> = {addCommentForm: {text: 'comment'}, user: {authData: {id: '1'}}, articleDetailsPage: {details: {data: {id: '1'}}}}

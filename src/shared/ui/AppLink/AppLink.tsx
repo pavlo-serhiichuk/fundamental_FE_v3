@@ -1,5 +1,5 @@
 import {Children, type FC, Fragment} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import {NavLink, type LinkProps} from 'react-router-dom'
 import * as s from './AppLink.module.scss'
 

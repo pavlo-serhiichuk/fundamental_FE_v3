@@ -1,5 +1,5 @@
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {type Comment} from 'entities/Comment'
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {type Comment} from '@/entities/Comment'
 import {
   fetchArticleCommentsById,
 } from './fetchArticleCommentsById'

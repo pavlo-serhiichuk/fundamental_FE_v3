@@ -1,5 +1,5 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {LIST_VIEW} from 'shared/const/localStorage'
+import {LIST_VIEW} from '@/shared/const/localStorage'
 import {ListView} from '../consts/consts'
 import {type ListViewSchema} from '../types/ListViewSchema'
 
