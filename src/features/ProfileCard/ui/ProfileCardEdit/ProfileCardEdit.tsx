@@ -1,5 +1,6 @@
 import {type FC, useCallback} from 'react'
 import {useSelector} from 'react-redux'
+import {useTranslation} from 'react-i18next'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import {Currency, CurrencySelect} from '@/entities/Currency'
 import {Country} from '@/entities/Country'
@@ -16,19 +17,18 @@ import {
 import {Avatar} from '@/shared/ui/Avatar/Avatar'
 import {Input} from '@/shared/ui/Input/Input'
 import {CountrySelect} from '@/entities/Country/ui/CountrySelect/CountrySelect'
-import {useTranslation} from 'react-i18next'
 import {cls} from '@/shared/lib/cls/cls'
 import {Text} from '@/shared/ui/Text/Text'
 import {Loader} from '@/shared/ui/Loader/Loader'
 import {Button} from '@/shared/ui/Button/Button'
 import {HStack, VStack} from '@/shared/ui/Stack'
-import * as s from './EditProfileCard.module.scss'
+import * as s from './ProfileCardEdit.module.scss'
 
 interface EditProfileCardProps {
   className?: string
 }
 
-export const EditProfileCard: FC<EditProfileCardProps> = () => {
+export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   const {t} = useTranslation('profile')
   const dispatch = useAppDispatch()
   const readonly = useSelector(getProfileReadonly)
@@ -80,13 +80,13 @@ export const EditProfileCard: FC<EditProfileCardProps> = () => {
   }
 
   return (
-    <div className={s.EditProfileCard} data-testid="EditProfileCard">
+    <div className={s.EditProfileCard} data-testid="ProfileCardEdit">
       {validationErrors?.map((error) => (
         <Text
           key={error}
           theme="error"
           text={t(error)}
-          testId={`EditProfileCard.${error}`}
+          testId={`ProfileCardEdit.${error}`}
         />
       ))}
       <VStack gap="10">

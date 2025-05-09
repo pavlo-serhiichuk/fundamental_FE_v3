@@ -1,1 +1,2 @@
-export {ProfileCard} from './ui/ProfileCard'
+export {ProfileCardEdit} from './ui/ProfileCardEdit/ProfileCardEdit'
+export {ProfileCardView} from './ui/ProfileCardView/ProfileCardView'

@@ -25,6 +25,7 @@ const config = {
     '\\.s?css$': path.resolve(__dirname, 'styleMock.ts'),
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     axios: 'axios/dist/node/axios.cjs',
+    '^@/(.*)$': '<rootDir>src/$1',
   },
   modulePaths: [
     '<rootDir>src',
@@ -49,7 +50,7 @@ const config = {
     ['jest-html-reporters', {
       publicPath: '<rootDir>/reports/unit',
       filename: 'report.html',
-      // openReport: true,
+      openReport: true,
     }],
   ],
 }

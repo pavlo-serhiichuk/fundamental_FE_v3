@@ -2,16 +2,16 @@ import {fn} from '@storybook/test'
 import {type Meta, type StoryObj} from '@storybook/react'
 import {profileMockState} from '@/entities/Profile/model/slice/profileState'
 import {StoreDecorator, ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
-import {EditProfileCard} from './EditProfileCard'
+import {ProfileCardEdit} from './ProfileCardEdit'
 
 const meta = {
-  title: 'features/EditProfileCard',
-  component: EditProfileCard,
+  title: 'features/ProfileCard/ProfileCardEdit',
+  component: ProfileCardEdit,
   args: {
     onClick: fn(),
   },
   decorators: [StoreDecorator({profile: profileMockState})],
-} as Meta <typeof EditProfileCard>
+} as Meta <typeof ProfileCardEdit>
 
 export default meta
 

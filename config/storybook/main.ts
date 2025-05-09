@@ -1,4 +1,5 @@
 import {Configuration, DefinePlugin} from 'webpack'
+import path from 'path'
 import {ConfigPaths} from '../build/configOptions'
 import {getCssLoader} from '../build/loaders/getCssLoader'
 
@@ -41,6 +42,16 @@ const config = {
     config.resolve?.modules?.push(paths.srcPath, 'node_modules')
     config.resolve?.extensions?.push('.ts', '.tsx')
     config.module?.rules?.push(getCssLoader(true))
+    // config!.resolve!.alias = {'@': path.resolve(__dirname, '..', '..', 'src')}
+    config!.resolve!.alias = {
+      ...config!.resolve!.alias,
+      '@/shared': path.resolve(__dirname, '..', '..', 'src', 'shared'),
+      '@/entities': path.resolve(__dirname, '..', '..', 'src', 'entities'),
+      '@/features': path.resolve(__dirname, '..', '..', 'src', 'features'),
+      '@/widgets': path.resolve(__dirname, '..', '..', 'src', 'widgets'),
+      '@/pages': path.resolve(__dirname, '..', '..', 'src', 'pages'),
+      '@/app': path.resolve(__dirname, '..', '..', 'src', 'app'),
+    }
     // Find and remove the existing rule for handling SVGs
     // @ts-ignore
     const fileLoaderRule: any = config.module?.rules?.find((rule: any) => {

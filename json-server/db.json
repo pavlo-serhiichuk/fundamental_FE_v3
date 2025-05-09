@@ -672,7 +672,9 @@
       "username": "admin",
       "password": "111",
       "age": 28,
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
     {
@@ -680,7 +682,9 @@
       "username": "user",
       "password": "111",
       "age": 27,
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
@@ -688,7 +692,9 @@
       "username": "manager",
       "password": "111",
       "age": 27,
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
@@ -696,7 +702,10 @@
       "username": "user-manager",
       "password": "111",
       "age": 27,
-      "roles": ["USER", "MANAGER"],
+      "roles": [
+        "USER",
+        "MANAGER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     }
   ],
@@ -708,7 +717,7 @@
       "age": 28,
       "country": "Italy",
       "currency": "USD",
-      "username": "pasha",
+      "username": "admin",
       "city": "Irpin",
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
@@ -716,12 +725,23 @@
       "id": "2",
       "firstname": "popo",
       "lastname": "Serh",
-      "age": 28,
+      "age": 27,
       "country": "Ukraine",
       "currency": "USD",
-      "username": "pasha",
+      "username": "user",
       "city": "Vinnytsia",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+    },
+    {
+      "id": "3",
+      "firstname": "Man",
+      "lastname": "Ager",
+      "age": 27,
+      "country": "Ukraine",
+      "currency": "UAH",
+      "username": "manager",
+      "city": "Vinnytsia",
+      "avatar": "https://i.dailymail.co.uk/1s/2024/05/12/12/84760313-13409027-image-a-16_1715513507798.jpg"
     }
   ],
   "notifications": [
@@ -749,6 +769,113 @@
       "title": "Friends request",
       "description": "New session is coming!",
       "userId": "1"
+    }
+  ],
+  "articles-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Good one",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Good one",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "articleId": "1",
+      "rate": 3,
+      "userId": "2",
+      "id": "Wy3vfwC"
+    },
+    {
+      "articleId": "3",
+      "rate": 2,
+      "feedback": "",
+      "userId": "2",
+      "id": "OiIiCIJ"
+    },
+    {
+      "articleId": "4",
+      "rate": 3,
+      "feedback": "",
+      "userId": "2",
+      "id": "tSm3uUS"
+    }
+  ],
+  "profiles-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "An awesome profile",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Good one",
+      "userId": "2",
+      "profileId": "2"
+    },
+    {
+      "profileId": "1",
+      "feedback": "",
+      "rate": 2,
+      "userId": "2",
+      "id": "9RaDEC2"
+    },
+    {
+      "profileId": "0",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "фіва",
+      "id": "0ueMYDC"
+    },
+    {
+      "profileId": "0",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "234",
+      "id": "YgOlQC3"
+    },
+    {
+      "profileId": "3",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "asdf",
+      "id": "eWKVi01"
+    },
+    {
+      "profileId": "3",
+      "userId": "2",
+      "rate": 1,
+      "feedback": "this is a perfect profile",
+      "id": "2sLYBhA"
+    },
+    {
+      "profileId": "1",
+      "userId": "3",
+      "rate": 3,
+      "feedback": "as a manager, I'm shocked",
+      "id": "hwHZh2t"
+    },
+    {
+      "profileId": "1",
+      "userId": "3",
+      "rate": 3,
+      "id": "PTIrBWA"
+    },
+    {
+      "profileId": "2",
+      "userId": "3",
+      "rate": 1,
+      "feedback": "bullshit!",
+      "id": "5yijocW"
     }
   ]
 }

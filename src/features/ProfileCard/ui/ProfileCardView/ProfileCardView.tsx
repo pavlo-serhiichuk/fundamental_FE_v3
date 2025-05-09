@@ -1,5 +1,7 @@
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
+import {useCallback} from 'react'
+import {useParams} from 'react-router-dom'
 import {
   getProfileData,
   getProfileError,
@@ -11,18 +13,16 @@ import {cls} from '@/shared/lib/cls/cls'
 import {Avatar} from '@/shared/ui/Avatar/Avatar'
 import PinIcon from '@/shared/assets/icons/map-pin.svg'
 import {Button} from '@/shared/ui/Button/Button'
-import {useCallback} from 'react'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import {getUserAuthData} from '@/entities/User'
-import {useParams} from 'react-router-dom'
 import {Skeleton} from '@/shared/ui/Skeleton/Skeleton'
-import * as s from './ProfileCard.module.scss'
+import * as s from './ProfileCardView.module.scss'
 
 interface ProfileCardProps {
   className?: string
 }
 
-export const ProfileCard = (props: ProfileCardProps) => {
+export const ProfileCardView = (props: ProfileCardProps) => {
   const {className} = props
   const {t} = useTranslation('profile')
   const dispatch = useAppDispatch()
