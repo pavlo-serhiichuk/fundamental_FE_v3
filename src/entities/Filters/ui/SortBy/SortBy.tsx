@@ -1,7 +1,7 @@
 import {memo, useCallback, useMemo} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
+import {cls} from '@/shared/lib/cls/cls'
 import {Select, SelectOption} from '@/shared/ui/Select/Select'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import {filtersActions} from '../../module/slice/filtersSlice'
@@ -32,12 +32,12 @@ export const SortBy = memo((props: SortByParamProps) => {
       value: SortByType.DATE,
       content: t('date'),
     },
-  ]), [sortField])
+  ]), [t])
 
   const onChange = useCallback((value: SortByType) => {
     dispatch(filtersActions.setSortBy(value))
     fetchData?.()
-  }, [dispatch, sortField])
+  }, [dispatch, fetchData])
 
   return (
     <div className={cls(s.SortByParam, {}, [className])}>

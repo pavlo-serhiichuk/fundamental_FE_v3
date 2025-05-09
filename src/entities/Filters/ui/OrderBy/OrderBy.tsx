@@ -1,7 +1,7 @@
 import {memo, useCallback, useMemo} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
+import {cls} from '@/shared/lib/cls/cls'
 import {Select, SelectOption} from '@/shared/ui/Select/Select'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import {getFiltersOrder} from '../../module/selectors/getFiltersState'

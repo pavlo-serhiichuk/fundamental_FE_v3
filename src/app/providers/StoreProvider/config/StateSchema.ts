@@ -1,11 +1,11 @@
-import {CounterSchema} from '@/entities/Counter'
-import {UserSchema} from '@/entities/User'
 import {
   type Action, EnhancedStore, type ReducersMapObject, type Reducer,
 } from '@reduxjs/toolkit'
 import {type NavigateOptions} from 'react-router/dist/lib/context'
 import {type AxiosInstance} from 'axios'
 import {type To} from '@remix-run/router'
+import {UserSchema} from '@/entities/User'
+import {CounterSchema} from '@/entities/Counter'
 import {SignInSchema} from '@/features/SignIn'
 import {ProfileSchema} from '@/entities/Profile'
 import {ArticlesPageSchema} from '@/pages/ArticlesPage'

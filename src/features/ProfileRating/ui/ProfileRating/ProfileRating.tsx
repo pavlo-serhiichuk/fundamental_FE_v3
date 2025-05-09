@@ -2,10 +2,10 @@ import {useTranslation} from 'react-i18next'
 import {useSelector} from 'react-redux'
 import {useCallback} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
-import * as s from './ProfileRating.module.scss'
 import {getUserAuthData} from '@/entities/User'
 import {RatingCard} from '@/entities/Rating/ui/RatingCard/RatingCard'
 import {useFetchProfileRating, useRateProfile} from '../../api/profileRatingApi'
+import * as s from './ProfileRating.module.scss'
 
 export interface ProfileRatingProps {
   className?: string
@@ -33,7 +33,7 @@ const ProfileRating = (props: ProfileRatingProps) => {
     } catch (err) {
       console.error('Failed to submit rating:', err)
     }
-  }, [profileId, userId])
+  }, [profileId, userId, rateProfile])
 
   const title = profileRating?.length ? "You've rated this profile" : 'Rate this profile'
 

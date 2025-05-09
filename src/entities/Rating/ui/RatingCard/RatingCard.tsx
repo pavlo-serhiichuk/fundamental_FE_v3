@@ -47,7 +47,7 @@ export const RatingCard = (props: RatingCardProps) => {
       setStarsCount(starsCount)
       setIsModalOpen(true)
     }
-  }, [])
+  }, [ratingInfo])
 
   const onChangeFeedbackMessage = (feedback: string) => {
     setFeedbackMessage(feedback)
@@ -58,14 +58,14 @@ export const RatingCard = (props: RatingCardProps) => {
       onAccept(starsCount, feedbackMessage)
       setIsModalOpen(false)
     }
-  }, [feedbackMessage, starsCount, ratingInfo])
+  }, [feedbackMessage, starsCount, ratingInfo, onAccept])
 
   const handleCancel = useCallback(() => {
     if (!ratingInfo && onCancel) {
       onCancel(starsCount)
       setIsModalOpen(false)
     }
-  }, [starsCount, ratingInfo])
+  }, [onCancel, starsCount, ratingInfo])
 
   const modalContent = (
     <>

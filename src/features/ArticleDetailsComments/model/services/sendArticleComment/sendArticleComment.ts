@@ -1,5 +1,5 @@
-import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {getUserAuthData} from '@/entities/User'
 import {getArticleDetailsData} from '@/features/ArticleDetails'
 import {getAddCommentFormText, addCommentFormSliceActions} from '@/entities/Comment'

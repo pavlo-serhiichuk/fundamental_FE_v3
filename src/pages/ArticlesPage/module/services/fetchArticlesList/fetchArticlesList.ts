@@ -1,5 +1,5 @@
-import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {type Article} from '@/entities/Article/model/types/article'
 import {
   getFiltersOrder,

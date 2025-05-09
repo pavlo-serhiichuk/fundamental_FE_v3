@@ -1,5 +1,5 @@
-import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {getListView} from '@/features/ChangeListView'
 import {
   filtersActions, OrderByType, SortByType, TopicType,

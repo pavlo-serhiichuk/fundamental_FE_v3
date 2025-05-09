@@ -1,6 +1,4 @@
-import {
-  FC, useState, memo, useEffect,
-} from 'react'
+import {useState, memo, useEffect} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
 import {Icon} from '@/shared/ui/Icon/Icon'
 import StarRatingIcon from '@/shared/assets/icons/start-rating.svg'
@@ -15,7 +13,7 @@ interface StarRatingProps {
 
 const stars = [1, 2, 3, 4, 5]
 
-export const StarRating: FC<StarRatingProps> = memo((props) => {
+export const StarRating = memo((props: StarRatingProps) => {
   const {
     className,
     size = 30,

@@ -1,5 +1,5 @@
-import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
+import {cls} from '@/shared/lib/cls/cls'
 import {Text} from '@/shared/ui/Text/Text'
 import {AppLink} from '@/shared/ui/AppLink/AppLink'
 import {Notification} from '../../module/types/notification'

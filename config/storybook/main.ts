@@ -45,12 +45,7 @@ const config = {
     // config!.resolve!.alias = {'@': path.resolve(__dirname, '..', '..', 'src')}
     config!.resolve!.alias = {
       ...config!.resolve!.alias,
-      '@/shared': path.resolve(__dirname, '..', '..', 'src', 'shared'),
-      '@/entities': path.resolve(__dirname, '..', '..', 'src', 'entities'),
-      '@/features': path.resolve(__dirname, '..', '..', 'src', 'features'),
-      '@/widgets': path.resolve(__dirname, '..', '..', 'src', 'widgets'),
-      '@/pages': path.resolve(__dirname, '..', '..', 'src', 'pages'),
-      '@/app': path.resolve(__dirname, '..', '..', 'src', 'app'),
+      '@': path.resolve(__dirname, '..', '..', 'src'),
     }
     // Find and remove the existing rule for handling SVGs
     // @ts-ignore
