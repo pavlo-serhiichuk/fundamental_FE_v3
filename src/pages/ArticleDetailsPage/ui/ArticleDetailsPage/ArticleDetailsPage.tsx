@@ -1,13 +1,13 @@
 import {type FC} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
 import {ArticleDetailsComments} from '@/features/ArticleDetailsComments'
-import {Page} from '@/widgets/Page/Page'
+import {Page} from '@/widgets/Page'
 import {ArticleDetails} from '@/features/ArticleDetails'
 import DynamicReducerLoader, {type ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/module/slice/articleDetailsPageReducer'
+import {articleDetailsPageReducer} from '../../module/slice/articleDetailsPageReducer'
 import {
   ArticleDetailsRecommendations,
-} from '@/features/ArticleDetailsRecommendations/ui/ArticleDetailsRecommendations/ArticleDetailsRecommendations'
+} from '@/features/ArticleDetailsRecommendations'
 import * as s from './ArticleDetailsPage.module.scss'
 
 interface ArticlesPageProps {

@@ -1,6 +1,5 @@
 import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {getArticleDetailsMockState} from '@/features/ArticleDetails/model/slice/articleState'
-import {ArticleDetailsSchema} from '@/features/ArticleDetails'
+import {getArticleDetailsMockState, ArticleDetailsSchema} from '@/features/ArticleDetails'
 import {fetchArticlesList} from '../fetchArticlesList/fetchArticlesList'
 import {fetchNextArticlesList} from './fetchNextArticlesList'
 

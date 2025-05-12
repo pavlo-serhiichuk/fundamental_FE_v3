@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
-    'by-pavlo-path-checker',
+    'ulbi-tv-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -49,7 +49,8 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 0,
     'react/no-array-index-key': 0,
-    'by-pavlo-path-checker/path-checker': 'error',
+    // 'ulbi-tv-plugin/path-checker': ['error', {alias: '@'}],
+    'ulbi-tv-plugin/public-api-imports': ['error', {alias: '@'}],
     'class-methods-use-this': 0,
     'implicit-arrow-linebreak': 0,
   },

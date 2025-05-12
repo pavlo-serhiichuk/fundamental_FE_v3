@@ -6,3 +6,4 @@ export {
   getArticleDetailsError,
 } from './model/selectors/getArticleDetailsData'
 export {ArticleDetails} from './ui/ArticleDetails/ArticleDetails'
+export {getArticleDetailsMockState} from './model/slice/articleState'

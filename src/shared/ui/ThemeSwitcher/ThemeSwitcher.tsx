@@ -1,6 +1,6 @@
 import {memo} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
-import {Button} from '@/shared/ui/Button/Button'
+import {Button} from '../../ui/Button/Button'
 import ThemeCircle from '@/shared/assets/icons/circle.svg'
 import {useTheme} from '@/shared/hooks/useTheme'
 import * as s from './ThemeSwitcher.module.scss'

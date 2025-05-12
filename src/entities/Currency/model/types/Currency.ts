@@ -1,3 +1,3 @@
-import {currencies} from '@/entities/Currency/model/consts/consts'
+import {currencies} from '../consts/consts'
 
 export type Currency = keyof typeof currencies

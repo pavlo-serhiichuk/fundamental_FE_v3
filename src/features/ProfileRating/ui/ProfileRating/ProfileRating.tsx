@@ -6,6 +6,7 @@ import {getUserAuthData} from '@/entities/User'
 import {RatingCard} from '@/entities/Rating/ui/RatingCard/RatingCard'
 import {useFetchProfileRating, useRateProfile} from '../../api/profileRatingApi'
 import * as s from './ProfileRating.module.scss'
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton'
 
 export interface ProfileRatingProps {
   className?: string
@@ -20,6 +21,7 @@ const ProfileRating = (props: ProfileRatingProps) => {
 
   const {
     data: profileRating,
+    isLoading,
   } = useFetchProfileRating({profileId, userId})
 
   const handleRate = useCallback(async (starsCount: number, feedbackMessage?: string) => {
@@ -44,6 +46,10 @@ const ProfileRating = (props: ProfileRatingProps) => {
   const onCancel = useCallback((startsCount: number) => {
     handleRate(startsCount)
   }, [handleRate])
+
+  if (isLoading) {
+    return <Skeleton width="100%" height={120} className={s.ProfileRating} radius="20px" />
+  }
 
   return (
     <div className={cls(s.ProfileRating, {}, [className])}>
