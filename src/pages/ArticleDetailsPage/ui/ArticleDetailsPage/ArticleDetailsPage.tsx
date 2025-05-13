@@ -4,7 +4,7 @@ import {ArticleDetailsComments} from '@/features/ArticleDetailsComments'
 import {Page} from '@/widgets/Page'
 import {ArticleDetails} from '@/features/ArticleDetails'
 import DynamicReducerLoader, {type ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {articleDetailsPageReducer} from '../../module/slice/articleDetailsPageReducer'
+import {articleDetailsPageSlice} from '../../module/slice/articleDetailsPageSlice'
 import {
   ArticleDetailsRecommendations,
 } from '@/features/ArticleDetailsRecommendations'
@@ -15,7 +15,7 @@ interface ArticlesPageProps {
 }
 
 const reducers: ReducersList = {
-  articleDetailsPage: articleDetailsPageReducer,
+  articleDetailsPage: articleDetailsPageSlice,
 }
 
 const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {

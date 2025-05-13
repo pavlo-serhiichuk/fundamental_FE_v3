@@ -49,8 +49,19 @@ module.exports = {
     'no-param-reassign': 0,
     'no-undef': 0,
     'react/no-array-index-key': 0,
-    // 'ulbi-tv-plugin/path-checker': ['error', {alias: '@'}],
-    'ulbi-tv-plugin/public-api-imports': ['error', {alias: '@'}],
+    'ulbi-tv-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFiles: ['**/*.test.*', '**/decorators.tsx'],
+      }],
+    'ulbi-tv-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
     'class-methods-use-this': 0,
     'implicit-arrow-linebreak': 0,
   },

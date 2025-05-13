@@ -1,6 +1,5 @@
 import {createContext} from 'react'
-
-export type Theme = 'light' | 'dark' | 'green'
+import {Theme} from '../../types/theme'
 
 interface ThemeContextProps {
   theme?: Theme;
@@ -8,5 +7,3 @@ interface ThemeContextProps {
 }
 
 export const ThemeContext = createContext<ThemeContextProps>({})
-
-export const LS_THEME_KEY = 'theme'

@@ -8,9 +8,9 @@ import {
   getFiltersTopicType,
 } from '@/entities/Filters'
 import {addQueryParam} from '@/shared/lib/addueryParam/addQueryParam'
-import {RoutePaths} from '@/shared/config/routesConfig/routesConfig'
 import {getArticlesPageLimit} from '../../selectors/getArticlesPageLimit'
 import {getArticlesPageNumber} from '../../selectors/getArticlesPageNumber'
+import {RoutePaths} from '@/shared/const/routers'
 
 interface FetchArticlesListProps {
   replace?: boolean

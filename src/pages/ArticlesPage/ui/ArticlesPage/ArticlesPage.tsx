@@ -6,7 +6,7 @@ import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import DynamicReducerLoader, {ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import {Page} from '@/widgets/Page'
 import {ArticlesList} from '@/entities/Article'
-import {getListView} from '@/features/ChangeListView'
+import {changeListViewActions, getListView} from '@/features/ChangeListView'
 import {ArticlesPageFilters} from '../ArticlesPageFilters/ArticlesPageFilters'
 import {getArticlesIsLoading} from '../../module/selectors/getArticlesIsLoading'
 import {initArticlesList} from '../../module/services/initArticlesList/initArticlesList'
@@ -26,6 +26,7 @@ const ArticlesPage = () => {
 
   useInitialEffect(() => {
     dispatch(initArticlesList(searchParams))
+    dispatch(changeListViewActions.initListView())
   })
 
   const onScrollEnd = useCallback(() => {

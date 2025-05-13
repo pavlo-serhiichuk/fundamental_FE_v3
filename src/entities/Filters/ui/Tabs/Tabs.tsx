@@ -1,15 +1,15 @@
+import {useCallback} from 'react'
+import {useSelector} from 'react-redux'
+import i18n from 'i18next'
 import {cls} from '@/shared/lib/cls/cls'
 import {Card} from '@/shared/ui/Card/Card'
-import {useCallback} from 'react'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
-import {useSelector} from 'react-redux'
-import {AppRouteNames} from '@/shared/config/routesConfig/routesConfig'
-import i18n from 'i18next'
 import {HStack} from '@/shared/ui/Stack'
 import {getFiltersTopicType} from '../../module/selectors/getFiltersState'
 import {filtersActions} from '../../module/slice/filtersSlice'
 import * as s from './Tabs.module.scss'
 import {TopicType} from '../../module/types/FiltersSchema'
+import {AppRouteNames} from '@/shared/const/routers'
 
 export interface TabOption<T extends string> {
   value: T

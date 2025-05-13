@@ -1,13 +1,13 @@
 import {FC, memo, useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
 import {useDispatch, useSelector} from 'react-redux'
+import {useNavigate} from 'react-router-dom'
 import {
   getIsUserAdmin, getIsUserManager, getUserAuthData, userActions,
 } from '@/entities/User'
 import {Dropdown} from '@/shared/ui/Popups'
 import {Avatar} from '@/shared/ui/Avatar/Avatar'
-import {getRouteAdmin, getRouteProfile} from '@/shared/config/routesConfig/routesConfig'
-import {useNavigate} from 'react-router-dom'
+import {getRouteAdmin, getRouteProfile} from '@/shared/const/routers'
 
 interface AvatarDropdownProps {
   className?: string;

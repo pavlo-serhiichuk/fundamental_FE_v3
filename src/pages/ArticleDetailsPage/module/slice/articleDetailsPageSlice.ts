@@ -3,7 +3,7 @@ import {articleDetailsReducer} from '@/features/ArticleDetails'
 import {articleDetailsCommentsReducer} from '@/features/ArticleDetailsComments'
 import {ArticleDetailsPageSchema} from '../types/ArticleDetailsPageSchema'
 
-export const articleDetailsPageReducer = combineReducers<ArticleDetailsPageSchema>({
+export const articleDetailsPageSlice = combineReducers<ArticleDetailsPageSchema>({
 // @ts-ignore
   details: articleDetailsReducer,
   // @ts-ignore
