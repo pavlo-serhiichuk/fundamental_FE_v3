@@ -1,6 +1,6 @@
 import {memo} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
-import {Text} from '@/shared/ui/Text/Text'
+import {Text} from '@/shared/ui/Text'
 import {type ArticleImageBlock} from '../../model/types/article'
 import * as s from './ArticleBlockImageComponent.module.scss'
 

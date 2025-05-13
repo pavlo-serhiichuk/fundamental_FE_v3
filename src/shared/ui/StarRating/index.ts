@@ -1,1 +1,1 @@
-export {StarRating} from './StarRating'
+export * from './StarRating'

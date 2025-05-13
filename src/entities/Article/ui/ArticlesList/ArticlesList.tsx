@@ -1,6 +1,6 @@
 import {memo} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
-import {Loader} from '@/shared/ui/Loader/Loader'
+import {Loader} from '@/shared/ui/Loader'
 import {ListView} from '@/features/ChangeListView'
 import {Article} from '../../model/types/article'
 import {ArticlesListItem} from '../ArticlesListItem/ArticlesListItem'

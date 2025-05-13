@@ -3,7 +3,7 @@ import {useTranslation} from 'react-i18next'
 import {type Comment} from '@/entities/Comment'
 import {CommentCard} from '@/entities/Comment/ui/CommentCard/CommentCard'
 import {CommentCardSkeleton} from '@/entities/Comment/ui/CommentCard/CommentCardSkeleton'
-import {Text} from '@/shared/ui/Text/Text'
+import {Text} from '@/shared/ui/Text'
 import * as s from './CommentList.module.scss'
 
 interface CommentListProps {

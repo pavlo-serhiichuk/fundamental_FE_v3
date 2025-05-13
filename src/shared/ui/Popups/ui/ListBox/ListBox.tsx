@@ -1,6 +1,6 @@
 import {ReactNode, useCallback} from 'react'
 import {Listbox as HListBox} from '@headlessui/react'
-import {Button} from '@/shared/ui/Button/Button'
+import {Button} from '@/shared/ui/Button'
 import {HStack} from '@/shared/ui/Stack'
 import {ListBoxDirection} from '@/shared/types/ui'
 import {cls} from '@/shared/lib/cls/cls'

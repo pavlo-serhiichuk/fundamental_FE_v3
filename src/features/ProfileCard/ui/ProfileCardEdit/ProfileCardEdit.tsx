@@ -14,13 +14,13 @@ import {
   updateProfileData,
   profileActions,
 } from '@/entities/Profile'
-import {Avatar} from '@/shared/ui/Avatar/Avatar'
-import {Input} from '@/shared/ui/Input/Input'
+import {Avatar} from '@/shared/ui/Avatar'
+import {Input} from '@/shared/ui/Input'
 import {CountrySelect} from '@/entities/Country/ui/CountrySelect/CountrySelect'
 import {cls} from '@/shared/lib/cls/cls'
-import {Text} from '@/shared/ui/Text/Text'
-import {Loader} from '@/shared/ui/Loader/Loader'
-import {Button} from '@/shared/ui/Button/Button'
+import {Text} from '@/shared/ui/Text'
+import {Loader} from '@/shared/ui/Loader'
+import {Button} from '@/shared/ui/Button'
 import {HStack, VStack} from '@/shared/ui/Stack'
 import * as s from './ProfileCardEdit.module.scss'
 

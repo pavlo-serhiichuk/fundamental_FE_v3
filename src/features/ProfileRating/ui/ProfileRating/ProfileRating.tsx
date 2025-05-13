@@ -6,7 +6,7 @@ import {getUserAuthData} from '@/entities/User'
 import {RatingCard} from '@/entities/Rating'
 import {useFetchProfileRating, useRateProfile} from '../../api/profileRatingApi'
 import * as s from './ProfileRating.module.scss'
-import {Skeleton} from '@/shared/ui/Skeleton/Skeleton'
+import {Skeleton} from '@/shared/ui/Skeleton'
 
 export interface ProfileRatingProps {
   className?: string

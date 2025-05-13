@@ -1,6 +1,6 @@
-import {Modal} from '@/shared/ui/Modal/Modal'
+import {Modal} from '@/shared/ui/Modal'
 import {Suspense} from 'react'
-import {Loader} from '@/shared/ui/Loader/Loader'
+import {Loader} from '@/shared/ui/Loader'
 import {SignInFormAsync} from '../SignInForm/SignInForm.async'
 
 interface SignInModalProps {

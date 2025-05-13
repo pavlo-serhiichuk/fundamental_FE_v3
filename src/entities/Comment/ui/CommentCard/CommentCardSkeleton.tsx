@@ -1,5 +1,5 @@
 import {cls} from '@/shared/lib/cls/cls'
-import {Skeleton} from '@/shared/ui/Skeleton/Skeleton'
+import {Skeleton} from '@/shared/ui/Skeleton'
 import * as s from './CommentCard.module.scss'
 
 export const CommentCardSkeleton = () => (

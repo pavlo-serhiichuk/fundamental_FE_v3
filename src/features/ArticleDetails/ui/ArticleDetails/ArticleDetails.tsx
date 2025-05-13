@@ -10,14 +10,14 @@ import {
   ArticleBlockTextComponent,
   ArticleBlockType,
 } from '@/entities/Article'
-import {Text} from '@/shared/ui/Text/Text'
-import {Avatar} from '@/shared/ui/Avatar/Avatar'
+import {Text} from '@/shared/ui/Text'
+import {Avatar} from '@/shared/ui/Avatar'
 import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
-import {Icon} from '@/shared/ui/Icon/Icon'
-import {Button} from '@/shared/ui/Button/Button'
+import {Icon} from '@/shared/ui/Icon'
+import {Button} from '@/shared/ui/Button'
 import {
   getArticleDetailsData,
   getArticleDetailsError,

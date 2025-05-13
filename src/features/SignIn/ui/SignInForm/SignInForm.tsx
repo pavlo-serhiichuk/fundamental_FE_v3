@@ -1,7 +1,7 @@
 import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {Input} from '@/shared/ui/Input/Input'
-import {Button} from '@/shared/ui/Button/Button'
+import {Input} from '@/shared/ui/Input'
+import {Button} from '@/shared/ui/Button'
 import {useSelector} from 'react-redux'
 import {
   getSignInError,
@@ -13,7 +13,7 @@ import {signInActions, signInReducer} from '@/features/SignIn/module/slice/signI
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import {fetchSignIn} from '@/features/SignIn/module/thunks/fetchSignIn'
 import {memo, useCallback, useMemo} from 'react'
-import {Text} from '@/shared/ui/Text/Text'
+import {Text} from '@/shared/ui/Text'
 import DynamicReducerLoader, {ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import * as s from './SignInForm.module.scss'
 
