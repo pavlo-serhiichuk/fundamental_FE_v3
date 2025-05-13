@@ -22,10 +22,12 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'ulbi-tv-plugin',
+    'unused-imports',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    "unused-imports/no-unused-imports": "error",
     indent: [2, 2],
     'react/jsx-filename-extension': [2, {extensions: ['.js', '.jsx', '.tsx']}],
     'import/no-unresolved': 'off',
