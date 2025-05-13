@@ -8,10 +8,12 @@ export type ButtonTheme = 'default' | 'clear' | 'bordered' | 'sidebar-squad-m' |
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
+  /** responsible for button appearance */
   theme?: ButtonTheme
   disabled?: boolean | undefined
   children?: ReactNode
   testId?: string
+  /** responsible for filling all width */
   fullWidth?: boolean
 }
 

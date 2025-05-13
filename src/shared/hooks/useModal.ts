@@ -3,11 +3,19 @@ import React, {
 } from 'react'
 
 interface UseModalProps {
-  onClose?: () => void
   isOpen: boolean | undefined
   lazy?: boolean | undefined
   animationDelay: number
+  onClose?: () => void
 }
+
+/**
+ * Reusable hook for modal components (modal/drawer)
+ * @param isOpen
+ * @param lazy
+ * @param animationDelay
+ * @param onClose
+ */
 
 export function useModal(props: UseModalProps) {
   const {

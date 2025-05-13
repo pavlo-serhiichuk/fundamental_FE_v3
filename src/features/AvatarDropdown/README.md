@@ -1,1 +1,1 @@
-## avatarDropdown feature
+## Feature that returns Avatar dropdown
