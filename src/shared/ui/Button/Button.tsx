@@ -1,5 +1,5 @@
 import {
-  type ButtonHTMLAttributes, Children, memo, type ReactNode,
+  type ButtonHTMLAttributes, memo, type ReactNode,
 } from 'react'
 import {cls} from '@/shared/lib/cls/cls'
 import * as s from './Button.module.scss'
@@ -36,7 +36,7 @@ export const Button = memo((props: ButtonProps) => {
       className={cls(s.Button, {[s.disabled]: disabled, [s.fullWidth]: fullWidth}, [s[theme], className])}
       {...otherProps}
     >
-      {Children.only(<span>{children}</span>)}
+      {children}
     </button>
   )
 })
