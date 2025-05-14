@@ -20,25 +20,17 @@ export interface TabsProps {
   className?: string
   page: AppRouteNames
   fetchData?: () => void
+  options: TabOption<TopicType>[]
 }
-
-const articleOptions: TabOption<TopicType>[] = [
-  {value: 'ALL', content: i18n.t('All')},
-  {value: 'IT', content: i18n.t('IT')},
-  {value: 'ECONOMICS', content: i18n.t('Economics')},
-  {value: 'SCIENCE', content: i18n.t('Science')},
-]
 
 export const Tabs = (props: TabsProps) => {
   const {
     className,
     fetchData,
-    page,
+    options,
   } = props
   const dispatch = useAppDispatch()
   const topicType = useSelector(getFiltersTopicType)
-
-  const options: TabOption<TopicType>[] | null = page === AppRouteNames.ARTICLES ? articleOptions : null
 
   const onChangeTab = useCallback((value: TopicType) => () => {
     dispatch(filtersActions.setTopicType(value))
