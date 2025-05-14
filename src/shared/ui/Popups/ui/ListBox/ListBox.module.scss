@@ -1,0 +1,52 @@
+.ListBox {
+  position: relative;
+  width: 100%;
+}
+
+.storiesClass {
+  width: 100%;
+  margin-top: 300px;
+}
+
+.label {
+  text-wrap: nowrap;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+  button {
+    padding: 0 0 0 6px;
+    width: 100%;
+  }
+
+  svg {
+    fill: var(--content-text-color);
+  }
+}
+
+.options {
+  color: var(--content-text-color);
+  background-color: var(--popup-bg);
+  position: absolute;
+  z-index: 3;
+  border-radius: 12px;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+}
+
+.item {
+  padding: 5px;
+  cursor: pointer;
+
+  &:hover {
+    li {
+      background-color: var(--popup-bg-hover);
+    }
+  }
+}

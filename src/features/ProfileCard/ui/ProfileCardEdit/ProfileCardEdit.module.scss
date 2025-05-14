@@ -1,0 +1,31 @@
+.EditProfileCard {
+  display: block;
+  border: 1px solid var(--border);
+  padding: 20px;
+}
+
+.buttons {
+  width: 100%;
+  display: inline-flex;
+  justify-content: end;
+  gap: 8px;
+}
+
+.avatarWrapper {
+  display: inline-flex;
+  justify-content: center;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  margin-top: 20px;
+}
+
+.selects {
+  margin-top: 10px;
+}

@@ -1,6 +1,6 @@
 import {type ChangeEvent, memo, useMemo} from 'react'
 import {useTranslation} from 'react-i18next'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import * as s from './Select.module.scss'
 
 export interface SelectOption<T extends string> {

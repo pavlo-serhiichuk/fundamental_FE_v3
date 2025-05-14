@@ -25,6 +25,7 @@ const config = {
     '\\.s?css$': path.resolve(__dirname, 'styleMock.ts'),
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     axios: 'axios/dist/node/axios.cjs',
+    '^@/(.*)$': '<rootDir>src/$1',
   },
   modulePaths: [
     '<rootDir>src',
@@ -43,6 +44,14 @@ const config = {
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   testPathIgnorePatterns: [
     '/node_modules/',
+  ],
+  reporters: [
+    'default',
+    ['jest-html-reporters', {
+      publicPath: '<rootDir>/reports/unit',
+      filename: 'report.html',
+      // openReport: true,
+    }],
   ],
 }
 

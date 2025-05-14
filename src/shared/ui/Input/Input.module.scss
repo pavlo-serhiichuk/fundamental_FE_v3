@@ -1,12 +1,14 @@
 .Input {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+  width: 100%;
+}
 
-  input {
-    background-color: var(--input-bg);
-    border: transparent 1px solid;
-    outline: none;
-    padding: 5px;
-  }
+.inputEl {
+  background-color: var(--input-bg);
+  border: transparent 1px solid;
+  outline: none;
+  padding: 5px;
+}
+
+.readonly {
+  opacity: 0.8;
 }

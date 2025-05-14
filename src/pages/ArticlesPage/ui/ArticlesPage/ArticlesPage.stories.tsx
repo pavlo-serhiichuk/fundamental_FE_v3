@@ -1,8 +1,7 @@
 import {type Meta, type StoryObj} from '@storybook/react'
-import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
-import {articlesListMockState} from 'pages/ArticlesPage/module/slice/articlesPageState'
-import {ListView} from 'features/ChangeListView'
+import {StoreDecorator, ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
+import {articlesListMockState} from '@/pages/ArticlesPage/module/slice/articlesPageState'
+import {ListView} from '@/features/ChangeListView'
 import ArticlesPage from './ArticlesPage'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

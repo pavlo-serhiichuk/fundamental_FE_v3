@@ -4,8 +4,8 @@ import {Input} from './Input'
 describe('Input', () => {
   test('exist', () => {
     render(<Input />)
-    expect(screen.getByTestId('input')).toBeInTheDocument()
-    expect(screen.getByTestId('input')).toBeInTheDocument()
+    expect(screen.getByTestId('Input')).toBeInTheDocument()
+    expect(screen.getByTestId('Input')).toBeInTheDocument()
   })
   test('has label', () => {
     render(<Input label="label" />)

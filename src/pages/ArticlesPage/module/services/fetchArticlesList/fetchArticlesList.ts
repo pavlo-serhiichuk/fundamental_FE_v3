@@ -1,15 +1,16 @@
-import {type ThunkConfig} from 'app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
-import {type Article} from 'entities/Article/model/types/article'
-import {getArticlesPageNumber} from 'pages/ArticlesPage/module/selectors/getArticlesPageNumber'
-import {getArticlesPageLimit} from 'pages/ArticlesPage/module/selectors/getArticlesPageLimit'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
+import {type Article} from '@/entities/Article'
 import {
   getFiltersOrder,
   getFiltersSearchValue,
-  getFiltersSortBy, getFiltersTopicType,
-} from 'entities/Filters'
-import {addQueryParam} from 'shared/lib/addueryParam/addQueryParam'
-import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
+  getFiltersSortBy,
+  getFiltersTopicType,
+} from '@/entities/Filters'
+import {addQueryParam} from '@/shared/lib/addueryParam/addQueryParam'
+import {getArticlesPageLimit} from '../../selectors/getArticlesPageLimit'
+import {getArticlesPageNumber} from '../../selectors/getArticlesPageNumber'
+import {RoutePaths} from '@/shared/const/routers'
 
 interface FetchArticlesListProps {
   replace?: boolean
@@ -34,7 +35,7 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
           title_like: searchValue,
           _order: orderBy,
           _sort: sortBy,
-          type: topicType === 'ALL' ? undefined : topicType,
+          type_like: topicType === 'ALL' ? undefined : topicType,
         },
       })
       addQueryParam({

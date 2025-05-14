@@ -1,10 +1,10 @@
-import {type ThunkConfig} from 'app/providers/StoreProvider'
 import {createAsyncThunk} from '@reduxjs/toolkit'
-import {getArticlesPageNumber} from 'pages/ArticlesPage/module/selectors/getArticlesPageNumber'
-import {fetchArticlesList} from 'pages/ArticlesPage/module/services/fetchArticlesList/fetchArticlesList'
-import {articlesPageActions} from 'pages/ArticlesPage/module/slice/articlesPageSlice'
-import {getArticlesPageHasMore} from 'pages/ArticlesPage/module/selectors/getArticlesPageHasMore'
-import {getArticlesIsLoading} from 'pages/ArticlesPage/module/selectors/getArticlesIsLoading'
+import {type ThunkConfig} from '@/app/providers/StoreProvider'
+import {fetchArticlesList} from '../fetchArticlesList/fetchArticlesList'
+import {articlesPageActions} from '../../slice/articlesPageSlice'
+import {getArticlesPageNumber} from '../../selectors/getArticlesPageNumber'
+import {getArticlesPageHasMore} from '../../selectors/getArticlesPageHasMore'
+import {getArticlesIsLoading} from '../../selectors/getArticlesIsLoading'
 
 export const fetchNextArticlesList = createAsyncThunk<void, undefined, ThunkConfig<string>>(
   'articles/fetchNextArticlesList',

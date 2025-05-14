@@ -1,10 +1,10 @@
-type UserRole = 'ADMIN' | 'USER'
+import {UserRoles} from '../consts/consts'
 
 export interface User {
     id?: string;
     username?: string;
     password?: string;
-    role?: UserRole
+    roles?: UserRoles[]
     avatar?: string
 }
 

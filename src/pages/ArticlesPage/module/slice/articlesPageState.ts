@@ -1,6 +1,5 @@
-import {ArticlesPageSchema} from 'pages/ArticlesPage/module/types/ArticlesPageSchema'
-import {getArticleDetailsMockState} from 'features/ArticleDetails/model/slice/articleState'
-import {Article} from 'entities/Article'
+import {mockArticle} from '@/entities/Article'
+import {ArticlesPageSchema} from '../types/ArticlesPageSchema'
 
 export const articlesListInitialState: ArticlesPageSchema = {
   ids: [],
@@ -17,12 +16,12 @@ export const articlesListMockState: ArticlesPageSchema = {
   error: undefined,
   ids: ['1', '2', '3', '4', '5', '6', '7'],
   entities: {
-    1: getArticleDetailsMockState().data as Article,
-    2: getArticleDetailsMockState().data as Article,
-    3: getArticleDetailsMockState().data as Article,
-    4: getArticleDetailsMockState().data as Article,
-    5: getArticleDetailsMockState().data as Article,
-    6: getArticleDetailsMockState().data as Article,
-    7: getArticleDetailsMockState().data as Article,
+    1: mockArticle,
+    2: mockArticle,
+    3: mockArticle,
+    4: mockArticle,
+    5: mockArticle,
+    6: mockArticle,
+    7: mockArticle,
   },
 }

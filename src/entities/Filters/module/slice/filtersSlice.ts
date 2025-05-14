@@ -1,7 +1,7 @@
 import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {ArticleTopicType} from 'entities/Article'
+import {ArticleTopicType} from '@/entities/Article'
+import {SortByType} from '../consts/consts'
 import type {FiltersSchema, OrderByType} from '../types/FiltersSchema'
-import {SortByType} from '../types/FiltersSchema'
 
 const initialState: FiltersSchema = {
   searchValue: '',

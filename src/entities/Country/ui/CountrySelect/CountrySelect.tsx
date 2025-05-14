@@ -1,12 +1,10 @@
-import {memo} from 'react'
-import {useSelector} from 'react-redux'
-import {getProfileForm, profileActions} from 'entities/Profile'
-import {countries, type Country} from 'entities/Country'
-import {Select} from 'shared/ui/Select/Select'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
+import React, {memo} from 'react'
+import {ListBox} from '@/shared/ui/Popups'
+import {useTranslation} from 'react-i18next'
+import {countries, type Country} from '../../model/Country'
+import * as s from './CountrySelect.module.scss'
 
 interface CountrySelectProps {
-  className?: string
   readonly?: boolean
   value?: Country
   onChange?: (value: Country) => void
@@ -15,15 +13,22 @@ interface CountrySelectProps {
 const countriesOptions = Object.entries(countries).map(([value, content]) => ({value, content} as {value: Country, content: Country}))
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {readonly, value, onChange} = props
-
+  const {
+    readonly,
+    value,
+    onChange = () => {},
+  } = props
+  const {t} = useTranslation()
   return (
-    <Select
+    <ListBox<Country>
+      testId="CountrySelect"
       readonly={readonly}
-      selectName="Country"
       value={value}
-      options={countriesOptions}
       onChange={onChange}
+      items={countriesOptions}
+      defaultValue={t('Select country')}
+      label={t('Select country')}
+      className={s.CountrySelect}
     />
   )
 })

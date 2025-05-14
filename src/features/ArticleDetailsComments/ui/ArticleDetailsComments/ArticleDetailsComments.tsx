@@ -1,18 +1,15 @@
 import {type FC, useCallback} from 'react'
 import {useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
-import {cls} from 'shared/lib/cls/cls'
-import {CommentList} from 'entities/Comment'
-import {
-  articleDetailsCommentsReducer,
-  getArticleDetailsComments,
-  fetchArticleCommentsById,
-  getArticleDetailsCommentsLoading, sendArticleComment,
-} from 'features/ArticleDetailsComments'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {useInitialEffect} from 'shared/hooks/useInitialEffect'
-import {getArticleDetailsError} from 'features/ArticleDetails'
-import {AddCommentForm} from 'features/AddCommentForm'
+import {cls} from '@/shared/lib/cls/cls'
+import {AddCommentForm, CommentList} from '@/entities/Comment'
+import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
+import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
+import {getArticleDetailsError} from '@/features/ArticleDetails'
+import {getArticleDetailsCommentsLoading} from '../../model/selectors/articleDetailsSelectors'
+import {sendArticleComment} from '../../model/services/sendArticleComment/sendArticleComment'
+import {fetchArticleCommentsById} from '../../model/services/fetchArticleCommentsById/fetchArticleCommentsById'
+import {getArticleDetailsComments} from '../../model/slice/articleDetailsCommentsSlice'
 import * as s from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {

@@ -1,0 +1,1 @@
+## Feature that returns List view switcher

@@ -1,8 +1,8 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
 import {CurrencySelect} from './CurrencySelect'
-import 'app/styles/index.scss'
+import '@/app/styles/index.scss'
 
 const meta = {
   title: 'entities/CurrencySelect',

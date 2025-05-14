@@ -1,8 +1,8 @@
-import {
-  profileActions, profileReducer, type ProfileSchema, ValidationError,
-} from 'entities/Profile'
-import {profileMockForm} from 'entities/Profile/model/slice/profileState'
-import {updateProfileData} from 'entities/Profile/model/services/updateProfileData/updateProfileData'
+import {ValidationError} from '../consts/consts'
+import {type ProfileSchema} from '../types/ProfileSchema'
+import {profileActions, profileReducer} from '../slice/profileSlice'
+import {profileMockForm} from './profileState'
+import {updateProfileData} from '../services/updateProfileData/updateProfileData'
 
 describe('profileSlice.test', () => {
   test('test setReadonly', () => {

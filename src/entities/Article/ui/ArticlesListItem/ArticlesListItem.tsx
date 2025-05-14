@@ -1,19 +1,18 @@
 import {memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
-import {ArticlesView} from 'pages/ArticlesPage/module/types/articlesPageTypes'
-import {Article, ArticleBlockType} from 'entities/Article'
-import {useSelector} from 'react-redux'
-import {Card} from 'shared/ui/Card/Card'
-import {Icon} from 'shared/ui/Icon/Icon'
-import EyeIcon from 'shared/assets/icons/eye.svg'
 import {useNavigate} from 'react-router-dom'
-import {RoutePaths} from 'shared/config/routesConfig/routesConfig'
-import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {Text} from 'shared/ui/Text/Text'
-import {Button} from 'shared/ui/Button/Button'
-import {getListView, ListView} from 'features/ChangeListView'
+import {cls} from '@/shared/lib/cls/cls'
+import {Card} from '@/shared/ui/Card'
+import {Icon} from '@/shared/ui/Icon'
+import EyeIcon from '@/shared/assets/icons/eye.svg'
+import {Avatar} from '@/shared/ui/Avatar'
+import {Text} from '@/shared/ui/Text'
+import {Button} from '@/shared/ui/Button'
+import {ListView} from '@/features/ChangeListView'
+import {ArticleBlockType} from '../../model/consts/consts'
+import {Article} from '../../model/types/article'
 import * as s from './ArticlesListItem.module.scss'
+import {RoutePaths} from '@/shared/const/routers'
 
 interface ArticlesListItemProps {
   className?: string
@@ -30,7 +29,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     navigate(RoutePaths.articleDetails + article.id)
   }
   if (listView === ListView.BIG) {
-    viewClassName = listView || ArticlesView.BIG
+    viewClassName = listView || ListView.BIG
     const textBlocks = article.blocks?.filter((block) => block.type === ArticleBlockType.TEXT)
 
     return (
@@ -67,7 +66,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     )
   }
 
-  viewClassName = listView || ArticlesView.SMALL
+  viewClassName = listView || ListView.SMALL
 
   return (
     <Card

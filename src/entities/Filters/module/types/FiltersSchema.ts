@@ -1,12 +1,7 @@
-import {ArticleTopicType} from 'entities/Article'
+import {ArticleTopicType} from '@/entities/Article'
+import {SortByType} from '../consts/consts'
 
 export type OrderByType = 'asc' | 'desc'
-
-export enum SortByType {
-  DATE = 'created',
-  VIEWS = 'views',
-  NAME = 'title'
-}
 
 export type TopicType = ArticleTopicType
 

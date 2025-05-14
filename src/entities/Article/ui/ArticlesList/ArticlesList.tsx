@@ -1,9 +1,9 @@
 import {memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
-import {Article} from 'entities/Article'
-import {ArticlesListItem} from 'entities/Article/ui/ArticlesListItem/ArticlesListItem'
-import {Loader} from 'shared/ui/Loader/Loader'
-import {ListView} from 'features/ChangeListView'
+import {cls} from '@/shared/lib/cls/cls'
+import {Loader} from '@/shared/ui/Loader'
+import {ListView} from '@/features/ChangeListView'
+import {Article} from '../../model/types/article'
+import {ArticlesListItem} from '../ArticlesListItem/ArticlesListItem'
 import * as s from './ArticlesList.module.scss'
 
 interface ArticlesListProps {

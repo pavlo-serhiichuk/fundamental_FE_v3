@@ -6,7 +6,8 @@
 @use 'fonts/fonts';
 
 .app,
-.app_modal {
+.app_modal,
+.app_drawer {
   height: 100vh;
   overflow: scroll;
   font: var(--font-16);

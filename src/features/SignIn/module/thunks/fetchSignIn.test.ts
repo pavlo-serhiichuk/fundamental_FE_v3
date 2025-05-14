@@ -1,7 +1,7 @@
-import {fetchSignIn} from 'features/SignIn/module/thunks/fetchSignIn'
-import {userActions} from 'entities/User'
 import axios from 'axios'
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {userActions} from '@/entities/User'
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {fetchSignIn} from './fetchSignIn'
 
 jest.mock('axios')
 const mockedAxios = jest.mocked(axios, true)

@@ -1,6 +1,6 @@
 import {type Meta, type StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
 import {Skeleton} from './Skeleton'
 
 const meta = {

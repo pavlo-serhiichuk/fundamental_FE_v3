@@ -5,4 +5,6 @@ export {
   getArticleDetailsLoading,
   getArticleDetailsError,
 } from './model/selectors/getArticleDetailsData'
-export {ArticleDetails} from 'features/ArticleDetails/ui/ArticleDetails/ArticleDetails'
+export {ArticleDetails} from './ui/ArticleDetails/ArticleDetails'
+export {getArticleDetailsMockState} from './model/slice/articleState'
+export {fetchArticleById} from './model/services/fetchArticleById/fetchArticleById'

@@ -1,7 +1,7 @@
-import {type FC, memo} from 'react'
-import {cls} from 'shared/lib/cls/cls'
-import {type ArticleImageBlock} from 'entities/Article'
-import {Text} from 'shared/ui/Text/Text'
+import {memo} from 'react'
+import {cls} from '@/shared/lib/cls/cls'
+import {Text} from '@/shared/ui/Text'
+import {type ArticleImageBlock} from '../../model/types/article'
 import * as s from './ArticleBlockImageComponent.module.scss'
 
 interface ArticleBlockImageComponentProps {

@@ -18,7 +18,8 @@ export const getLoaders = (options: ConfigOptions) => {
     ],
   }
 
-  const babelLoader = getBabelLoader(options)
+  const codeBabelLoader = getBabelLoader({...options, isTsx: false})
+  const tsxCodeBabelLoader = getBabelLoader({...options, isTsx: true})
 
   const tsLoader = {
     test: /\.tsx?$/,
@@ -44,8 +45,8 @@ export const getLoaders = (options: ConfigOptions) => {
   return [
     fileLoader,
     svgLoader,
-    babelLoader,
-    tsLoader,
+    codeBabelLoader,
+    tsxCodeBabelLoader,
     cssLoader,
     fontLoader,
   ]

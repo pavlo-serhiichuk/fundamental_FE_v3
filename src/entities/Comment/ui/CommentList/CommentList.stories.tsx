@@ -8,7 +8,7 @@ const comments = [{
     id: '1',
     username: 'name of the user',
     age: 28,
-    role: 'ADMIN',
+    roles: ['ADMIN'],
     avatar: 'https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg',
   },
 }, {
@@ -18,7 +18,7 @@ const comments = [{
     id: '1',
     username: 'name of the user 2',
     age: 28,
-    role: 'USER',
+    roles: ['USER'],
     avatar: 'https://cdn.sortiraparis.com/images/80/98390/1014564-avatar-le-dernier-maitre-de-l-air-la-serie-netflix-en-live-action-devoile-sa-bande-annonce-finale.jpg',
   },
 }]

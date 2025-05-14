@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/react'
 import {fn} from '@storybook/test'
-import {StoreDecorator, ThemeDecorator} from 'shared/config/storybook/decorators/decorators'
+import {StoreDecorator, ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
 import SignInForm from './SignInForm'
-import 'app/styles/index.scss'
-import {getSignInInitialState} from 'features/SignIn/module/slice/getSignInInitialState'
+import '@/app/styles/index.scss'
+import {getSignInInitialState} from '@/features/SignIn/module/slice/getSignInInitialState'
 
 const meta = {
   title: 'features/SignInForm',

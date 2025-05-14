@@ -1,7 +1,8 @@
 import React, {Suspense} from 'react'
 import {Route, Routes} from 'react-router-dom'
-import {AppRoutesProps, routesConfig} from 'shared/config/routesConfig/routesConfig'
-import {RequireAuth} from 'app/providers/router/ui/RequireAuth'
+import {RequireAuth} from './RequireAuth'
+import {routesConfig} from '../config/routesConfig'
+import {AppRoutesProps} from '@/shared/types/router'
 
 const AppRouter = () => {
   const renderWithProtection = (route: AppRoutesProps) => {
@@ -15,7 +16,7 @@ const AppRouter = () => {
       <Route
         key={route.path}
         path={route.path}
-        element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+        element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
       />
     )
   }

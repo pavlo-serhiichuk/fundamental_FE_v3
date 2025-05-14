@@ -1,13 +1,15 @@
-import {cls} from 'shared/lib/cls/cls'
-import {Card} from 'shared/ui/Card/Card'
 import {useCallback} from 'react'
-import {filtersActions, getFiltersTopicType} from 'entities/Filters'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
 import {useSelector} from 'react-redux'
-import {AppRouteNames} from 'shared/config/routesConfig/routesConfig'
 import i18n from 'i18next'
+import {cls} from '@/shared/lib/cls/cls'
+import {Card} from '@/shared/ui/Card'
+import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
+import {HStack} from '@/shared/ui/Stack'
+import {getFiltersTopicType} from '../../module/selectors/getFiltersState'
+import {filtersActions} from '../../module/slice/filtersSlice'
 import * as s from './Tabs.module.scss'
 import {TopicType} from '../../module/types/FiltersSchema'
+import {AppRouteNames} from '@/shared/const/routers'
 
 export interface TabOption<T extends string> {
   value: T
@@ -44,7 +46,7 @@ export const Tabs = (props: TabsProps) => {
   }, [dispatch, fetchData])
 
   return (
-    <div className={cls(s.Tabs, {}, [className])}>
+    <HStack gap="10" className={cls('', {}, [className])}>
       {options?.map((option) => (
         <Card
           className={cls(s.tab, {[s.selected]: topicType === option.value})}
@@ -54,6 +56,6 @@ export const Tabs = (props: TabsProps) => {
           {option.content}
         </Card>
       ))}
-    </div>
+    </HStack>
   )
 }

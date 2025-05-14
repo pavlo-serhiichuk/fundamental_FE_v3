@@ -1,4 +1,4 @@
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from './cls'
 
 describe('cls', () => {
   test('return first param only', () => {

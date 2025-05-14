@@ -1,7 +1,4 @@
-export enum ListView {
-  BIG = 'BIG',
-  SMALL = 'SMALL'
-}
+import {ListView} from '../consts/consts'
 
 export interface ListViewSchema {
   listView: ListView

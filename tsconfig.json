@@ -3,13 +3,14 @@
     "strict": true,
     // the compiled folder adress - doesn't matter couse we compile with Webpack
     "outDir": "./build/",
+    "isolatedModules": true,
     //can use "any" only where you need it
     "noImplicitAny": true,
     "module": "ESNext",
     "lib": ["ESNext", "DOM", "ES6"],
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
     //compile to standart
     "target": "es5",
@@ -33,5 +34,5 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
 }

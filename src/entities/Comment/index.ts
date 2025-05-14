@@ -1,2 +1,6 @@
-export type {Comment} from './module/types/comment'
 export {CommentList} from './ui/CommentList/CommentList'
+export {AddCommentFormAsync as AddCommentForm} from './ui/AddCommentForm/AddCommentForm.async'
+export {type Comment} from './module/types/AddCommentSchema'
+export {type AddCommentSchema} from './module/types/AddCommentSchema'
+export {getAddCommentFormText} from './module/selectors/getAddCommentFormSelectors'
+export {addCommentFormSliceActions} from './module/slice/addCommentFormSlice'

@@ -1,4 +1,4 @@
-import {type Profile, type ProfileSchema} from 'entities/Profile'
+import {type Profile, type ProfileSchema} from '../types/ProfileSchema'
 
 export const profileInitialState: ProfileSchema = {
   form: undefined,

@@ -1,26 +1,33 @@
 import React, {memo} from 'react'
-import {useSelector} from 'react-redux'
-import {getProfileForm, profileActions} from 'entities/Profile'
-import {currencies, type Currency} from 'entities/Currency'
-import {useAppDispatch} from 'shared/hooks/useAppDispatch'
-import {Select} from 'shared/ui/Select/Select'
-import {countries} from 'entities/Country'
+import {ListBox} from '@/shared/ui/Popups'
+import {type ListBoxItem} from '@/shared/ui/Popups'
+import {type Currency} from '../../model/types/Currency'
+import {currencies} from '../../model/consts/consts'
+import * as s from './CurrencySelect.module.scss'
 
 interface CurrencySelectProps {
-  className?: string
   readonly?: boolean
   value?: Currency
   onChange?: (value: Currency) => void
 }
 
-const currenciesOptions = Object.entries(currencies).map(([value, content]) => ({value, content} as {value: Currency, content: Currency}))
+const currenciesOptions: ListBoxItem<Currency>[] = Object.entries(currencies).map(([value, content]) => ({value, content} as {value: Currency, content: Currency}))
 
-export const CurrencySelect = memo(({readonly, onChange, value}: CurrencySelectProps) => (
-  <Select
-    readonly={!!readonly}
-    selectName="Currency"
-    value={value}
-    options={currenciesOptions}
-    onChange={onChange}
-  />
-))
+export const CurrencySelect = memo((props: CurrencySelectProps) => {
+  const {
+    readonly,
+    onChange,
+    value,
+  } = props
+  return (
+    <ListBox<Currency>
+      readonly={!!readonly}
+      value={value}
+      items={currenciesOptions}
+      onChange={onChange}
+      label="Currency"
+      className={s.CurrencySelect}
+      testId="CurrencySelect"
+    />
+  )
+})

@@ -1,9 +1,9 @@
 import {type FC} from 'react'
-import {cls} from 'shared/lib/cls/cls'
-import {Avatar} from 'shared/ui/Avatar/Avatar'
-import {AppLink} from 'shared/ui/AppLink/AppLink'
+import {cls} from '@/shared/lib/cls/cls'
+import {Avatar} from '@/shared/ui/Avatar'
+import {AppLink} from '@/shared/ui/AppLink'
+import {Comment} from '@/entities/Comment'
 import * as s from './CommentCard.module.scss'
-import {type Comment} from '../../module/types/comment'
 
 interface CommentCardProps {
   className?: string

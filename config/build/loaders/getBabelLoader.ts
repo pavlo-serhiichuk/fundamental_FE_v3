@@ -1,20 +1,36 @@
 import {type ConfigOptions} from '../configOptions'
+import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin'
 
-export function getBabelLoader(options: ConfigOptions) {
-  const {isDev} = options
-  const getPlugins = () => {
-    const plugins = [['i18next-extract', {
-      locales: ['ua', 'en'],
-      keyAsDefaultValue: true,
-    }]]
-    if (isDev) {
-      plugins.push([require.resolve('react-refresh/babel')])
-    }
-    return plugins
-  }
+interface GetBabelLoaderOptions extends ConfigOptions {
+  isTsx?: boolean
+}
+
+export function getBabelLoader(options: GetBabelLoaderOptions) {
+  const {isDev, isTsx} = options
+
+  const plugins = [
+    [
+      'i18next-extract',
+      {
+        locales: ['ua', 'en'],
+        keyAsDefaultValue: true,
+      },
+    ], [
+      '@babel/plugin-transform-typescript',
+      {
+        isTsx,
+      },
+    ],
+    '@babel/plugin-transform-runtime',
+    isTsx && [
+      babelRemovePropsPlugin,
+      {props: ['data-testid']},
+    ],
+    isDev && [require.resolve('react-refresh/babel')],
+  ].filter(Boolean)
 
   return {
-    test: /\.(js|ts|tsx)$/,
+    test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
@@ -22,7 +38,7 @@ export function getBabelLoader(options: ConfigOptions) {
         presets: [
           ['@babel/preset-env', {targets: 'defaults'}],
         ],
-        plugins: getPlugins(),
+        plugins,
       },
     },
   }

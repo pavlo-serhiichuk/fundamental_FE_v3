@@ -1,4 +1,5 @@
 import {Configuration, DefinePlugin} from 'webpack'
+import path from 'path'
 import {ConfigPaths} from '../build/configOptions'
 import {getCssLoader} from '../build/loaders/getCssLoader'
 
@@ -35,10 +36,17 @@ const config = {
       htmlPath: '',
       entryPath: '',
       srcPath: '../../src',
+      locales: '',
+      buildLocales: '',
     }
     config.resolve?.modules?.push(paths.srcPath, 'node_modules')
     config.resolve?.extensions?.push('.ts', '.tsx')
     config.module?.rules?.push(getCssLoader(true))
+    // config!.resolve!.alias = {'@': path.resolve(__dirname, '..', '..', 'src')}
+    config!.resolve!.alias = {
+      ...config!.resolve!.alias,
+      '@': path.resolve(__dirname, '..', '..', 'src'),
+    }
     // Find and remove the existing rule for handling SVGs
     // @ts-ignore
     const fileLoaderRule: any = config.module?.rules?.find((rule: any) => {

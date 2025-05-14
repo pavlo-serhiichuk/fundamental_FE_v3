@@ -1,4 +1,4 @@
-import {AppRouteType} from 'shared/config/routesConfig/routesConfig'
+import {AppRouteType} from '@/shared/const/routers'
 
 export function getQueryParams(params: Record<string, string>, path: AppRouteType | string = '') {
   const searchParams = new URLSearchParams(window.location.search)

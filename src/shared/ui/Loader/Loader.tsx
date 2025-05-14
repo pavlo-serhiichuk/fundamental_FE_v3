@@ -1,5 +1,5 @@
 import {type FC} from 'react'
-import {cls} from 'shared/lib/cls/cls'
+import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
 import * as s from './Loader.module.scss'
 

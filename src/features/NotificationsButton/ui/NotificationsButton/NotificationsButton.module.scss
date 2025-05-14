@@ -1,0 +1,9 @@
+.NotificationsButton {
+  display: block;
+}
+
+.notifList {
+  border-bottom: 1px solid var(--content-border);
+  max-height: 300px;
+  overflow-y: auto;
+}
