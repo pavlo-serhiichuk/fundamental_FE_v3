@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux'
 import {Navigate, useLocation} from 'react-router-dom'
 import {getUserAuthData, getUserRoles, UserRoles} from '@/entities/User'
 
-import {RoutePaths} from '@/shared/const/routers'
+import {getRouteForbidden, getRouteMain} from '@/shared/const/routers'
 
 interface RequireAuthProps {
   children?: ReactNode
@@ -24,11 +24,11 @@ export const RequireAuth = (props: RequireAuthProps) => {
   }, [roles, currentUserRoles])
 
   if (!isAuth) {
-    return <Navigate to="/" state={{from: location}} replace />
+    return <Navigate to={getRouteMain()} state={{from: location}} replace />
   }
 
   if (!hasRequiredRoles) {
-    return <Navigate to={RoutePaths.forbidden} state={{from: location}} replace />
+    return <Navigate to={getRouteForbidden()} state={{from: location}} replace />
   }
 
   return children

@@ -12,7 +12,7 @@ import {ListView} from '@/features/ChangeListView'
 import {ArticleBlockType} from '../../model/consts/consts'
 import {Article} from '../../model/types/article'
 import * as s from './ArticlesListItem.module.scss'
-import {RoutePaths} from '@/shared/const/routers'
+import {getRouteArticleDetails} from '@/shared/const/routers'
 
 interface ArticlesListItemProps {
   className?: string
@@ -26,7 +26,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
   let viewClassName
   const navigate = useNavigate()
   const onClickCard = () => {
-    navigate(RoutePaths.articleDetails + article.id)
+    navigate(getRouteArticleDetails(article.id))
   }
   if (listView === ListView.BIG) {
     viewClassName = listView || ListView.BIG

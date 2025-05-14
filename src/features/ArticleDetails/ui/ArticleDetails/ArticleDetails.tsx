@@ -26,7 +26,7 @@ import {
 import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById'
 import {ArticleDetailsSkeleton} from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
-import {RoutePaths} from '@/shared/const/routers'
+import {getRouteArticles} from '@/shared/const/routers'
 
 interface ArticleDetailsProps {
   className?: string
@@ -48,7 +48,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   })
 
   const onClick = () => {
-    navigate(RoutePaths.articles)
+    navigate(getRouteArticles())
   }
 
   const renderBlocks = (block: ArticleBlock) => {

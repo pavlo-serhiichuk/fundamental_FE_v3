@@ -1,7 +1,7 @@
 import webpack from 'webpack'
 import path from 'path'
 import {getWebpackConfig} from './config/build/getWebpackConfig'
-import {ConfigEnv, ConfigPaths} from './config/build/configOptions'
+import {ConfigEnv, ConfigOptions, ConfigPaths} from './config/build/configOptions'
 
 export default (env: ConfigEnv) => {
   const paths: ConfigPaths = {
@@ -18,14 +18,15 @@ export default (env: ConfigEnv) => {
   const PORT = env.port || 3000
   const apiUrl = env.apiUrl || 'http://localhost:8000'
   const project = 'frontend'
-  const config: webpack.Configuration = getWebpackConfig({
+
+  const options: ConfigOptions = {
     mode,
     paths,
     isDev,
     port: PORT,
     apiUrl,
     project,
-  })
+  }
 
-  return config
+  return getWebpackConfig(options)
 }

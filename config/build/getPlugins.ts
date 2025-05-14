@@ -10,6 +10,7 @@ import {ConfigOptions} from './configOptions'
 const CopyPlugin = require('copy-webpack-plugin')
 
 export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
+  const isProd = !options.isDev
   const plugins: WebpackPluginInstance[] = [
     new HTMLWebpackPlugin({template: options.paths.htmlPath}),
     new webpack.ProgressPlugin(),
@@ -17,11 +18,6 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
       __IS_DEV__: options.isDev,
       __API__: JSON.stringify(options.apiUrl),
       __PROJECT__: JSON.stringify(options.project),
-    }),
-    new CopyPlugin({
-      patterns: [
-        {from: options.paths.locales, to: options.paths.buildLocales},
-      ],
     }),
     new CircularDependencyPlugin({
       exclude: /node_modules/,
@@ -44,10 +40,15 @@ export function getPlugins(options: ConfigOptions): WebpackPluginInstance[] {
     plugins.push(new BundleAnalyzerPlugin({openAnalyzer: false}))
   }
 
-  if (!options.isDev) {
+  if (isProd) {
     plugins.push(new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:10].css',
       chunkFilename: 'css/[name].[contenthash:8].css',
+    }))
+    plugins.push(new CopyPlugin({
+      patterns: [
+        {from: options.paths.locales, to: options.paths.buildLocales},
+      ],
     }))
   }
 

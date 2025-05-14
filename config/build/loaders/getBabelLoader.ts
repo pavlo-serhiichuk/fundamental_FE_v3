@@ -7,7 +7,7 @@ interface GetBabelLoaderOptions extends ConfigOptions {
 
 export function getBabelLoader(options: GetBabelLoaderOptions) {
   const {isDev, isTsx} = options
-
+  const isProd = !isDev
   const plugins = [
     [
       'i18next-extract',
@@ -22,7 +22,7 @@ export function getBabelLoader(options: GetBabelLoaderOptions) {
       },
     ],
     '@babel/plugin-transform-runtime',
-    isTsx && [
+    isTsx && isProd && [
       babelRemovePropsPlugin,
       {props: ['data-testid']},
     ],
@@ -35,6 +35,7 @@ export function getBabelLoader(options: GetBabelLoaderOptions) {
     use: {
       loader: 'babel-loader',
       options: {
+        cacheDirectory: true,
         presets: [
           ['@babel/preset-env', {targets: 'defaults'}],
         ],

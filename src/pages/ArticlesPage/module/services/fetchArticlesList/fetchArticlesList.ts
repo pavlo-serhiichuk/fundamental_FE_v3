@@ -10,7 +10,7 @@ import {
 import {addQueryParam} from '@/shared/lib/addueryParam/addQueryParam'
 import {getArticlesPageLimit} from '../../selectors/getArticlesPageLimit'
 import {getArticlesPageNumber} from '../../selectors/getArticlesPageNumber'
-import {RoutePaths} from '@/shared/const/routers'
+import {getRouteArticles} from '@/shared/const/routers'
 
 interface FetchArticlesListProps {
   replace?: boolean
@@ -40,7 +40,7 @@ export const fetchArticlesList = createAsyncThunk<Article[], FetchArticlesListPr
       })
       addQueryParam({
         orderBy, sortBy, searchValue, topicType,
-      }, RoutePaths.articles)
+      }, getRouteArticles())
       return response.data
     } catch (e) {
       return thunkAPI.rejectWithValue('error')

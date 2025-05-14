@@ -19,7 +19,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build --config-dir ./config/storybook",
     "chromatic": "npx chromatic --project-token=chpt_7258454dcdf3fa1 --storybook-config-dir=config/storybook",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "postinstall": "rm -rf node_modules/.cache"
   },
   "repository": {
     "type": "git",
