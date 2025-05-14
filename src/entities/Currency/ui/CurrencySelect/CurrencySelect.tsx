@@ -1,6 +1,6 @@
 import React, {memo} from 'react'
 import {ListBox} from '@/shared/ui/Popups'
-import {ListBoxItem} from '@/shared/ui/Popups'
+import {type ListBoxItem} from '@/shared/ui/Popups'
 import {type Currency} from '../../model/types/Currency'
 import {currencies} from '../../model/consts/consts'
 import * as s from './CurrencySelect.module.scss'
