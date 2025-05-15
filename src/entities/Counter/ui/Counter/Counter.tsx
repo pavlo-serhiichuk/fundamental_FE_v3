@@ -1,25 +1,29 @@
 import React from 'react'
-import {useDispatch, useSelector} from 'react-redux'
 import {Button} from '@/shared/ui/Button'
-import {counterActions} from '../../module/slice/counterSlice'
-import {getCounterValue} from '../../module/selectors/getCounterValue'
+import {useCounterActions} from '../../module/slice/counterSlice'
+import {useGetCounter} from '../../module/selectors/getCounter'
 
 export const Counter = () => {
-  const dispatch = useDispatch()
-  const value = useSelector(getCounterValue)
-  const increment = () => {
-    dispatch(counterActions.increment())
+  const {value} = useGetCounter()
+  const {incrementByAmount, increment, decrement} = useCounterActions()
+  const onIncrement = () => {
+    increment()
   }
-  const decrement = () => {
-    dispatch(counterActions.decrement())
+  const onDecrement = () => {
+    decrement()
   }
+  const onIncByAmount = () => {
+    incrementByAmount(10)
+  }
+
   return (
     <div>
       <h1 data-testid="counter-value-title">
         {value}
       </h1>
-      <Button theme="bordered" data-testid="inc-btn" onClick={increment}>+ 1</Button>
-      <Button theme="bordered" data-testid="dec-btn" onClick={decrement}>- 1</Button>
+      <Button theme="bordered" data-testid="inc-btn" onClick={onIncrement}>+ 1</Button>
+      <Button theme="bordered" data-testid="dec-btn" onClick={onDecrement}>- 1</Button>
+      <Button theme="bordered" data-testid="dec-btn" onClick={onIncByAmount}>+ 10</Button>
     </div>
   )
 }

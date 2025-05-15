@@ -2,7 +2,11 @@ import {useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {useMemo} from 'react'
 import {ProfileCardEdit, ProfileCardView} from '@/features/ProfileCard'
-import {profileReducer, fetchProfileData, getProfileReadonly} from '@/entities/Profile'
+import {
+  profileReducer,
+  fetchProfileData,
+  useGetProfileReadonly,
+} from '@/entities/Profile'
 import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import DynamicReducerLoader, {ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
@@ -18,7 +22,7 @@ const reducers: ReducersList = {
 const ProfilePage = () => {
   const dispatch: AppDispatch = useAppDispatch()
   const {id: profileId} = useParams<{ id: string }>()
-  const readonly = useSelector(getProfileReadonly)
+  const readonly = useGetProfileReadonly()
   const userId = useSelector(getUserAuthData)?.id
   const isShowRating = useMemo(() => userId !== profileId, [userId, profileId])
 
