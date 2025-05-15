@@ -16,6 +16,16 @@ declare module '*.svg' {
   export default svg
 }
 
+declare module '*.png' {
+  const value: string
+  export default value
+}
+
+declare module '*.jpg' {
+  const value: string
+  export default value
+}
+
 type DeepPartial<T> = T extends object ? {
   [P in keyof T]?: DeepPartial<T[P]>
 } : T

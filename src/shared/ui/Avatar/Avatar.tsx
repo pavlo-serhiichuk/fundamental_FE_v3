@@ -1,5 +1,6 @@
 import {type CSSProperties, type FC, useMemo} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
+import {AppImage} from '@/shared/ui/AppImage'
 
 interface AvatarProps {
   className?: string
@@ -25,9 +26,12 @@ export const Avatar: FC<AvatarProps> = (props) => {
 
   return (
     <div className={cls('', {}, [className])}>
-      {src
-        ? <img style={styles} src={src} alt={alt} />
-        : <div style={styles} />}
+      <AppImage
+        style={styles}
+        src={src}
+        alt={alt}
+        isAvatar
+      />
     </div>
   )
 }

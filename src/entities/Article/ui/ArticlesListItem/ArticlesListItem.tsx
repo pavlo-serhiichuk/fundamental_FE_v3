@@ -13,6 +13,8 @@ import {ArticleBlockType} from '../../model/consts/consts'
 import {Article} from '../../model/types/article'
 import * as s from './ArticlesListItem.module.scss'
 import {getRouteArticleDetails} from '@/shared/const/routers'
+import {AppImage} from '@/shared/ui/AppImage'
+import {Skeleton} from '@/shared/ui/Skeleton'
 
 interface ArticlesListItemProps {
   className?: string
@@ -48,7 +50,11 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <Text text={article?.type?.join(', ')} fontStyle="italic-fs" className={s.topics} />
         </div>
         <div className={s.image}>
-          <img src={article?.image} alt={article?.title} />
+          <AppImage
+            src={article?.image}
+            alt={article?.title}
+            fallback={<Skeleton width="100%" height={400} />}
+          />
         </div>
         <div className={s.paragraphs}>
           {textBlocks?.map((block, index) => (
@@ -75,7 +81,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     >
       <div className={s.created}>{article.created}</div>
       <div className={s.image}>
-        <img src={article.image} alt={article.title} />
+        <AppImage src={article.image} alt={article.title} fallback={<Skeleton width="100%" height={200} />} />
       </div>
       <div className={s.details}>
         <span>{article.type?.join(', ')}</span>

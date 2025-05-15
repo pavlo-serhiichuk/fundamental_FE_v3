@@ -35,7 +35,7 @@ export const Sidebar = memo((props: SidebarProps) => {
       </div>
       <Button
         data-testid="sidebar-toggle"
-        theme="sidebar-squad-m"
+        theme="sidebar_squad_m"
         className={s.collapseBtn}
         onClick={onToggle}
       >

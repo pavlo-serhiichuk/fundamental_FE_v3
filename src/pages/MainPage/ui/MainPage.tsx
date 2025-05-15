@@ -9,7 +9,7 @@ const MainPage = () => {
   return (
     <Page className={s.MainPage}>
       <div>{t('Main page')}</div>
-      <Counter />
+      {/* <Counter /> */}
     </Page>
   )
 }
