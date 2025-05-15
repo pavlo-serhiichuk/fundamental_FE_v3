@@ -1,6 +1,7 @@
 import {type CSSProperties, type FC, useMemo} from 'react'
 import {cls} from '@/shared/lib/cls/cls'
 import {AppImage} from '@/shared/ui/AppImage'
+import {Skeleton} from '@/shared/ui/Skeleton'
 
 interface AvatarProps {
   className?: string
@@ -11,7 +12,10 @@ interface AvatarProps {
 
 export const Avatar: FC<AvatarProps> = (props) => {
   const {
-    src = '', alt = 'default', size, className,
+    src = '',
+    alt = 'default',
+    size,
+    className,
   } = props
 
   const styles = useMemo<CSSProperties>(() => ({
@@ -24,13 +28,20 @@ export const Avatar: FC<AvatarProps> = (props) => {
     backgroundColor: 'grey',
   }), [size])
 
+  const fallbackProps = useMemo(() => ({
+    width: size,
+    height: size,
+    radius: '50%',
+  }), [])
+
   return (
     <div className={cls('', {}, [className])}>
       <AppImage
-        style={styles}
+        isAvatar
         src={src}
         alt={alt}
-        isAvatar
+        style={styles}
+        fallback={<Skeleton {...fallbackProps} />}
       />
     </div>
   )

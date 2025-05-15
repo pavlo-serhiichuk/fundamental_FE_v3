@@ -23,7 +23,7 @@ export const Counter = () => {
       </h1>
       <Button theme="bordered" data-testid="inc-btn" onClick={onIncrement}>+ 1</Button>
       <Button theme="bordered" data-testid="dec-btn" onClick={onDecrement}>- 1</Button>
-      <Button theme="bordered" data-testid="dec-btn" onClick={onIncByAmount}>+ 10</Button>
+      <Button theme="bordered" data-testid="inc-by-amount-btn" onClick={onIncByAmount}>+ 10</Button>
     </div>
   )
 }
