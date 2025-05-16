@@ -63,19 +63,24 @@ jobs:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
   checks:
-    name: linting
+    name: Linting
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [ 18.x ]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install modules
+
+      - name: Install dependencies
         run: npm ci --force
 
       - name: Lint TypeScript

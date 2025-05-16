@@ -15,7 +15,7 @@ export function buildSlice<
   const slice = createSlice(options)
   const useActions = () => {
     const dispatch = useDispatch()
-    return useMemo(() => bindActionCreators(slice.actions, dispatch), [dispatch, slice])
+    return useMemo(() => bindActionCreators(slice.actions, dispatch), [dispatch])
   }
   return {...slice, useActions}
 }
