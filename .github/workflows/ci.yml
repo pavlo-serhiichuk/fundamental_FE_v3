@@ -44,14 +44,14 @@ jobs:
         uses: actions/configure-pages@v2
         if: always()
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         if: always()
         with:
           path: 'reports'
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
 
       - name: Build Storybook
         run: npm run build-storybook
