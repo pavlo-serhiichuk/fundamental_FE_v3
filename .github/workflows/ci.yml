@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ develop ]
 
+permissions:
+  id-token: write
+  pages: write
+  contents: read
+
 jobs:
   pipeline:
     name: CI + Chromatic
