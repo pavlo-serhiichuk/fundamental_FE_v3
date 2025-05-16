@@ -7,7 +7,7 @@ import {Counter} from '@/entities/Counter'
 const MainPage = () => {
   const {t} = useTranslation('main')
   return (
-    <Page className={s.MainPage}>
+    <Page className={s.MainPage} data-testid="MainPage">
       <div>{t('Main page')}</div>
       {/* <Counter /> */}
     </Page>

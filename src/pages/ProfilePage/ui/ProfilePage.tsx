@@ -30,7 +30,7 @@ const ProfilePage = () => {
     if (profileId) {
       dispatch(fetchProfileData(profileId))
     }
-  }, [profileId])
+  })
 
   if (!profileId) {
     return null
@@ -38,7 +38,7 @@ const ProfilePage = () => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <Page>
+      <Page data-testid="ProfilePage">
         {readonly ? <ProfileCardView /> : <ProfileCardEdit />}
         {isShowRating && <ProfileRating profileId={profileId} />}
       </Page>
