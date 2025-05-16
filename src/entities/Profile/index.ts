@@ -6,7 +6,7 @@ export {getProfileLoading} from './model/selectors/getProfileLoading/getProfileL
 export {getProfileError} from './model/selectors/getProfileError/getProfileError'
 export {getProfileUpdating} from './model/selectors/getProfileUpdating/getProfileUpdating'
 export {getProfileValidationErrors} from './model/selectors/getProfileValidationErrors/getProfileValidationErrors'
-export {getProfileReadonly} from './model/selectors/getProfileReadonly/getProfileReadonly'
+export {getProfileReadonly, useGetProfileReadonly} from './model/selectors/getProfileReadonly/getProfileReadonly'
 export {updateProfileData} from './model/services/updateProfileData/updateProfileData'
 export {fetchProfileData} from './model/services/fetchProfileData/fetchProfileData'
 export {ValidationError} from './model/consts/consts'

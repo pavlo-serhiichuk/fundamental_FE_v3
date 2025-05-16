@@ -698,7 +698,7 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
-      "id": "3",
+      "id": "4",
       "username": "user-manager",
       "password": "111",
       "age": 27,
@@ -706,7 +706,7 @@
         "USER",
         "MANAGER"
       ],
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }
   ],
   "profile": [
@@ -742,6 +742,17 @@
       "username": "manager",
       "city": "Vinnytsia",
       "avatar": "https://i.dailymail.co.uk/1s/2024/05/12/12/84760313-13409027-image-a-16_1715513507798.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "User",
+      "lastname": "Manager",
+      "age": 27,
+      "country": "Ukraine",
+      "currency": "UAH",
+      "username": "manager",
+      "city": "Vinnytsia",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }
   ],
   "notifications": [

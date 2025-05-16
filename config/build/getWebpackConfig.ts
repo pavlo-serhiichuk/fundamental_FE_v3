@@ -10,7 +10,7 @@ export function getWebpackConfig(options: ConfigOptions): Configuration {
   return {
     mode,
     entry: paths.entryPath,
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     output: {
       filename: '[name].[contenthash].js',
       path: paths.buildPath,

@@ -1,4 +1,6 @@
-import {memo, RefObject, useRef} from 'react'
+import {
+  memo, ReactNode, RefObject, useRef,
+} from 'react'
 import {useSelector} from 'react-redux'
 import {useLocation} from 'react-router-dom'
 import {cls} from '@/shared/lib/cls/cls'
@@ -7,11 +9,12 @@ import {useThrottle} from '@/shared/hooks/useThrottle'
 import {getScrollRecoverScroll, scrollRecoverActions} from '@/features/ScrollRecover'
 import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
+import {TestProps} from '@/shared/types/tests'
 import * as s from './Page.module.scss'
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string
-  children?: React.ReactNode
+  children?: ReactNode
   onScrollEnd?: () => void
 }
 
@@ -21,7 +24,12 @@ export const Page = memo((props: PageProps) => {
   const {pathname} = useLocation()
   const wrapperRef = useRef(null) as RefObject<HTMLElement | null>
   const triggerRef = useRef(null) as RefObject<HTMLElement | null>
-  const {className, children, onScrollEnd} = props
+  const {
+    className,
+    children,
+    onScrollEnd,
+    ...otherProps
+  } = props
 
   useInitialEffect(() => {
     if (wrapperRef.current) {
@@ -40,7 +48,12 @@ export const Page = memo((props: PageProps) => {
   }, 500)
 
   return (
-    <main onScroll={onScroll} ref={wrapperRef} className={cls(s.Page, {}, [className])}>
+    <main
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={cls(s.Page, {}, [className])}
+      data-testid={props['data-testid']}
+    >
       {children}
       {/* @ts-ignore */}
       {onScrollEnd && <div className={s.trigger} ref={triggerRef} />}

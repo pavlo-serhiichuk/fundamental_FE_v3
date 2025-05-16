@@ -4,10 +4,10 @@ import {ArticleDetailsComments} from '@/features/ArticleDetailsComments'
 import {Page} from '@/widgets/Page'
 import {ArticleDetails} from '@/features/ArticleDetails'
 import DynamicReducerLoader, {type ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {articleDetailsPageSlice} from '../../module/slice/articleDetailsPageSlice'
 import {
   ArticleDetailsRecommendations,
 } from '@/features/ArticleDetailsRecommendations'
+import {articleDetailsPageSlice} from '../../module/slice/articleDetailsPageSlice'
 import * as s from './ArticleDetailsPage.module.scss'
 
 interface ArticlesPageProps {
@@ -23,7 +23,7 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <Page className={cls(s.ArticleDetailsPage, {}, [className])}>
+      <Page className={cls(s.ArticleDetailsPage, {}, [className])} data-testid="ArticleDetailsPage">
         <ArticleDetails />
         <ArticleDetailsRecommendations />
         <ArticleDetailsComments />
