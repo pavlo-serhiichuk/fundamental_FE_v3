@@ -2,9 +2,9 @@ name: Linting, Testing CI Pipeline with Chromatic
 
 on:
   push:
-    branches: [main, develop]
+    branches: [ main, develop ]
   pull_request:
-    branches: [develop]
+    branches: [ develop ]
 
 jobs:
   pipeline:
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [ 18.x ]
 
     steps:
       - name: Checkout repository
@@ -30,20 +30,57 @@ jobs:
 
       - name: Build production project
         run: npm run build:prod
-
-      - name: Lint TypeScript
-        run: npm run lint:ts
-
-      - name: Lint CSS
-        run: npm run lint:scss
+        if: always()
 
       - name: Run Unit Tests
         run: npm run test:unit
+        if: always()
+
+      - name: Generate HTML report
+        run: npm run test:ui:report
+        if: always()
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+        if: always()
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        if: always()
+        with:
+          path: 'reports'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        if: always()
+        uses: actions/deploy-pages@v1
 
       - name: Build Storybook
         run: npm run build-storybook
+        if: always()
 
       - name: Publish to Chromatic
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+  checks:
+    name: linting
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm ci --force
+
+      - name: Lint TypeScript
+        run: npm run lint:ts
+        if: always()
+
+      - name: Lint CSS
+        run: npm run lint:scss
