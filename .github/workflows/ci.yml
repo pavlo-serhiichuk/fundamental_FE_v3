@@ -52,7 +52,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         if: always()
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
 
       - name: Build Storybook
         run: npm run build-storybook
