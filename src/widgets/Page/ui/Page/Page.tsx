@@ -1,4 +1,5 @@
 import {
+  LegacyRef,
   memo, ReactNode, RefObject, useRef,
 } from 'react'
 import {useSelector} from 'react-redux'
@@ -50,7 +51,7 @@ export const Page = memo((props: PageProps) => {
   return (
     <main
       onScroll={onScroll}
-      ref={wrapperRef}
+      ref={wrapperRef as LegacyRef<HTMLElement>}
       className={cls(s.Page, {}, [className])}
       data-testid={props['data-testid']}
     >
