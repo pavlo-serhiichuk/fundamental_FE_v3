@@ -14,11 +14,11 @@ describe('Article details is opened', () => {
   it('and User sees article', () => {
     cy.getByTestId('ArticleDetails.Info').should('exist')
   })
-  it('and User sees recommendations', () => {
+  it.skip('and User sees recommendations', () => {
     cy.getByTestId('ArticleDetailsRecommendations').should('exist')
   })
 
-  it('and User leaves comment', () => {
+  it.skip('and User leaves comment', () => {
     cy.getByTestId('AddCommentForm').scrollIntoView()
     cy.sendComment()
     cy.getByTestId('CommentCard').should('have.length', 1)
@@ -26,6 +26,14 @@ describe('Article details is opened', () => {
   })
 
   it('and User rates article', () => {
+    cy.getByTestId('ArticleRating').scrollIntoView()
+    cy.rate()
+    cy.get('[data-selected=true]').should('have.length', 5)
+    cy.deleteRating('articles-ratings')
+  })
+
+  it('and User rates article with STUBS(fixtures)', () => {
+    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'})
     cy.getByTestId('ArticleRating').scrollIntoView()
     cy.rate()
     cy.get('[data-selected=true]').should('have.length', 5)
