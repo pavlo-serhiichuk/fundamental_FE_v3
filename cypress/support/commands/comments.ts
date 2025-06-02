@@ -10,7 +10,6 @@ export const deleteComment = () => {
     url: 'http://localhost:8000/comments?userId=5',
   })
     .then((res) => {
-      console.log('res.body', res.body)
       const deletes = res.body.map((comment: any) =>
         cy.request({
           method: 'DELETE',

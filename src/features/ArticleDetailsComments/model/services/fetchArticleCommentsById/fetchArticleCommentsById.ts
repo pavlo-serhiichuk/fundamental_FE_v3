@@ -6,7 +6,6 @@ export const fetchArticleCommentsById = createAsyncThunk<Comment[], string | und
   'articleDetailsComments/fetchArticleCommentsById',
   async (articleId, thunkAPI) => {
     const {extra} = thunkAPI
-    console.log(1, articleId)
     try {
       const response = await extra.api.get<Comment[]>('/comments', {
         params: {

@@ -1,5 +1,5 @@
 import {
-  Children, type FC, HTMLAttributes, type ReactNode,
+  type FC, HTMLAttributes, type ReactNode,
 } from 'react'
 import {cls, Mods} from '@/shared/lib/cls/cls'
 import * as s from './Card.module.scss'
@@ -28,7 +28,7 @@ export const Card: FC<CardProps> = (props) => {
       className={cls(s.Card, mods, [className])}
       {...otherProps}
     >
-      {Children.only(<>{children}</>)}
+      {children}
     </div>
   )
 }

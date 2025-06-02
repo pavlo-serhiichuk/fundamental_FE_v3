@@ -1,5 +1,4 @@
 import {type FC, useCallback} from 'react'
-import {useParams} from 'react-router-dom'
 import {useSelector} from 'react-redux'
 import {cls} from '@/shared/lib/cls/cls'
 import {AddCommentForm, CommentList} from '@/entities/Comment'
@@ -30,7 +29,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (props) =
 
   const onSendComment = useCallback(() => {
     dispatch(sendArticleComment(articleId))
-  }, [dispatch])
+  }, [dispatch, articleId])
 
   if (articleError) {
     return null

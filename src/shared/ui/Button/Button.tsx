@@ -29,7 +29,6 @@ export const Button = memo((props: ButtonProps) => {
   } = props
 
   const mods: Mods = {[s.disabled]: disabled, [s.fullWidth]: fullWidth}
-  console.log(testId)
   return (
     <button
       type="button"
