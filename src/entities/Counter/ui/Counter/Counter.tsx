@@ -5,6 +5,7 @@ import {useGetCounter} from '../../module/selectors/getCounter'
 
 export const Counter = () => {
   const {value} = useGetCounter()
+  // @ts-ignore
   const {incrementByAmount, increment, decrement} = useCounterActions()
   const onIncrement = () => {
     increment()

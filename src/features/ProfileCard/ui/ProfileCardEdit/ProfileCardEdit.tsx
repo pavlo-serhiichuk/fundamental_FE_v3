@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux'
 import {useTranslation} from 'react-i18next'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
 import {Currency, CurrencySelect} from '@/entities/Currency'
-import {Country} from '@/entities/Country'
+import {Country, CountrySelect} from '@/entities/Country'
 import {
   getProfileError,
   getProfileForm,
@@ -16,7 +16,6 @@ import {
 } from '@/entities/Profile'
 import {Avatar} from '@/shared/ui/Avatar'
 import {Input} from '@/shared/ui/Input'
-import {CountrySelect} from '@/entities/Country/ui/CountrySelect/CountrySelect'
 import {cls} from '@/shared/lib/cls/cls'
 import {Text} from '@/shared/ui/Text'
 import {Loader} from '@/shared/ui/Loader'
@@ -31,7 +30,6 @@ interface EditProfileCardProps {
 export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   const {t} = useTranslation('profile')
   const dispatch = useAppDispatch()
-  const readonly = useSelector(getProfileReadonly)
   const form = useSelector(getProfileForm)
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
@@ -149,7 +147,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
           {t('Cancel')}
         </Button>
         <Button
-          testId="Save.Button"
+          testId="ProfileCardEdit.SaveButton"
           disabled={isUpdating}
           onClick={onSave}
           theme="bordered"

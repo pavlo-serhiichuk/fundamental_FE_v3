@@ -707,13 +707,25 @@
         "MANAGER"
       ],
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
+    },
+    {
+      "id": "5",
+      "username": "testusername",
+      "password": "111",
+      "age": 30,
+      "roles": [
+        "USER",
+        "MANAGER",
+        "ADMIN"
+      ],
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }
   ],
   "profile": [
     {
       "id": "1",
       "firstname": "Adminator",
-      "lastname": "Adminovych",
+      "lastname": "Adminovych2",
       "age": 28,
       "country": "Italy",
       "currency": "USD",
@@ -747,6 +759,17 @@
       "id": "4",
       "firstname": "User",
       "lastname": "Manager",
+      "age": 27,
+      "country": "Ukraine",
+      "currency": "UAH",
+      "username": "manager",
+      "city": "Vinnytsia",
+      "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
+    },
+    {
+      "id": "5",
+      "firstname": "Test",
+      "lastname": "User",
       "age": 27,
       "country": "Ukraine",
       "currency": "UAH",

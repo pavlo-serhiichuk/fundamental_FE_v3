@@ -1,6 +1,6 @@
 import React, {memo} from 'react'
-import {ListBox} from '@/shared/ui/Popups'
 import {useTranslation} from 'react-i18next'
+import {ListBox} from '@/shared/ui/Popups'
 import {countries, type Country} from '../../model/Country'
 import * as s from './CountrySelect.module.scss'
 

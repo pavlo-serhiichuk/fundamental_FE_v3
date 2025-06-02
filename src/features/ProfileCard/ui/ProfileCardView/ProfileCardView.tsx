@@ -58,11 +58,15 @@ export const ProfileCardView = (props: ProfileCardProps) => {
   }
 
   return (
-    <div className={cls(s.ProfileCard, {}, [className])}>
+    <div className={cls(s.ProfileCard, {}, [className])} data-testid="ProfileCardView">
       <div className={s.header}>
         <Avatar src={data?.avatar || ''} alt="profile" size={70} />
         <div>
-          <Text title={`${data?.firstname} ${data?.lastname}`} size="text_size_s" />
+          <Text
+            title={`${data?.firstname} ${data?.lastname}`}
+            size="text_size_s"
+            testId="ProfileCardView"
+          />
           <Text text={`${data?.age} ${t('years old')}`} fontStyle="italic-fs" />
           <div className={s.location}>
             <PinIcon />
@@ -72,7 +76,7 @@ export const ProfileCardView = (props: ProfileCardProps) => {
       </div>
       {id === user?.id ? (
         <div>
-          <Button theme="bordered" onClick={onEdit}>Edit</Button>
+          <Button theme="bordered" onClick={onEdit} testId="ProfileCardView.EditButton">Edit</Button>
         </div>
       ) : null}
     </div>

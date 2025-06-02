@@ -10,3 +10,4 @@ export {getProfileReadonly, useGetProfileReadonly} from './model/selectors/getPr
 export {updateProfileData} from './model/services/updateProfileData/updateProfileData'
 export {fetchProfileData} from './model/services/fetchProfileData/fetchProfileData'
 export {ValidationError} from './model/consts/consts'
+export {profileMockForm, profileMockState} from './model/slice/profileState'
