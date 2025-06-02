@@ -8,17 +8,23 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
   className?: string
   withPadding?: boolean
   children: ReactNode
+  testId?: string
 }
 
 export const Card: FC<CardProps> = (props) => {
   const {
-    className, withPadding = false, children, ...otherProps
+    className,
+    withPadding = false,
+    children,
+    testId = 'Card',
+    ...otherProps
   } = props
 
   const mods: Mods = {[s.withPadding]: withPadding}
 
   return (
     <div
+      data-testid={testId}
       className={cls(s.Card, mods, [className])}
       {...otherProps}
     >

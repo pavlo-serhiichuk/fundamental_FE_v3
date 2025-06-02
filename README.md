@@ -133,7 +133,7 @@ For async reducers connecting(avoid them in common bundle) uses [DynamicModuleLo
 - [LandSwitcher](/src/features/LandSwitcher)
 - [NotificationsButton](/src/features/NotificationsButton)
 - [ProfileCard](/src/features/ProfileCard)
-- [ProfileRating](/src/features/ProfileRating)
+- [ArticleRating](/src/features/ProfileRating)
 - [ScrollRecover](/src/features/ScrollRecover)
 - [SignIn](/src/features/SignIn)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)

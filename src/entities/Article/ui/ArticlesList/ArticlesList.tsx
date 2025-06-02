@@ -23,7 +23,10 @@ export const ArticlesList = memo((props: ArticlesListProps) => {
   )
 
   return (
-    <div className={cls(s.ArticlesList, {}, [className, s[listView as string]])}>
+    <div
+      className={cls(s.ArticlesList, {}, [className, s[listView as string]])}
+      data-testid="ArticlesList"
+    >
       {articles?.map(renderArticle)}
       {(!articles?.length || isLoading) && <Loader />}
     </div>

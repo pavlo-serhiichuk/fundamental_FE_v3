@@ -1,27 +1,25 @@
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {type ThunkConfig} from '@/app/providers/StoreProvider'
 import {getUserAuthData} from '@/entities/User'
-import {getArticleDetailsData} from '@/features/ArticleDetails'
 import {getAddCommentFormText, addCommentFormSliceActions} from '@/entities/Comment'
 import {
   fetchArticleCommentsById,
 } from '../fetchArticleCommentsById/fetchArticleCommentsById'
 
-export const sendArticleComment = createAsyncThunk<void, undefined, ThunkConfig<string>>(
+export const sendArticleComment = createAsyncThunk<void, string | undefined, ThunkConfig<string>>(
   'articleDetails/sendArticleComment',
-  async (_, thunkAPI) => {
+  async (articleId, thunkAPI) => {
     const {extra} = thunkAPI
     const commentText = getAddCommentFormText(thunkAPI.getState())
     const user = getUserAuthData(thunkAPI.getState())
-    const article = getArticleDetailsData(thunkAPI.getState())
 
     try {
       const res = await extra.api.post('/comments', {
         text: commentText,
-        articleId: article?.id,
+        articleId,
         userId: user?.id,
       })
-      thunkAPI.dispatch(fetchArticleCommentsById(article?.id))
+      thunkAPI.dispatch(fetchArticleCommentsById(articleId))
       thunkAPI.dispatch(addCommentFormSliceActions.setText(''))
       return res.data
     } catch (e) {

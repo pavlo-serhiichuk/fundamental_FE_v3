@@ -70,7 +70,11 @@ export const RatingCard = (props: RatingCardProps) => {
   const modalContent = (
     <>
       <Text title={feedbackTitle} />
-      <Input value={feedbackMessage} onChange={onChangeFeedbackMessage} />
+      <Input
+        value={feedbackMessage}
+        onChange={onChangeFeedbackMessage}
+        testId="RatingCard.Input"
+      />
     </>
   )
 
@@ -81,8 +85,11 @@ export const RatingCard = (props: RatingCardProps) => {
         <StarRating selectedStars={starsCount} onSelect={onSelect} />
       </VStack>
       {isMobile ? (
-        <Drawer isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <VStack gap="10">
+        <Drawer
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        >
+          <VStack gap="10" data-testid="RatingCard">
             {modalContent}
             <VStack justify="end" gap="10" align="end">
               <Button fullWidth onClick={handleAccept}>Send</Button>
@@ -92,11 +99,11 @@ export const RatingCard = (props: RatingCardProps) => {
         </Drawer>
       ) : (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <VStack gap="10">
+          <VStack gap="10" data-testid="RatingCard">
             {modalContent}
             <HStack justify="end" gap="10">
               <Button onClick={handleCancel} theme="cancel">Cancel</Button>
-              <Button onClick={handleAccept}>Send</Button>
+              <Button onClick={handleAccept} testId="RatingCard.SendButton">Send</Button>
             </HStack>
           </VStack>
         </Modal>

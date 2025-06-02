@@ -14,22 +14,22 @@ import * as s from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
   className?: string
+  articleId?: string | undefined
 }
 
 export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (props) => {
-  const {className} = props
+  const {className, articleId = '0'} = props
   const dispatch = useAppDispatch()
-  const {id} = useParams<{ id: string }>()
   const commentsIsLoading = useSelector(getArticleDetailsCommentsLoading)
   const comments = useSelector(getArticleDetailsComments.selectAll)
   const articleError = useSelector(getArticleDetailsError)
 
   useInitialEffect(async () => {
-    dispatch(fetchArticleCommentsById(id))
+    dispatch(fetchArticleCommentsById(articleId))
   })
 
   const onSendComment = useCallback(() => {
-    dispatch(sendArticleComment())
+    dispatch(sendArticleComment(articleId))
   }, [dispatch])
 
   if (articleError) {

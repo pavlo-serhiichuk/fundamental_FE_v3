@@ -35,7 +35,10 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     const textBlocks = article.blocks?.filter((block) => block.type === ArticleBlockType.TEXT)
 
     return (
-      <Card className={cls(s.ArticlesListItem, {}, [className, s[viewClassName]])}>
+      <Card
+        className={cls(s.ArticlesListItem, {}, [className, s[viewClassName]])}
+        testId="ArticlesListItem"
+      >
         <div className={s.titleWrapper}>
           <div className={s.userWrapper}>
             <div className={s.userInfo}>
@@ -78,6 +81,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
     <Card
       className={cls(s.ArticlesListItem, {}, [className, s[viewClassName]])}
       onClick={onClickCard}
+      testId="ArticlesListItem"
     >
       <div className={s.created}>{article.created}</div>
       <div className={s.image}>

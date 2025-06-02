@@ -30,6 +30,7 @@ import {getRouteArticles} from '@/shared/const/routers'
 
 interface ArticleDetailsProps {
   className?: string
+  articleId?: string | undefined
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
@@ -38,13 +39,11 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const articleDetails = useSelector(getArticleDetailsData)
   const isLoading = useSelector(getArticleDetailsLoading)
   const error = useSelector(getArticleDetailsError)
-  const {className} = props
-  const {id} = useParams<{ id: string | undefined }>()
+  const {className, articleId = '0'} = props
   const navigate = useNavigate()
+
   useInitialEffect(() => {
-    if (id) {
-      dispatch(fetchArticleById(id))
-    }
+    dispatch(fetchArticleById(articleId))
   })
 
   const onClick = () => {
@@ -72,7 +71,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       return <ArticleDetailsSkeleton />
     case !!articleDetails:
       return (
-        <div>
+        <div data-testid="ArticleDetails.Info">
           <Button onClick={onClick} theme="bordered">
             {'< '}
             Return back
@@ -101,7 +100,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   }
 
   return (
-    <div className={cls(s.ArticleDetails, {}, [className])}>
+    <div
+      className={cls(s.ArticleDetails, {}, [className])}
+      data-testid="ArticleDetails"
+    >
       <Content />
     </div>
   )
