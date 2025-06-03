@@ -1,25 +1,25 @@
-import {cls} from '@/shared/lib/cls/cls'
 import {useTranslation} from 'react-i18next'
+import {useSelector} from 'react-redux'
+import {memo, useCallback, useMemo} from 'react'
+import {cls} from '@/shared/lib/cls/cls'
 import {Input} from '@/shared/ui/Input'
 import {Button} from '@/shared/ui/Button'
-import {useSelector} from 'react-redux'
 import {
   getSignInError,
   getSignInIsLoading,
   getSignInPassword,
   getSignInUsername,
-} from '@/features/SignIn/module/selectors/getSignInSelectors'
-import {signInActions, signInReducer} from '@/features/SignIn/module/slice/signInSlice'
+} from '../../module/selectors/getSignInSelectors'
 import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
-import {fetchSignIn} from '@/features/SignIn/module/thunks/fetchSignIn'
-import {memo, useCallback, useMemo} from 'react'
 import {Text} from '@/shared/ui/Text'
 import DynamicReducerLoader, {ReducersList} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import * as s from './SignInForm.module.scss'
+import {signInReducer, signInActions} from '../../module/slice/signInSlice'
+import {fetchSignIn} from '../../module/thunks/fetchSignIn'
 
 export interface SignInFormProps {
     className?: string
-    onSuccess: () => void
+    onSuccess?: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -49,7 +49,7 @@ const SignInForm = memo((props: SignInFormProps) => {
     }
     const result = await dispatch(fetchSignIn(requestData))
     if (result.meta.requestStatus === 'fulfilled') {
-      onSuccess()
+      onSuccess?.()
     }
   }, [onSuccess, password, username, dispatch])
   const btnDisabled = useMemo(() => isLoading || !username || !password, [isLoading, password, username])
@@ -61,8 +61,18 @@ const SignInForm = memo((props: SignInFormProps) => {
           :
         </h4>
         {error && <Text text={error} theme="error" />}
-        <Input placeholder="Enter username..." value={username} onChange={onChangeUsername} />
-        <Input placeholder="Enter password..." value={password} onChange={onChangePassword} />
+        <Input
+          placeholder="Enter username..."
+          value={username}
+          onChange={onChangeUsername}
+          testId="Signin.Username.Input"
+        />
+        <Input
+          placeholder="Enter password..."
+          value={password}
+          onChange={onChangePassword}
+          testId="Signin.Password.Input"
+        />
         <Button theme="bordered" onClick={onSignIn} disabled={btnDisabled}>{t('Apply')}</Button>
       </div>
     </DynamicReducerLoader>

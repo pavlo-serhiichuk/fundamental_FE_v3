@@ -9,7 +9,6 @@ import {
   getProfileForm,
   getProfileLoading,
   getProfileUpdating,
-  getProfileReadonly,
   getProfileValidationErrors,
   updateProfileData,
   profileActions,
@@ -22,6 +21,7 @@ import {Loader} from '@/shared/ui/Loader'
 import {Button} from '@/shared/ui/Button'
 import {HStack, VStack} from '@/shared/ui/Stack'
 import * as s from './ProfileCardEdit.module.scss'
+import {StateSchema} from '@/app/providers/StoreProvider'
 
 interface EditProfileCardProps {
   className?: string
@@ -31,6 +31,8 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   const {t} = useTranslation('profile')
   const dispatch = useAppDispatch()
   const form = useSelector(getProfileForm)
+  const state = useSelector((state: StateSchema) => state)
+  console.log(state)
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
   const isUpdating = useSelector(getProfileUpdating)

@@ -31,7 +31,6 @@ const ProfilePage = () => {
       dispatch(fetchProfileData(profileId))
     }
   })
-
   if (!profileId) {
     return null
   }
