@@ -1,13 +1,16 @@
-import {AUTH_USER_DATA} from '../../../src/shared/const/localStorage'
-import {selectByTestId} from '../../helpers/selectByTestId'
-import {User} from '../../../src/entities/User'
+import { AUTH_USER_DATA } from '../../../src/shared/const/localStorage'
+import { selectByTestId } from '../../helpers/selectByTestId'
+import { User } from '../../../src/entities/User'
 
-export const login = (username: string = 'testusername', password: string = '111') => {
+export const login = (
+  username: string = 'testusername',
+  password: string = '111',
+) => {
   cy.request({
     method: 'POST',
-    body: {username, password},
+    body: { username, password },
     url: 'http://localhost:8000/login',
-  }).then(({body}) => {
+  }).then(({ body }) => {
     window.localStorage.setItem(AUTH_USER_DATA, JSON.stringify(body))
     return body
   })

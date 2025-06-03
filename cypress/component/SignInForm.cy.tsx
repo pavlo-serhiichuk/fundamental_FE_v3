@@ -1,4 +1,4 @@
-import {TestProvider} from '../../src/shared/lib/tests/renderTestComponent/renderTestComponent'
+import { TestProvider } from '../../src/shared/lib/tests/renderTestComponent/renderTestComponent'
 import SignInForm from '../../src/features/SignIn/ui/SignInForm/SignInForm'
 
 describe('SignInForm.cy.tsx', () => {

@@ -1,6 +1,10 @@
 import path from 'path'
-import {getWebpackConfig} from './config/build/getWebpackConfig'
-import {ConfigEnv, ConfigOptions, ConfigPaths} from './config/build/configOptions'
+import { getWebpackConfig } from './config/build/getWebpackConfig'
+import {
+  ConfigEnv,
+  ConfigOptions,
+  ConfigPaths,
+} from './config/build/configOptions'
 
 export default (env: ConfigEnv) => {
   const paths: ConfigPaths = {

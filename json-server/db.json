@@ -11,9 +11,7 @@
       "views": 10023,
       "created": "28.02.2022",
       "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -79,9 +77,7 @@
       "views": 103,
       "created": "01.01.2022",
       "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -102,9 +98,7 @@
       "views": 1033,
       "created": "10.02.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -125,10 +119,7 @@
       "views": 123,
       "created": "25.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -149,9 +140,7 @@
       "views": 5023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -172,10 +161,7 @@
       "views": 1023,
       "created": "30.01.2024",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -196,9 +182,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -219,9 +203,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -242,9 +224,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -265,10 +245,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -289,9 +266,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -312,9 +287,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -335,9 +308,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -358,10 +329,7 @@
       "views": 123,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -382,9 +350,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -405,9 +371,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -428,9 +392,7 @@
       "views": 199,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -451,10 +413,7 @@
       "views": 23,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -475,10 +434,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -489,10 +445,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -503,10 +456,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -517,10 +467,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -531,10 +478,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -545,10 +489,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -559,10 +500,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -573,10 +511,7 @@
       "views": 23,
       "created": "27.02.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": []
     },
     {
@@ -586,9 +521,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -609,9 +542,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -632,9 +563,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -655,9 +584,7 @@
       "views": 1023,
       "created": "26.02.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -764,9 +691,7 @@
       "username": "admin",
       "password": "111",
       "age": 28,
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
     {
@@ -774,9 +699,7 @@
       "username": "user",
       "password": "111",
       "age": 27,
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
@@ -784,9 +707,7 @@
       "username": "manager",
       "password": "111",
       "age": 27,
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
@@ -794,10 +715,7 @@
       "username": "user-manager",
       "password": "111",
       "age": 27,
-      "roles": [
-        "USER",
-        "MANAGER"
-      ],
+      "roles": ["USER", "MANAGER"],
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     },
     {
@@ -805,11 +723,7 @@
       "username": "testusername",
       "password": "111",
       "age": 30,
-      "roles": [
-        "USER",
-        "MANAGER",
-        "ADMIN"
-      ],
+      "roles": ["USER", "MANAGER", "ADMIN"],
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }
   ],

@@ -1,3 +1,4 @@
-import {StateSchema} from '@/app/providers/StoreProvider'
+import { StateSchema } from '@/app/providers/StoreProvider'
 
-export const getScrollRecoverScroll = (state: StateSchema) => state.scrollRecover.scroll
+export const getScrollRecoverScroll = (state: StateSchema) =>
+  state.scrollRecover.scroll

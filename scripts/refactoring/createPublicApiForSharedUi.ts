@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Project} from 'ts-morph'
+import { Project } from 'ts-morph'
 import path from 'path'
 
 const project = new Project({})
@@ -22,7 +22,9 @@ componentsDirs?.forEach((directory: any) => {
   const indexFile = directory.getSourceFile(indexFilePath)
   if (!indexFile) {
     const sourceCode = `export * from './${directory.getBaseName()}'`
-    const file = directory.createSourceFile(indexFilePath, sourceCode, {overwrite: true})
+    const file = directory.createSourceFile(indexFilePath, sourceCode, {
+      overwrite: true,
+    })
 
     file.save()
   }

@@ -1,4 +1,4 @@
-import {cls} from './cls'
+import { cls } from './cls'
 
 describe('cls', () => {
   test('return first param only', () => {
@@ -8,9 +8,11 @@ describe('cls', () => {
     expect(cls('className', {}, ['class1'])).toBe('className class1')
   })
   test('return first param and mods', () => {
-    expect(cls('className', {hover: true}, [])).toBe('className hover')
+    expect(cls('className', { hover: true }, [])).toBe('className hover')
   })
   test('return all', () => {
-    expect(cls('className', {hover: true}, ['clear'])).toBe('className hover clear')
+    expect(cls('className', { hover: true }, ['clear'])).toBe(
+      'className hover clear',
+    )
   })
 })

@@ -1,10 +1,13 @@
-import {rtkApi} from '@/shared/api/rtkApi'
-import {ArticleRating, RatingInfo} from '@/entities/Rating'
+import { rtkApi } from '@/shared/api/rtkApi'
+import { ArticleRating, RatingInfo } from '@/entities/Rating'
 
 const articleRatingApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    fetchArticleRating: build.query<ArticleRating[], { articleId: string | undefined, userId: string }>({
-      query: ({articleId, userId}) => ({
+    fetchArticleRating: build.query<
+      ArticleRating[],
+      { articleId: string | undefined; userId: string }
+    >({
+      query: ({ articleId, userId }) => ({
         url: '/articles-ratings',
         params: {
           articleId,

@@ -18,7 +18,7 @@ export const resetProfile = (profileId: string) => {
       city: 'Vinnytsia',
       avatar: 'https://cdn-icons-png.flaticon.com/512/6858/6858578.png',
     },
-    headers: {Authorization: 'asdf'},
+    headers: { Authorization: 'asdf' },
     url: `http://localhost:8000/profile/${profileId}`,
   })
 }

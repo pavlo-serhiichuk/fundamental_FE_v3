@@ -1,12 +1,18 @@
-import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {getArticleDetailsMockState, ArticleDetailsSchema} from '@/features/ArticleDetails'
-import {fetchArticlesList} from './fetchArticlesList'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import {
+  getArticleDetailsMockState,
+  ArticleDetailsSchema,
+} from '@/features/ArticleDetails'
+import { fetchArticlesList } from './fetchArticlesList'
 
 describe('fetchArticlesList.test', () => {
   test('success', async () => {
     const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
-    const thunk = new TestAsyncThunk(fetchArticlesList, {articlesPage: {}, filters: {}})
-    thunk.api.get.mockReturnValue(Promise.resolve({data: mockData}))
+    const thunk = new TestAsyncThunk(fetchArticlesList, {
+      articlesPage: {},
+      filters: {},
+    })
+    thunk.api.get.mockReturnValue(Promise.resolve({ data: mockData }))
     const result: any = await thunk.callThunk()
     expect(result.payload).toEqual(mockData)
     expect(result.meta.requestStatus).toEqual('fulfilled')

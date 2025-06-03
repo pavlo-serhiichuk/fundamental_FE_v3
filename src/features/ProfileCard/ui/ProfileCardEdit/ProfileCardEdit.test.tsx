@@ -1,14 +1,14 @@
-import {screen} from '@testing-library/react'
-import {act} from 'react'
+import { screen } from '@testing-library/react'
+import { act } from 'react'
 import userEvent from '@testing-library/user-event'
-import {renderTestComponent} from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
-import {profileReducer, profileMockState} from '@/entities/Profile'
-import {ProfileCardEdit} from './ProfileCardEdit'
-import {$api} from '@/shared/api/api'
+import { renderTestComponent } from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
+import { profileReducer, profileMockState } from '@/entities/Profile'
+import { ProfileCardEdit } from './ProfileCardEdit'
+import { $api } from '@/shared/api/api'
 
 const options = {
-  initialState: {profile: {...profileMockState, readonly: false}},
-  asyncReducers: {profile: profileReducer},
+  initialState: { profile: { ...profileMockState, readonly: false } },
+  asyncReducers: { profile: profileReducer },
 }
 
 describe('ProfileCardEdit', () => {
@@ -47,14 +47,18 @@ describe('ProfileCardEdit', () => {
       await userEvent.clear(screen.getByTestId('Input.Firstname'))
       await userEvent.click(screen.getByTestId('ProfileCardEdit.SaveButton'))
     })
-    expect(screen.getByTestId('ProfileCardEdit.FIRSTNAME_ERROR.Text')).toBeInTheDocument()
+    expect(
+      screen.getByTestId('ProfileCardEdit.FIRSTNAME_ERROR.Text'),
+    ).toBeInTheDocument()
 
     await act(async () => {
       await userEvent.type(screen.getByTestId('Input.Firstname'), 'Firstname')
       await userEvent.clear(screen.getByTestId('Input.Lastname'))
       await userEvent.click(screen.getByTestId('ProfileCardEdit.SaveButton'))
     })
-    expect(screen.getByTestId('ProfileCardEdit.LASTNAME_ERROR.Text')).toBeInTheDocument()
+    expect(
+      screen.getByTestId('ProfileCardEdit.LASTNAME_ERROR.Text'),
+    ).toBeInTheDocument()
   })
 
   test('update PUT request works with', async () => {

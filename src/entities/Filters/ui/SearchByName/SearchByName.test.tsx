@@ -1,6 +1,5 @@
-import {SearchByName} from './SearchByName'
+import { SearchByName } from './SearchByName'
 
 describe('SearchByName', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

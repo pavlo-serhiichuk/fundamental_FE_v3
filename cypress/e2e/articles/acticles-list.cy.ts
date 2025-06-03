@@ -10,7 +10,7 @@ describe('User auths and open articles list and', () => {
   })
 
   it('articles are visible on STUBS(fixtures)', () => {
-    cy.intercept('GET', '**/articles?*', {fixture: 'articles.json'})
+    cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' })
     cy.getByTestId('ArticlesPage').should('be.visible')
     cy.getByTestId('ArticlesList').should('exist')
     cy.getByTestId('ArticlesListItem').should('have.length.greaterThan', 3)

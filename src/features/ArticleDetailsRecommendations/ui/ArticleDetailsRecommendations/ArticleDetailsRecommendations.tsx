@@ -1,11 +1,15 @@
-import {memo} from 'react'
-import {ArticlesList} from '@/entities/Article'
-import {ListView} from '@/features/ChangeListView'
-import {useFetchArticleDetailsRecommendationsList} from '../../api/recommendationsApi'
+import { memo } from 'react'
+import { ArticlesList } from '@/entities/Article'
+import { ListView } from '@/features/ChangeListView'
+import { useFetchArticleDetailsRecommendationsList } from '../../api/recommendationsApi'
 import * as s from './ArticleDetailsRecommendations.module.scss'
 
 export const ArticleDetailsRecommendations = memo(() => {
-  const {data: articles, isLoading, error} = useFetchArticleDetailsRecommendationsList(5)
+  const {
+    data: articles,
+    isLoading,
+    error,
+  } = useFetchArticleDetailsRecommendationsList(5)
 
   if (isLoading || error) {
     return null
@@ -13,7 +17,11 @@ export const ArticleDetailsRecommendations = memo(() => {
 
   return (
     <div data-testid="ArticleDetailsRecommendations">
-      <ArticlesList articles={articles} listView={ListView.SMALL} className={s.recommendationsList} />
+      <ArticlesList
+        articles={articles}
+        listView={ListView.SMALL}
+        className={s.recommendationsList}
+      />
     </div>
   )
 })

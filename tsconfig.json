@@ -21,18 +21,18 @@
     //allows to work with packages that uses "common js" as usual - import Something from 'something'
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node","@testing-library/jest-dom"]
+    "types": ["node", "@testing-library/jest-dom"]
     //    "allowImportingTsExtensions": true
   },
   "include": [
     "./config/test/setupTests.ts",
     "src/app/types/global.d.ts",
     //    "./config/test/*",
-    "./src/**/*",
+    "./src/**/*"
   ],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  },
+  }
 }

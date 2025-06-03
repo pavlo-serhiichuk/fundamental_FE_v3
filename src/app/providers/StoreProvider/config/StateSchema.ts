@@ -1,20 +1,23 @@
 import {
-  type Action, EnhancedStore, type ReducersMapObject, type Reducer,
+  type Action,
+  EnhancedStore,
+  type ReducersMapObject,
+  type Reducer,
 } from '@reduxjs/toolkit'
-import {type NavigateOptions} from 'react-router/dist/lib/context'
-import {type AxiosInstance} from 'axios'
-import {type To} from '@remix-run/router'
-import {UserSchema} from '@/entities/User'
-import {CounterSchema} from '@/entities/Counter'
-import {SignInSchema} from '@/features/SignIn'
-import {ProfileSchema} from '@/entities/Profile'
-import {ArticlesPageSchema} from '@/pages/ArticlesPage'
-import {ListViewSchema} from '@/features/ChangeListView'
-import {ScrollRecoverSchema} from '@/features/ScrollRecover'
-import {FiltersSchema} from '@/entities/Filters'
-import {ArticleDetailsPageSchema} from '@/pages/ArticleDetailsPage'
-import {AddCommentSchema} from '@/entities/Comment'
-import {rtkApi} from '@/shared/api/rtkApi'
+import { type NavigateOptions } from 'react-router/dist/lib/context'
+import { type AxiosInstance } from 'axios'
+import { type To } from '@remix-run/router'
+import { UserSchema } from '@/entities/User'
+import { CounterSchema } from '@/entities/Counter'
+import { SignInSchema } from '@/features/SignIn'
+import { ProfileSchema } from '@/entities/Profile'
+import { ArticlesPageSchema } from '@/pages/ArticlesPage'
+import { ListViewSchema } from '@/features/ChangeListView'
+import { ScrollRecoverSchema } from '@/features/ScrollRecover'
+import { FiltersSchema } from '@/entities/Filters'
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
+import { AddCommentSchema } from '@/entities/Comment'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -22,7 +25,7 @@ export interface StateSchema {
   listView: ListViewSchema
   scrollRecover: ScrollRecoverSchema
   filters: FiltersSchema
-  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
   // async reducers
   signIn?: SignInSchema
@@ -41,7 +44,8 @@ export interface ReducerManager {
   remove: (key: StateSchemaKey) => void
 }
 
-export interface ReduxStoreWithReducerManager extends EnhancedStore<StateSchema> {
+export interface ReduxStoreWithReducerManager
+  extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager
 }
 

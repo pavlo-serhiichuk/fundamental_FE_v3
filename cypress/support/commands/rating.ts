@@ -7,19 +7,19 @@ export const rate = () => {
 export const deleteRating = (ratingUrl: string) => {
   cy.request({
     method: 'GET',
-    headers: {Authorization: 'asdf'},
+    headers: { Authorization: 'asdf' },
     url: `http://localhost:8000/${ratingUrl}?userId=5`,
+  }).then((res) => {
+    console.log('res.body', res.body)
+    const deletes = res.body.map((comment: any) =>
+      cy.request({
+        method: 'DELETE',
+        headers: { Authorization: 'asdf' },
+        url: `http://localhost:8000/${ratingUrl}/${comment.id}`,
+      }),
+    )
+    return Promise.all(deletes)
   })
-    .then((res) => {
-      console.log('res.body', res.body)
-      const deletes = res.body.map((comment: any) =>
-        cy.request({
-          method: 'DELETE',
-          headers: {Authorization: 'asdf'},
-          url: `http://localhost:8000/${ratingUrl}/${comment.id}`,
-        }))
-      return Promise.all(deletes)
-    })
 }
 
 // @ts-ignore

@@ -1,6 +1,5 @@
-import {Tabs} from './Tabs'
+import { Tabs } from './Tabs'
 
 describe('Tabs', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

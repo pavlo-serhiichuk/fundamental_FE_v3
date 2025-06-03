@@ -1,4 +1,4 @@
-let articleId : string
+let articleId: string
 
 describe('Article details is opened', () => {
   beforeEach(() => {
@@ -33,7 +33,7 @@ describe('Article details is opened', () => {
   })
 
   it('and User rates article with STUBS(fixtures)', () => {
-    cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'})
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' })
     cy.getByTestId('ArticleRating').scrollIntoView()
     cy.rate()
     cy.get('[data-selected=true]').should('have.length', 5)

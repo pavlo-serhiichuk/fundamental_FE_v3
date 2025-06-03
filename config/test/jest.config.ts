@@ -15,12 +15,8 @@ const config = {
   clearMocks: true,
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/config/test/setupTests.ts'],
-  coveragePathIgnorePatterns: [
-    '\\\\node_modules\\\\',
-  ],
-  moduleDirectories: [
-    'node_modules',
-  ],
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  moduleDirectories: ['node_modules'],
   moduleNameMapper: {
     '\\.s?css$': path.resolve(__dirname, 'styleMock.ts'),
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
@@ -29,9 +25,7 @@ const config = {
     axios: 'axios/dist/node/axios.cjs',
     '^@/(.*)$': '<rootDir>src/$1',
   },
-  modulePaths: [
-    '<rootDir>src',
-  ],
+  modulePaths: ['<rootDir>src'],
   moduleFileExtensions: [
     'js',
     'mjs',
@@ -44,16 +38,17 @@ const config = {
   ],
   rootDir: '../../',
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-  testPathIgnorePatterns: [
-    '/node_modules/',
-  ],
+  testPathIgnorePatterns: ['/node_modules/'],
   reporters: [
     'default',
-    ['jest-html-reporters', {
-      publicPath: '<rootDir>/reports/unit',
-      filename: 'report.html',
-      // openReport: true,
-    }],
+    [
+      'jest-html-reporters',
+      {
+        publicPath: '<rootDir>/reports/unit',
+        filename: 'report.html',
+        // openReport: true,
+      },
+    ],
   ],
 }
 

@@ -1,7 +1,7 @@
 export interface RatingBase {
-  id?: number;
-  rate: number;
-  userId: string;
+  id?: number
+  rate: number
+  userId: string
   feedback?: string
 }
 

@@ -6,18 +6,18 @@ export const sendComment = () => {
 export const deleteComment = () => {
   cy.request({
     method: 'GET',
-    headers: {Authorization: 'asdf'},
+    headers: { Authorization: 'asdf' },
     url: 'http://localhost:8000/comments?userId=5',
+  }).then((res) => {
+    const deletes = res.body.map((comment: any) =>
+      cy.request({
+        method: 'DELETE',
+        headers: { Authorization: 'asdf' },
+        url: `http://localhost:8000/comments/${comment.id}`,
+      }),
+    )
+    return Promise.all(deletes)
   })
-    .then((res) => {
-      const deletes = res.body.map((comment: any) =>
-        cy.request({
-          method: 'DELETE',
-          headers: {Authorization: 'asdf'},
-          url: `http://localhost:8000/comments/${comment.id}`,
-        }))
-      return Promise.all(deletes)
-    })
 }
 
 // @ts-ignore

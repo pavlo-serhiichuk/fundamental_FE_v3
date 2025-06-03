@@ -1,12 +1,15 @@
-import {useTranslation} from 'react-i18next'
-import {useSelector} from 'react-redux'
-import {useCallback} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
-import {getUserAuthData} from '@/entities/User'
-import {RatingCard} from '@/entities/Rating'
-import {useFetchProfileRating, useRateProfile} from '../../api/profileRatingApi'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useCallback } from 'react'
+import { cls } from '@/shared/lib/cls/cls'
+import { getUserAuthData } from '@/entities/User'
+import { RatingCard } from '@/entities/Rating'
+import {
+  useFetchProfileRating,
+  useRateProfile,
+} from '../../api/profileRatingApi'
 import * as s from './ProfileRating.module.scss'
-import {Skeleton} from '@/shared/ui/Skeleton'
+import { Skeleton } from '@/shared/ui/Skeleton'
 
 export interface ProfileRatingProps {
   className?: string
@@ -14,41 +17,59 @@ export interface ProfileRatingProps {
 }
 
 const ProfileRating = (props: ProfileRatingProps) => {
-  const {className, profileId} = props
-  const {t} = useTranslation()
+  const { className, profileId } = props
+  const { t } = useTranslation()
   const userId = useSelector(getUserAuthData)?.id || '0'
   const [rateProfile] = useRateProfile()
 
-  const {
-    data: profileRating,
-    isLoading,
-  } = useFetchProfileRating({profileId, userId})
+  const { data: profileRating, isLoading } = useFetchProfileRating({
+    profileId,
+    userId,
+  })
 
-  const handleRate = useCallback(async (starsCount: number, feedbackMessage?: string) => {
-    try {
-      await rateProfile({
-        profileId,
-        userId,
-        rate: starsCount,
-        feedback: feedbackMessage,
-      }).unwrap()
-    } catch (err) {
-      console.error('Failed to submit rating:', err)
-    }
-  }, [profileId, userId, rateProfile])
+  const handleRate = useCallback(
+    async (starsCount: number, feedbackMessage?: string) => {
+      try {
+        await rateProfile({
+          profileId,
+          userId,
+          rate: starsCount,
+          feedback: feedbackMessage,
+        }).unwrap()
+      } catch (err) {
+        console.error('Failed to submit rating:', err)
+      }
+    },
+    [profileId, userId, rateProfile],
+  )
 
-  const title = profileRating?.length ? "You've rated this profile" : 'Rate this profile'
+  const title = profileRating?.length
+    ? "You've rated this profile"
+    : 'Rate this profile'
 
-  const onAccept = useCallback((startsCount: number, feedbackMessage?: string) => {
-    handleRate(startsCount, feedbackMessage)
-  }, [handleRate])
+  const onAccept = useCallback(
+    (startsCount: number, feedbackMessage?: string) => {
+      handleRate(startsCount, feedbackMessage)
+    },
+    [handleRate],
+  )
 
-  const onCancel = useCallback((startsCount: number) => {
-    handleRate(startsCount)
-  }, [handleRate])
+  const onCancel = useCallback(
+    (startsCount: number) => {
+      handleRate(startsCount)
+    },
+    [handleRate],
+  )
 
   if (isLoading) {
-    return <Skeleton width="100%" height={120} className={s.ProfileRating} radius="20px" />
+    return (
+      <Skeleton
+        width="100%"
+        height={120}
+        className={s.ProfileRating}
+        radius="20px"
+      />
+    )
   }
 
   return (

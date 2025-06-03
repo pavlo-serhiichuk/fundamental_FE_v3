@@ -1,21 +1,21 @@
-import {useTranslation} from 'react-i18next'
-import {useSelector} from 'react-redux'
-import {useCallback} from 'react'
-import {useParams} from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useCallback } from 'react'
+import { useParams } from 'react-router-dom'
 import {
   getProfileData,
   getProfileError,
   getProfileLoading,
   profileActions,
 } from '@/entities/Profile'
-import {Text} from '@/shared/ui/Text'
-import {cls} from '@/shared/lib/cls/cls'
-import {Avatar} from '@/shared/ui/Avatar'
+import { Text } from '@/shared/ui/Text'
+import { cls } from '@/shared/lib/cls/cls'
+import { Avatar } from '@/shared/ui/Avatar'
 import PinIcon from '@/shared/assets/icons/map-pin.svg'
-import {Button} from '@/shared/ui/Button'
-import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
-import {getUserAuthData} from '@/entities/User'
-import {Skeleton} from '@/shared/ui/Skeleton'
+import { Button } from '@/shared/ui/Button'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { getUserAuthData } from '@/entities/User'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import * as s from './ProfileCardView.module.scss'
 
 interface ProfileCardProps {
@@ -23,14 +23,14 @@ interface ProfileCardProps {
 }
 
 export const ProfileCardView = (props: ProfileCardProps) => {
-  const {className} = props
-  const {t} = useTranslation('profile')
+  const { className } = props
+  const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
   const data = useSelector(getProfileData)
   const user = useSelector(getUserAuthData)
-  const {id} = useParams<{ id: string }>()
+  const { id } = useParams<{ id: string }>()
   const onEdit = useCallback(() => {
     dispatch(profileActions.setReadonly())
   }, [dispatch])
@@ -58,7 +58,10 @@ export const ProfileCardView = (props: ProfileCardProps) => {
   }
 
   return (
-    <div className={cls(s.ProfileCard, {}, [className])} data-testid="ProfileCardView">
+    <div
+      className={cls(s.ProfileCard, {}, [className])}
+      data-testid="ProfileCardView"
+    >
       <div className={s.header}>
         <Avatar src={data?.avatar || ''} alt="profile" size={70} />
         <div>
@@ -70,13 +73,23 @@ export const ProfileCardView = (props: ProfileCardProps) => {
           <Text text={`${data?.age} ${t('years old')}`} fontStyle="italic-fs" />
           <div className={s.location}>
             <PinIcon />
-            <Text text={`${data?.country}, ${data?.city}`} size="text_size_m" fontStyle="italic-fs" />
+            <Text
+              text={`${data?.country}, ${data?.city}`}
+              size="text_size_m"
+              fontStyle="italic-fs"
+            />
           </div>
         </div>
       </div>
       {id === user?.id ? (
         <div>
-          <Button theme="bordered" onClick={onEdit} testId="ProfileCardView.EditButton">Edit</Button>
+          <Button
+            theme="bordered"
+            onClick={onEdit}
+            testId="ProfileCardView.EditButton"
+          >
+            Edit
+          </Button>
         </div>
       ) : null}
     </div>

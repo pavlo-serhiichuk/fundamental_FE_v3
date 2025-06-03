@@ -1,7 +1,12 @@
-import {User} from '@/entities/User'
-import {ArticleBlockType} from '../consts/consts'
+import { User } from '@/entities/User'
+import { ArticleBlockType } from '../consts/consts'
 
-export type ArticleTopicType = 'ALL' | 'SCIENCE' | 'IT' | 'FICTION' | 'ECONOMICS'
+export type ArticleTopicType =
+  | 'ALL'
+  | 'SCIENCE'
+  | 'IT'
+  | 'FICTION'
+  | 'ECONOMICS'
 
 export interface ArticleBlockBase {
   id: string
@@ -25,7 +30,10 @@ export interface ArticleTextBlock extends ArticleBlockBase {
   paragraphs: string[]
 }
 
-export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlock
+export type ArticleBlock =
+  | ArticleCodeBlock
+  | ArticleImageBlock
+  | ArticleTextBlock
 
 export interface Article {
   id?: string

@@ -21,6 +21,9 @@ describe('Profile page is opened', () => {
     const newName = 'Firstname'
     const newLastname = 'Lastname'
     cy.updateProfile(newName, newLastname)
-    cy.getByTestId('ProfileCardView.Title').should('have.text', `${newName} ${newLastname}`)
+    cy.getByTestId('ProfileCardView.Title').should(
+      'have.text',
+      `${newName} ${newLastname}`,
+    )
   })
 })

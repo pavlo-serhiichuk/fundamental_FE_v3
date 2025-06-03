@@ -1,4 +1,3 @@
 describe('Page', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

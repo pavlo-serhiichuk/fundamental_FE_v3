@@ -1,16 +1,16 @@
+import { LegacyRef, memo, ReactNode, RefObject, useRef } from 'react'
+import { useSelector } from 'react-redux'
+import { useLocation } from 'react-router-dom'
+import { cls } from '@/shared/lib/cls/cls'
+import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll'
+import { useThrottle } from '@/shared/hooks/useThrottle'
 import {
-  LegacyRef,
-  memo, ReactNode, RefObject, useRef,
-} from 'react'
-import {useSelector} from 'react-redux'
-import {useLocation} from 'react-router-dom'
-import {cls} from '@/shared/lib/cls/cls'
-import {useInfiniteScroll} from '@/shared/hooks/useInfiniteScroll'
-import {useThrottle} from '@/shared/hooks/useThrottle'
-import {getScrollRecoverScroll, scrollRecoverActions} from '@/features/ScrollRecover'
-import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
-import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
-import {TestProps} from '@/shared/types/tests'
+  getScrollRecoverScroll,
+  scrollRecoverActions,
+} from '@/features/ScrollRecover'
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { TestProps } from '@/shared/types/tests'
 import * as s from './Page.module.scss'
 
 interface PageProps extends TestProps {
@@ -22,15 +22,10 @@ interface PageProps extends TestProps {
 export const Page = memo((props: PageProps) => {
   const dispatch = useAppDispatch()
   const scroll = useSelector(getScrollRecoverScroll)
-  const {pathname} = useLocation()
+  const { pathname } = useLocation()
   const wrapperRef = useRef(null) as RefObject<HTMLElement | null>
   const triggerRef = useRef(null) as RefObject<HTMLElement | null>
-  const {
-    className,
-    children,
-    onScrollEnd,
-    ...otherProps
-  } = props
+  const { className, children, onScrollEnd, ...otherProps } = props
 
   useInitialEffect(() => {
     if (wrapperRef.current) {
@@ -45,7 +40,12 @@ export const Page = memo((props: PageProps) => {
   })
 
   const onScroll = useThrottle((e) => {
-    dispatch(scrollRecoverActions.setScroll({path: pathname, position: e.currentTarget.scrollTop}))
+    dispatch(
+      scrollRecoverActions.setScroll({
+        path: pathname,
+        position: e.currentTarget.scrollTop,
+      }),
+    )
   }, 500)
 
   return (

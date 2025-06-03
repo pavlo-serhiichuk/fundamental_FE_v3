@@ -1,6 +1,6 @@
-import {fireEvent, screen} from '@testing-library/react'
-import {renderTestComponent} from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
-import {ThemeSwitcher} from './ThemeSwitcher'
+import { fireEvent, screen } from '@testing-library/react'
+import { renderTestComponent } from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
+import { ThemeSwitcher } from './ThemeSwitcher'
 
 describe('ThemeSwitcher', () => {
   test('exist', () => {

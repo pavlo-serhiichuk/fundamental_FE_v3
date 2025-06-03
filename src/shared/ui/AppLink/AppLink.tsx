@@ -1,9 +1,13 @@
-import {Children, type FC, Fragment} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
-import {NavLink, type LinkProps} from 'react-router-dom'
+import { Children, type FC, Fragment } from 'react'
+import { cls } from '@/shared/lib/cls/cls'
+import { NavLink, type LinkProps } from 'react-router-dom'
 import * as s from './AppLink.module.scss'
 
-export type AppLinkThemes = 'content' | 'navigation' | 'navigationBorder' | 'contentBorder'
+export type AppLinkThemes =
+  | 'content'
+  | 'navigation'
+  | 'navigationBorder'
+  | 'contentBorder'
 
 interface AppLinkProps extends LinkProps {
   className?: string
@@ -13,7 +17,11 @@ interface AppLinkProps extends LinkProps {
 
 export const AppLink: FC<AppLinkProps> = (props) => {
   const {
-    className = '', theme = 'content', to, children, ...otherProps
+    className = '',
+    theme = 'content',
+    to,
+    children,
+    ...otherProps
   } = props
   return (
     <NavLink

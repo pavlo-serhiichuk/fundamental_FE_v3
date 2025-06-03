@@ -1,7 +1,7 @@
 import React from 'react'
-import {type Meta, type StoryObj} from '@storybook/react'
-import {fn} from '@storybook/test'
-import {Flex} from './Flex'
+import { type Meta, type StoryObj } from '@storybook/react'
+import { fn } from '@storybook/test'
+import { Flex } from './Flex'
 
 const children = (
   <>
@@ -17,9 +17,11 @@ const meta = {
   component: Flex,
   args: {
     onClick: fn(),
-    onDoubleClick: fn(() => { alert('double') }),
+    onDoubleClick: fn(() => {
+      alert('double')
+    }),
   },
-} as Meta <typeof Flex>
+} as Meta<typeof Flex>
 
 export default meta
 type Story = StoryObj<typeof meta>

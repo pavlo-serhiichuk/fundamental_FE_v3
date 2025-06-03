@@ -1,6 +1,5 @@
-import {ChangeListView} from './ChangeListView'
+import { ChangeListView } from './ChangeListView'
 
 describe('ChangeListView', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

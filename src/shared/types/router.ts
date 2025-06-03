@@ -1,6 +1,6 @@
-import type {RouteProps} from 'react-router/dist/lib/components'
-import {UserRoles} from '@/entities/User'
-import {AppRouteNames} from '@/shared/const/routers'
+import type { RouteProps } from 'react-router/dist/lib/components'
+import { UserRoles } from '@/entities/User'
+import { AppRouteNames } from '@/shared/const/routers'
 
 export type AppRoutesProps = RouteProps & {
   authOnly?: boolean

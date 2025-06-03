@@ -1,5 +1,5 @@
-import {ValidationError} from '../../consts/consts'
-import {type Profile} from '../../types/ProfileSchema'
+import { ValidationError } from '../../consts/consts'
+import { type Profile } from '../../types/ProfileSchema'
 
 export function validateProfileForm(profile: Profile): ValidationError[] {
   const errors: ValidationError[] = []

@@ -1,10 +1,8 @@
-import {
-  type FC, HTMLAttributes, type ReactNode,
-} from 'react'
-import {cls, Mods} from '@/shared/lib/cls/cls'
+import { type FC, HTMLAttributes, type ReactNode } from 'react'
+import { cls, Mods } from '@/shared/lib/cls/cls'
 import * as s from './Card.module.scss'
 
-interface CardProps extends HTMLAttributes<HTMLDivElement>{
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   className?: string
   withPadding?: boolean
   children: ReactNode
@@ -20,7 +18,7 @@ export const Card: FC<CardProps> = (props) => {
     ...otherProps
   } = props
 
-  const mods: Mods = {[s.withPadding]: withPadding}
+  const mods: Mods = { [s.withPadding]: withPadding }
 
   return (
     <div

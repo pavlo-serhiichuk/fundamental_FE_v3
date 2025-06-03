@@ -1,27 +1,26 @@
-import {ReactNode, memo} from 'react'
-import {useTranslation} from 'react-i18next'
-import {Popover as LibPopover, PopoverButton, PopoverPanel} from '@headlessui/react'
-import {DropdownDirection} from '@/shared/types/ui'
-import {cls} from '@/shared/lib/cls/cls'
+import { ReactNode, memo } from 'react'
+import { useTranslation } from 'react-i18next'
+import {
+  Popover as LibPopover,
+  PopoverButton,
+  PopoverPanel,
+} from '@headlessui/react'
+import { DropdownDirection } from '@/shared/types/ui'
+import { cls } from '@/shared/lib/cls/cls'
 import * as s from './Popover.module.scss'
 import * as popupsCls from '../../styles/popups.module.scss'
-import {mapDropdownDirectionClass} from '../../styles/consts'
+import { mapDropdownDirectionClass } from '../../styles/consts'
 
 interface PopoverProps {
-  className?: string;
+  className?: string
   trigger: ReactNode
   direction?: DropdownDirection
   children: ReactNode
 }
 
 export const Popover = memo((props: PopoverProps) => {
-  const {
-    className,
-    trigger,
-    direction = 'bottom right',
-    children,
-  } = props
-  const {t} = useTranslation()
+  const { className, trigger, direction = 'bottom right', children } = props
+  const { t } = useTranslation()
 
   const menuClasses = [mapDropdownDirectionClass[direction]]
 

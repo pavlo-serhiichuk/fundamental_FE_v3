@@ -1,7 +1,10 @@
-import type {Meta, StoryObj} from '@storybook/react'
-import {fn} from '@storybook/test'
-import {StoreDecorator, ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
-import {Header} from './Header'
+import type { Meta, StoryObj } from '@storybook/react'
+import { fn } from '@storybook/test'
+import {
+  StoreDecorator,
+  ThemeDecorator,
+} from '@/shared/config/storybook/decorators/decorators'
+import { Header } from './Header'
 import '@/app/styles/index.scss'
 
 const meta = {
@@ -12,13 +15,13 @@ const meta = {
   // },
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
-  args: {onClick: fn()},
-} as Meta <typeof Header>
+  args: { onClick: fn() },
+} as Meta<typeof Header>
 
 export default meta
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
   args: {},
@@ -32,5 +35,9 @@ export const PrimaryDark: Story = {
 
 export const PrimarySignedIn: Story = {
   args: {},
-  decorators: [StoreDecorator({user: {authData: {username: 'username', password: 'password'}}})],
+  decorators: [
+    StoreDecorator({
+      user: { authData: { username: 'username', password: 'password' } },
+    }),
+  ],
 }

@@ -1,6 +1,5 @@
-import {ArticlesPageFilters} from './ArticlesPageFilters'
+import { ArticlesPageFilters } from './ArticlesPageFilters'
 
 describe('ArticlesFilters', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

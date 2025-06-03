@@ -1,13 +1,13 @@
-import type {Meta, StoryObj} from '@storybook/react'
-import {fn} from '@storybook/test'
-import {Dropdown} from './Dropdown'
+import type { Meta, StoryObj } from '@storybook/react'
+import { fn } from '@storybook/test'
+import { Dropdown } from './Dropdown'
 import '@/app/styles/index.scss'
-import {Button} from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 
 const items = [
-  {value: '123', content: 'content value'},
-  {value: '123', content: 'content value'},
-  {value: '123', content: 'content value'},
+  { value: '123', content: 'content value' },
+  { value: '123', content: 'content value' },
+  { value: '123', content: 'content value' },
 ]
 
 const meta = {
@@ -15,13 +15,13 @@ const meta = {
   component: Dropdown,
   tags: ['autodocs'],
   argTypes: {
-    backgroundColor: {control: 'color'},
+    backgroundColor: { control: 'color' },
   },
-  args: {onClick: fn()},
-} as Meta <typeof Dropdown>
+  args: { onClick: fn() },
+} as Meta<typeof Dropdown>
 
 export default meta
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof meta>
 
 const TopRight: Story = {
   args: {
@@ -36,9 +36,9 @@ export const Primary: Story = {
     trigger: <Button>Trigger</Button>,
     direction: 'bottom left',
     items: [
-      {value: '123', content: 'content value'},
-      {value: '123', content: 'content value'},
-      {value: '123', content: 'content value'},
+      { value: '123', content: 'content value' },
+      { value: '123', content: 'content value' },
+      { value: '123', content: 'content value' },
     ],
   },
 }

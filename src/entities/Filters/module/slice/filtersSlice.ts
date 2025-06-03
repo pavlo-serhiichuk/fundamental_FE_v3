@@ -1,7 +1,7 @@
-import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {ArticleTopicType} from '@/entities/Article'
-import {SortByType} from '../consts/consts'
-import type {FiltersSchema, OrderByType} from '../types/FiltersSchema'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { ArticleTopicType } from '@/entities/Article'
+import { SortByType } from '../consts/consts'
+import type { FiltersSchema, OrderByType } from '../types/FiltersSchema'
 
 const initialState: FiltersSchema = {
   searchValue: '',
@@ -23,11 +23,14 @@ export const filtersSlice = createSlice({
     setSortBy: (state: FiltersSchema, action: PayloadAction<SortByType>) => {
       state.sortBy = action.payload
     },
-    setTopicType: (state: FiltersSchema, action: PayloadAction<ArticleTopicType>) => {
+    setTopicType: (
+      state: FiltersSchema,
+      action: PayloadAction<ArticleTopicType>,
+    ) => {
       state.topicType = action.payload
     },
   },
 })
 
-export const {actions: filtersActions} = filtersSlice
-export const {reducer: filtersReducer} = filtersSlice
+export const { actions: filtersActions } = filtersSlice
+export const { reducer: filtersReducer } = filtersSlice

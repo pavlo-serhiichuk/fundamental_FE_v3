@@ -1,13 +1,13 @@
-import {type Meta, type StoryObj} from '@storybook/react'
-import {fn} from '@storybook/test'
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/decorators'
-import {Select} from './Select'
+import { type Meta, type StoryObj } from '@storybook/react'
+import { fn } from '@storybook/test'
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/decorators'
+import { Select } from './Select'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const options = [
-  {value: 'foo 1', content: 'foo 1'},
-  {value: 'foo 2', content: 'foo 2'},
-  {value: 'foo 3', content: 'foo 3'},
+  { value: 'foo 1', content: 'foo 1' },
+  { value: 'foo 2', content: 'foo 2' },
+  { value: 'foo 3', content: 'foo 3' },
 ]
 
 const meta = {

@@ -1,3 +1,4 @@
-import {type StateSchema} from '@/app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 
-export const getProfileUpdating = (state: StateSchema) => state.profile?.isUpdating
+export const getProfileUpdating = (state: StateSchema) =>
+  state.profile?.isUpdating

@@ -1,6 +1,6 @@
-import {screen} from '@testing-library/react'
-import {renderTestComponent} from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
-import {Text} from './Text'
+import { screen } from '@testing-library/react'
+import { renderTestComponent } from '@/shared/lib/tests/renderTestComponent/renderTestComponent'
+import { Text } from './Text'
 
 describe('Text', () => {
   test('exist title & text', () => {

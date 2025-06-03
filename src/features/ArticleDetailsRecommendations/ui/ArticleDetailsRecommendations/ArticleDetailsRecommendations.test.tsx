@@ -1,6 +1,5 @@
-import {ArticleDetailsRecommendations} from './ArticleDetailsRecommendations'
+import { ArticleDetailsRecommendations } from './ArticleDetailsRecommendations'
 
 describe('ArticleDetailsRecommendations', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

@@ -1,9 +1,9 @@
-import {type FC, useCallback} from 'react'
-import {useSelector} from 'react-redux'
-import {useTranslation} from 'react-i18next'
-import {useAppDispatch} from '@/shared/hooks/useAppDispatch'
-import {Currency, CurrencySelect} from '@/entities/Currency'
-import {Country, CountrySelect} from '@/entities/Country'
+import { type FC, useCallback } from 'react'
+import { useSelector } from 'react-redux'
+import { useTranslation } from 'react-i18next'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { Currency, CurrencySelect } from '@/entities/Currency'
+import { Country, CountrySelect } from '@/entities/Country'
 import {
   getProfileError,
   getProfileForm,
@@ -13,22 +13,22 @@ import {
   updateProfileData,
   profileActions,
 } from '@/entities/Profile'
-import {Avatar} from '@/shared/ui/Avatar'
-import {Input} from '@/shared/ui/Input'
-import {cls} from '@/shared/lib/cls/cls'
-import {Text} from '@/shared/ui/Text'
-import {Loader} from '@/shared/ui/Loader'
-import {Button} from '@/shared/ui/Button'
-import {HStack, VStack} from '@/shared/ui/Stack'
+import { Avatar } from '@/shared/ui/Avatar'
+import { Input } from '@/shared/ui/Input'
+import { cls } from '@/shared/lib/cls/cls'
+import { Text } from '@/shared/ui/Text'
+import { Loader } from '@/shared/ui/Loader'
+import { Button } from '@/shared/ui/Button'
+import { HStack, VStack } from '@/shared/ui/Stack'
 import * as s from './ProfileCardEdit.module.scss'
-import {StateSchema} from '@/app/providers/StoreProvider'
+import { StateSchema } from '@/app/providers/StoreProvider'
 
 interface EditProfileCardProps {
   className?: string
 }
 
 export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
-  const {t} = useTranslation('profile')
+  const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const form = useSelector(getProfileForm)
   const state = useSelector((state: StateSchema) => state)
@@ -38,24 +38,42 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   const isUpdating = useSelector(getProfileUpdating)
   const validationErrors = useSelector(getProfileValidationErrors)
 
-  const onChangeFirstName = useCallback((value: string) => {
-    dispatch(profileActions.updateProfileForm({firstname: value}))
-  }, [dispatch])
-  const onChangeLastname = useCallback((value: string) => {
-    dispatch(profileActions.updateProfileForm({lastname: value}))
-  }, [dispatch])
-  const onChangeAge = useCallback((value: string) => {
-    dispatch(profileActions.updateProfileForm({age: Number(value)}))
-  }, [dispatch])
-  const onChangeAvatar = useCallback((value: string) => {
-    dispatch(profileActions.updateProfileForm({avatar: value}))
-  }, [dispatch])
-  const onChangeCurrency = useCallback((value: Currency) => {
-    dispatch(profileActions.updateProfileForm({currency: value}))
-  }, [dispatch])
-  const onChangeCountry = useCallback((value: Country) => {
-    dispatch(profileActions.updateProfileForm({country: value}))
-  }, [dispatch])
+  const onChangeFirstName = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileForm({ firstname: value }))
+    },
+    [dispatch],
+  )
+  const onChangeLastname = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileForm({ lastname: value }))
+    },
+    [dispatch],
+  )
+  const onChangeAge = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileForm({ age: Number(value) }))
+    },
+    [dispatch],
+  )
+  const onChangeAvatar = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileForm({ avatar: value }))
+    },
+    [dispatch],
+  )
+  const onChangeCurrency = useCallback(
+    (value: Currency) => {
+      dispatch(profileActions.updateProfileForm({ currency: value }))
+    },
+    [dispatch],
+  )
+  const onChangeCountry = useCallback(
+    (value: Country) => {
+      dispatch(profileActions.updateProfileForm({ country: value }))
+    },
+    [dispatch],
+  )
   const onCancel = useCallback(() => {
     dispatch(profileActions.resetForm())
   }, [dispatch])
@@ -65,7 +83,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
 
   if (error) {
     return (
-      <div className={cls(s.EditProfileCard, {[s.error]: true})}>
+      <div className={cls(s.EditProfileCard, { [s.error]: true })}>
         <Text title={error} />
       </div>
     )

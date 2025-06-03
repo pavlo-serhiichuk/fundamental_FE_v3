@@ -1,7 +1,7 @@
-import {type FC} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
-import {Code} from '@/shared/ui/Code'
-import {type ArticleCodeBlock} from '../../model/types/article'
+import { type FC } from 'react'
+import { cls } from '@/shared/lib/cls/cls'
+import { Code } from '@/shared/ui/Code'
+import { type ArticleCodeBlock } from '../../model/types/article'
 import * as s from './ArticleBlockCodeComponent.module.scss'
 
 interface ArticleBlockCodeComponentProps {
@@ -9,8 +9,10 @@ interface ArticleBlockCodeComponentProps {
   block: ArticleCodeBlock
 }
 
-export const ArticleBlockCodeComponent: FC<ArticleBlockCodeComponentProps> = (props) => {
-  const {className, block} = props
+export const ArticleBlockCodeComponent: FC<ArticleBlockCodeComponentProps> = (
+  props,
+) => {
+  const { className, block } = props
 
   return (
     <div className={cls(s.ArticleBlockCodeComponent, {}, [className])}>

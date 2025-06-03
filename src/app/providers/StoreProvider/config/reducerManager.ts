@@ -1,10 +1,15 @@
 import {
-  Action, combineReducers, Reducer, type ReducersMapObject,
+  Action,
+  combineReducers,
+  Reducer,
+  type ReducersMapObject,
 } from '@reduxjs/toolkit'
-import {ReducerManager, StateSchema, StateSchemaKey} from './StateSchema'
+import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema'
 
-export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
-  const reducers = {...initialReducers}
+export function createReducerManager(
+  initialReducers: ReducersMapObject<StateSchema>,
+): ReducerManager {
+  const reducers = { ...initialReducers }
   let combinedReducer = combineReducers(reducers)
   let keysToRemove: StateSchemaKey[] = []
 
@@ -13,7 +18,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
     getReducerMap: () => reducers,
     reduce: (state: DeepPartial<StateSchema>, action: Action) => {
       if (keysToRemove.length > 0) {
-        state = {...state}
+        state = { ...state }
         keysToRemove.forEach((key) => {
           delete state[key]
         })

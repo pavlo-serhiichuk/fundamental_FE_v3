@@ -1,18 +1,17 @@
-import {ArticleBlockType} from '../consts/consts'
-import {Article} from '../types/article'
+import { ArticleBlockType } from '../consts/consts'
+import { Article } from '../types/article'
 
 export const mockArticle: Article = {
   id: '1',
   title: 'How to become a true ninja...',
   subtitle: '... and make others lives harder',
-  image: 'https://yt3.googleusercontent.com/ytc/AGIKgqND5OpZ3zBGI_CFfNpPWs1PDQu_OmNG2IFXPcxf=s900-c-k-c0x00ffffff-no-rj',
+  image:
+    'https://yt3.googleusercontent.com/ytc/AGIKgqND5OpZ3zBGI_CFfNpPWs1PDQu_OmNG2IFXPcxf=s900-c-k-c0x00ffffff-no-rj',
   views: 1023,
   created: '26.02.2022',
   userId: '1',
-  type: [
-    'ECONOMICS',
-  ],
-  user: {username: 'username'},
+  type: ['ECONOMICS'],
+  user: { username: 'username' },
   blocks: [
     {
       id: '1',

@@ -1,7 +1,5 @@
-import {
-  Component, type ErrorInfo, type ReactNode, Suspense,
-} from 'react'
-import {PageError} from '@/widgets/PageError/PageError'
+import { Component, type ErrorInfo, type ReactNode, Suspense } from 'react'
+import { PageError } from '@/widgets/PageError/PageError'
 
 interface Props {
   children?: ReactNode
@@ -17,7 +15,7 @@ export class ErrorBoundary extends Component<Props, State> {
   }
 
   public static getDerivedStateFromError(_: Error): State {
-    return {hasError: true}
+    return { hasError: true }
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {

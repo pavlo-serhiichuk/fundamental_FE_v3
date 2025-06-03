@@ -1,6 +1,5 @@
-import {ArticlesListItem} from './ArticlesListItem'
+import { ArticlesListItem } from './ArticlesListItem'
 
 describe('ArticlesListItem', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })
