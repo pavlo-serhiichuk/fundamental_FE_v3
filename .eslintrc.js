@@ -40,7 +40,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     semi: ['error', 'never'],
-    'object-curly-spacing': ['error', 'never'],
     // "max-len": 0,
     'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
     'react-hooks/rules-of-hooks': 'error',
