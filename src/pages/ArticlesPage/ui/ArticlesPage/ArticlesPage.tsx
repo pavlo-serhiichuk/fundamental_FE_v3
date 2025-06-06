@@ -29,9 +29,9 @@ const ArticlesPage = () => {
   const isLoading = useSelector(getArticlesIsLoading)
   const articles = useSelector(getArticlesList.selectAll)
   const listView = useSelector(getListView)
-  // no check for params:
-  const articleItem = useGetArticleById()
-  console.log(11, articleItem)
+  // with check for params:
+  const articleItem = useGetArticleById('2')
+  console.log(11, articleItem) // return data
 
   useInitialEffect(() => {
     dispatch(initArticlesList(searchParams))
