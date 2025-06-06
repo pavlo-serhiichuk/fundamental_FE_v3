@@ -6,7 +6,7 @@ export enum AppRouteNames {
   ARTICLE_DETAILS = 'articleDetails',
   FORBIDDEN = 'forbidden',
   ADMIN_PANEL = 'admin_panel',
-  NOT_FOUND = 'not_found'
+  NOT_FOUND = 'not_found',
 }
 
 export type AppRouteType = Record<AppRouteNames, string>

@@ -1,11 +1,11 @@
-import {memo} from 'react'
-import {useSelector} from 'react-redux'
-import {cls} from '@/shared/lib/cls/cls'
-import {NotificationsItem} from '@/entities/Notification/ui/NotificationsItem/NotificationsItem'
-import {getUserAuthData} from '@/entities/User'
-import {Skeleton} from '@/shared/ui/Skeleton'
-import {useFetchNotifications} from '../../api/notificationsApi'
-import {Notification} from '../../module/types/notification'
+import { memo } from 'react'
+import { useSelector } from 'react-redux'
+import { cls } from '@/shared/lib/cls/cls'
+import { NotificationsItem } from '@/entities/Notification/ui/NotificationsItem/NotificationsItem'
+import { getUserAuthData } from '@/entities/User'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { useFetchNotifications } from '../../api/notificationsApi'
+import { Notification } from '../../module/types/notification'
 import * as s from './NotificationsList.module.scss'
 
 interface NotificationsListProps {
@@ -13,9 +13,13 @@ interface NotificationsListProps {
 }
 
 export const NotificationsList = memo((props: NotificationsListProps) => {
-  const {className} = props
+  const { className } = props
   const userId = useSelector(getUserAuthData)?.id
-  const {data: notifications, isLoading, error} = useFetchNotifications(userId ?? '0', {
+  const {
+    data: notifications,
+    isLoading,
+    error,
+  } = useFetchNotifications(userId ?? '0', {
     pollingInterval: 5000,
   })
 
@@ -31,14 +35,9 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
 
   return (
     <div className={cls(s.NotificationsList, {}, [className])}>
-      {notifications?.map(
-        (notification: Notification) => (
-          <NotificationsItem
-            notification={notification}
-            key={notification.id}
-          />
-        ),
-      )}
+      {notifications?.map((notification: Notification) => (
+        <NotificationsItem notification={notification} key={notification.id} />
+      ))}
     </div>
   )
 })

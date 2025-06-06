@@ -9,6 +9,7 @@ module.exports = {
     'airbnb',
     'plugin:storybook/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,16 +19,15 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'ulbi-tv-plugin',
-  ],
+  plugins: ['react', '@typescript-eslint', 'ulbi-tv-plugin'],
   rules: {
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
-    indent: [2, 2],
-    'react/jsx-filename-extension': [2, {extensions: ['.js', '.jsx', '.tsx']}],
+    // "react/jsx-indent": [2, 2],
+    // "react/jsx-indent-props": [2, 2],
+    // indent: [2, 2],
+    'react/jsx-filename-extension': [
+      2,
+      { extensions: ['.js', '.jsx', '.tsx'] },
+    ],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 0,
@@ -40,8 +40,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     semi: ['error', 'never'],
-    'object-curly-spacing': ['error', 'never'],
-    'max-len': 0,
+    // "max-len": 0,
+    'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'error',
     'jsx-a11y/click-events-have-key-events': 0,
@@ -54,7 +54,8 @@ module.exports = {
       {
         alias: '@',
         testFiles: ['**/*.test.*', '**/decorators.tsx'],
-      }],
+      },
+    ],
     'ulbi-tv-plugin/layer-imports': [
       'error',
       {

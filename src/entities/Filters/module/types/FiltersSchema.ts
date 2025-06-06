@@ -1,5 +1,5 @@
-import {ArticleTopicType} from '@/entities/Article'
-import {SortByType} from '../consts/consts'
+import { ArticleTopicType } from '@/entities/Article'
+import { SortByType } from '../consts/consts'
 
 export type OrderByType = 'asc' | 'desc'
 

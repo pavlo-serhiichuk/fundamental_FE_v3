@@ -1,13 +1,13 @@
-import {ReactNode, useCallback} from 'react'
-import {Listbox as HListBox} from '@headlessui/react'
-import {Button} from '@/shared/ui/Button'
-import {HStack} from '@/shared/ui/Stack'
-import {ListBoxDirection} from '@/shared/types/ui'
-import {cls} from '@/shared/lib/cls/cls'
+import { ReactNode, useCallback } from 'react'
+import { Listbox as HListBox } from '@headlessui/react'
+import { Button } from '@/shared/ui/Button'
+import { HStack } from '@/shared/ui/Stack'
+import { ListBoxDirection } from '@/shared/types/ui'
+import { cls } from '@/shared/lib/cls/cls'
 import ArrowDown from '@/shared/assets/icons/arrowdown.svg'
 import * as popupsCls from '../../styles/popups.module.scss'
 import * as s from './ListBox.module.scss'
-import {mapListBoxDirectionClass} from '../../styles/consts'
+import { mapListBoxDirectionClass } from '../../styles/consts'
 
 export interface ListBoxItem<T extends string> {
   value: T
@@ -40,25 +40,28 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     testId,
   } = props
 
-  const renderItem = useCallback((item: ListBoxItem<T>) => (
-    <HListBox.Option
-      className={s.item}
-      key={item.value}
-      value={item.value}
-      disabled={item.disabled}
-    >
-      {({active, selected}) => (
-        <li
-          className={cls(s.item, {
-            [popupsCls.active]: Boolean(active) || Boolean(selected),
-            [popupsCls.disabled]: !!item.disabled,
-          })}
-        >
-          {item.content}
-        </li>
-      )}
-    </HListBox.Option>
-  ), [])
+  const renderItem = useCallback(
+    (item: ListBoxItem<T>) => (
+      <HListBox.Option
+        className={s.item}
+        key={item.value}
+        value={item.value}
+        disabled={item.disabled}
+      >
+        {({ active, selected }) => (
+          <li
+            className={cls(s.item, {
+              [popupsCls.active]: Boolean(active) || Boolean(selected),
+              [popupsCls.disabled]: !!item.disabled,
+            })}
+          >
+            {item.content}
+          </li>
+        )}
+      </HListBox.Option>
+    ),
+    [],
+  )
 
   return (
     <HStack
@@ -68,9 +71,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       className={className}
       data-testid={testId || 'ListBox'}
     >
-      {label && (
-        <div className={s.label}>{`${label}:`}</div>
-      )}
+      {label && <div className={s.label}>{`${label}:`}</div>}
       <HListBox
         as="div"
         value={value}
@@ -79,17 +80,15 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       >
         <HListBox.Button as="div" className={s.trigger}>
           <Button disabled={readonly} theme="bordered">
-            <HStack
-              align="center"
-              justify="between"
-              max
-            >
+            <HStack align="center" justify="between" max>
               {value ?? defaultValue}
               <ArrowDown />
             </HStack>
           </Button>
         </HListBox.Button>
-        <HListBox.Options className={cls(s.options, {}, [mapListBoxDirectionClass[direction]])}>
+        <HListBox.Options
+          className={cls(s.options, {}, [mapListBoxDirectionClass[direction]])}
+        >
           {items?.map(renderItem)}
         </HListBox.Options>
       </HListBox>

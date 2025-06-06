@@ -1,7 +1,7 @@
-import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {type AddCommentSchema} from '../types/AddCommentSchema'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { type AddCommentSchema } from '../types/AddCommentSchema'
 
-const initialState: AddCommentSchema = {text: ''}
+const initialState: AddCommentSchema = { text: '' }
 
 export const addCommentFormSlice = createSlice({
   name: 'addCommentForm',
@@ -13,5 +13,5 @@ export const addCommentFormSlice = createSlice({
   },
 })
 
-export const {actions: addCommentFormSliceActions} = addCommentFormSlice
-export const {reducer: addCommentFormReducer} = addCommentFormSlice
+export const { actions: addCommentFormSliceActions } = addCommentFormSlice
+export const { reducer: addCommentFormReducer } = addCommentFormSlice

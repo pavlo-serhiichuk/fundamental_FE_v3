@@ -1,6 +1,5 @@
-import {SortBy} from './SortBy'
+import { SortBy } from './SortBy'
 
 describe('SortByParam', () => {
-  test('render', () => {
-  })
+  test('render', () => {})
 })

@@ -1,10 +1,13 @@
-import {rtkApi} from '@/shared/api/rtkApi'
-import {ProfileRating, RatingInfo} from '@/entities/Rating'
+import { rtkApi } from '@/shared/api/rtkApi'
+import { ProfileRating, RatingInfo } from '@/entities/Rating'
 
 const profileRatingApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    fetchProfileRating: build.query<ProfileRating[], { profileId: string, userId: string }>({
-      query: ({profileId, userId}) => ({
+    fetchProfileRating: build.query<
+      ProfileRating[],
+      { profileId: string; userId: string }
+    >({
+      query: ({ profileId, userId }) => ({
         url: '/profiles-ratings',
         params: {
           profileId,

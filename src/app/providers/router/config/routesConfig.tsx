@@ -1,12 +1,12 @@
-import {MainPage} from '@/pages/MainPage'
-import {ProfilePage} from '@/pages/ProfilePage'
-import {ArticlesPage} from '@/pages/ArticlesPage'
-import {ArticleDetailsPage} from '@/pages/ArticleDetailsPage'
-import {AboutPage} from '@/pages/AboutPage'
-import {ForbiddenPage} from '@/pages/ForbiddenPage'
-import {AdminPanelPage} from '@/pages/AdminPanelPage'
-import {UserRoles} from '@/entities/User'
-import {NotFoundPage} from '@/pages/NotFoundPage'
+import { MainPage } from '@/pages/MainPage'
+import { ProfilePage } from '@/pages/ProfilePage'
+import { ArticlesPage } from '@/pages/ArticlesPage'
+import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage'
+import { AboutPage } from '@/pages/AboutPage'
+import { ForbiddenPage } from '@/pages/ForbiddenPage'
+import { AdminPanelPage } from '@/pages/AdminPanelPage'
+import { UserRoles } from '@/entities/User'
+import { NotFoundPage } from '@/pages/NotFoundPage'
 import {
   AppRouteNames,
   getRouteAbout,
@@ -17,7 +17,7 @@ import {
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/routers'
-import {RoutesConfigType} from '@/shared/types/router'
+import { RoutesConfigType } from '@/shared/types/router'
 
 export const routesConfig: RoutesConfigType = {
   [AppRouteNames.MAIN]: {

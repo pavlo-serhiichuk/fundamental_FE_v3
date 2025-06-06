@@ -1,9 +1,12 @@
-import {type ChangeEvent, type InputHTMLAttributes, memo} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
-import {VStack} from '../Stack'
+import { type ChangeEvent, type InputHTMLAttributes, memo } from 'react'
+import { cls } from '@/shared/lib/cls/cls'
+import { VStack } from '../Stack'
 import * as s from './Input.module.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>
 
 interface InputProps extends HTMLInputProps {
   readOnly?: boolean
@@ -34,15 +37,10 @@ export const Input = memo((props: InputProps) => {
   return (
     <VStack
       data-testid="input-wrapper"
+      className={cls(s.Input, { [s.readonly]: !!readOnly }, [className])}
       gap="3"
-      className={cls(s.Input, {[s.readonly]: !!readOnly}, [className])}
     >
-      {label ? (
-        <div data-testid="input-label">
-          {label}
-          :
-        </div>
-      ) : null}
+      {label ? <div data-testid="input-label">{label}:</div> : null}
       <input
         data-testid={testId || 'Input'}
         value={value}

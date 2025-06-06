@@ -1,6 +1,6 @@
-import {type Country} from '@/entities/Country'
-import {type Currency} from '@/entities/Currency'
-import {ValidationError} from '../consts/consts'
+import { type Country } from '@/entities/Country'
+import { type Currency } from '@/entities/Currency'
+import { ValidationError } from '../consts/consts'
 
 export interface Profile {
   id?: string

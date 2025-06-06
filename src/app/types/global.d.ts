@@ -3,7 +3,7 @@ declare module '*.scss' {
     [className: string]: string
   }
   const classNames: IClassNames
-  export = classNames;
+  export = classNames
 }
 
 declare module '*.module.scss' {
@@ -26,9 +26,11 @@ declare module '*.jpg' {
   export default value
 }
 
-type DeepPartial<T> = T extends object ? {
-  [P in keyof T]?: DeepPartial<T[P]>
-} : T
+type DeepPartial<T> = T extends object
+  ? {
+      [P in keyof T]?: DeepPartial<T[P]>
+    }
+  : T
 
 declare const __IS_DEV__: boolean
 declare const __API__: string

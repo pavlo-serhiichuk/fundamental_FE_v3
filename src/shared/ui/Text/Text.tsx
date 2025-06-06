@@ -1,5 +1,5 @@
-import {memo} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
+import { memo } from 'react'
+import { cls } from '@/shared/lib/cls/cls'
 import * as s from './Text.module.scss'
 
 type TextTheme = 'content' | 'error' | 'warn'
@@ -32,12 +32,21 @@ export const Text = memo((props: TextProps) => {
     theme = 'content',
     size = 'text_size_m',
     fontStyle = 'normal-fs',
-    testId = 'testId',
+    testId = 'Text',
   } = props
   const HeaderTag = mapHeaderTag[size]
   return (
-    <div data-testid="text-wrapper-el" className={cls('', {[s[theme]]: true}, [className, s[size], s[fontStyle]])}>
-      {title ? <HeaderTag data-testid={`${testId}.Title`}>{title}</HeaderTag> : null}
+    <div
+      data-testid={testId}
+      className={cls('', { [s[theme]]: true }, [
+        className,
+        s[size],
+        s[fontStyle],
+      ])}
+    >
+      {title ? (
+        <HeaderTag data-testid={`${testId}.Title`}>{title}</HeaderTag>
+      ) : null}
       {text ? <span data-testid={`${testId}.Text`}>{text}</span> : null}
     </div>
   )

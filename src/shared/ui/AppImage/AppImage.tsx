@@ -1,5 +1,9 @@
 import React, {
-  ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState,
+  ImgHTMLAttributes,
+  memo,
+  ReactElement,
+  useLayoutEffect,
+  useState,
 } from 'react'
 import ErrorFallbackImage from '../../assets/images/errorFallbackImage.jpg'
 import AvatarImage from '../../assets/images/avatarImage.png'
@@ -51,7 +55,5 @@ export const AppImage = memo((props: ImageProps) => {
     )
   }
 
-  return (
-    <img src={src} alt={alt} className={className} {...otherProps} />
-  )
+  return <img src={src} alt={alt} className={className} {...otherProps} />
 })

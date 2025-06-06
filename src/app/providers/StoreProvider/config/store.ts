@@ -1,14 +1,18 @@
-import {configureStore, Reducer, type ReducersMapObject} from '@reduxjs/toolkit'
-import {CombinedState} from '@reduxjs/toolkit/query'
-import {counterReducer} from '@/entities/Counter'
-import {userReducer} from '@/entities/User'
-import {createReducerManager} from '@/app/providers/StoreProvider/config/reducerManager'
-import {$api} from '@/shared/api/api'
-import {scrollRecoverReducer} from '@/features/ScrollRecover'
-import {changeListViewReducer} from '@/features/ChangeListView'
-import {filtersReducer} from '@/entities/Filters'
-import {rtkApi} from '@/shared/api/rtkApi'
-import {StateSchema, ThunkExtraArg} from './StateSchema'
+import {
+  configureStore,
+  Reducer,
+  type ReducersMapObject,
+} from '@reduxjs/toolkit'
+import { CombinedState } from '@reduxjs/toolkit/query'
+import { counterReducer } from '@/entities/Counter'
+import { userReducer } from '@/entities/User'
+import { createReducerManager } from '@/app/providers/StoreProvider/config/reducerManager'
+import { $api } from '@/shared/api/api'
+import { scrollRecoverReducer } from '@/features/ScrollRecover'
+import { changeListViewReducer } from '@/features/ChangeListView'
+import { filtersReducer } from '@/entities/Filters'
+import { rtkApi } from '@/shared/api/rtkApi'
+import { StateSchema, ThunkExtraArg } from './StateSchema'
 
 export function createReduxStore(
   initialState?: StateSchema,
@@ -34,11 +38,12 @@ export function createReduxStore(
     // @ts-ignore
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     preloadedState: initialState,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: extraArg,
-      },
-    }).concat(rtkApi.middleware),
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: extraArg,
+        },
+      }).concat(rtkApi.middleware),
     devTools: __IS_DEV__,
   })
 

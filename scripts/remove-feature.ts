@@ -1,6 +1,4 @@
-import {
-  JsxAttribute, Node, Project, SyntaxKind,
-} from 'ts-morph'
+import { JsxAttribute, Node, Project, SyntaxKind } from 'ts-morph'
 
 const removedFeatureName = process.argv[2] // example isArticleEnabled
 const featureState = process.argv[3] // example off\on
@@ -32,8 +30,8 @@ function isToggleFunction(node: Node) {
 
   node.forEachChild((child) => {
     if (
-      child.isKind(SyntaxKind.Identifier)
-      && child.getText() === toggleFunctionName
+      child.isKind(SyntaxKind.Identifier) &&
+      child.getText() === toggleFunctionName
     ) {
       isToggleFeatures = true
     }
@@ -82,10 +80,7 @@ const replaceToggleFunction = (node: Node) => {
   }
 }
 
-const getAttributeNodeByName = (
-  jsxAttributes: JsxAttribute[],
-  name: string,
-) =>
+const getAttributeNodeByName = (jsxAttributes: JsxAttribute[], name: string) =>
   // @ts-ignore
   jsxAttributes.find((node) => node.getName() === name)
 
@@ -135,8 +130,8 @@ files.forEach((sourceFile) => {
     }
 
     if (
-      node.isKind(SyntaxKind.JsxSelfClosingElement)
-      && isToggleComponent(node)
+      node.isKind(SyntaxKind.JsxSelfClosingElement) &&
+      isToggleComponent(node)
     ) {
       replaceComponent(node)
     }

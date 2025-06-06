@@ -1,6 +1,6 @@
-import {screen} from '@testing-library/react'
-import {renderWithTranslations} from '@/shared/lib/tests/renderWithTranslations/renderWithTranslations'
-import {CountrySelect} from './CountrySelect'
+import { screen } from '@testing-library/react'
+import { renderWithTranslations } from '@/shared/lib/tests/renderWithTranslations/renderWithTranslations'
+import { CountrySelect } from './CountrySelect'
 
 describe('', () => {
   test('', () => {

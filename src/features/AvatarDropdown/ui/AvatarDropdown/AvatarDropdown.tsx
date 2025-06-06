@@ -1,20 +1,23 @@
-import {FC, memo, useCallback} from 'react'
-import {useTranslation} from 'react-i18next'
-import {useDispatch, useSelector} from 'react-redux'
-import {useNavigate} from 'react-router-dom'
+import { FC, memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import {
-  getIsUserAdmin, getIsUserManager, getUserAuthData, userActions,
+  getIsUserAdmin,
+  getIsUserManager,
+  getUserAuthData,
+  userActions,
 } from '@/entities/User'
-import {Dropdown} from '@/shared/ui/Popups'
-import {Avatar} from '@/shared/ui/Avatar'
-import {getRouteAdmin, getRouteProfile} from '@/shared/const/routers'
+import { Dropdown } from '@/shared/ui/Popups'
+import { Avatar } from '@/shared/ui/Avatar'
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/routers'
 
 interface AvatarDropdownProps {
-  className?: string;
+  className?: string
 }
 
 export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   const authData = useSelector(getUserAuthData)
   const dispatch = useDispatch()
   const navigate = useNavigate()
@@ -30,14 +33,21 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
   }
 
   const items = [
-    ...(isAdminPageAvailable ? [{
-      content: t('Admin'),
-      onClick: () => { navigate(getRouteAdmin()) },
-
-    }] : []),
+    ...(isAdminPageAvailable
+      ? [
+          {
+            content: t('Admin'),
+            onClick: () => {
+              navigate(getRouteAdmin())
+            },
+          },
+        ]
+      : []),
     {
       content: t('Profile'),
-      onClick: () => { navigate(getRouteProfile(authData.id || '')) },
+      onClick: () => {
+        navigate(getRouteProfile(authData.id || ''))
+      },
     },
     {
       content: t('Exit'),
@@ -48,7 +58,9 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
   return (
     <Dropdown
       items={items}
-      trigger={<Avatar size={45} src={authData.avatar} alt={authData.username} />}
+      trigger={
+        <Avatar size={45} src={authData.avatar} alt={authData.username} />
+      }
       direction="bottom left"
     />
   )

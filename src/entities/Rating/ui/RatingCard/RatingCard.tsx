@@ -1,16 +1,16 @@
-import {useCallback, useEffect, useState} from 'react'
-import {cls} from '@/shared/lib/cls/cls'
+import { useCallback, useEffect, useState } from 'react'
+import { cls } from '@/shared/lib/cls/cls'
 import * as s from './RatingCard.module.scss'
-import {RatingInfo} from '@/entities/Rating'
-import {Text} from '@/shared/ui/Text'
-import {StarRating} from '@/shared/ui/StarRating'
-import {Card} from '@/shared/ui/Card'
-import {HStack, VStack} from '@/shared/ui/Stack'
-import {Modal} from '@/shared/ui/Modal'
-import {Input} from '@/shared/ui/Input'
-import {Button} from '@/shared/ui/Button'
-import {useDevice} from '@/shared/hooks/useDevice'
-import {Drawer} from '@/shared/ui/Drawer'
+import { RatingInfo } from '@/entities/Rating'
+import { Text } from '@/shared/ui/Text'
+import { StarRating } from '@/shared/ui/StarRating'
+import { Card } from '@/shared/ui/Card'
+import { HStack, VStack } from '@/shared/ui/Stack'
+import { Modal } from '@/shared/ui/Modal'
+import { Input } from '@/shared/ui/Input'
+import { Button } from '@/shared/ui/Button'
+import { useDevice } from '@/shared/hooks/useDevice'
+import { Drawer } from '@/shared/ui/Drawer'
 
 interface RatingCardProps {
   className?: string
@@ -42,12 +42,15 @@ export const RatingCard = (props: RatingCardProps) => {
     }
   }, [ratingInfo])
 
-  const onSelect = useCallback((starsCount: number) => {
-    if (!ratingInfo) {
-      setStarsCount(starsCount)
-      setIsModalOpen(true)
-    }
-  }, [ratingInfo])
+  const onSelect = useCallback(
+    (starsCount: number) => {
+      if (!ratingInfo) {
+        setStarsCount(starsCount)
+        setIsModalOpen(true)
+      }
+    },
+    [ratingInfo],
+  )
 
   const onChangeFeedbackMessage = (feedback: string) => {
     setFeedbackMessage(feedback)
@@ -70,7 +73,11 @@ export const RatingCard = (props: RatingCardProps) => {
   const modalContent = (
     <>
       <Text title={feedbackTitle} />
-      <Input value={feedbackMessage} onChange={onChangeFeedbackMessage} />
+      <Input
+        value={feedbackMessage}
+        onChange={onChangeFeedbackMessage}
+        testId="RatingCard.Input"
+      />
     </>
   )
 
@@ -82,21 +89,29 @@ export const RatingCard = (props: RatingCardProps) => {
       </VStack>
       {isMobile ? (
         <Drawer isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <VStack gap="10">
+          <VStack gap="10" data-testid="RatingCard">
             {modalContent}
             <VStack justify="end" gap="10" align="end">
-              <Button fullWidth onClick={handleAccept}>Send</Button>
-              <Button fullWidth onClick={handleCancel} theme="cancel">Cancel</Button>
+              <Button fullWidth onClick={handleAccept}>
+                Send
+              </Button>
+              <Button fullWidth onClick={handleCancel} theme="cancel">
+                Cancel
+              </Button>
             </VStack>
           </VStack>
         </Drawer>
       ) : (
         <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <VStack gap="10">
+          <VStack gap="10" data-testid="RatingCard">
             {modalContent}
             <HStack justify="end" gap="10">
-              <Button onClick={handleCancel} theme="cancel">Cancel</Button>
-              <Button onClick={handleAccept}>Send</Button>
+              <Button onClick={handleCancel} theme="cancel">
+                Cancel
+              </Button>
+              <Button onClick={handleAccept} testId="RatingCard.SendButton">
+                Send
+              </Button>
             </HStack>
           </VStack>
         </Modal>

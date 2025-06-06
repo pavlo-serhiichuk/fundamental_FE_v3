@@ -1,25 +1,27 @@
 import axios from 'axios'
-import {userActions} from '@/entities/User'
-import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {fetchSignIn} from './fetchSignIn'
+import { userActions } from '@/entities/User'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import { fetchSignIn } from './fetchSignIn'
 
 jest.mock('axios')
 const mockedAxios = jest.mocked(axios, true)
 
 describe('fetchSignIn', () => {
   test('success', async () => {
-    const userValue = {password: '111', username: 'test'}
-    mockedAxios.post.mockReturnValue(Promise.resolve({data: userValue}))
+    const userValue = { password: '111', username: 'test' }
+    mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }))
     const thunk = new TestAsyncThunk(fetchSignIn)
     const result = await thunk.callThunk(userValue)
-    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue))
+    expect(thunk.dispatch).toHaveBeenCalledWith(
+      userActions.setAuthData(userValue),
+    )
     expect(thunk.dispatch).toHaveBeenCalledTimes(3)
     expect(mockedAxios.post).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
   })
   test('error', async () => {
-    const userValue = {password: '111', username: 'test'}
-    mockedAxios.post.mockReturnValue(Promise.resolve({status: 403}))
+    const userValue = { password: '111', username: 'test' }
+    mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }))
     const thunk = new TestAsyncThunk(fetchSignIn)
     const result = await thunk.callThunk(userValue)
     expect(thunk.dispatch).toHaveBeenCalledTimes(3)

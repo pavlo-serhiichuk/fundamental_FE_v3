@@ -1,13 +1,17 @@
-import {RefObject, useRef} from 'react'
-import {useInitialEffect} from '@/shared/hooks/useInitialEffect'
+import { RefObject, useRef } from 'react'
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void
   wrapperRef: RefObject<HTMLElement | null>
-  triggerRef: RefObject<HTMLElement| null>
+  triggerRef: RefObject<HTMLElement | null>
 }
 
-export const useInfiniteScroll = ({callback, triggerRef, wrapperRef}: UseInfiniteScrollOptions) => {
+export const useInfiniteScroll = ({
+  callback,
+  triggerRef,
+  wrapperRef,
+}: UseInfiniteScrollOptions) => {
   const observer = useRef<IntersectionObserver | null>(null)
   useInitialEffect(() => {
     const wrapperElement = wrapperRef?.current

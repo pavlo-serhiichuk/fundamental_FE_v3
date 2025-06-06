@@ -1,7 +1,7 @@
-import {Configuration, DefinePlugin} from 'webpack'
+import { Configuration, DefinePlugin } from 'webpack'
 import path from 'path'
-import {ConfigPaths} from '../build/configOptions'
-import {getCssLoader} from '../build/loaders/getCssLoader'
+import { ConfigPaths } from '../build/configOptions'
+import { getCssLoader } from '../build/loaders/getCssLoader'
 
 const config = {
   stories: [
@@ -63,16 +63,15 @@ const config = {
       use: ['@svgr/webpack'],
     })
 
-    config.plugins?.push(new DefinePlugin({
-      __IS_DEV__: JSON.stringify(true),
-      __API__: JSON.stringify('https://test-api.ua'),
-      __PROJECT__: JSON.stringify('storybook'),
-    }))
-
     config.plugins?.push(
       new DefinePlugin({
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify('https://test-api.ua'),
+        __PROJECT__: JSON.stringify('storybook'),
       }),
     )
+
+    config.plugins?.push(new DefinePlugin({}))
 
     return config
   },

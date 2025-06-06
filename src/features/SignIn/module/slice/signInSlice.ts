@@ -1,7 +1,7 @@
-import {createSlice, type PayloadAction} from '@reduxjs/toolkit'
-import {fetchSignIn} from '../thunks/fetchSignIn'
-import {getSignInInitialState} from './getSignInInitialState'
-import {type SignInSchema} from '../types/signInSchema'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+import { fetchSignIn } from '../thunks/fetchSignIn'
+import { getSignInInitialState } from './getSignInInitialState'
+import { type SignInSchema } from '../types/signInSchema'
 
 const initialState: SignInSchema = getSignInInitialState()
 
@@ -32,5 +32,5 @@ const signInSlice = createSlice({
   },
 })
 
-export const {actions: signInActions} = signInSlice
-export const {reducer: signInReducer} = signInSlice
+export const { actions: signInActions } = signInSlice
+export const { reducer: signInReducer } = signInSlice
