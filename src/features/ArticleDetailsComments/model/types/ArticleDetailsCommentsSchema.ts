@@ -1,3 +1,4 @@
+// @ts-ignore
 import { EntityState } from '@reduxjs/toolkit'
 import { Comment } from '@/entities/Comment'
 
