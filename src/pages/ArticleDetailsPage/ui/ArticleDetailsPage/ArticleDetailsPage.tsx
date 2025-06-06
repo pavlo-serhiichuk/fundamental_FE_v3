@@ -11,6 +11,7 @@ import { ArticleDetailsRecommendations } from '@/features/ArticleDetailsRecommen
 import { articleDetailsPageSlice } from '../../module/slice/articleDetailsPageSlice'
 import * as s from './ArticleDetailsPage.module.scss'
 import { ArticleRating } from '@/features/ArticleRating'
+import { getFeatureFlags } from '@/shared/lib/features'
 
 interface ArticlesPageProps {
   className?: string
@@ -23,6 +24,11 @@ const reducers: ReducersList = {
 const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props
   const { id: articleId } = useParams<{ id: string | undefined }>()
+  const isArticleDetailsRatingEnabled = getFeatureFlags(
+    'isArticleDetailsRatingEnabled',
+  )
+  if (!articleId) return null
+
   return (
     <DynamicReducerLoader reducers={reducers}>
       <Page
@@ -31,7 +37,9 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
       >
         <ArticleDetails articleId={articleId} />
         <ArticleDetailsRecommendations />
-        {articleId && <ArticleRating articleId={articleId} />}
+        {isArticleDetailsRatingEnabled && (
+          <ArticleRating articleId={articleId} />
+        )}
         <ArticleDetailsComments articleId={articleId} />
       </Page>
     </DynamicReducerLoader>

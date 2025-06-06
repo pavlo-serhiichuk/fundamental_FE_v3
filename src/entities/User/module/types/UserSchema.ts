@@ -1,4 +1,5 @@
 import { UserRoles } from '../consts/consts'
+import { FeatureFlags } from '@/shared/types/featureFlags'
 
 export interface User {
   id?: string
@@ -6,6 +7,7 @@ export interface User {
   password?: string
   roles?: UserRoles[]
   avatar?: string
+  features?: FeatureFlags
 }
 
 export interface UserSchema {

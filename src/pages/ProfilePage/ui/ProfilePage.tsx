@@ -6,6 +6,7 @@ import {
   profileReducer,
   fetchProfileData,
   useGetProfileReadonly,
+  getProfileLoading,
 } from '@/entities/Profile'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
@@ -16,6 +17,7 @@ import { AppDispatch } from '@/app/providers/StoreProvider'
 import { Page } from '@/widgets/Page'
 import { ProfileRating } from '@/features/ProfileRating'
 import { getUserAuthData } from '@/entities/User'
+import { getFeatureFlags } from '@/shared/lib/features'
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -26,8 +28,11 @@ const ProfilePage = () => {
   const { id: profileId } = useParams<{ id: string }>()
   const readonly = useGetProfileReadonly()
   const userId = useSelector(getUserAuthData)?.id
-  const isShowRating = useMemo(() => userId !== profileId, [userId, profileId])
-
+  const isProfileRatingEnabled = getFeatureFlags('isProfileRatingEnabled')
+  const isShowRating = useMemo(
+    () => userId !== profileId && isProfileRatingEnabled,
+    [userId, profileId],
+  )
   useInitialEffect(() => {
     if (profileId) {
       dispatch(fetchProfileData(profileId))

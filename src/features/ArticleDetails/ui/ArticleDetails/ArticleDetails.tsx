@@ -30,7 +30,7 @@ import { getRouteArticles } from '@/shared/const/routers'
 
 interface ArticleDetailsProps {
   className?: string
-  articleId?: string | undefined
+  articleId: string
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
@@ -39,7 +39,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const articleDetails = useSelector(getArticleDetailsData)
   const isLoading = useSelector(getArticleDetailsLoading)
   const error = useSelector(getArticleDetailsError)
-  const { className, articleId = '0' } = props
+  const { className, articleId } = props
   const navigate = useNavigate()
 
   useInitialEffect(() => {

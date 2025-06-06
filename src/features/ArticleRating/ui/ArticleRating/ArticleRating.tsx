@@ -21,7 +21,6 @@ const ArticleRating = (props: ArticleRatingProps) => {
   const { t } = useTranslation()
   const userId = useSelector(getUserAuthData)?.id || '0'
   const [rateArticle] = useRateArticle()
-  // const {id: articleId} = useParams<{ id: string | undefined }>()
 
   const { data: articleRating, isLoading } = useFetchArticleRating({
     articleId,

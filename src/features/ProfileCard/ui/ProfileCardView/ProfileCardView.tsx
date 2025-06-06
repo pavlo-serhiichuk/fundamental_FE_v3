@@ -15,8 +15,8 @@ import PinIcon from '@/shared/assets/icons/map-pin.svg'
 import { Button } from '@/shared/ui/Button'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { getUserAuthData } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/Skeleton'
 import * as s from './ProfileCardView.module.scss'
+import { ProfileCardViewSkeleton } from './ProfileCardViewSkeleton'
 
 interface ProfileCardProps {
   className?: string
@@ -42,19 +42,9 @@ export const ProfileCardView = (props: ProfileCardProps) => {
       </div>
     )
   }
+
   if (isLoading) {
-    return (
-      <div className={cls(s.ProfileCard, {}, [className])}>
-        <div className={s.header}>
-          <div>
-            <Skeleton height={70} width={70} radius="50%" />
-          </div>
-          <div>
-            <Skeleton height={20} width={100} />
-          </div>
-        </div>
-      </div>
-    )
+    return <ProfileCardViewSkeleton />
   }
 
   return (

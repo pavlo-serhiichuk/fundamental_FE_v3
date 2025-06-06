@@ -13,13 +13,13 @@ import * as s from './ArticleDetailsComments.module.scss'
 
 interface ArticleDetailsCommentsProps {
   className?: string
-  articleId?: string | undefined
+  articleId: string
 }
 
 export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = (
   props,
 ) => {
-  const { className, articleId = '0' } = props
+  const { className, articleId } = props
   const dispatch = useAppDispatch()
   const commentsIsLoading = useSelector(getArticleDetailsCommentsLoading)
   const comments = useSelector(getArticleDetailsComments.selectAll)

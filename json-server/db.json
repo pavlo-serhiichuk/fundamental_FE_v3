@@ -790,6 +790,10 @@
       "roles": [
         "ADMIN"
       ],
+      "features": {
+        "isArticleDetailsRatingEnabled": true,
+        "isProfileRatingEnabled": true
+      },
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
     {
@@ -800,6 +804,10 @@
       "roles": [
         "USER"
       ],
+      "features": {
+        "isArticleDetailsRatingEnabled": false,
+        "isProfileRatingEnabled": false
+      },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
@@ -810,6 +818,10 @@
       "roles": [
         "MANAGER"
       ],
+      "features": {
+        "isArticleDetailsRatingEnabled": false,
+        "isProfileRatingEnabled": false
+      },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
     {
@@ -821,11 +833,15 @@
         "USER",
         "MANAGER"
       ],
+      "features": {
+        "isArticleDetailsRatingEnabled": false,
+        "isProfileRatingEnabled": false
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     },
     {
       "id": "5",
-      "username": "testusername",
+      "username": "testuser",
       "password": "111",
       "age": 30,
       "roles": [
@@ -833,6 +849,10 @@
         "MANAGER",
         "ADMIN"
       ],
+      "features": {
+        "isArticleDetailsRatingEnabled": true,
+        "isProfileRatingEnabled": true
+      },
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }
   ],

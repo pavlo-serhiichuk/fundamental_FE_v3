@@ -11,7 +11,6 @@ import { ArticlesList } from '@/entities/Article'
 import { changeListViewActions, getListView } from '@/features/ChangeListView'
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { getArticlesIsLoading } from '../../module/selectors/getArticlesIsLoading'
-import { useGetArticleById } from '../../module/selectors/getArticleById'
 import { initArticlesList } from '../../module/services/initArticlesList/initArticlesList'
 import { fetchNextArticlesList } from '../../module/services/fetchNextArticlesList/fetchNextArticlesList'
 import {
@@ -29,9 +28,6 @@ const ArticlesPage = () => {
   const isLoading = useSelector(getArticlesIsLoading)
   const articles = useSelector(getArticlesList.selectAll)
   const listView = useSelector(getListView)
-  // with check for params:
-  const articleItem = useGetArticleById('2')
-  console.log(11, articleItem) // return data
 
   useInitialEffect(() => {
     dispatch(initArticlesList(searchParams))
