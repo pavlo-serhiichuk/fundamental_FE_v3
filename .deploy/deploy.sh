@@ -1,3 +1,6 @@
+# chmod +x deploy.sh - give access
+# ./deploy.sh - run script
+
 cd ~/fundamental_FE_v3
 npm run build:prod
 
