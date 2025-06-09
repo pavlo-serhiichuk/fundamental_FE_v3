@@ -23,8 +23,8 @@ export const Page = memo((props: PageProps) => {
   const dispatch = useAppDispatch()
   const scroll = useSelector(getScrollRecoverScroll)
   const { pathname } = useLocation()
-  const wrapperRef = useRef(null) as RefObject<HTMLElement | null>
-  const triggerRef = useRef(null) as RefObject<HTMLElement | null>
+  const wrapperRef = useRef(null) as RefObject<HTMLElement>
+  const triggerRef = useRef(null) as RefObject<HTMLElement>
   const { className, children, onScrollEnd, ...otherProps } = props
 
   useInitialEffect(() => {

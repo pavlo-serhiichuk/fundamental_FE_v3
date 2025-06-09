@@ -1,3 +1,4 @@
+// 'npx ts-node ./scripts/remove-feature.ts isProfileRatingEnabled on'  - script example
 import { JsxAttribute, Node, Project, SyntaxKind } from 'ts-morph'
 
 const removedFeatureName = process.argv[2] // example isArticleEnabled
@@ -7,21 +8,21 @@ const toggleFunctionName = 'toggleFeatures'
 const toggleComponentName = 'ToggleFeatures'
 
 if (!removedFeatureName) {
-  throw new Error('Укажите название фича-флага')
+  throw new Error('write to name of feature flag')
 }
 
 if (!featureState) {
-  throw new Error('Укажите состояние фичи (on или off)')
+  throw new Error('Set state of a feature(on/off)')
 }
 
 if (featureState !== 'on' && featureState !== 'off') {
-  throw new Error('Некорректное значение состояния фичи (on или off)')
+  throw new Error('Inconnect value of feature state(on/off)')
 }
 
 const project = new Project({})
 
-project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.ts')
-project.addSourceFilesAtPaths('src/**/ArticleDetailsPage.tsx')
+project.addSourceFilesAtPaths('src/**/*.ts')
+project.addSourceFilesAtPaths('src/**/*.tsx')
 
 const files = project.getSourceFiles()
 
