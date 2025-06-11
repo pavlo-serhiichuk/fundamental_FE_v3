@@ -29,7 +29,7 @@ export const PrimaryDark: Story = {
     width: 400,
     height: 40,
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 
 export const PrimaryGreen: Story = {
@@ -37,7 +37,7 @@ export const PrimaryGreen: Story = {
     width: 400,
     height: 40,
   },
-  decorators: [ThemeDecorator('green')],
+  decorators: [ThemeDecorator('app_green_theme')],
 }
 
 export const Circle: Story = {

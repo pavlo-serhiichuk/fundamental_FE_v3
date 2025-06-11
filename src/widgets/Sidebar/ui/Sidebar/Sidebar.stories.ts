@@ -22,7 +22,7 @@ export const NoAuth: Story = {
 }
 
 export const NoAuthDark: Story = {
-  decorators: [ThemeDecorator('dark'), StoreDecorator({})],
+  decorators: [ThemeDecorator('app_dark_theme'), StoreDecorator({})],
 }
 
 export const Auth: Story = {

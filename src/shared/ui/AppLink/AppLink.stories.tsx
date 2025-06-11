@@ -27,5 +27,5 @@ export const PrimaryDark: Story = {
   args: {
     children: 'Primary',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }

@@ -5,14 +5,14 @@ import { cls } from '@/shared/lib/cls/cls'
 import AppRouter from './providers/router/ui/AppRouter'
 import { Header } from '@/widgets/Header'
 import { Sidebar } from '@/widgets/Sidebar'
-import { getUserInited, userActions } from '@/entities/User'
+import { userActions, getUserInited, initUserDataById } from '@/entities/User'
 
 export const App = () => {
-  const { theme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   const dispatch = useDispatch()
   const inited = useSelector(getUserInited)
   useEffect(() => {
-    dispatch(userActions.initAuthData())
+    dispatch(initUserDataById())
   }, [dispatch])
 
   return (

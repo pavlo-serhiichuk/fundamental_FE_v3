@@ -27,5 +27,5 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {}
 
 export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }

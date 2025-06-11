@@ -32,7 +32,7 @@ export const DefaultDark: Story = {
     children: 'Default dark',
     theme: 'default',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 
 export const Clear: Story = {
@@ -47,7 +47,7 @@ export const ClearDark: Story = {
     children: 'Clear dark',
     theme: 'clear',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 
 export const SidebarSquad: Story = {
@@ -62,5 +62,5 @@ export const SidebarSquadDark: Story = {
     children: '<',
     theme: 'sidebar-squad-m',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }

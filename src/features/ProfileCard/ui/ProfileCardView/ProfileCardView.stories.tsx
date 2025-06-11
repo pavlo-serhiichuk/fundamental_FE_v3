@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { profileMockState } from '@/entities/Profile/model/slice/profileState'
+import { profileMockState } from '@/entities/Profile'
 import {
   StoreDecorator,
   ThemeDecorator,
@@ -23,7 +23,7 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = { args: {} }
 
 export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 export const Loading: Story = {
   decorators: [

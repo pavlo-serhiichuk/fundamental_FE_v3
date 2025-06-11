@@ -30,7 +30,7 @@ export const Primary: Story = {
 
 export const PrimaryDark: Story = {
   args: {},
-  decorators: [ThemeDecorator('dark'), StoreDecorator({})],
+  decorators: [ThemeDecorator('app_dark_theme'), StoreDecorator({})],
 }
 
 export const PrimarySignedIn: Story = {

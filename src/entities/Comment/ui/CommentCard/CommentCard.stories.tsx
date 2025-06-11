@@ -32,14 +32,14 @@ export const Primary: Story = {
 }
 
 export const Dark: Story = {
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
   args: {
     comment,
   },
 }
 
 export const Green: Story = {
-  decorators: [ThemeDecorator('green')],
+  decorators: [ThemeDecorator('app_green_theme')],
   args: {
     comment,
   },

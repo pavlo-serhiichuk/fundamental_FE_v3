@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { AUTH_USER_DATA } from '@/shared/const/localStorage'
+import { USER_ID } from '@/shared/const/localStorage'
 
 // Define a service using a base URL and expected endpoints
 export const rtkApi = createApi({
@@ -7,7 +7,7 @@ export const rtkApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: __API__,
     prepareHeaders: (headers) => {
-      const token = localStorage.getItem(AUTH_USER_DATA) || ''
+      const token = localStorage.getItem(USER_ID) || ''
 
       if (token) {
         headers.set('Authorization', token)

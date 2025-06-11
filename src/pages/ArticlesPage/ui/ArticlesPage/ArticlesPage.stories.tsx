@@ -3,8 +3,8 @@ import {
   StoreDecorator,
   ThemeDecorator,
 } from '@/shared/config/storybook/decorators/decorators'
-import { articlesListMockState } from '@/pages/ArticlesPage/module/slice/articlesPageState'
 import { ListView } from '@/features/ChangeListView'
+import { articlesListMockState } from '../../module/slice/articlesPageState'
 import ArticlesPage from './ArticlesPage'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -18,9 +18,11 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const PrimarySMALL: Story = {}
-export const PrimarySMALLDark: Story = { decorators: [ThemeDecorator('dark')] }
+export const PrimarySMALLDark: Story = {
+  decorators: [ThemeDecorator('app_dark_theme')],
+}
 export const PrimarySMALLGreen: Story = {
-  decorators: [ThemeDecorator('green')],
+  decorators: [ThemeDecorator('app_green_theme')],
 }
 export const PrimaryBIG: Story = {
   decorators: [
@@ -32,7 +34,7 @@ export const PrimaryBIG: Story = {
 }
 export const PrimaryBIGDark: Story = {
   decorators: [
-    ThemeDecorator('dark'),
+    ThemeDecorator('app_dark_theme'),
     StoreDecorator({
       articlesPage: { ...articlesListMockState },
       listView: { listView: ListView.BIG },
@@ -41,7 +43,7 @@ export const PrimaryBIGDark: Story = {
 }
 export const PrimaryBIGGreen: Story = {
   decorators: [
-    ThemeDecorator('green'),
+    ThemeDecorator('app_green_theme'),
     StoreDecorator({
       articlesPage: { ...articlesListMockState },
       listView: { listView: ListView.BIG },

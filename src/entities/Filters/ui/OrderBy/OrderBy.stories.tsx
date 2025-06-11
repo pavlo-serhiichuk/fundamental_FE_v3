@@ -21,5 +21,8 @@ export const Primary: Story = {
   decorators: [StoreDecorator({ filters: {} })],
 }
 export const PrimaryDark: Story = {
-  decorators: [StoreDecorator({ filters: {} }), ThemeDecorator('dark')],
+  decorators: [
+    StoreDecorator({ filters: {} }),
+    ThemeDecorator('app_dark_theme'),
+  ],
 }

@@ -32,7 +32,7 @@ export const PrimaryDark: Story = {
     text: 'Primary text',
     title: 'Primary title',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 
 export const OnlyTitle: Story = {
@@ -45,7 +45,7 @@ export const OnlyTitleDark: Story = {
   args: {
     title: 'Primary title',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 export const OnlyText: Story = {
   args: {
@@ -57,5 +57,5 @@ export const OnlyTextDark: Story = {
   args: {
     text: 'Primary text',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }

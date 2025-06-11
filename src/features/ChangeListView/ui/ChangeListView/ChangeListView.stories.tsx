@@ -21,5 +21,5 @@ export const Primary: Story = {
   decorators: [StoreDecorator({})],
 }
 export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator('dark'), StoreDecorator({})],
+  decorators: [ThemeDecorator('app_dark_theme'), StoreDecorator({})],
 }

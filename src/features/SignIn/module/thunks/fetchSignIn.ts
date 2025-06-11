@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type User, userActions } from '@/entities/User'
-import { AUTH_USER_DATA } from '@/shared/const/localStorage'
+import { USER_ID } from '@/shared/const/localStorage'
 import { ThunkConfig } from '@/app/providers/StoreProvider/config/StateSchema'
 
 export interface FetchSignInProps {
@@ -20,7 +20,6 @@ export const fetchSignIn = createAsyncThunk<
   const { extra, dispatch } = thunkAPI
   try {
     const response = await extra.api.post('/login', payload)
-    localStorage.setItem(AUTH_USER_DATA, JSON.stringify(response.data))
     dispatch(userActions.setAuthData(response.data))
     if (!response.data) {
       throw new Error()

@@ -1,6 +1,6 @@
 import { fn } from '@storybook/test'
 import { type Meta, type StoryObj } from '@storybook/react'
-import { profileMockState } from '@/entities/Profile/model/slice/profileState'
+import { profileMockState } from '@/entities/Profile'
 import {
   StoreDecorator,
   ThemeDecorator,
@@ -30,7 +30,7 @@ export const WithData: Story = {
 export const WithDataDark: Story = {
   args: {},
   decorators: [
-    ThemeDecorator('dark'),
+    ThemeDecorator('app_dark_theme'),
     StoreDecorator({ profile: profileMockState }),
   ],
 }

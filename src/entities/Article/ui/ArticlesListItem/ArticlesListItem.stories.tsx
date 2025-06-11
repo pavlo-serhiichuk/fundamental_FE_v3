@@ -17,16 +17,18 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const PrimarySMALL: Story = {}
-export const PrimarySMALLDark: Story = { decorators: [ThemeDecorator('dark')] }
+export const PrimarySMALLDark: Story = {
+  decorators: [ThemeDecorator('app_dark_theme')],
+}
 export const PrimarySMALLGreen: Story = {
-  decorators: [ThemeDecorator('green')],
+  decorators: [ThemeDecorator('app_green_theme')],
 }
 export const PrimaryBIG: Story = { args: { listView: ListView.BIG } }
 export const PrimaryBIGDark: Story = {
   args: { listView: ListView.BIG },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }
 export const PrimaryBIGGreen: Story = {
   args: { listView: ListView.BIG },
-  decorators: [ThemeDecorator('green')],
+  decorators: [ThemeDecorator('app_green_theme')],
 }
