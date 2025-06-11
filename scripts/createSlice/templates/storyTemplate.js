@@ -1,19 +1,17 @@
-module.exports = (layer, componentName) => `import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+module.exports = (layer, componentName) => `
+import { type Meta, type StoryObj } from '@storybook/react'
+import { ${componentName} } from './${componentName}'
 
-import { ${componentName} } from './${componentName}';
+const meta = {
+  title: 'features/${componentName}',
+  component: ${componentName},
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as Meta<typeof ArticlesPageGreeting>
 
-export default {
-    title: '${layer}/${componentName}',
-    component: ${componentName},
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ${componentName}>;
+export default meta
+type Story = StoryObj<typeof meta>
 
-const Template: ComponentStory<typeof ${componentName}> = (args) => <${componentName} {...args} />;
-
-export const Normal = Template.bind({});
-Normal.args = {
-   
-};`;
+export const Template: Story = {}
+`

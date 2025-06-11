@@ -797,7 +797,8 @@
       "jsonSettings": {
         "theme": "app_green_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
@@ -816,7 +817,8 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
@@ -835,7 +837,8 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
@@ -855,7 +858,8 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": false
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     },
@@ -876,7 +880,8 @@
       "jsonSettings": {
         "theme": "app_dark_theme",
         "isFirstVisit": true,
-        "settingsPageHasBeenOpened": false
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }

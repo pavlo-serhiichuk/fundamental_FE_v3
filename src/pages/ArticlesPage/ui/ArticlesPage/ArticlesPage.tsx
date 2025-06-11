@@ -1,6 +1,7 @@
 import { useCallback } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { ArticlesPageGreeting } from '@/features/ArticlesPageGreeting'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import DynamicReducerLoader, {
@@ -17,6 +18,7 @@ import {
   articlesPageReducer,
   getArticlesList,
 } from '../../module/slice/articlesPageSlice'
+import { useGetJsonSettings } from '@/entities/User'
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,
@@ -40,6 +42,7 @@ const ArticlesPage = () => {
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
+      <ArticlesPageGreeting />
       <Page onScrollEnd={onScrollEnd} data-testid="ArticlesPage">
         <ArticlesPageFilters />
         <ArticlesList
