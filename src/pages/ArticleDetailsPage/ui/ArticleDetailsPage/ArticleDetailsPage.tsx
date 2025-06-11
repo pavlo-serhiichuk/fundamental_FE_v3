@@ -12,8 +12,8 @@ import { ArticleDetailsRecommendations } from '@/features/ArticleDetailsRecommen
 import { articleDetailsPageSlice } from '../../module/slice/articleDetailsPageSlice'
 import * as s from './ArticleDetailsPage.module.scss'
 import { ArticleRating } from '@/features/ArticleRating'
-import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features'
 import { Card } from '@/shared/ui/Card'
+import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
 
 interface ArticlesPageProps {
   className?: string
@@ -29,15 +29,6 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
   const { id: articleId } = useParams<{ id: string | undefined }>()
   if (!articleId) return null
 
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleDetailsRatingEnabled',
-    on: () => <ArticleRating articleId={articleId} />,
-    off: () => (
-      <Card className={s.articleRatingInfo}>
-        {t('Here is gonna be article rating!')}
-      </Card>
-    ),
-  })
   return (
     <DynamicReducerLoader reducers={reducers}>
       <Page
@@ -46,7 +37,15 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
       >
         <ArticleDetails articleId={articleId} />
         <ArticleDetailsRecommendations />
-        {articleRatingCard}
+        <ToggleFeature
+          feature="isArticleDetailsRatingEnabled"
+          on={<ArticleRating articleId={articleId} />}
+          off={
+            <Card className={s.articleRatingInfo}>
+              {t('Here is gonna be article rating!')}
+            </Card>
+          }
+        />
         <ArticleDetailsComments articleId={articleId} />
       </Page>
     </DynamicReducerLoader>
