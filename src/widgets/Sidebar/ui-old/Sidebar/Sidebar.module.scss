@@ -1,22 +1,13 @@
-.SidebarWrapper {
-  position: sticky;
-  justify-self: center;
-  margin-top: 20px;
-  height: 100%;
-}
-
 .Sidebar {
   position: relative;
-  min-width: var(--sidebar-width-v2);
-  max-width: var(--sidebar-width-v2);
-  background-color: var(--sidebar-bg-v2);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  background-color: var(--sidebar-bg);
   transition: min-width ease-out 0.2s;
-  height: calc(100% - 40px);
+  height: calc(100vh - var(--navbar-height));
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  border-radius: 32px;
-  overflow: hidden;
 }
 
 .links {

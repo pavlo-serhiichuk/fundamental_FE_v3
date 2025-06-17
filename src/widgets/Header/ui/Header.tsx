@@ -6,8 +6,11 @@ import { SignInModal } from '@/features/SignIn'
 import { Button } from '@/shared/ui/Button'
 import { getUserAuthData } from '@/entities/User'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
+import EditIcon from '@/shared/assets/icons/edit.svg'
 import { NotificationsButton } from '@/features/NotificationsButton'
 import * as s from './Header.module.scss'
+import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { Icon } from '@/shared/ui/Icon'
 
 interface HeaderProps {
   className?: string
@@ -29,25 +32,62 @@ export const Header: FC<HeaderProps> = (props) => {
 
   if (authData) {
     return (
-      <header className={cls(s.Header, {}, [className])}>
-        <div className={s.links}>
-          <NotificationsButton />
-          <AvatarDropdown />
-        </div>
-      </header>
+      <ToggleFeature
+        feature="isV2"
+        on={
+          <header className={cls(s.HeaderV2, {}, [className])}>
+            <div className={s.links}>
+              <Icon Svg={EditIcon} />
+              <NotificationsButton />
+              <AvatarDropdown />
+            </div>
+          </header>
+        }
+        off={
+          <header className={cls(s.Header, {}, [className])}>
+            <div className={s.links}>
+              <NotificationsButton />
+              <AvatarDropdown />
+            </div>
+          </header>
+        }
+      />
     )
   }
 
   return (
-    <header className={cls(s.Header, {}, [className])}>
-      {isSignInModalOpen && (
-        <SignInModal isOpen={isSignInModalOpen} onClose={onCloseSignInModal} />
-      )}
-      <div className={s.links}>
-        <Button onClick={onOpen} theme="bordered">
-          {t('Sign in')}
-        </Button>
-      </div>
-    </header>
+    <ToggleFeature
+      feature="isV2"
+      on={
+        <header className={cls(s.HeaderV2, {}, [className])}>
+          {isSignInModalOpen && (
+            <SignInModal
+              isOpen={isSignInModalOpen}
+              onClose={onCloseSignInModal}
+            />
+          )}
+          <div className={s.links}>
+            <Button onClick={onOpen} theme="bordered">
+              {t('Sign in')}
+            </Button>
+          </div>
+        </header>
+      }
+      off={
+        <header className={cls(s.Header, {}, [className])}>
+          {isSignInModalOpen && (
+            <SignInModal
+              isOpen={isSignInModalOpen}
+              onClose={onCloseSignInModal}
+            />
+          )}
+          <div className={s.links}>
+            <Button onClick={onOpen} theme="bordered">
+              {t('Sign in')}
+            </Button>
+          </div>
+        </header>
+      }
+    />
   )
 }

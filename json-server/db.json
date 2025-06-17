@@ -791,11 +791,12 @@
         "ADMIN"
       ],
       "features": {
+        "isV2": true,
         "isArticleDetailsRatingEnabled": true,
         "isProfileRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_green_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false,
         "articlesPageHasBeenOpened": true
@@ -811,6 +812,7 @@
         "USER"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": false,
         "isProfileRatingEnabled": false
       },
@@ -831,6 +833,7 @@
         "MANAGER"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": false,
         "isProfileRatingEnabled": false
       },
@@ -852,6 +855,7 @@
         "MANAGER"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": false,
         "isProfileRatingEnabled": false
       },
@@ -874,6 +878,7 @@
         "ADMIN"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": true,
         "isProfileRatingEnabled": true
       },

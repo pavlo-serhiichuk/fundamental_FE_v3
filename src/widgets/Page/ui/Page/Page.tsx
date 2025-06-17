@@ -12,6 +12,7 @@ import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { TestProps } from '@/shared/types/tests'
 import * as s from './Page.module.scss'
+import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features'
 
 interface PageProps extends TestProps {
   className?: string
@@ -52,7 +53,11 @@ export const Page = memo((props: PageProps) => {
     <main
       onScroll={onScroll}
       ref={wrapperRef as LegacyRef<HTMLElement>}
-      className={cls(s.Page, {}, [className])}
+      className={cls(
+        toggleFeatures({ name: 'isV2', on: () => s.PageV2, off: () => s.Page }),
+        {},
+        [className],
+      )}
       data-testid={props['data-testid']}
     >
       {children}

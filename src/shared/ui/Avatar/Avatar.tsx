@@ -32,7 +32,7 @@ export const Avatar: FC<AvatarProps> = (props) => {
       height: size,
       radius: '50%',
     }),
-    [],
+    [size],
   )
 
   return (

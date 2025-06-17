@@ -7,7 +7,7 @@
   gap: 10px;
 
   &:hover {
-    background-color: var(--sidebar-bg-hover-v2);
+    background-color: var(--sidebar-bg-hover);
   }
   span {
     width: 100px;
@@ -25,5 +25,5 @@
 }
 
 .selected {
-  background-color: var(--sidebar-bg-hover-v2);
+  background-color: var(--sidebar-bg-hover);
 }

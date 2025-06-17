@@ -1,0 +1,37 @@
+.MainLayout {
+  display: grid;
+  grid-template-areas: 'sidebar content rightbar';
+  grid-template-columns: 284px 1fr 236px;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.content {
+  grid-area: content;
+  max-width: 1200px;
+  //border: 1px solid red;
+  justify-self: center;
+}
+
+.rightbar {
+  grid-area: rightbar;
+}
+
+.sidebar, .rightbar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.header {
+  display: block;
+  margin: 20px;
+}
+
+.toolbar {
+  display: block;
+}

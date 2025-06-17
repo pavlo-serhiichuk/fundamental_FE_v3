@@ -18,6 +18,16 @@
   background-color: var(--content-bg);
 }
 
+.app-v2 {
+  background-color: var(--content-bg-v2);
+  font: var(--font-16-v2);
+  color: var(--content-text-color-v2);
+  font-optical-sizing: auto;
+  font-style:  normal;
+  font-variation-settings:
+          "wdth" 100;
+}
+
 .app-content {
   display: flex;
   height: calc(100vh - var(--navbar-height) - 6px);

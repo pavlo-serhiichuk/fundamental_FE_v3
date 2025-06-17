@@ -23,31 +23,27 @@ export const Sidebar = memo((props: SidebarProps) => {
     setCollapsed((prev) => !prev)
   }
   return (
-    <aside className={s.SidebarWrapper}>
-      <div
-        data-testid="sidebar"
-        className={cls(s.Sidebar, { [s.collapsed]: collapsed }, [className])}
-      >
-        <VStack>
-          {sidebarItems.map((item: ISidebarItem) => (
-            <SidebarItem key={item.path} item={item} collapsed={collapsed} />
-          ))}
-        </VStack>
-        <div
-          className={cls(s.switchers, { [s.switchersCollapsed]: collapsed })}
-        >
-          <ThemeSwitcher />
-          <LangSwitcher className={s.sidebarLang} />
-        </div>
-        {/* <Button */}
-        {/*  data-testid="sidebar-toggle" */}
-        {/*  theme="sidebar_squad_m" */}
-        {/*  className={s.collapseBtn} */}
-        {/*  onClick={onToggle} */}
-        {/* > */}
-        {/*  {collapsed ? '>' : '<'} */}
-        {/* </Button> */}
+    <aside
+      data-testid="sidebar"
+      className={cls(s.Sidebar, { [s.collapsed]: collapsed }, [className])}
+    >
+      <VStack>
+        {sidebarItems.map((item: ISidebarItem) => (
+          <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+        ))}
+      </VStack>
+      <div className={cls(s.switchers, { [s.switchersCollapsed]: collapsed })}>
+        <ThemeSwitcher />
+        <LangSwitcher className={s.sidebarLang} />
       </div>
+      <Button
+        data-testid="sidebar-toggle"
+        theme="sidebar_squad_m"
+        className={s.collapseBtn}
+        onClick={onToggle}
+      >
+        {collapsed ? '>' : '<'}
+      </Button>
     </aside>
   )
 })

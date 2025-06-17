@@ -11,6 +11,7 @@ import {
 import { Dropdown } from '@/shared/ui/Popups'
 import { Avatar } from '@/shared/ui/Avatar'
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/routers'
+import * as s from './AvatarDropdown.module.scss'
 
 interface AvatarDropdownProps {
   className?: string
@@ -59,7 +60,12 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
     <Dropdown
       items={items}
       trigger={
-        <Avatar size={45} src={authData.avatar} alt={authData.username} />
+        <Avatar
+          size={45}
+          src={authData.avatar}
+          alt={authData.username}
+          className={s.AvatarIcon}
+        />
       }
       direction="bottom left"
     />

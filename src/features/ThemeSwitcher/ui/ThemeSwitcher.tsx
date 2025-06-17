@@ -6,6 +6,7 @@ import { useTheme } from '@/shared/hooks/useTheme'
 import * as s from './ThemeSwitcher.module.scss'
 import { saveJsonSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface ThemeSwitcherProps {
   className?: string
@@ -15,12 +16,29 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   const { className } = props
   const { theme, toggleTheme } = useTheme()
   const dispatch = useAppDispatch()
+
   const handleToggleTheme = useCallback(() => {
     toggleTheme((newTheme) => {
       // console.log('toggle theme')
       dispatch(saveJsonSettings({ theme: newTheme }))
     })
-  }, [toggleTheme])
+  }, [toggleTheme, dispatch])
+
+  const lightClass = toggleFeatures({
+    name: 'isV2',
+    off: () => s.light,
+    on: () => s.lightV2,
+  })
+  const darkClass = toggleFeatures({
+    name: 'isV2',
+    off: () => s.dark,
+    on: () => s.darkV2,
+  })
+  const greenClass = toggleFeatures({
+    name: 'isV2',
+    off: () => s.green,
+    on: () => s.greenV2,
+  })
 
   return (
     <Button
@@ -30,9 +48,9 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
       className={cls(
         s.ThemeSwitcher,
         {
-          [s.light]: theme === 'app_light_theme',
-          [s.dark]: theme === 'app_dark_theme',
-          [s.green]: theme === 'app_green_theme',
+          [lightClass]: theme === 'app_light_theme',
+          [darkClass]: theme === 'app_dark_theme',
+          [greenClass]: theme === 'app_green_theme',
         },
         [className],
       )}

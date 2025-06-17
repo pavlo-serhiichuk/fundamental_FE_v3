@@ -1,4 +1,5 @@
 export interface FeatureFlags {
-  isArticleDetailsRatingEnabled: boolean
-  isProfileRatingEnabled: boolean
+  isV2?: boolean
+  isArticleDetailsRatingEnabled?: boolean
+  isProfileRatingEnabled?: boolean
 }

@@ -5,7 +5,10 @@ import { cls } from '@/shared/lib/cls/cls'
 import AppRouter from './providers/router/ui/AppRouter'
 import { Header } from '@/widgets/Header'
 import { Sidebar } from '@/widgets/Sidebar'
-import { userActions, getUserInited, initUserDataById } from '@/entities/User'
+import { getUserInited, initUserDataById } from '@/entities/User'
+import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { MainLayout } from '@/shared/layouts/MainLayout'
+import { PageLoader } from '@/widgets/PageLoader'
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme()
@@ -15,13 +18,31 @@ export const App = () => {
     dispatch(initUserDataById())
   }, [dispatch])
 
+  if (!inited) {
+    return <PageLoader />
+  }
+
   return (
-    <div className={cls('app', {}, [theme])}>
-      <Header />
-      <div className="app-content">
-        <Sidebar />
-        {inited && <AppRouter />}
-      </div>
-    </div>
+    <ToggleFeature
+      feature="isV2"
+      on={
+        <div className={cls('app-v2', {}, [theme])}>
+          <MainLayout
+            sidebar={<Sidebar />}
+            content={<AppRouter />}
+            header={<Header />}
+          />
+        </div>
+      }
+      off={
+        <div className={cls('app', {}, [theme])}>
+          <Header />
+          <div className="app-content">
+            <Sidebar />
+            {inited && <AppRouter />}
+          </div>
+        </div>
+      }
+    />
   )
 }

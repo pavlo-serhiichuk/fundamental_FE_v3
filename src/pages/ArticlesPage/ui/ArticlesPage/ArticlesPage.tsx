@@ -18,7 +18,6 @@ import {
   articlesPageReducer,
   getArticlesList,
 } from '../../module/slice/articlesPageSlice'
-import { useGetJsonSettings } from '@/entities/User'
 
 const reducers: ReducersList = {
   articlesPage: articlesPageReducer,

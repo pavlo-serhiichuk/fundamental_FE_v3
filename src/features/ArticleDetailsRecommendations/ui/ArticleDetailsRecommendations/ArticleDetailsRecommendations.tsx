@@ -16,7 +16,10 @@ export const ArticleDetailsRecommendations = memo(() => {
   }
 
   return (
-    <div data-testid="ArticleDetailsRecommendations">
+    <div
+      data-testid="ArticleDetailsRecommendations"
+      className={s.ArticleDetailsRecommendations}
+    >
       <ArticlesList
         articles={articles}
         listView={ListView.SMALL}

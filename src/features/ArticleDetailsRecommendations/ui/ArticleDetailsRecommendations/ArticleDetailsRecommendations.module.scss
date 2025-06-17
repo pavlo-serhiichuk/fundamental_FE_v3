@@ -1,7 +1,11 @@
+.ArticleDetailsRecommendations {
+  width: calc(100vw - 236px - 284px - 40px);
+}
 .recommendationsList {
   padding: 20px 0;
   overflow-x: scroll;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  max-width: 1200px;
 }
