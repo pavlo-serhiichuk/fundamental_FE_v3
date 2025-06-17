@@ -2,7 +2,7 @@ import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '@/shared/lib/cls/cls'
-import { Button } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/deprecated/Button'
 import { Page } from '@/widgets/Page'
 import * as s from './NotFoundPage.module.scss'
 

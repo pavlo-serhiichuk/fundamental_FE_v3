@@ -1,9 +1,9 @@
-import { cls } from '@/shared/lib/cls/cls'
 import { useTranslation } from 'react-i18next'
+import { cls } from '@/shared/lib/cls/cls'
 import { type Comment } from '@/entities/Comment'
-import { CommentCard } from '@/entities/Comment/ui/CommentCard/CommentCard'
-import { CommentCardSkeleton } from '@/entities/Comment/ui/CommentCard/CommentCardSkeleton'
-import { Text } from '@/shared/ui/Text'
+import { CommentCard } from '../CommentCard/CommentCard'
+import { CommentCardSkeleton } from '../CommentCard/CommentCardSkeleton'
+import { Text } from '@/shared/ui/deprecated/Text'
 import * as s from './CommentList.module.scss'
 
 interface CommentListProps {

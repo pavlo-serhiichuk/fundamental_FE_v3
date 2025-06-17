@@ -12,7 +12,7 @@ import { ArticleDetailsRecommendations } from '@/features/ArticleDetailsRecommen
 import { articleDetailsPageSlice } from '../../module/slice/articleDetailsPageSlice'
 import * as s from './ArticleDetailsPage.module.scss'
 import { ArticleRating } from '@/features/ArticleRating'
-import { Card } from '@/shared/ui/Card'
+import { Card } from '@/shared/ui/deprecated/Card'
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
 
 interface ArticlesPageProps {

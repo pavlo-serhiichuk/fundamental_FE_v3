@@ -13,6 +13,7 @@ import { articleDetailsPageSlice } from '@/pages/ArticleDetailsPage'
 import { Theme } from '@/shared/types/theme'
 import i18nForTests from '../../../config/i18n/i18nForTests'
 import { ReducersList } from '../../../lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { CollapseProvider } from '@/app/providers/CollapseProvider/CollapseProvider'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -60,8 +61,8 @@ export const StoreDecorator =
     </StoreProvider>
   )
 
-export const PageContentDecorator = (StoryComponent: any) => (
-  <div className="page-content">
+export const CollapseProviderDecorator = (StoryComponent: any) => (
+  <CollapseProvider>
     <StoryComponent />
-  </div>
+  </CollapseProvider>
 )

@@ -8,8 +8,8 @@ import {
   getUserAuthData,
   userActions,
 } from '@/entities/User'
-import { Dropdown } from '@/shared/ui/Popups'
-import { Avatar } from '@/shared/ui/Avatar'
+import { Dropdown } from '@/shared/ui/deprecated/Popups'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/routers'
 import * as s from './AvatarDropdown.module.scss'
 

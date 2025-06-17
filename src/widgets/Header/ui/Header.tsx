@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
 import { SignInModal } from '@/features/SignIn'
-import { Button } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/deprecated/Button'
 import { getUserAuthData } from '@/entities/User'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import EditIcon from '@/shared/assets/icons/edit.svg'
 import { NotificationsButton } from '@/features/NotificationsButton'
 import * as s from './Header.module.scss'
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
-import { Icon } from '@/shared/ui/Icon'
+import { Icon } from '@/shared/ui/deprecated/Icon'
 
 interface HeaderProps {
   className?: string
@@ -37,7 +37,7 @@ export const Header: FC<HeaderProps> = (props) => {
         on={
           <header className={cls(s.HeaderV2, {}, [className])}>
             <div className={s.links}>
-              <Icon Svg={EditIcon} />
+              <Icon Svg={EditIcon} height={25} width={25} />
               <NotificationsButton />
               <AvatarDropdown />
             </div>

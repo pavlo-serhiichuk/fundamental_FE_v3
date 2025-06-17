@@ -1,7 +1,7 @@
-import { useTranslation } from 'react-i18next'
-import { ReactElement } from 'react'
+import { ReactElement, useContext } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
 import * as s from './MainLayout.module.scss'
+import { CollapseContext } from '@/shared/lib/context/CollapseContext'
 
 interface MainLayoutProps {
   className?: string
@@ -13,9 +13,11 @@ interface MainLayoutProps {
 
 export const MainLayout = (props: MainLayoutProps) => {
   const { className, header, content, sidebar, toolbar } = props
-  const { t } = useTranslation()
+  const { collapsed = false } = useContext(CollapseContext)
   return (
-    <div className={cls(s.MainLayout, {}, [className])}>
+    <div
+      className={cls(s.MainLayout, { [s.collapsed]: collapsed }, [className])}
+    >
       <div className={s.sidebar}>{sidebar}</div>
       <div className={s.content}>{content}</div>
       <div className={s.rightbar}>

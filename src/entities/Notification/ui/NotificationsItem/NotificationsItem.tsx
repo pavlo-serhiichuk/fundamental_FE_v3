@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { cls } from '@/shared/lib/cls/cls'
-import { Text } from '@/shared/ui/Text'
-import { AppLink } from '@/shared/ui/AppLink'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { AppLink } from '@/shared/ui/deprecated/AppLink'
 import { Notification } from '../../module/types/notification'
 import * as s from './NotificationsItem.module.scss'
 

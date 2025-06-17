@@ -1,6 +1,6 @@
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
-import { Sidebar as SidebarOld } from './ui-old/Sidebar/Sidebar'
-import { Sidebar as SidebarNew } from './ui/Sidebar/Sidebar'
+import { Sidebar as SidebarOld } from './ui/deprecated/Sidebar/Sidebar'
+import { Sidebar as SidebarNew } from './ui/V2/Sidebar/Sidebar'
 
 export const Sidebar = () => {
   return (

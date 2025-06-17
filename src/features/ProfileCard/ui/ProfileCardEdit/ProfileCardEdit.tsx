@@ -1,6 +1,7 @@
 import { type FC, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
+import { HStack, VStack } from '@/shared/ui/stationary/Stack'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { Currency, CurrencySelect } from '@/entities/Currency'
 import { Country, CountrySelect } from '@/entities/Country'
@@ -13,13 +14,12 @@ import {
   updateProfileData,
   profileActions,
 } from '@/entities/Profile'
-import { Avatar } from '@/shared/ui/Avatar'
-import { Input } from '@/shared/ui/Input'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { Input } from '@/shared/ui/deprecated/Input'
 import { cls } from '@/shared/lib/cls/cls'
-import { Text } from '@/shared/ui/Text'
-import { Loader } from '@/shared/ui/Loader'
-import { Button } from '@/shared/ui/Button'
-import { HStack, VStack } from '@/shared/ui/Stack'
+import { Text } from '@/shared/ui/deprecated/Text'
+import { Loader } from '@/shared/ui/deprecated/Loader'
+import { Button } from '@/shared/ui/deprecated/Button'
 import * as s from './ProfileCardEdit.module.scss'
 import { StateSchema } from '@/app/providers/StoreProvider'
 

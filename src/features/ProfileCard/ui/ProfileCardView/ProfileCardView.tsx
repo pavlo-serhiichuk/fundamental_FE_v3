@@ -8,11 +8,11 @@ import {
   getProfileLoading,
   profileActions,
 } from '@/entities/Profile'
-import { Text } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
 import { cls } from '@/shared/lib/cls/cls'
-import { Avatar } from '@/shared/ui/Avatar'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import PinIcon from '@/shared/assets/icons/map-pin.svg'
-import { Button } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/deprecated/Button'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { getUserAuthData } from '@/entities/User'
 import * as s from './ProfileCardView.module.scss'

@@ -1,6 +1,6 @@
-import { Modal } from '@/shared/ui/Modal'
 import { Suspense } from 'react'
-import { Loader } from '@/shared/ui/Loader'
+import { Modal } from '@/shared/ui/deprecated/Modal'
+import { Loader } from '@/shared/ui/deprecated/Loader'
 import { SignInFormAsync } from '../SignInForm/SignInForm.async'
 
 interface SignInModalProps {

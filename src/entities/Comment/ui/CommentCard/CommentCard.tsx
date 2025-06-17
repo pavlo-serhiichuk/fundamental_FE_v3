@@ -1,10 +1,10 @@
 import { type FC } from 'react'
+import { VStack } from '@/shared/ui/stationary/Stack'
 import { cls } from '@/shared/lib/cls/cls'
-import { Avatar } from '@/shared/ui/Avatar'
-import { AppLink } from '@/shared/ui/AppLink'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
+import { AppLink } from '@/shared/ui/deprecated/AppLink'
 import { Comment } from '@/entities/Comment'
 import * as s from './CommentCard.module.scss'
-import { VStack } from '@/shared/ui/Stack'
 
 interface CommentCardProps {
   className?: string

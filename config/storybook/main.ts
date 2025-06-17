@@ -14,7 +14,6 @@ const config = {
     '@storybook/addon-onboarding',
     '@chromatic-com/storybook',
     '@storybook/addon-interactions',
-    '@storybook/addon-styling-webpack',
     'storybook-css-modules',
   ],
   framework: {

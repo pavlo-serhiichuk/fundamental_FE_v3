@@ -8,7 +8,7 @@ import { ChangeListView } from './ChangeListView'
 import '@/app/styles/index.scss'
 
 const meta = {
-  title: 'common/ChangeListView',
+  title: 'features/ChangeListView',
   component: ChangeListView,
   tags: ['autodocs'],
   args: { onClick: fn() },

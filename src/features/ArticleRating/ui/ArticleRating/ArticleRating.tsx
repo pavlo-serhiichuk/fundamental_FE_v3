@@ -9,7 +9,7 @@ import {
   useRateArticle,
 } from '../../api/articleRatingApi'
 import * as s from './ArticleRating.module.scss'
-import { Skeleton } from '@/shared/ui/Skeleton'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 
 export interface ArticleRatingProps {
   className?: string

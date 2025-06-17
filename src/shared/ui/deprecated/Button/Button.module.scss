@@ -1,0 +1,55 @@
+.Button {
+  cursor: pointer;
+  color: var(--content-text-color);
+  z-index: 1;
+}
+
+.default {
+  color: var(--content-text-color);
+}
+
+.clear {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.bordered,
+.cancel {
+  background: none;
+  border: 1px solid var(--content-text-color);
+  padding: 4px 10px;
+  text-align: center;
+}
+
+.sidebar_squad_m,
+.content_squad_m {
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 6px;
+}
+
+.sidebar_squad_m {
+  background-color: var(--sidebar-bg);
+}
+
+.content_squad_m {
+  background-color: var(--content-bg);
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.cancel {
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}

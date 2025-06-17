@@ -1,16 +1,16 @@
 import { type FC } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { Input } from '@/shared/ui/Input'
+import { HStack } from '@/shared/ui/stationary/Stack'
+import { Input } from '@/shared/ui/deprecated/Input'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { Button } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/deprecated/Button'
 import DynamicReducerLoader, {
   type ReducersList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { getUserAuthData } from '@/entities/User'
-import { Avatar } from '@/shared/ui/Avatar'
+import { Avatar } from '@/shared/ui/deprecated/Avatar'
 import { getArticleDetailsError } from '@/features/ArticleDetails'
-import { HStack } from '@/shared/ui/Stack'
 import { getAddCommentFormText } from '../../module/selectors/getAddCommentFormSelectors'
 import {
   addCommentFormSliceActions,

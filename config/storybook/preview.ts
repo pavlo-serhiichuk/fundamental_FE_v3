@@ -5,6 +5,7 @@ import {
   RouterDecorator,
   ThemeDecorator,
   TranslationDecorator,
+  CollapseProviderDecorator,
 } from '../../src/shared/config/storybook/decorators/decorators'
 
 const preview: Preview = {
@@ -12,6 +13,7 @@ const preview: Preview = {
     ThemeDecorator('app_light_theme'),
     TranslationDecorator,
     RouterDecorator,
+    CollapseProviderDecorator,
   ],
   parameters: {
     controls: {

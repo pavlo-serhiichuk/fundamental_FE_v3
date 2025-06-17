@@ -1,5 +1,6 @@
 import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
+import { HStack } from '@/shared/ui/stationary/Stack'
 import { cls } from '@/shared/lib/cls/cls'
 import {
   OrderBy,
@@ -12,7 +13,6 @@ import {
 import { ChangeListView } from '@/features/ChangeListView'
 import { useDebounce } from '@/shared/hooks/useDebounce'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { HStack } from '@/shared/ui/Stack'
 import { fetchArticlesList } from '../../module/services/fetchArticlesList/fetchArticlesList'
 import { articlesPageActions } from '../../module/slice/articlesPageSlice'
 import * as s from './ArticlesPageFilters.module.scss'

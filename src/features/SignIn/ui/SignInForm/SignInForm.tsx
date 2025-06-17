@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { memo, useCallback, useMemo } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
-import { Input } from '@/shared/ui/Input'
-import { Button } from '@/shared/ui/Button'
+import { Input } from '@/shared/ui/deprecated/Input'
+import { Button } from '@/shared/ui/deprecated/Button'
 import {
   getSignInError,
   getSignInIsLoading,
@@ -11,7 +11,7 @@ import {
   getSignInUsername,
 } from '../../module/selectors/getSignInSelectors'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { Text } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
 import DynamicReducerLoader, {
   ReducersList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'

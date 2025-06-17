@@ -1,0 +1,31 @@
+.SidebarItem {
+  display: inline-flex;
+  padding: 0 13px;
+  height: 45px;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  border-left: 4px solid transparent;
+
+  &:hover {
+    background-color: var(--sidebar-bg-hover-v2);
+  }
+
+  span {
+    width: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+
+.SidebarItem.collapsed {
+  padding: 0 0 0 15px;
+  span {
+    width: 0;
+  }
+}
+
+.selected {
+  background-color: var(--sidebar-bg-hover-v2);
+  border-left: 4px solid var(--nav-border);
+}

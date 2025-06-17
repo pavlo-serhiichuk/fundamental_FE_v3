@@ -1,0 +1,47 @@
+.content {
+  color: var(--content-text-color-v2);
+}
+
+.error {
+  color: var(--color-error-v2);
+}
+
+.warn {
+  color: var(--color-warn);
+}
+
+.text_size_s {
+  span {
+    font: var(--font-14-v2);
+  }
+}
+
+.text_size_m {
+  p {
+    font: var(--font-20-v2);
+  }
+
+  span {
+    font: var(--font-16-v2);
+  }
+}
+
+.text_size_l {
+  p {
+    font: var(--font-26-v2);
+  }
+
+  span {
+    font: var(--font-20-v2);
+  }
+}
+
+.normal-fs {
+  font-style: normal;
+}
+
+.italic-fs {
+  p, span {
+    font-style: italic;
+  }
+}

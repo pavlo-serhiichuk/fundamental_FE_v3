@@ -1,6 +1,6 @@
 import { type FC } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
-import { Code } from '@/shared/ui/Code'
+import { Code } from '@/shared/ui/deprecated/Code'
 import { type ArticleCodeBlock } from '../../model/types/article'
 import * as s from './ArticleBlockCodeComponent.module.scss'
 
