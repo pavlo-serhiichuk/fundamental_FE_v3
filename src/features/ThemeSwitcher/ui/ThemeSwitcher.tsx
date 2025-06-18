@@ -8,22 +8,21 @@ import { useTheme } from '@/shared/hooks/useTheme'
 import * as s from './ThemeSwitcher.module.scss'
 import { saveJsonSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { toggleFeatures } from '@/shared/lib/features'
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
 import { Icon } from '@/shared/ui/V2/Icon'
 
 interface ThemeSwitcherProps {
   className?: string
+  isV2InStorybook?: boolean
 }
 
 export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
-  const { className } = props
+  const { className, isV2InStorybook } = props
   const { theme, toggleTheme } = useTheme()
   const dispatch = useAppDispatch()
 
   const handleToggleTheme = useCallback(() => {
     toggleTheme((newTheme) => {
-      // console.log('toggle theme')
       dispatch(saveJsonSettings({ theme: newTheme }))
     })
   }, [toggleTheme, dispatch])
@@ -31,6 +30,7 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   return (
     <ToggleFeature
       feature="isV2"
+      isV2InStorybook={isV2InStorybook}
       on={
         <Button
           theme="clear"

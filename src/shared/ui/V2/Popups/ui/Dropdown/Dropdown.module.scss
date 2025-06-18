@@ -1,0 +1,27 @@
+
+.menu {
+  color: black;
+  background-color: var(--popup-bg-v2);
+  position: absolute;
+  z-index: 3;
+  border-radius: 12px;
+  border: 1px solid var(--content-border-v2);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.item {
+  padding: 5px 20px 5px 10px;
+  border: none;
+  background: none;
+  outline: none;
+  list-style-type: none;
+  cursor: pointer;
+  border-radius: 0;
+
+  &:hover {
+    background: var(--popup-bg-hover-v2);
+  }
+}

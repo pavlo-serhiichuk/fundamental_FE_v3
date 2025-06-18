@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
 import { NotificationsItem } from '../NotificationsItem/NotificationsItem'
 import { getUserAuthData } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
 import { useFetchNotifications } from '../../api/notificationsApi'
 import { Notification } from '../../module/types/notification'
-import * as s from './NotificationsList.module.scss'
+import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { Skeleton } from '@/shared/ui/V2/Skeleton'
 
 interface NotificationsListProps {
   className?: string
@@ -25,16 +26,28 @@ export const NotificationsList = memo((props: NotificationsListProps) => {
 
   if (isLoading || error) {
     return (
-      <div className={cls(s.NotificationsList, {}, [className])}>
-        <Skeleton width="100%" height={40} marginTop={5} />
-        <Skeleton width="100%" height={40} marginTop={5} />
-        <Skeleton width="100%" height={40} marginTop={5} />
-      </div>
+      <ToggleFeature
+        feature="isV2"
+        on={
+          <div className={cls('', {}, [className])}>
+            <Skeleton width="100%" height={40} marginTop={5} />
+            <Skeleton width="100%" height={40} marginTop={5} />
+            <Skeleton width="100%" height={40} marginTop={5} />
+          </div>
+        }
+        off={
+          <div className={cls('', {}, [className])}>
+            <SkeletonDeprecated width="100%" height={40} marginTop={5} />
+            <SkeletonDeprecated width="100%" height={40} marginTop={5} />
+            <SkeletonDeprecated width="100%" height={40} marginTop={5} />
+          </div>
+        }
+      />
     )
   }
 
   return (
-    <div className={cls(s.NotificationsList, {}, [className])}>
+    <div className={cls('', {}, [className])}>
       {notifications?.map((notification: Notification) => (
         <NotificationsItem notification={notification} key={notification.id} />
       ))}
