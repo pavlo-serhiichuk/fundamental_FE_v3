@@ -11,10 +11,16 @@ import { AppRouteNames } from '@/shared/const/routers'
 const args = {
   page: AppRouteNames.ARTICLES,
   onChangeTab: fn(),
+  options: [
+    { value: 'ALL', content: 'All' },
+    { value: 'IT', content: 'IT' },
+    { value: 'FICTION', content: 'Fiction' },
+    { value: 'ECONOMICS', content: 'Economics' },
+  ],
 }
 
 const meta = {
-  title: 'shared/Tabs',
+  title: 'entities/Filters/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   args,

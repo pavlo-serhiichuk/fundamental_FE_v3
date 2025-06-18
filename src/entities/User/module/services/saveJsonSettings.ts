@@ -12,8 +12,7 @@ export const saveJsonSettings = createAsyncThunk<
   const { extra, getState } = thunkAPI
   const userId = getUserAuthData(getState())?.id
   const jsonSettings = getJsonSettings(getState())
-  console.log(newJsonSettings)
-  console.log(userId, { ...jsonSettings, ...newJsonSettings })
+
   try {
     if (userId) {
       const response = await extra.api.patch(`/users/${userId}`, {

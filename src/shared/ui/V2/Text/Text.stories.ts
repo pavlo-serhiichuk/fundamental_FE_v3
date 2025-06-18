@@ -5,11 +5,8 @@ import { Text } from './Text'
 import '@/app/styles/index.scss'
 
 const meta = {
-  title: 'shared/Text',
+  title: 'shared/V2/Text',
   component: Text,
-  // parameters: {
-  //   layout: 'centered',
-  // },
   tags: ['autodocs'],
   argTypes: {
     backgroundColor: { control: 'color' },

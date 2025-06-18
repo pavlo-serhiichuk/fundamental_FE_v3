@@ -46,6 +46,8 @@ export const Avatar: FC<AvatarProps> = (props) => {
         src={src}
         alt={alt}
         style={styles}
+        width={size}
+        height={size}
         fallback={<Skeleton {...fallbackProps} />}
       />
     </div>

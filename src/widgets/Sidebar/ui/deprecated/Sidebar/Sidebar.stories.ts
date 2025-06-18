@@ -8,7 +8,7 @@ import { Sidebar } from './Sidebar'
 import '@/app/styles/index.scss'
 
 const meta = {
-  title: 'widget/deprecated/Sidebar',
+  title: 'widgets/Sidebar/deprecated/Sidebar',
   component: Sidebar,
   tags: ['autodocs'],
   args: { onClick: fn() },

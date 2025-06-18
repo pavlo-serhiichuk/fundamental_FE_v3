@@ -8,7 +8,7 @@ import { Header } from './Header'
 import '@/app/styles/index.scss'
 
 const meta = {
-  title: 'widget/Header',
+  title: 'widgets/Header',
   component: Header,
   // parameters: {
   //   layout: 'centered',

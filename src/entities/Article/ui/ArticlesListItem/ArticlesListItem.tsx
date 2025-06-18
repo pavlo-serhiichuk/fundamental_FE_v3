@@ -64,6 +64,8 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <AppImage
             src={article?.image}
             alt={article?.title}
+            height={400}
+            width={400}
             fallback={<Skeleton width="100%" height={400} />}
           />
         </div>

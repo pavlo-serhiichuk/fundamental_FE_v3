@@ -31,8 +31,6 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const form = useSelector(getProfileForm)
-  const state = useSelector((state: StateSchema) => state)
-  console.log(state)
   const isLoading = useSelector(getProfileLoading)
   const error = useSelector(getProfileError)
   const isUpdating = useSelector(getProfileUpdating)
