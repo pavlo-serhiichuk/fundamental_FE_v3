@@ -6,6 +6,8 @@ export const mapDropdownDirectionClass: Record<DropdownDirection, string> = {
   'top right': s.dropdownTopRight,
   'bottom left': s.dropdownBottomLeft,
   'bottom right': s.dropdownBottomRight,
+  left: s.dropdownLeft,
+  right: s.dropdownRight,
 }
 
 export const mapListBoxDirectionClass: Record<ListBoxDirection, string> = {

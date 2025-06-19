@@ -14,11 +14,17 @@
   height: var(--navbar-height);
   padding: 20px;
   box-sizing: border-box;
-  border-radius: 32px;
+  border-radius: 32px 0 0 32px;
   width: 196px;
 }
 
 .links {
+  display: flex;
+  align-items: center;
+  gap: 21px;
+}
+
+.linksV2 {
   display: flex;
   align-items: center;
   gap: 21px;

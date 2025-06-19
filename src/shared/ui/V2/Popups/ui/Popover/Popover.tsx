@@ -1,5 +1,4 @@
 import { ReactNode, memo } from 'react'
-import { useTranslation } from 'react-i18next'
 import {
   Popover as LibPopover,
   PopoverButton,
@@ -20,7 +19,6 @@ interface PopoverProps {
 
 export const Popover = memo((props: PopoverProps) => {
   const { className, trigger, direction = 'bottom right', children } = props
-  const { t } = useTranslation()
 
   const menuClasses = [mapDropdownDirectionClass[direction]]
 

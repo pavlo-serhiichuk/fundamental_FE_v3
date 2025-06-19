@@ -29,6 +29,10 @@ export const Dropdown = (props: DropdownProps) => {
     direction = 'bottom left',
     dropdownClassName,
   } = props
+  console.log(
+    'mapDropdownDirectionClass[direction]',
+    mapDropdownDirectionClass[direction],
+  )
   return (
     <Menu as="div" className={cls('', {}, [className, popupsCls.popup])}>
       <Menu.Button as="div" className={popupsCls.trigger}>

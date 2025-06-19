@@ -6,7 +6,7 @@ interface CollapseProviderProps {
 }
 
 export function CollapseProvider({ children }: CollapseProviderProps) {
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
 
   return (
     <CollapseContext.Provider value={{ collapsed, setCollapsed }}>

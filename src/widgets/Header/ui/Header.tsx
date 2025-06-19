@@ -36,7 +36,7 @@ export const Header: FC<HeaderProps> = (props) => {
         feature="isV2"
         on={
           <header className={cls(s.HeaderV2, {}, [className])}>
-            <div className={s.links}>
+            <div className={s.linksV2}>
               <Icon Svg={EditIcon} height={25} width={25} />
               <NotificationsButton />
               <AvatarDropdown />

@@ -12,7 +12,7 @@ import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { TestProps } from '@/shared/types/tests'
 import * as s from './Page.module.scss'
-import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface PageProps extends TestProps {
   className?: string
@@ -35,7 +35,11 @@ export const Page = memo((props: PageProps) => {
   })
 
   useInfiniteScroll({
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isV2',
+      on: () => undefined,
+      off: () => wrapperRef,
+    }),
     triggerRef,
     callback: onScrollEnd,
   })
@@ -62,7 +66,7 @@ export const Page = memo((props: PageProps) => {
     >
       {children}
       {/* @ts-ignore */}
-      {onScrollEnd && <div className={s.trigger} ref={triggerRef} />}
+      {onScrollEnd ? <div className={s.trigger} ref={triggerRef} /> : null}
     </main>
   )
 })

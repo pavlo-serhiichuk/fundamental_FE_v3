@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
@@ -15,7 +14,6 @@ interface SortByParamProps {
 
 export const SearchByName = memo((props: SortByParamProps) => {
   const { className, fetchData } = props
-  const { t } = useTranslation()
   const searchValue = useSelector(getFiltersSearchValue)
   const dispatch = useAppDispatch()
 
