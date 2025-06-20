@@ -3,14 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
 import { SignInModal } from '@/features/SignIn'
-import { Button } from '@/shared/ui/deprecated/Button'
+import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button'
 import { getUserAuthData } from '@/entities/User'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import EditIcon from '@/shared/assets/icons/edit.svg'
 import { NotificationsButton } from '@/features/NotificationsButton'
 import * as s from './Header.module.scss'
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
-import { Icon } from '@/shared/ui/deprecated/Icon'
+import { Icon } from '@/shared/ui/V2/Icon'
+import { Button } from '@/shared/ui/V2/Button'
 
 interface HeaderProps {
   className?: string
@@ -37,7 +38,7 @@ export const Header: FC<HeaderProps> = (props) => {
         on={
           <header className={cls(s.HeaderV2, {}, [className])}>
             <div className={s.linksV2}>
-              <Icon Svg={EditIcon} height={25} width={25} />
+              <Icon Svg={EditIcon} height={38} width={38} />
               <NotificationsButton />
               <AvatarDropdown />
             </div>
@@ -82,9 +83,9 @@ export const Header: FC<HeaderProps> = (props) => {
             />
           )}
           <div className={s.links}>
-            <Button onClick={onOpen} theme="bordered">
+            <ButtonDeprecated onClick={onOpen} theme="bordered">
               {t('Sign in')}
-            </Button>
+            </ButtonDeprecated>
           </div>
         </header>
       }
