@@ -12,7 +12,6 @@ import { ListView } from '../../module/consts/consts'
 import * as s from './ChangeListView.module.scss'
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
 import { Card } from '@/shared/ui/V2/Card'
-import { Button } from '@/shared/ui/V2/Button'
 import { Icon } from '@/shared/ui/V2/Icon'
 
 interface ChangeListViewProps {
