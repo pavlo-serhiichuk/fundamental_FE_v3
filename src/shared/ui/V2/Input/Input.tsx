@@ -1,12 +1,16 @@
 import { type ChangeEvent, type InputHTMLAttributes, memo } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
-import { VStack } from '../../stationary/Stack'
+import { HStack, VStack } from '../../stationary/Stack'
 import * as s from './Input.module.scss'
+import SearchIcon from '@/shared/assets/icons/map_search.svg'
+import { Icon } from '@/shared/ui/V2/Icon'
 
 type HTMLInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange' | 'readOnly'
+  'value' | 'onChange' | 'readOnly' | 'size'
 >
+
+type InputSize = 'medium' | 'large'
 
 interface InputProps extends HTMLInputProps {
   readOnly?: boolean
@@ -17,6 +21,7 @@ interface InputProps extends HTMLInputProps {
   onChange?: ((value: string) => void) | undefined
   testId?: string
   withSearchIcon?: boolean
+  size?: InputSize
 }
 
 export const Input = memo((props: InputProps) => {
@@ -29,6 +34,7 @@ export const Input = memo((props: InputProps) => {
     readOnly,
     testId,
     withSearchIcon = false,
+    size = 'medium',
     ...otherProps
   } = props
 
@@ -37,21 +43,25 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <VStack
+    <HStack
       data-testid="input-wrapper"
       className={cls(s.Input, { [s.readonly]: !!readOnly }, [className])}
       gap="3"
+      align="center"
     >
       {label ? <div data-testid="input-label">{label}:</div> : null}
+      {withSearchIcon && <Icon Svg={SearchIcon} className={s.searchIcon} />}
       <input
         data-testid={testId || 'Input'}
         value={value}
-        className={cls(s.inputEl, { [s.withSearchIcon]: withSearchIcon })}
+        className={cls(s.inputEl, { [s.withSearchIcon]: withSearchIcon }, [
+          s[size],
+        ])}
         onChange={onChangeHandler}
         type={type}
         readOnly={readOnly}
         {...otherProps}
       />
-    </VStack>
+    </HStack>
   )
 })

@@ -1,11 +1,12 @@
 .Button {
   cursor: pointer;
-  color: var(--content-text-color);
+  color: var(--content-text-color-v2);
   z-index: 1;
+  border-radius: 32px;
 }
 
 .default {
-  color: var(--content-text-color);
+  color: var(--content-text-color-v2);
 }
 
 .clear {
@@ -18,25 +19,9 @@
 .bordered,
 .cancel {
   background: none;
-  border: 1px solid var(--content-text-color);
-  padding: 4px 10px;
+  border: 1px solid var(--border-v2);
+  padding: 4px 12px;
   text-align: center;
-}
-
-.sidebar_squad_m,
-.content_squad_m {
-  height: 40px;
-  width: 40px;
-  border: none;
-  border-radius: 6px;
-}
-
-.sidebar_squad_m {
-  background-color: var(--sidebar-bg);
-}
-
-.content_squad_m {
-  background-color: var(--content-bg);
 }
 
 .disabled {

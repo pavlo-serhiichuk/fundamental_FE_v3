@@ -14,14 +14,14 @@ import {
   updateProfileData,
   profileActions,
 } from '@/entities/Profile'
-import { Avatar } from '@/shared/ui/deprecated/Avatar'
-import { Input } from '@/shared/ui/deprecated/Input'
+import { Avatar } from '@/shared/ui/V2/Avatar'
+import { Input } from '@/shared/ui/V2/Input'
 import { cls } from '@/shared/lib/cls/cls'
-import { Text } from '@/shared/ui/deprecated/Text'
-import { Loader } from '@/shared/ui/deprecated/Loader'
-import { Button } from '@/shared/ui/deprecated/Button'
+import { Text } from '@/shared/ui/V2/Text'
+import { Loader } from '@/shared/ui/V2/Loader'
+import { Button } from '@/shared/ui/V2/Button'
 import * as s from './ProfileCardEdit.module.scss'
-import { StateSchema } from '@/app/providers/StoreProvider'
+import { Card } from '@/shared/ui/V2/Card'
 
 interface EditProfileCardProps {
   className?: string
@@ -51,6 +51,12 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   const onChangeAge = useCallback(
     (value: string) => {
       dispatch(profileActions.updateProfileForm({ age: Number(value) }))
+    },
+    [dispatch],
+  )
+  const onChangeCity = useCallback(
+    (value: string) => {
+      dispatch(profileActions.updateProfileForm({ city: value }))
     },
     [dispatch],
   )
@@ -89,14 +95,14 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
 
   if (isLoading) {
     return (
-      <div className={cls(s.EditProfileCard, {})}>
+      <Card>
         <Loader />
-      </div>
+      </Card>
     )
   }
 
   return (
-    <div className={s.EditProfileCard} data-testid="ProfileCardEdit">
+    <Card data-testid="ProfileCardEdit" padding="32">
       {validationErrors?.map((error) => (
         <Text
           key={error}
@@ -105,44 +111,55 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
           testId={`ProfileCardEdit.${error}`}
         />
       ))}
-      <VStack gap="10">
-        <div className={s.avatarWrapper}>
-          <Avatar src={form?.avatar || ''} alt="profile" size={100} />
-        </div>
-        <Input
-          readOnly={isUpdating}
-          value={form?.avatar || ''}
-          placeholder={t('Your avatar...')}
-          onChange={onChangeAvatar}
-          label={t('Avatar')}
-          testId="Input.Avatar"
-        />
-        <Input
-          readOnly={isUpdating}
-          value={form?.firstname || ''}
-          placeholder={t('Your name...')}
-          onChange={onChangeFirstName}
-          label={t('Name')}
-          testId="Input.Firstname"
-        />
-        <Input
-          readOnly={isUpdating}
-          value={form?.lastname || ''}
-          placeholder={t('Your lastname...')}
-          label={t('Lastname')}
-          onChange={onChangeLastname}
-          testId="Input.Lastname"
-        />
-        <Input
-          readOnly={isUpdating}
-          value={form?.age || ''}
-          type="number"
-          placeholder={t('Your age...')}
-          label={t('Age')}
-          onChange={onChangeAge}
-          testId="Input.Age"
-        />
-        <HStack gap="16" className={s.selects}>
+      <HStack justify="center">
+        <Avatar src={form?.avatar || ''} alt="profile" size={100} />
+      </HStack>
+      <HStack gap="32">
+        <VStack gap="10" max>
+          <Input
+            readOnly={isUpdating}
+            value={form?.firstname || ''}
+            placeholder={t('Your name...')}
+            onChange={onChangeFirstName}
+            label={t('Name')}
+            testId="Input.Firstname"
+          />
+          <Input
+            readOnly={isUpdating}
+            value={form?.lastname || ''}
+            placeholder={t('Your lastname...')}
+            label={t('Lastname')}
+            onChange={onChangeLastname}
+            testId="Input.Lastname"
+          />
+          <Input
+            readOnly={isUpdating}
+            value={form?.age || ''}
+            type="number"
+            placeholder={t('Your age...')}
+            label={t('Age')}
+            onChange={onChangeAge}
+            testId="Input.Age"
+          />
+          <Input
+            readOnly={isUpdating}
+            value={form?.city || ''}
+            type="string"
+            placeholder={t('Your city...')}
+            label={t('City')}
+            onChange={onChangeCity}
+            testId="Input.Age"
+          />
+        </VStack>
+        <VStack gap="10" max>
+          <Input
+            readOnly={isUpdating}
+            value={form?.avatar || ''}
+            placeholder={t('Your avatar...')}
+            onChange={onChangeAvatar}
+            label={t('Avatar')}
+            testId="Input.Avatar"
+          />
           <CountrySelect
             readonly={isUpdating}
             value={form?.country}
@@ -153,8 +170,8 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
             value={form?.currency}
             onChange={onChangeCurrency}
           />
-        </HStack>
-      </VStack>
+        </VStack>
+      </HStack>
       <HStack justify="end" gap="8" className={s.bottom}>
         <Button
           testId="Cancel.Button"
@@ -173,6 +190,6 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
           {t('Save')}
         </Button>
       </HStack>
-    </div>
+    </Card>
   )
 }

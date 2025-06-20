@@ -2,13 +2,7 @@ import { type ButtonHTMLAttributes, memo, type ReactNode } from 'react'
 import { cls, Mods } from '@/shared/lib/cls/cls'
 import * as s from './Button.module.scss'
 
-export type ButtonTheme =
-  | 'default'
-  | 'clear'
-  | 'bordered'
-  | 'sidebar_squad_m'
-  | 'content_squad_m'
-  | 'cancel'
+export type ButtonTheme = 'default' | 'clear' | 'bordered' | 'cancel'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string

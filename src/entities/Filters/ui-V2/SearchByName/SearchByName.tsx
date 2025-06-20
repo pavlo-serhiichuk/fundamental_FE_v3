@@ -34,6 +34,7 @@ export const SearchByName = memo((props: SortByParamProps) => {
         onChange={onChange}
         placeholder="Search..."
         withSearchIcon
+        size="large"
       />
     </div>
   )

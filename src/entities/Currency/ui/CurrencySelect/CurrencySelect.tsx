@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { ListBox } from '@/shared/ui/deprecated/Popups'
+import { ListBox } from '@/shared/ui/V2/Popups'
 import { type ListBoxItem } from '@/shared/ui/deprecated/Popups'
 import { type Currency } from '../../model/types/Currency'
 import { currencies } from '../../model/consts/consts'
@@ -26,7 +26,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
       value={value}
       items={currenciesOptions}
       onChange={onChange}
-      label="Currency"
+      label="Select currency"
       className={s.CurrencySelect}
       testId="CurrencySelect"
     />

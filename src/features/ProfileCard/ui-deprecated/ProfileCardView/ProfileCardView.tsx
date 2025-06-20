@@ -22,6 +22,10 @@ interface ProfileCardProps {
   className?: string
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const ProfileCardView = (props: ProfileCardProps) => {
   const { className } = props
   const { t } = useTranslation('profile')

@@ -8,6 +8,7 @@ import ArrowDown from '@/shared/assets/icons/arrowdown.svg'
 import * as popupsCls from '../../styles/popups.module.scss'
 import * as s from './ListBox.module.scss'
 import { mapListBoxDirectionClass } from '../../styles/consts'
+import { Icon } from '@/shared/ui/V2/Icon'
 
 export interface ListBoxItem<T extends string> {
   value: T
@@ -82,7 +83,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
           <Button disabled={readonly} theme="bordered">
             <HStack align="center" justify="between" max>
               {value ?? defaultValue}
-              <ArrowDown />
+              <Icon Svg={ArrowDown} width={25} height={25} />
             </HStack>
           </Button>
         </HListBox.Button>

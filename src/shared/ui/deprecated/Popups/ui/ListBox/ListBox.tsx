@@ -30,7 +30,9 @@ interface ListBoxProps<T extends string> {
   label?: string
   testId?: string
 }
-
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
   const {
     items,

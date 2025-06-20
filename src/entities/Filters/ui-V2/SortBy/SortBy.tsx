@@ -2,7 +2,7 @@ import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
-import { Select, SelectOption } from '@/shared/ui/deprecated/Select'
+import { SelectOption } from '@/shared/ui/deprecated/Select'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { filtersActions } from '../../module/slice/filtersSlice'
 import { getFiltersSortBy } from '../../module/selectors/getFiltersState'
@@ -46,9 +46,5 @@ export const SortBy = memo((props: SortByParamProps) => {
     [dispatch, fetchData],
   )
 
-  return (
-    <div className={cls(s.SortByParam, {}, [className])}>
-      <ListBox items={options} value={sortField} onChange={onChange} />
-    </div>
-  )
+  return <ListBox items={options} value={sortField} onChange={onChange} />
 })

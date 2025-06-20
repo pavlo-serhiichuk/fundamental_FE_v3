@@ -58,13 +58,16 @@ export const ArticlesPageFilters = memo(() => {
               fetchData={debouncedFilteredArticlesList}
               className={s.searchArticlesInput}
             />
-            <Tabs
-              fetchData={fetchFilteredArticlesList}
-              page={AppRouteNames.ARTICLES}
-              options={articleOptions}
-            />
             <VStack gap="10">
-              <Text title={t('Sort by:')} size="text_size_m" />
+              <Text title="Topics:" size="text_size_s" />
+              <Tabs
+                fetchData={fetchFilteredArticlesList}
+                page={AppRouteNames.ARTICLES}
+                options={articleOptions}
+              />
+            </VStack>
+            <VStack gap="10">
+              <Text title={t('Sort by:')} size="text_size_s" />
               <OrderBy fetchData={debouncedFilteredArticlesList} />
               <SortBy fetchData={debouncedFilteredArticlesList} />
             </VStack>

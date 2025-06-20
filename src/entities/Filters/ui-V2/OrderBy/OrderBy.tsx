@@ -1,13 +1,11 @@
 import { memo, useCallback, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { cls } from '@/shared/lib/cls/cls'
-import { Select, SelectOption } from '@/shared/ui/deprecated/Select'
+import { SelectOption } from '@/shared/ui/deprecated/Select'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { getFiltersOrder } from '../../module/selectors/getFiltersState'
 import { filtersActions } from '../../module/slice/filtersSlice'
 import { type OrderByType } from '../../module/types/FiltersSchema'
-import * as s from './OrderBy.module.scss'
 import { ListBox } from '@/shared/ui/V2/Popups'
 
 interface SortByOrderProps {
@@ -42,18 +40,5 @@ export const OrderBy = memo((props: SortByOrderProps) => {
     [dispatch, fetchData],
   )
 
-  // if (!orderBy) {
-  //   return null
-  // }
-
-  return (
-    <div className={cls(s.SortByOrder, {}, [className])}>
-      <ListBox
-        items={options}
-        value={orderBy}
-        onChange={onChange}
-        className={s.sortBox}
-      />
-    </div>
-  )
+  return <ListBox items={options} value={orderBy} onChange={onChange} />
 })
