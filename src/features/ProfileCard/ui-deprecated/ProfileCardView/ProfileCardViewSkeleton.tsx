@@ -1,20 +1,4 @@
-import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
-import { useCallback } from 'react'
-import { useParams } from 'react-router-dom'
-import {
-  getProfileData,
-  getProfileError,
-  getProfileLoading,
-  profileActions,
-} from '@/entities/Profile'
-import { Text } from '@/shared/ui/deprecated/Text'
 import { cls } from '@/shared/lib/cls/cls'
-import { Avatar } from '@/shared/ui/deprecated/Avatar'
-import PinIcon from '@/shared/assets/icons/map-pin.svg'
-import { Button } from '@/shared/ui/deprecated/Button'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
-import { getUserAuthData } from '@/entities/User'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 import * as s from './ProfileCardView.module.scss'
 
