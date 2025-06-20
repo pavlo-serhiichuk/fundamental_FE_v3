@@ -1,0 +1,58 @@
+.Card {
+  border-radius: 18px;
+  box-shadow: var(--box-shadow);
+}
+
+.main {
+  background-color: var(--secondary-bg-v2);
+}
+
+.secondary {
+  background-color: var(--accent-2-v2);
+}
+
+.withPadding {
+  padding: 20px;
+}
+
+.padding0 {
+  padding: 0;
+}
+.padding8 {
+  padding: 8px;
+}
+.padding12 {
+  padding: 12px;
+}
+.padding16 {
+  padding: 16px;
+}
+
+.padding20 {
+  padding: 20px;
+}
+
+.padding32 {
+  padding: 32px;
+}
+
+.radius0 {
+  border-radius: 0;
+}
+.radius8 {
+  border-radius: 8px;
+}
+.radius12 {
+  border-radius: 12px;
+}
+.radius16 {
+  border-radius: 16px;
+}
+
+.radius20 {
+  border-radius: 20px;
+}
+
+.radius32 {
+  border-radius: 32px;
+}

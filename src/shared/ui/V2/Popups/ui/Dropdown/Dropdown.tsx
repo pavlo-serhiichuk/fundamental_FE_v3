@@ -29,10 +29,7 @@ export const Dropdown = (props: DropdownProps) => {
     direction = 'bottom left',
     dropdownClassName,
   } = props
-  console.log(
-    'mapDropdownDirectionClass[direction]',
-    mapDropdownDirectionClass[direction],
-  )
+
   return (
     <Menu as="div" className={cls('', {}, [className, popupsCls.popup])}>
       <Menu.Button as="div" className={popupsCls.trigger}>
@@ -46,6 +43,7 @@ export const Dropdown = (props: DropdownProps) => {
       >
         {items.map((item: any, i) => {
           const content = ({ active }: { active: boolean }) => (
+            // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
             <li
               onClick={item.onClick}
               className={cls(s.item, { [popupsCls.active]: active })}

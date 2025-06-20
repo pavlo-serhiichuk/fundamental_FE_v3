@@ -14,6 +14,10 @@ interface SortByParamProps {
   fetchData?: () => void
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const SortBy = memo((props: SortByParamProps) => {
   const { className, fetchData } = props
   const { t } = useTranslation()

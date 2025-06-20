@@ -8,7 +8,14 @@ project.addSourceFilesAtPaths('src/**/*.ts')
 project.addSourceFilesAtPaths('src/**/*.tsx')
 
 const files = project.getSourceFiles()
-const uiPath = path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui-old')
+const uiPath = path.resolve(
+  __dirname,
+  '..',
+  '..',
+  'src',
+  'shared',
+  'ui-deprecated-old',
+)
 const sharedUiDirectory = project.getDirectory(uiPath)
 const componentsDirs = sharedUiDirectory?.getDirectories()
 
@@ -39,7 +46,7 @@ files.forEach((sourceFile: any) => {
     const segments = valueWithoutAlias.split('/')
 
     const isSharedLayer = segments?.[0] === 'shared'
-    const isUiSlice = segments?.[1] === 'ui-old'
+    const isUiSlice = segments?.[1] === 'ui-deprecated-old'
 
     if (isAbsolute(valueWithoutAlias) && isSharedLayer && isUiSlice) {
       const result = valueWithoutAlias.split('/').slice(0, 3).join('/')

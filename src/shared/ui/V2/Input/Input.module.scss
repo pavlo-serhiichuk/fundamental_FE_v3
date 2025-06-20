@@ -1,0 +1,29 @@
+.Input {
+  width: 100%;
+}
+
+.inputEl {
+  background-color: var(--input-bg-v2);
+  border: transparent 1px solid;
+  outline: none;
+  padding: 5px 5px 5px 33px;
+  height: 44px;
+}
+.inputElV2 {
+  background-color: var(--input-bg-v2);
+  border: transparent 1px solid;
+  outline: none;
+  padding: 5px;
+}
+
+.readonly {
+  opacity: 0.8;
+}
+
+.withSearchIcon {
+  background-image: url("../../../assets/icons/map_search.svg");
+  background-repeat: no-repeat;
+  background-position: 10px 13px;
+  border: 1px solid var(--content-border-v2);
+  border-radius: 20px;
+}

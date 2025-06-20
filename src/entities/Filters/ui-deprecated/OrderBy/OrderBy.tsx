@@ -14,6 +14,10 @@ interface SortByOrderProps {
   fetchData?: () => void
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const OrderBy = memo((props: SortByOrderProps) => {
   const { className, fetchData } = props
   const { t } = useTranslation()
@@ -40,10 +44,6 @@ export const OrderBy = memo((props: SortByOrderProps) => {
     },
     [dispatch, fetchData],
   )
-
-  // if (!orderBy) {
-  //   return null
-  // }
 
   return (
     <div className={cls(s.SortByOrder, {}, [className])}>

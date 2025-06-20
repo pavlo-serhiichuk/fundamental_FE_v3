@@ -25,7 +25,6 @@ export function useTheme(): UseThemeResult {
         newTheme = 'app_light_theme'
     }
     saveAction?.(newTheme)
-    console.log('1')
     setTheme?.(newTheme)
   }
   return { theme: theme || 'app_light_theme', toggleTheme }

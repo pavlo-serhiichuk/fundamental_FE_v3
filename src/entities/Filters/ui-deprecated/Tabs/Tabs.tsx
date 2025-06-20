@@ -1,14 +1,16 @@
 import { useCallback } from 'react'
 import { useSelector } from 'react-redux'
-import { HStack } from '@/shared/ui/stationary/Stack'
+import { HStack, VStack } from '@/shared/ui/stationary/Stack'
 import { cls } from '@/shared/lib/cls/cls'
-import { Card } from '@/shared/ui/deprecated/Card'
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { getFiltersTopicType } from '../../module/selectors/getFiltersState'
 import { filtersActions } from '../../module/slice/filtersSlice'
 import * as s from './Tabs.module.scss'
 import { TopicType } from '../../module/types/FiltersSchema'
 import { AppRouteNames } from '@/shared/const/routers'
+import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { Card } from '@/shared/ui/V2/Card'
 
 export interface TabOption<T extends string> {
   value: T
@@ -22,8 +24,12 @@ export interface TabsProps {
   options: TabOption<TopicType>[]
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const Tabs = (props: TabsProps) => {
-  const { className, fetchData, options } = props
+  const { className, fetchData, options, page } = props
   const dispatch = useAppDispatch()
   const topicType = useSelector(getFiltersTopicType)
 
@@ -38,13 +44,15 @@ export const Tabs = (props: TabsProps) => {
   return (
     <HStack gap="10" className={cls('', {}, [className])}>
       {options?.map((option) => (
-        <Card
-          className={cls(s.tab, { [s.selected]: topicType === option.value })}
+        <CardDeprecated
+          className={cls(s.tab, {
+            [s.selected]: topicType === option.value,
+          })}
           onClick={onChangeTab(option.value)}
           key={option.value}
         >
           {option.content}
-        </Card>
+        </CardDeprecated>
       ))}
     </HStack>
   )
