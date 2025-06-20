@@ -22,6 +22,7 @@ import { Avatar } from '@/shared/ui/V2/Avatar'
 import { Skeleton } from '@/shared/ui/V2/Skeleton'
 import { Button } from '@/shared/ui/V2/Button'
 import { Icon } from '@/shared/ui/V2/Icon'
+import { HStack } from '@/shared/ui/stationary/Stack'
 
 interface ArticlesListItemProps {
   className?: string
@@ -97,8 +98,8 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
                 {t('Read more')}
               </Button>
               <span className={s.views}>
-                <span>{article.views}</span>
                 <Icon Svg={EyeIcon} />
+                <span>{article.views}</span>
               </span>
             </div>
           </Card>
@@ -170,6 +171,7 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
       feature="isV2"
       on={
         <Card
+          padding="0"
           className={cls(s.ArticlesListItem, {}, [className, s[viewClassName]])}
           onClick={onClickCard}
           testId="ArticlesListItem"
@@ -185,11 +187,15 @@ export const ArticlesListItem = memo((props: ArticlesListItemProps) => {
           <div className={s.details}>
             <span>{article.type?.join(', ')}</span>
             <span className={s.views}>
-              <span>{article.views}</span>
               <Icon Svg={EyeIcon} />
+              <span>{article.views}</span>
             </span>
           </div>
-          <div className={s.title}>{article.title}</div>
+          <Text className={s.title} title={article.title} />
+          <HStack gap="10" className={s.userContainer}>
+            <Avatar src={article.user?.avatar} alt="user" size={30} />
+            <Text text={article.user?.username} />
+          </HStack>
         </Card>
       }
       off={

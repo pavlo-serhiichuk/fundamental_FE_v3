@@ -17,12 +17,18 @@
 }
 
 .bordered,
+.accept,
 .cancel {
   background: none;
-  border: 1px solid var(--border-v2);
+  border: 1px solid var(--content-text-color-v2);
   padding: 4px 12px;
   text-align: center;
 }
+
+.accept {
+  border: 1px solid var(--border-v2);
+}
+
 
 .disabled {
   opacity: 0.5;

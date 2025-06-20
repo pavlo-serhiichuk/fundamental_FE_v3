@@ -185,7 +185,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
           testId="ProfileCardEdit.SaveButton"
           disabled={isUpdating}
           onClick={onSave}
-          theme="bordered"
+          theme="accept"
         >
           {t('Save')}
         </Button>
