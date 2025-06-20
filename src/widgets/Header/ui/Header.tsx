@@ -9,7 +9,7 @@ import { AvatarDropdown } from '@/features/AvatarDropdown'
 import EditIcon from '@/shared/assets/icons/edit.svg'
 import { NotificationsButton } from '@/features/NotificationsButton'
 import * as s from './Header.module.scss'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Icon } from '@/shared/ui/V2/Icon'
 import { Button } from '@/shared/ui/V2/Button'
 

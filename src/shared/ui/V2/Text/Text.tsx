@@ -35,6 +35,7 @@ export const Text = memo((props: TextProps) => {
     testId = 'Text',
   } = props
   const HeaderTag = mapHeaderTag[size]
+
   return (
     <div
       data-testid={testId}

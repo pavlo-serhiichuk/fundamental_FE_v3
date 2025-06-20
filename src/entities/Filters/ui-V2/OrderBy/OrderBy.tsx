@@ -40,5 +40,5 @@ export const OrderBy = memo((props: SortByOrderProps) => {
     [dispatch, fetchData],
   )
 
-  return <ListBox items={options} value={orderBy} onChange={onChange} />
+  return <ListBox items={options} value={orderBy} onChange={onChange} max />
 })

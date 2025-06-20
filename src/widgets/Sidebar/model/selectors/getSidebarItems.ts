@@ -7,12 +7,14 @@ import ArticlesIconDeprecated from '@/shared/assets/icons/articles.svg'
 import AboutUsIcon from '@/shared/assets/icons/indo.svg'
 import ProfileIcon from '@/shared/assets/icons/avatar.svg'
 import ArticlesIcon from '@/shared/assets/icons/notes2.svg'
+import SettingsIcon from '@/shared/assets/icons/settings.svg'
 import { type ISidebarItem } from '../types/sidebar'
 import {
   getRouteAbout,
   getRouteArticles,
   getRouteMain,
   getRouteProfile,
+  getRouteSettings,
 } from '@/shared/const/routers'
 import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features'
 
@@ -60,6 +62,16 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
         }),
       },
     )
+
+    sidebarItems.push({
+      name: 'Settings',
+      path: getRouteSettings(),
+      Icon: toggleFeatures({
+        name: 'isV2',
+        off: () => SettingsIcon,
+        on: () => SettingsIcon,
+      }),
+    })
   }
 
   return sidebarItems

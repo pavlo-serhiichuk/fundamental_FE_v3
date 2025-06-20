@@ -22,7 +22,7 @@ import {
   articlesPageReducer,
   getArticlesList,
 } from '../../module/slice/articlesPageSlice'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { ContentStickyLayout } from '@/shared/layouts/ContentStickyLayout'
 
 const reducers: ReducersList = {

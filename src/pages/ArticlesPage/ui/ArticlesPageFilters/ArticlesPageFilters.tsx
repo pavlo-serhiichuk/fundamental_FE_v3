@@ -21,7 +21,7 @@ import { fetchArticlesList } from '../../module/services/fetchArticlesList/fetch
 import { articlesPageActions } from '../../module/slice/articlesPageSlice'
 import * as s from './ArticlesPageFilters.module.scss'
 import { AppRouteNames } from '@/shared/const/routers'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Card } from '@/shared/ui/V2/Card'
 import { Text } from '@/shared/ui/V2/Text'
 

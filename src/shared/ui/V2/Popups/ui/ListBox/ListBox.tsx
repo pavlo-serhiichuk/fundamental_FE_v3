@@ -26,6 +26,7 @@ interface ListBoxProps<T extends string> {
   direction?: ListBoxDirection
   label?: string
   testId?: string
+  max?: boolean
 }
 
 export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
@@ -39,6 +40,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
     direction = 'bottom',
     label,
     testId,
+    max,
   } = props
 
   const renderItem = useCallback(
@@ -77,7 +79,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
         as="div"
         value={value}
         onChange={onChange}
-        className={cls(s.ListBox, {}, [])}
+        className={cls(s.ListBox, { [s.max]: Boolean(max) }, [])}
       >
         <HListBox.Button as="div" className={s.trigger}>
           <Button disabled={readonly} theme="bordered">

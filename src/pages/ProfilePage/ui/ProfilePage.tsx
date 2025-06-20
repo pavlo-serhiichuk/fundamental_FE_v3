@@ -22,7 +22,7 @@ import { Page } from '@/widgets/Page'
 import { ProfileRating } from '@/features/ProfileRating'
 import { getUserAuthData } from '@/entities/User'
 import { getFeatureFlags } from '@/shared/lib/features'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 
 const reducers: ReducersList = {
   profile: profileReducer,

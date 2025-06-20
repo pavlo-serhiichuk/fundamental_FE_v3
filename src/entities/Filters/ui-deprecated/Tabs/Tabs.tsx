@@ -9,7 +9,7 @@ import { filtersActions } from '../../module/slice/filtersSlice'
 import * as s from './Tabs.module.scss'
 import { TopicType } from '../../module/types/FiltersSchema'
 import { AppRouteNames } from '@/shared/const/routers'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Card } from '@/shared/ui/V2/Card'
 
 export interface TabOption<T extends string> {

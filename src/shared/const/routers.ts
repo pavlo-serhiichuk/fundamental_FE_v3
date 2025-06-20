@@ -7,6 +7,7 @@ export enum AppRouteNames {
   FORBIDDEN = 'forbidden',
   ADMIN_PANEL = 'admin_panel',
   NOT_FOUND = 'not_found',
+  SETTINGS = 'settings',
 }
 
 export type AppRouteType = Record<AppRouteNames, string>
@@ -20,3 +21,4 @@ export const getRouteArticleCreate = () => '/articles/create'
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`
 export const getRouteAdmin = () => '/admin'
 export const getRouteForbidden = () => '/forbidden'
+export const getRouteSettings = () => '/settings'

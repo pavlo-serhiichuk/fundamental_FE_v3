@@ -10,7 +10,7 @@ import { changeListViewActions } from '../../module/slice/changeListViewSlice'
 import { getListView } from '../../module/selectors/getListView'
 import { ListView } from '../../module/consts/consts'
 import * as s from './ChangeListView.module.scss'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Card } from '@/shared/ui/V2/Card'
 import { Icon } from '@/shared/ui/V2/Icon'
 

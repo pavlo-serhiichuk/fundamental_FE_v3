@@ -6,7 +6,7 @@ import { getUserAuthData } from '@/entities/User'
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
 import { useFetchNotifications } from '../../api/notificationsApi'
 import { Notification } from '../../module/types/notification'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Skeleton } from '@/shared/ui/V2/Skeleton'
 
 interface NotificationsListProps {

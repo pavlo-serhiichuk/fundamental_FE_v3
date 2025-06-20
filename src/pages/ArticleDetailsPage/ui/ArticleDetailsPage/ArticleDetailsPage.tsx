@@ -13,7 +13,7 @@ import { articleDetailsPageSlice } from '../../module/slice/articleDetailsPageSl
 import * as s from './ArticleDetailsPage.module.scss'
 import { ArticleRating } from '@/features/ArticleRating'
 import { Card } from '@/shared/ui/deprecated/Card'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 
 interface ArticlesPageProps {
   className?: string

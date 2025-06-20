@@ -6,7 +6,7 @@ import AppRouter from './providers/router/ui/AppRouter'
 import { Header } from '@/widgets/Header'
 import { Sidebar } from '@/widgets/Sidebar'
 import { getUserInited, initUserDataById } from '@/entities/User'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { MainLayout } from '@/shared/layouts/MainLayout'
 import { PageLoader } from '@/widgets/PageLoader'
 

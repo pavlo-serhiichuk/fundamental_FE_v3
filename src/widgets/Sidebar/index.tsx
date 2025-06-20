@@ -1,4 +1,4 @@
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Sidebar as SidebarOld } from './ui/deprecated/Sidebar/Sidebar'
 import { Sidebar as SidebarNew } from './ui/V2/Sidebar/Sidebar'
 

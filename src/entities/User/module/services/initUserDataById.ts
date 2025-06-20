@@ -13,7 +13,6 @@ export const initUserDataById = createAsyncThunk<
   if (localStorageUserId) {
     const userId = JSON.parse(localStorageUserId)
     try {
-      console.log('userId', `/users/${userId}`)
       if (userId) {
         const response = await extra.api.get(`/users/${userId}`)
         return response.data

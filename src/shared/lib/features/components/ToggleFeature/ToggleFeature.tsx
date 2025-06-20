@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
-import { FeatureFlags } from '@/shared/types/featureFlags'
-import { getFeatureFlags } from '@/shared/lib/features'
+import { FeatureFlags } from '../../../../types/featureFlags'
+import { getFeatureFlags } from '../../lib/setGetFeatureFlags'
 
 interface ToggleFeatureProps {
   isV2InStorybook?: boolean

@@ -6,7 +6,7 @@ import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input'
 import { filtersActions } from '../../module/slice/filtersSlice'
 import { getFiltersSearchValue } from '../../module/selectors/getFiltersState'
 import * as s from './SearchByName.module.scss'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Input } from '@/shared/ui/V2/Input'
 
 interface SortByParamProps {

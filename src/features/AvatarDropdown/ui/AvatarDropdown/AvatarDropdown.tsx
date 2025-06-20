@@ -12,7 +12,7 @@ import { Dropdown as DropdownDepricated } from '@/shared/ui/deprecated/Popups'
 import { Avatar as AvatarDepricated } from '@/shared/ui/deprecated/Avatar'
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/routers'
 import * as s from './AvatarDropdown.module.scss'
-import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Dropdown } from '@/shared/ui/V2/Popups'
 import { Avatar } from '@/shared/ui/V2/Avatar'
 
