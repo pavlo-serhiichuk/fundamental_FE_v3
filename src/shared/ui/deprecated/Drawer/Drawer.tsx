@@ -22,7 +22,7 @@ const height = window.innerHeight - 100
 
 const DrawerContent = memo((props: DrawerProps) => {
   const { className, children, isOpen, onClose, lazy } = props
-  const { isClosing, isMounted, close } = useModal({
+  const { isMounted, close } = useModal({
     animationDelay: 300,
     onClose,
     isOpen,
@@ -82,13 +82,12 @@ const DrawerContent = memo((props: DrawerProps) => {
   const display = y.to((py: any) => (py < height ? 'block' : 'none'))
 
   return (
-    <Portal>
+    <Portal container={document.getElementById('app') || document.body}>
       <div
         className={cls(
           s.Drawer,
           {
             [s.opened]: Boolean(isOpen),
-            [s.isClosing]: Boolean(isClosing),
           },
           [theme, className, 'app_drawer'],
         )}

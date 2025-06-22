@@ -13,10 +13,6 @@ interface ModalProps {
   onClose?: () => void
 }
 
-/**
- * @deprecated, there is new components from V2 folder
- * */
-
 export const Modal: FC<ModalProps> = (props) => {
   const { className, children, isOpen, onClose } = props
 
@@ -36,7 +32,7 @@ export const Modal: FC<ModalProps> = (props) => {
   }
 
   return (
-    <Portal container={document.getElementById('app') || document.body}>
+    <Portal container={document.getElementById('app-v2') || document.body}>
       <div className={cls(s.Modal, mods, [className, 'app_modal', theme])}>
         <Overlay onClick={close} />
         <div className={s.content}>{children}</div>
