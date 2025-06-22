@@ -5,7 +5,7 @@ import * as s from './MainPage.module.scss'
 import { Text } from '@/shared/ui/V2/Text'
 
 const MainPage = () => {
-  const { t } = useTranslation('main')
+  const { t } = useTranslation()
   return (
     <Page className={s.MainPage} data-testid="MainPage">
       <Text
@@ -13,7 +13,6 @@ const MainPage = () => {
         title={t('Main page')}
         text={t('Here is a main page')}
       />
-      {/* <Counter /> */}
     </Page>
   )
 }

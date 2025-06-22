@@ -12,7 +12,7 @@ export function getBabelLoader(options: GetBabelLoaderOptions) {
     [
       'i18next-extract',
       {
-        locales: ['ua', 'en'],
+        locales: ['uk', 'en'],
         keyAsDefaultValue: true,
       },
     ], [
