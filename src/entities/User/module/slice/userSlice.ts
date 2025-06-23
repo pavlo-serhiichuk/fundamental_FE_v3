@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { USER_ID } from '@/shared/const/localStorage'
+import { LS_DESIGN_VERSION, USER_ID } from '@/shared/const/localStorage'
 import { User, UserSchema } from '../../module/types/UserSchema'
 import { setFeatureFlags } from '@/shared/lib/features'
 import { saveJsonSettings } from '../services/saveJsonSettings'
@@ -31,6 +31,10 @@ export const userSlice = createSlice({
         (state, action: PayloadAction<User>) => {
           state.authData = action.payload
           setFeatureFlags(action.payload?.features)
+          localStorage.setItem(
+            LS_DESIGN_VERSION,
+            JSON.stringify(action.payload?.features?.isV2 ? 'V2' : 'V1'),
+          )
           state._inited = true
         },
       )

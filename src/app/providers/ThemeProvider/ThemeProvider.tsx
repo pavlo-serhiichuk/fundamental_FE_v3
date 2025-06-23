@@ -4,8 +4,8 @@ import { Theme } from '@/shared/types/theme'
 import { LS_THEME_KEY } from '@/shared/const/localStorage'
 import { useGetJsonSettings } from '@/entities/User'
 
-const defTheme =
-  (localStorage.getItem(LS_THEME_KEY) as Theme) || 'app_light_theme'
+const fallbackTheme = localStorage.getItem(LS_THEME_KEY)
+const defTheme = (fallbackTheme as Theme) || 'app_light_theme'
 
 export const ThemeProvider: FC<any> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defTheme)
@@ -16,6 +16,11 @@ export const ThemeProvider: FC<any> = ({ children }) => {
       setTheme(jsonTheme)
     }
   }, [jsonTheme])
+
+  useEffect(() => {
+    document.body.classList = defTheme
+    localStorage.setItem(LS_THEME_KEY, theme)
+  }, [theme])
 
   const defThemeContextValue = useMemo(() => ({ theme, setTheme }), [theme])
   return (

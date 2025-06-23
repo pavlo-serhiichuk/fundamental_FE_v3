@@ -9,6 +9,8 @@ import { getUserInited, initUserDataById } from '@/entities/User'
 import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { MainLayout } from '@/shared/layouts/MainLayout'
 import { PageLoader } from '@/widgets/PageLoader'
+import { Skeleton } from '@/shared/ui/V2/Skeleton'
+import { VStack } from '@/shared/ui/stationary/Stack'
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme()
@@ -22,7 +24,11 @@ export const App = () => {
   }, [dispatch, inited])
 
   if (!inited) {
-    return <PageLoader />
+    return (
+      <div id="app-v2" className={cls('app-v2', {}, [theme])}>
+        <PageLoader />
+      </div>
+    )
   }
 
   return (

@@ -13,6 +13,7 @@ import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { getUserAuthData } from '@/entities/User'
 import { Skeleton } from '@/shared/ui/V2/Skeleton'
 import { HStack } from '@/shared/ui/stationary/Stack'
+import { LS_DESIGN_VERSION } from '@/shared/const/localStorage'
 
 export const UiDesignSwitcher = memo(() => {
   const { t } = useTranslation()
@@ -39,6 +40,10 @@ export const UiDesignSwitcher = memo(() => {
           userId,
           features: { isV2: value === 'new' },
         }),
+      )
+      localStorage.setItem(
+        LS_DESIGN_VERSION,
+        JSON.stringify(value === 'new' ? 'V2' : 'V1'),
       )
       setIsLoading(false)
     }
