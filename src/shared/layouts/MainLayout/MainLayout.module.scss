@@ -1,13 +1,14 @@
 .MainLayout {
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
-  grid-template-columns: 264px 1fr 200px;
+  grid-template-columns: var(--main-layout-sidebar-full-width) 1fr var(--main-layout-rightbar-width);
   height: 100vh;
   overflow-y: scroll;
+  gap: 20px;
 }
 
 .collapsed {
-  grid-template-columns: 104px 1fr 200px;
+  grid-template-columns: min-content 1fr var(--main-layout-rightbar-width);
 }
 
 .sidebar {
@@ -19,6 +20,7 @@
   max-width: 1200px;
   width: 100%;
   justify-self: center;
+  padding: 20px 0;
 }
 
 .rightbar {

@@ -12,8 +12,11 @@ import { ArticleDetailsRecommendations } from '@/features/ArticleDetailsRecommen
 import { articleDetailsPageSlice } from '../../module/slice/articleDetailsPageSlice'
 import * as s from './ArticleDetailsPage.module.scss'
 import { ArticleRating } from '@/features/ArticleRating'
-import { Card } from '@/shared/ui/deprecated/Card'
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card'
 import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
+import { ContentStickyLayout } from '@/shared/layouts/ContentStickyLayout'
+import { Card } from '@/shared/ui/V2/Card'
+import { ArticleDetailsRightbar } from '@/features/ArticleDetailsRightbar'
 
 interface ArticlesPageProps {
   className?: string
@@ -31,23 +34,54 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <Page
-        className={cls(s.ArticleDetailsPage, {}, [className])}
-        data-testid="ArticleDetailsPage"
-      >
-        <ArticleDetails articleId={articleId} />
-        <ArticleDetailsRecommendations />
-        <ToggleFeature
-          feature="isArticleDetailsRatingEnabled"
-          on={<ArticleRating articleId={articleId} />}
-          off={
-            <Card className={s.articleRatingInfo}>
-              {t('Here is gonna be article rating!')}
-            </Card>
-          }
-        />
-        <ArticleDetailsComments articleId={articleId} />
-      </Page>
+      <ToggleFeature
+        feature="isV2"
+        on={
+          <ContentStickyLayout
+            content={
+              <Page
+                className={cls('', {}, [className])}
+                data-testid="ArticleDetailsPage"
+              >
+                <Card padding="32" bgType="secondary">
+                  <ArticleDetails articleId={articleId} />
+                  <ArticleDetailsRecommendations />
+                  <ToggleFeature
+                    feature="isArticleDetailsRatingEnabled"
+                    on={<ArticleRating articleId={articleId} />}
+                    off={
+                      <Card className={s.articleRatingInfo}>
+                        {t('Here is gonna be article rating!')}
+                      </Card>
+                    }
+                  />
+                  <ArticleDetailsComments articleId={articleId} />
+                </Card>
+              </Page>
+            }
+            right={<ArticleDetailsRightbar />}
+          />
+        }
+        off={
+          <Page
+            className={cls('', {}, [className])}
+            data-testid="ArticleDetailsPage"
+          >
+            <ArticleDetails articleId={articleId} />
+            <ArticleDetailsRecommendations />
+            <ToggleFeature
+              feature="isArticleDetailsRatingEnabled"
+              on={<ArticleRating articleId={articleId} />}
+              off={
+                <CardDeprecated className={s.articleRatingInfo}>
+                  {t('Here is gonna be article rating!')}
+                </CardDeprecated>
+              }
+            />
+            <ArticleDetailsComments articleId={articleId} />
+          </Page>
+        }
+      />
     </DynamicReducerLoader>
   )
 }

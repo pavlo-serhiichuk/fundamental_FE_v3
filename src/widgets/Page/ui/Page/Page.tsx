@@ -58,7 +58,7 @@ export const Page = memo((props: PageProps) => {
       onScroll={onScroll}
       ref={wrapperRef as LegacyRef<HTMLElement>}
       className={cls(
-        toggleFeatures({ name: 'isV2', on: () => s.PageV2, off: () => s.Page }),
+        toggleFeatures({ name: 'isV2', on: () => '', off: () => s.Page }),
         {},
         [className],
       )}
