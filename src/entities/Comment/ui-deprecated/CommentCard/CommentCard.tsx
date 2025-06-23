@@ -11,6 +11,10 @@ interface CommentCardProps {
   comment: Comment
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const CommentCard: FC<CommentCardProps> = (props) => {
   const { className, comment } = props
 

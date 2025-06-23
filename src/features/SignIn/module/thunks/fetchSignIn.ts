@@ -24,6 +24,7 @@ export const fetchSignIn = createAsyncThunk<
     if (!response.data) {
       throw new Error()
     }
+    window.location.reload()
     return response.data
   } catch (e) {
     return thunkAPI.rejectWithValue(i18n.t('userIsNotFound'))

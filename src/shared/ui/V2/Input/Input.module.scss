@@ -1,14 +1,24 @@
 .Input {
   position: relative;
+  width: 100%;
+  font: var(--font-16-v2);
 }
 
 .inputEl {
   width: 100%;
   outline: none;
   padding: 5px 5px 5px 15px;
+  color: var(--content-text-color-v2);
+}
+
+.bordered {
   border: 2px solid var(--content-border-v2);
   border-radius: 20px;
-  color: var(--content-text-color-v2);
+}
+
+.clear {
+  border: none;
+  outline: none;
 }
 
 .medium {

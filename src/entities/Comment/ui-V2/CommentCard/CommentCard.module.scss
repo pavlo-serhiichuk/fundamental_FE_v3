@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  color: var(--comment-text-color);
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+}
+
+.text {
+  margin-left: 10px;
+}

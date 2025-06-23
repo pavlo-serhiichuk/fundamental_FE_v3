@@ -12,6 +12,10 @@ interface CommentListProps {
   isLoading?: boolean | undefined
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const CommentList = (props: CommentListProps) => {
   const { t } = useTranslation()
   const { className, comments, isLoading } = props

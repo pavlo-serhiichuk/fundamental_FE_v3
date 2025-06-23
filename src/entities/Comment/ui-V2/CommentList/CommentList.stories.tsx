@@ -30,7 +30,7 @@ const comments = [
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'entities/Comment/CommentList',
+  title: 'entities/Comment/ui-V2/CommentList',
   component: CommentList,
   decorators: [],
 } as Meta<typeof CommentList>

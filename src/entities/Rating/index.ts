@@ -4,4 +4,5 @@ export type {
   ArticleRating,
   RatingInfo,
 } from './module/types/rating'
-export { RatingCard } from './ui/RatingCard/RatingCard'
+export { RatingCard as RatingCardDeprecated } from './ui-deprecated/RatingCard/RatingCard'
+export { RatingCard } from './ui-V2/RatingCard/RatingCard'

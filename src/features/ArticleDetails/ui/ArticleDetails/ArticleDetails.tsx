@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
+import ArrowIcon from '@/shared/assets/icons/arrowdown.svg'
 import {
   type ArticleBlock,
   ArticleBlockCodeComponent,
@@ -32,6 +33,7 @@ import { ToggleFeature } from '@/shared/lib/features'
 import { Button } from '@/shared/ui/V2/Button'
 import { Avatar } from '@/shared/ui/V2/Avatar'
 import { Icon } from '@/shared/ui/V2/Icon'
+import { HStack } from '@/shared/ui/stationary/Stack'
 
 interface ArticleDetailsProps {
   className?: string
@@ -97,8 +99,15 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             on={
               <div data-testid="ArticleDetails.Info">
                 <Button onClick={onClick} theme="bordered">
-                  {'< '}
-                  Return back
+                  <HStack align="center">
+                    <Icon
+                      Svg={ArrowIcon}
+                      width={30}
+                      height={30}
+                      className={s.arrowIcon}
+                    />
+                    {t('Return back')}
+                  </HStack>
                 </Button>
                 <Avatar
                   size={200}
@@ -152,10 +161,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   }
 
   return (
-    <div
-      className={cls(s.ArticleDetails, {}, [className])}
-      data-testid="ArticleDetails"
-    >
+    <div className={className} data-testid="ArticleDetails">
       <Content />
     </div>
   )

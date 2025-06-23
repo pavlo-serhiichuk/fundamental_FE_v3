@@ -68,7 +68,7 @@ export const Header: FC<HeaderProps> = (props) => {
             />
           )}
           <div className={s.links}>
-            <Button onClick={onOpen} theme="bordered">
+            <Button onClick={onOpen} theme="accept">
               {t('Sign in')}
             </Button>
           </div>

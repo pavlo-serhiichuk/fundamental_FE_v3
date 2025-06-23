@@ -14,9 +14,12 @@ export const App = () => {
   const { theme, toggleTheme } = useTheme()
   const dispatch = useDispatch()
   const inited = useSelector(getUserInited)
+
   useEffect(() => {
-    dispatch(initUserDataById())
-  }, [dispatch])
+    if (!inited) {
+      dispatch(initUserDataById())
+    }
+  }, [dispatch, inited])
 
   if (!inited) {
     return <PageLoader />

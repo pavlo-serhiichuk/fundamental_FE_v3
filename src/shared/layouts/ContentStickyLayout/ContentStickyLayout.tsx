@@ -17,8 +17,8 @@ export const ContentStickyLayout = (props: ContentStickyLayoutProps) => {
     <div
       className={cls(
         s.ContentStickyLayout,
-        // { [s.collapsed]: Boolean(!collapsed) },
-        {},
+        { [s.collapsed]: Boolean(collapsed) },
+        // {},
         [className],
       )}
     >

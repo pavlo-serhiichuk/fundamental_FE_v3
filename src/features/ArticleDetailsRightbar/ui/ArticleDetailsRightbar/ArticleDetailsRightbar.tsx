@@ -28,7 +28,7 @@ export const ArticleDetailsRightbar = (props: ArticleDetailsRightbarProps) => {
       padding="20"
       className={cls(s.ArticleDetailsRightbar, {}, [className])}
     >
-      <HStack gap="10">
+      <HStack gap="12">
         <Avatar src={articleDetails?.user?.avatar} alt="avatar" size={30} />
         <Text text={articleDetails?.user?.username} />
       </HStack>

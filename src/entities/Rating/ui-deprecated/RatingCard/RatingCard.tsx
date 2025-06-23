@@ -21,6 +21,10 @@ interface RatingCardProps {
   feedbackTitle?: string
 }
 
+/**
+ * @deprecated, there is new components from V2 folder
+ * */
+
 export const RatingCard = (props: RatingCardProps) => {
   const {
     className,

@@ -102,7 +102,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
   }
 
   return (
-    <Card data-testid="ProfileCardEdit" padding="32">
+    <Card data-testid="ProfileCardEdit" padding="32" bgType="secondary">
       {validationErrors?.map((error) => (
         <Text
           key={error}

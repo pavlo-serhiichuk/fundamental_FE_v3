@@ -3,13 +3,14 @@ import { useSelector } from 'react-redux'
 import { useCallback } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
 import { getUserAuthData } from '@/entities/User'
-import { RatingCard } from '@/entities/Rating'
+import { RatingCardDeprecated, RatingCard } from '@/entities/Rating'
 import {
   useFetchArticleRating,
   useRateArticle,
 } from '../../api/articleRatingApi'
 import * as s from './ArticleRating.module.scss'
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
+import { ToggleFeature } from '@/shared/lib/features'
 
 export interface ArticleRatingProps {
   className?: string
@@ -77,12 +78,26 @@ const ArticleRating = (props: ArticleRatingProps) => {
       className={cls(s.ArticleRating, {}, [className])}
       data-testid="ArticleRating"
     >
-      <RatingCard
-        title={t(title)}
-        ratingInfo={articleRating?.[0]}
-        onAccept={onAccept}
-        onCancel={onCancel}
-        feedbackTitle={t('Rate this profile:')}
+      <ToggleFeature
+        feature="isV2"
+        on={
+          <RatingCard
+            title={t(title)}
+            ratingInfo={articleRating?.[0]}
+            onAccept={onAccept}
+            onCancel={onCancel}
+            feedbackTitle={t('Rate this profile:')}
+          />
+        }
+        off={
+          <RatingCardDeprecated
+            title={t(title)}
+            ratingInfo={articleRating?.[0]}
+            onAccept={onAccept}
+            onCancel={onCancel}
+            feedbackTitle={t('Rate this profile:')}
+          />
+        }
       />
     </div>
   )

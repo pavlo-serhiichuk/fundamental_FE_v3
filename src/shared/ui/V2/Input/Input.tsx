@@ -11,6 +11,7 @@ type HTMLInputProps = Omit<
 >
 
 type InputSize = 'medium' | 'large'
+type InputTheme = 'bordered' | 'clear'
 
 interface InputProps extends HTMLInputProps {
   readOnly?: boolean
@@ -22,6 +23,7 @@ interface InputProps extends HTMLInputProps {
   testId?: string
   withSearchIcon?: boolean
   size?: InputSize
+  theme?: InputTheme
 }
 
 export const Input = memo((props: InputProps) => {
@@ -35,6 +37,7 @@ export const Input = memo((props: InputProps) => {
     testId,
     withSearchIcon = false,
     size = 'medium',
+    theme = 'bordered',
     ...otherProps
   } = props
 
@@ -56,6 +59,7 @@ export const Input = memo((props: InputProps) => {
         value={value}
         className={cls(s.inputEl, { [s.withSearchIcon]: withSearchIcon }, [
           s[size],
+          s[theme],
         ])}
         onChange={onChangeHandler}
         type={type}
