@@ -8,7 +8,7 @@ import {
 import { ProfileCardView } from './ProfileCardView'
 
 const meta = {
-  title: 'features/ProfileCard/ProfileCardView',
+  title: 'features/ProfileCard/V2/ProfileCardView',
   component: ProfileCardView,
   args: {
     onClick: fn(),

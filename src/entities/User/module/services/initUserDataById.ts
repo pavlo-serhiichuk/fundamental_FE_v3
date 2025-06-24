@@ -7,7 +7,7 @@ export const initUserDataById = createAsyncThunk<
   User,
   void,
   ThunkConfig<string>
->('user/initUserDataById', async (newJsonSettings, thunkAPI) => {
+>('user/initUserDataById', async (_, thunkAPI) => {
   const { extra, getState } = thunkAPI
   const localStorageUserId = localStorage.getItem(USER_ID)
   if (localStorageUserId) {
@@ -22,6 +22,6 @@ export const initUserDataById = createAsyncThunk<
       return thunkAPI.rejectWithValue('error')
     }
   } else {
-    console.log('user is not authenticated')
+    return thunkAPI.rejectWithValue('user is not authenticated')
   }
 })

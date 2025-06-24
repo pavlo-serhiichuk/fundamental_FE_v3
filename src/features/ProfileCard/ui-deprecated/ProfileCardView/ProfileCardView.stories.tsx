@@ -8,7 +8,7 @@ import {
 import { ProfileCardView } from './ProfileCardView'
 
 const meta = {
-  title: 'features/ProfileCard/ProfileCardView',
+  title: 'features/ProfileCard/deprecated/ProfileCardView',
   component: ProfileCardView,
   args: {
     onClick: fn(),

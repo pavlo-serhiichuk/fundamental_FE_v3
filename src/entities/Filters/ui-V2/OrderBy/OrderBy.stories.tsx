@@ -8,7 +8,7 @@ import { OrderBy } from './OrderBy'
 import '@/app/styles/index.scss'
 
 const meta = {
-  title: 'entities/Filters/OrderBy',
+  title: 'entities/Filters/V2/OrderBy',
   component: OrderBy,
   tags: ['autodocs'],
   args: { onClick: fn() },

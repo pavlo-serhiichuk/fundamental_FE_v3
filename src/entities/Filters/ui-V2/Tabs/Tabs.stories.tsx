@@ -20,7 +20,7 @@ const args = {
 }
 
 const meta = {
-  title: 'entities/Filters/Tabs',
+  title: 'entities/Filters/V2/Tabs',
   component: Tabs,
   tags: ['autodocs'],
   args,

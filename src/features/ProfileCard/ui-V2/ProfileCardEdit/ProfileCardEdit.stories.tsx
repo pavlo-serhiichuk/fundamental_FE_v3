@@ -8,7 +8,7 @@ import {
 import { ProfileCardEdit } from './ProfileCardEdit'
 
 const meta = {
-  title: 'features/ProfileCard/ProfileCardEdit',
+  title: 'features/ProfileCard/V2/ProfileCardEdit',
   component: ProfileCardEdit,
   args: {
     onClick: fn(),

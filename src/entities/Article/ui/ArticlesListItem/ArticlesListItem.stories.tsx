@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/decorators'
+import {
+  ThemeDecorator,
+  ThemeDecoratorV2,
+} from '@/shared/config/storybook/decorators/decorators'
 import '@/app/styles/index.scss'
 import { ListView } from '@/features/ChangeListView'
 import { ArticlesListItem } from './ArticlesListItem'
@@ -31,4 +34,11 @@ export const PrimaryBIGDark: Story = {
 export const PrimaryBIGGreen: Story = {
   args: { listView: ListView.BIG },
   decorators: [ThemeDecorator('app_green_theme')],
+}
+export const PrimarySMALL_V2: Story = {
+  decorators: [ThemeDecoratorV2('app_light_theme')],
+}
+
+export const PrimarySMALLDark_V2: Story = {
+  decorators: [ThemeDecoratorV2('app_dark_theme')],
 }

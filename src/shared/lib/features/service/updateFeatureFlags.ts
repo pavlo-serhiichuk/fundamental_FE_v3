@@ -7,13 +7,13 @@ import {
 import { getAllFeatureFlags } from '@/shared/lib/features/lib/setGetFeatureFlags'
 
 export const updateFeatureFlag = createAsyncThunk<
-  void,
+  any,
   UpdateFeatureFlagsOptions,
   ThunkConfig<string>
 >('profile/fetchProfileData', async ({ userId, features }, thunkAPI) => {
   const { extra, dispatch } = thunkAPI
   try {
-    await dispatch(
+    const res = await dispatch(
       updateFeatureFlagsMutation({
         userId,
         features: {
@@ -23,6 +23,7 @@ export const updateFeatureFlag = createAsyncThunk<
       }),
     )
     window.location.reload()
+    return res
   } catch (e) {
     return thunkAPI.rejectWithValue('error')
   }
