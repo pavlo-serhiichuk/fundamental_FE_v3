@@ -46,7 +46,8 @@ export interface FlexProps extends DivProps {
   direction?: FlexDirection
   align?: FlexAlign
   gap?: FlexGap
-  max?: boolean
+  fullWidth?: boolean
+  fullHeight?: boolean
 }
 
 export const Flex: FC<FlexProps> = (props) => {
@@ -57,7 +58,8 @@ export const Flex: FC<FlexProps> = (props) => {
     direction = 'row',
     align,
     gap,
-    max,
+    fullWidth,
+    fullHeight,
     ...otherProps
   } = props
 
@@ -70,7 +72,17 @@ export const Flex: FC<FlexProps> = (props) => {
   ]
 
   return (
-    <div className={cls(s.Flex, { [s.max]: !!max }, classes)} {...otherProps}>
+    <div
+      className={cls(
+        s.Flex,
+        {
+          [s.fullWidth]: Boolean(fullWidth),
+          [s.fullHeight]: Boolean(fullHeight),
+        },
+        classes,
+      )}
+      {...otherProps}
+    >
       {children}
     </div>
   )

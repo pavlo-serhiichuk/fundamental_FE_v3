@@ -13,7 +13,13 @@ interface IconProps {
 }
 
 export const Icon: FC<IconProps> = memo((props: IconProps) => {
-  const { className, Svg, ...otherProps } = props
+  const { className, Svg, onClick, ...otherProps } = props
 
-  return <Svg className={cls(s.Icon, {}, [className])} {...otherProps} />
+  return (
+    <Svg
+      onClick={onClick || undefined}
+      className={cls(s.Icon, { [s.pointer]: Boolean(onClick) }, [className])}
+      {...otherProps}
+    />
+  )
 })

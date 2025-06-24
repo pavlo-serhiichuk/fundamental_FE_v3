@@ -9,14 +9,14 @@ import { getUserInited, initUserDataById } from '@/entities/User'
 import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { MainLayout } from '@/shared/layouts/MainLayout'
 import { PageLoader } from '@/widgets/PageLoader'
-import { Skeleton } from '@/shared/ui/V2/Skeleton'
-import { VStack } from '@/shared/ui/stationary/Stack'
+import { ScrollToolbar } from '@/widgets/ScrollToolbar'
+import { useAppToolbar } from '@/app/lib/useAppToolbar'
 
 export const App = () => {
   const { theme, toggleTheme } = useTheme()
   const dispatch = useDispatch()
   const inited = useSelector(getUserInited)
-
+  const toolbar = useAppToolbar()
   useEffect(() => {
     if (!inited) {
       dispatch(initUserDataById())
@@ -40,6 +40,7 @@ export const App = () => {
             sidebar={<Sidebar />}
             content={<AppRouter />}
             header={<Header />}
+            toolbar={toolbar}
           />
         </div>
       }

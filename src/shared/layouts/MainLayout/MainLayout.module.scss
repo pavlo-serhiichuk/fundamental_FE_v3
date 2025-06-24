@@ -2,8 +2,6 @@
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
   grid-template-columns: var(--main-layout-sidebar-full-width) 1fr var(--main-layout-rightbar-width);
-  height: 100vh;
-  overflow-y: scroll;
   gap: 20px;
 }
 
@@ -40,4 +38,5 @@
 
 .toolbar {
   display: block;
+  height: 100%;
 }

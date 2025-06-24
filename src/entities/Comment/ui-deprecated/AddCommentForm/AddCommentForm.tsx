@@ -52,7 +52,7 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
         gap="12"
         data-testid="AddCommentForm"
       >
-        <HStack gap="16" max>
+        <HStack gap="16" fullWidth>
           <Avatar src={user?.avatar} alt={user?.username || ''} size={30} />
           <Input
             value={text || ''}

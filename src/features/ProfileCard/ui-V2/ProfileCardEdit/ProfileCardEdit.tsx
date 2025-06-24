@@ -115,7 +115,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
         <Avatar src={form?.avatar || ''} alt="profile" size={100} />
       </HStack>
       <HStack gap="32">
-        <VStack gap="10" max>
+        <VStack gap="10" fullWidth>
           <Input
             readOnly={isUpdating}
             value={form?.firstname || ''}
@@ -151,7 +151,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
             testId="Input.Age"
           />
         </VStack>
-        <VStack gap="10" max>
+        <VStack gap="10" fullWidth>
           <Input
             readOnly={isUpdating}
             value={form?.avatar || ''}

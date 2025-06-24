@@ -2,7 +2,6 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { cls } from '@/shared/lib/cls/cls'
 import ArrowIcon from '@/shared/assets/icons/arrowdown.svg'
 import {
   type ArticleBlock,

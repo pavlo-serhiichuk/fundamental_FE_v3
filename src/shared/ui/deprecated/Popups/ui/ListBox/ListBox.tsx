@@ -71,7 +71,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 
   return (
     <HStack
-      max
+      fullWidth
       gap="8"
       align="center"
       className={className}
@@ -86,7 +86,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       >
         <HListBox.Button as="div" className={s.trigger}>
           <Button disabled={readonly} theme="bordered">
-            <HStack align="center" justify="between" max>
+            <HStack align="center" justify="between" fullWidth>
               {value ?? defaultValue}
               <ArrowDown />
             </HStack>

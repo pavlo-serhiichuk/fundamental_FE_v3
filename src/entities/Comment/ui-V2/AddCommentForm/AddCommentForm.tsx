@@ -46,7 +46,7 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
     <DynamicReducerLoader reducers={reducers}>
       <Card className={s.AddCommentForm} padding="16">
         <HStack gap="12" data-testid="AddCommentForm">
-          <HStack gap="8" max align="center">
+          <HStack gap="8" fullWidth align="center">
             <Avatar src={user?.avatar} alt={user?.username || ''} size={30} />
             <Input
               theme="clear"
