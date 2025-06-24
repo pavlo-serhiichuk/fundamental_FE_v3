@@ -3,7 +3,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { profileMockState } from '@/entities/Profile'
 import {
   StoreDecorator,
-  ThemeDecorator,
+  ThemeDecoratorV2,
 } from '@/shared/config/storybook/decorators/decorators'
 import { ProfileCardEdit } from './ProfileCardEdit'
 
@@ -20,15 +20,11 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = { args: {} }
-
-export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator('app_dark_theme')],
+export const Primary: Story = {
+  args: {},
+  decorators: [ThemeDecoratorV2('app_light_theme')],
 }
 
-export const Editable: Story = {
-  args: {},
-  decorators: StoreDecorator({
-    profile: { ...profileMockState, readonly: false },
-  }),
+export const PrimaryDark: Story = {
+  decorators: [ThemeDecoratorV2('app_dark_theme')],
 }

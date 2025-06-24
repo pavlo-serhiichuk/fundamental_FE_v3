@@ -1,6 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/decorators'
+import {
+  ThemeDecorator,
+  ThemeDecoratorV2,
+} from '@/shared/config/storybook/decorators/decorators'
 import '@/app/styles/index.scss'
 import { ListView } from '@/features/ChangeListView'
 import { mockArticle } from '../../model/mocks/mockArticle'
@@ -40,3 +43,9 @@ export const PrimaryBIGGreen: Story = {
   decorators: [ThemeDecorator('app_green_theme')],
 }
 export const Loading: Story = { args: { isLoading: true } }
+export const PrimarySMALLV2: Story = {
+  decorators: [ThemeDecoratorV2('app_light_theme')],
+}
+export const PrimarySMALLDarkV2: Story = {
+  decorators: [ThemeDecoratorV2('app_dark_theme')],
+}

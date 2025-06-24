@@ -35,10 +35,10 @@ export const PrimaryBIGGreen: Story = {
   args: { listView: ListView.BIG },
   decorators: [ThemeDecorator('app_green_theme')],
 }
-export const PrimarySMALL_V2: Story = {
+export const PrimarySMALLV2: Story = {
   decorators: [ThemeDecoratorV2('app_light_theme')],
 }
 
-export const PrimarySMALLDark_V2: Story = {
+export const PrimarySMALLDarkV2: Story = {
   decorators: [ThemeDecoratorV2('app_dark_theme')],
 }

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import {
   StoreDecorator,
-  ThemeDecorator,
+  ThemeDecoratorV2,
 } from '@/shared/config/storybook/decorators/decorators'
 import { OrderBy } from './OrderBy'
 import '@/app/styles/index.scss'
@@ -23,6 +23,6 @@ export const Primary: Story = {
 export const PrimaryDark: Story = {
   decorators: [
     StoreDecorator({ filters: {} }),
-    ThemeDecorator('app_dark_theme'),
+    ThemeDecoratorV2('app_dark_theme'),
   ],
 }

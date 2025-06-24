@@ -3,7 +3,7 @@ import { type Meta, type StoryObj } from '@storybook/react'
 import { profileMockState } from '@/entities/Profile'
 import {
   StoreDecorator,
-  ThemeDecorator,
+  ThemeDecoratorV2,
 } from '@/shared/config/storybook/decorators/decorators'
 import { ProfileCardView } from './ProfileCardView'
 
@@ -20,13 +20,17 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Primary: Story = { args: {} }
+export const Primary: Story = {
+  args: {},
+  decorators: [ThemeDecoratorV2('app_light_theme')],
+}
 
 export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator('app_dark_theme')],
+  decorators: [ThemeDecoratorV2('app_dark_theme')],
 }
 export const Loading: Story = {
   decorators: [
-    StoreDecorator({ profile: { ...profileMockState, isLoading: true } }),
+    StoreDecorator({ profile: { isLoading: true } }),
+    ThemeDecoratorV2('app_light_theme'),
   ],
 }

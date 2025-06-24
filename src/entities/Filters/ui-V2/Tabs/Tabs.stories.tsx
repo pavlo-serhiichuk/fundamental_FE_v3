@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { fn } from '@storybook/test'
 import {
   StoreDecorator,
-  ThemeDecorator,
+  ThemeDecoratorV2,
 } from '@/shared/config/storybook/decorators/decorators'
 import '@/app/styles/index.scss'
 import { Tabs } from './Tabs'
@@ -33,5 +33,5 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {}
 
 export const PrimaryDark: Story = {
-  decorators: [ThemeDecorator('app_dark_theme')],
+  decorators: [ThemeDecoratorV2('app_dark_theme')],
 }
