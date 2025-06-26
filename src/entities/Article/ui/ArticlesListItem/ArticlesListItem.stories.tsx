@@ -7,7 +7,7 @@ import {
 import '@/app/styles/index.scss'
 import { ListView } from '@/features/ChangeListView'
 import { ArticlesListItem } from './ArticlesListItem'
-import { mockArticle } from '../../model/mocks/mockArticle'
+import { mockArticle } from '@/entities/Article'
 
 const meta = {
   title: 'entities/Article/ArticlesListItem',

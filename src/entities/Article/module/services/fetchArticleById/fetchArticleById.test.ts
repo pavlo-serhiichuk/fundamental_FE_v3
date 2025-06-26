@@ -1,6 +1,6 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema'
-import { getArticleDetailsMockState } from '../../slice/articleState'
+import { ArticleDetailsSchema } from '../../../../../features/ArticleDetails/model/types/ArticleDetailsSchema'
+import { getArticleDetailsMockState } from '../../../../../features/ArticleDetails/model/slice/articleState'
 import { fetchArticleById } from './fetchArticleById'
 
 describe('fetchArticleById.test', () => {

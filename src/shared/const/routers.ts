@@ -4,6 +4,8 @@ export enum AppRouteNames {
   PROFILE = 'profile',
   ARTICLES = 'articles',
   ARTICLE_DETAILS = 'articleDetails',
+  ARTICLE_EDIT = 'articleEdit',
+  ARTICLE_CREATE = 'articleCreate',
   FORBIDDEN = 'forbidden',
   ADMIN_PANEL = 'admin_panel',
   NOT_FOUND = 'not_found',

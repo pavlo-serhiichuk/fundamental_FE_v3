@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
 import { Loader } from '@/shared/ui/deprecated/Loader'
 import { ListView } from '@/features/ChangeListView'
-import { Article } from '../../model/types/article'
+import { Article } from '@/entities/Article'
 import { ArticlesListItem } from '../ArticlesListItem/ArticlesListItem'
 import * as s from './ArticlesList.module.scss'
 

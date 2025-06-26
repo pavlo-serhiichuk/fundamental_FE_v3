@@ -3,13 +3,6 @@ import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import ArrowIcon from '@/shared/assets/icons/arrowdown.svg'
-import {
-  type ArticleBlock,
-  ArticleBlockCodeComponent,
-  ArticleBlockImageComponent,
-  ArticleBlockTextComponent,
-  ArticleBlockType,
-} from '@/entities/Article'
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
 import { Text } from '@/shared/ui/V2/Text'
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar'
@@ -24,7 +17,7 @@ import {
   getArticleDetailsError,
   getArticleDetailsLoading,
 } from '../../model/selectors/getArticleDetailsData'
-import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
+import { fetchArticleById, renderBlocks } from '@/entities/Article'
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
 import { getRouteArticles } from '@/shared/const/routers'
@@ -56,18 +49,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     navigate(getRouteArticles())
   }
 
-  const renderBlocks = (block: ArticleBlock) => {
-    switch (block.type) {
-      case ArticleBlockType.TEXT:
-        return <ArticleBlockTextComponent block={block} key={block.id} />
-      case ArticleBlockType.CODE:
-        return <ArticleBlockCodeComponent block={block} key={block.id} />
-      case ArticleBlockType.IMAGE:
-        return <ArticleBlockImageComponent block={block} key={block.id} />
-      default:
-        return null
-    }
-  }
   // eslint-disable-next-line react/no-unstable-nested-components
   const Content = () => {
     switch (true) {

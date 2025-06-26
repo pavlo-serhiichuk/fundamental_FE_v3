@@ -2,8 +2,9 @@
   cursor: pointer;
   color: var(--content-text-color-v2);
   z-index: 1;
-  border-radius: 32px;
+  border-radius: var(--border-radius-v2);
   font: var(--font-16-v2);
+  width: fit-content;
 }
 
 .default {

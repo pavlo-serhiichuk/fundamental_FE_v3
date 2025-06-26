@@ -30,6 +30,7 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props
   const { t } = useTranslation()
   const { id: articleId } = useParams<{ id: string | undefined }>()
+
   if (!articleId) return null
 
   return (
@@ -59,7 +60,7 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
                 </Card>
               </Page>
             }
-            right={<ArticleDetailsRightbar />}
+            right={<ArticleDetailsRightbar articleId={articleId} />}
           />
         }
         off={

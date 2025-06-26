@@ -49,10 +49,14 @@ export const Input = memo((props: InputProps) => {
     <HStack
       data-testid="input-wrapper"
       className={cls(s.Input, { [s.readonly]: !!readOnly }, [className])}
-      gap="3"
+      gap="8"
       align="center"
     >
-      {label ? <div data-testid="input-label">{label}:</div> : null}
+      {label ? (
+        <div data-testid="input-label" className={s.label}>
+          {label}:
+        </div>
+      ) : null}
       {withSearchIcon && <Icon Svg={SearchIcon} className={s.searchIcon} />}
       <input
         data-testid={testId || 'Input'}

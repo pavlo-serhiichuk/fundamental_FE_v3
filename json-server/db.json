@@ -78,7 +78,7 @@
       "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
       "views": 103,
       "created": "01.01.2022",
-      "userId": "1",
+      "userId": "2",
       "type": [
         "ECONOMICS"
       ],
@@ -101,7 +101,7 @@
       "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
       "views": 1033,
       "created": "10.02.2022",
-      "userId": "1",
+      "userId": "3",
       "type": [
         "SCIENCE"
       ],
@@ -808,7 +808,7 @@
         "isProfileRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_dark_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false,
         "articlesPageHasBeenOpened": true
