@@ -9,7 +9,7 @@ import {
 } from '@/entities/Comment'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
-import { getArticleDetailsError } from '@/features/ArticleDetails'
+import { getArticleDetailsError } from '@/entities/Article'
 import { getArticleDetailsCommentsLoading } from '../../model/selectors/articleDetailsSelectors'
 import { sendArticleComment } from '../../model/services/sendArticleComment/sendArticleComment'
 import { fetchArticleCommentsById } from '../../model/services/fetchArticleCommentsById/fetchArticleCommentsById'

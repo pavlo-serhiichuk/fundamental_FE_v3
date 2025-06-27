@@ -1,11 +1,16 @@
-import { mockArticle } from '@/entities/Article'
+import { mockArticle } from '../mocks/mockArticle'
 import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
+import { Article } from '../types/article'
 
-export const articleInitialState: ArticleDetailsSchema = {
-  isLoading: false,
-  error: undefined,
+export const newArticle: Article = {
+  title: '',
+  subtitle: '',
+  image: '',
+  views: 0,
+  created: '',
+  userId: '',
+  blocks: [],
 }
-
 export const getArticleDetailsMockState = (
   isLoading = false,
   error: string | undefined = undefined,

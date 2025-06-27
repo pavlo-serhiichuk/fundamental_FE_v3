@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
@@ -16,11 +16,13 @@ import {
   getArticleDetailsData,
   getArticleDetailsError,
   getArticleDetailsLoading,
-} from '../../model/selectors/getArticleDetailsData'
-import { fetchArticleById, renderBlocks } from '@/entities/Article'
+  fetchArticleById,
+  renderBlocks,
+  getEditArticleData,
+} from '@/entities/Article'
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
-import { getRouteArticles } from '@/shared/const/routers'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/routers'
 import { ToggleFeature } from '@/shared/lib/features'
 import { Button } from '@/shared/ui/V2/Button'
 import { Avatar } from '@/shared/ui/V2/Avatar'
@@ -29,20 +31,29 @@ import { HStack } from '@/shared/ui/stationary/Stack'
 
 interface ArticleDetailsProps {
   className?: string
-  articleId: string
+  articleId?: string
+  isPreview?: boolean
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const articleDetails = useSelector(getArticleDetailsData)
+  const editArticleData = useSelector(getEditArticleData)
   const isLoading = useSelector(getArticleDetailsLoading)
   const error = useSelector(getArticleDetailsError)
-  const { className, articleId } = props
+  const { className, articleId, isPreview } = props
   const navigate = useNavigate()
 
+  const actualArticle = useMemo(
+    () => (isPreview ? editArticleData : articleDetails),
+    [isPreview, editArticleData, articleDetails],
+  )
+
   useInitialEffect(() => {
-    dispatch(fetchArticleById(articleId))
+    if (articleId && !isPreview) {
+      dispatch(fetchArticleById(articleId))
+    }
   })
 
   const onClick = () => {
@@ -70,38 +81,40 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             }
           />
         )
-      case isLoading || !articleDetails:
+      case isLoading || !actualArticle:
         return <ArticleDetailsSkeleton />
-      case !!articleDetails:
+      case Boolean(actualArticle):
         return (
           <ToggleFeature
             feature="isV2"
             on={
               <div data-testid="ArticleDetails.Info">
-                <Button onClick={onClick} theme="bordered">
-                  <HStack align="center">
-                    <Icon
-                      Svg={ArrowIcon}
-                      width={30}
-                      height={30}
-                      className={s.arrowIcon}
-                    />
-                    {t('Return back')}
-                  </HStack>
-                </Button>
+                {!isPreview && (
+                  <Button onClick={onClick} theme="bordered">
+                    <HStack align="center">
+                      <Icon
+                        Svg={ArrowIcon}
+                        width={30}
+                        height={30}
+                        className={s.arrowIcon}
+                      />
+                      {t('Return back')}
+                    </HStack>
+                  </Button>
+                )}
                 <Avatar
                   size={200}
-                  src={articleDetails?.image}
-                  alt={articleDetails?.title}
+                  src={actualArticle?.image}
+                  alt={actualArticle?.title}
                   className={s.avatar}
                 />
                 <Text
                   size="text_size_l"
-                  title={articleDetails?.title}
-                  text={articleDetails?.subtitle}
+                  title={actualArticle?.title}
+                  text={actualArticle?.subtitle}
                   className={s.title}
                 />
-                {articleDetails?.blocks?.map(renderBlocks)}
+                {actualArticle?.blocks?.map(renderBlocks)}
               </div>
             }
             off={

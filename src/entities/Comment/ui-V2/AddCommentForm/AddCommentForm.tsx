@@ -10,7 +10,7 @@ import DynamicReducerLoader, {
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { getUserAuthData } from '@/entities/User'
 import { Avatar } from '@/shared/ui/V2/Avatar'
-import { getArticleDetailsError } from '@/features/ArticleDetails'
+import { getArticleDetailsError } from '@/entities/Article'
 import { getAddCommentFormText } from '../../module/selectors/getAddCommentFormSelectors'
 import {
   addCommentFormSliceActions,

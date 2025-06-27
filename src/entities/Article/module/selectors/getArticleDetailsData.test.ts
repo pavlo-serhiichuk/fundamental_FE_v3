@@ -4,7 +4,7 @@ import {
   getArticleDetailsError,
   getArticleDetailsLoading,
 } from './getArticleDetailsData'
-import { getArticleDetailsMockState } from '../slice/articleState'
+import { getArticleDetailsMockState } from '../slice/_articleState'
 import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
 
 describe('getArticleDetailsData.test', () => {

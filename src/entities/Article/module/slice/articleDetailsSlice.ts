@@ -1,36 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ArticleEditPageSchema } from '../types/ArticleEditPageSchema'
-import { fetchArticleById, Article } from '@/entities/Article'
+import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
+import { Article } from '../types/article'
 
-const initialState: ArticleEditPageSchema = {}
-
-interface BlockParagraphAction {
-  blockId?: string
-  paragraphId?: string
-  paragraphValue?: string
-  title?: string
-}
+const initialState: ArticleDetailsSchema = {}
 
 export const articleDetailsSlice = createSlice({
-  name: 'ArticleEditPage',
+  name: 'articleDetailsSlice',
   initialState,
   reducers: {
-    changeBlockParagraph: (
-      state,
-      action: PayloadAction<BlockParagraphAction>,
-    ) => {
-      const { blockId, paragraphId, paragraphValue } = action.payload
-      if (state?.editData?.blocks?.length) {
-        console.log(action.payload)
-        // if (state.editData.blocks[blockId]?.[paragraphId]) {
-        //   state.editData.blocks[blockId]?.[paragraphId] = paragraphValue
-        // }
-      }
-      // switch (true) {
-      //   case state?.editData.blocks.findIndex(curblockId => curblockId === blockId) !== -1:
-      //
-      // }
-    },
+    template: () => {},
   },
   extraReducers: (builder) => {
     builder

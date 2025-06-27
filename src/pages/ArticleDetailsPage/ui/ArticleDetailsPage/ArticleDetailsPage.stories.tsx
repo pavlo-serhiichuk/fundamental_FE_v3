@@ -6,7 +6,7 @@ import {
 import {
   getArticleDetailsMockState,
   ArticleDetailsSchema,
-} from '@/features/ArticleDetails'
+} from '@/entities/Article'
 import ArticleDetailsPage from './ArticleDetailsPage'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export

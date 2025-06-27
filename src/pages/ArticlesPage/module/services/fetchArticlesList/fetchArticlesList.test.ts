@@ -2,7 +2,7 @@ import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk
 import {
   getArticleDetailsMockState,
   ArticleDetailsSchema,
-} from '@/features/ArticleDetails'
+} from '@/entities/Article'
 import { fetchArticlesList } from './fetchArticlesList'
 
 describe('fetchArticlesList.test', () => {

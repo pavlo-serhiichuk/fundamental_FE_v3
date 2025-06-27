@@ -6,6 +6,7 @@
   flex-direction: row;
   gap: 10px;
   border-left: 4px solid transparent;
+  width: 100%;
 
   &:hover {
     background-color: var(--sidebar-bg-hover-v2);

@@ -6,7 +6,7 @@ export const fetchArticleById = createAsyncThunk<
   Article,
   string,
   ThunkConfig<string>
->('articleDetails/fetchArticleById', async (articleId, thunkAPI) => {
+>('articleDetails/editArticleById', async (articleId, thunkAPI) => {
   const { extra } = thunkAPI
   try {
     if (articleId) {

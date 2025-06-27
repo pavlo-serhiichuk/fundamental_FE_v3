@@ -1,5 +1,5 @@
 import { ArticleDetailsCommentsSchema } from '@/features/ArticleDetailsComments'
-import { ArticleDetailsSchema } from '@/features/ArticleDetails'
+import { ArticleDetailsSchema } from '@/entities/Article'
 
 export interface ArticleDetailsPageSchema {
   details: ArticleDetailsSchema

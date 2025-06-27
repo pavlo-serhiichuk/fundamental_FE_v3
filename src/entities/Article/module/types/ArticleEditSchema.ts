@@ -1,8 +1,8 @@
 import { Article } from '@/entities/Article'
 
-export interface ArticleEditPageSchema {
+export interface ArticleEditSchema {
   data?: Article
   editData?: Article
   isLoading?: boolean
-  error?: string
+  error?: string | undefined
 }

@@ -1,6 +1,9 @@
 import { type FC, HTMLAttributes, type ReactNode } from 'react'
 import { cls, Mods } from '@/shared/lib/cls/cls'
 import * as s from './Card.module.scss'
+import { Icon } from '@/shared/ui/V2/Icon'
+import CloseIcon from '@/shared/assets/icons/closeCircle.svg'
+import { HStack } from '@/shared/ui/stationary/Stack'
 
 type BgType = 'main' | 'secondary'
 type CardPadding = '0' | '8' | '12' | '16' | '20' | '32'
@@ -16,6 +19,8 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   bgType?: BgType
   padding?: CardPadding
   radius?: CardRadius
+  withCloseIcon?: boolean
+  onClose?: () => void
 }
 
 export const Card: FC<CardProps> = (props) => {
@@ -26,6 +31,8 @@ export const Card: FC<CardProps> = (props) => {
     bgType = 'main',
     padding = '12',
     radius = '32',
+    withCloseIcon = false,
+    onClose = () => {},
     ...otherProps
   } = props
 
@@ -57,6 +64,11 @@ export const Card: FC<CardProps> = (props) => {
       ])}
       {...otherProps}
     >
+      {withCloseIcon && (
+        <HStack justify="end">
+          <Icon Svg={CloseIcon} width={25} height={25} onClick={onClose} />
+        </HStack>
+      )}
       {children}
     </div>
   )

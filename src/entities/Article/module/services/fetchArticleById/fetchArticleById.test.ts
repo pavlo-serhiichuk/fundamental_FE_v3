@@ -1,9 +1,9 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import { ArticleDetailsSchema } from '../../../../../features/ArticleDetails/model/types/ArticleDetailsSchema'
-import { getArticleDetailsMockState } from '../../../../../features/ArticleDetails/model/slice/articleState'
+import { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema'
+import { getArticleDetailsMockState } from '../../slice/_articleState'
 import { fetchArticleById } from './fetchArticleById'
 
-describe('fetchArticleById.test', () => {
+describe('editArticleById.test', () => {
   test('success', async () => {
     const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
     const thunk = new TestAsyncThunk(fetchArticleById, {

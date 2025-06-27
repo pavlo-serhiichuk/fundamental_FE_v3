@@ -6,7 +6,7 @@ import { ArticleEditCodeComponent } from '../ui/ArticleEditCodeComponent/Article
 import { ArticleEditImageComponent } from '../ui/ArticleEditImageComponent/ArticleEditImageComponent'
 import { AddArticleEditBlock } from '../ui/AddArticleEditBlock/AddArticleEditBlock'
 
-export const renderEditBlocks = (block: ArticleBlock) => {
+export const renderEditBlocks = (block: ArticleBlock, index: number) => {
   let result: ReactElement = <></>
   switch (block.type) {
     case ArticleBlockType.TEXT:
@@ -23,7 +23,7 @@ export const renderEditBlocks = (block: ArticleBlock) => {
   }
   return (
     <div key={block.id}>
-      <AddArticleEditBlock blockId={block.id} />
+      <AddArticleEditBlock blockId={block.id} blockIndex={index} />
       {result}
     </div>
   )

@@ -5,9 +5,9 @@
   "articles": [
     {
       "id": "1",
-      "title": "You should know how to become a true ninja and change the world",
+      "title": "You should know how to become a true ninja and change the world!!",
       "subtitle": "... and make others lives harder",
-      "image": "https://yt3.googleusercontent.com/ytc/AGIKgqND5OpZ3zBGI_CFfNpPWs1PDQu_OmNG2IFXPcxf=s900-c-k-c0x00ffffff-no-rj",
+      "image": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
       "views": 10023,
       "created": "28.02.2022",
       "userId": "1",
@@ -18,7 +18,7 @@
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Ніндзя код",
+          "title": "Ніндзя код!!!",
           "paragraphs": [
             "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
             "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
@@ -69,7 +69,28 @@
             "Екзотична змінна у якості лічильника особоливо доречна, коли тіло циклу займає одну-дві сторінки (чим більше, тим краще). У такому випадку, ті, хто зануриться глибоко у код циклу, не зможуть швидко здогадатись, що змінна x насправді є лічильником."
           ]
         }
-      ]
+      ],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "111",
+        "age": 28,
+        "roles": [
+          "ADMIN"
+        ],
+        "features": {
+          "isV2": true,
+          "isArticleDetailsRatingEnabled": true,
+          "isProfileRatingEnabled": true
+        },
+        "jsonSettings": {
+          "theme": "app_light_theme",
+          "isFirstVisit": true,
+          "settingsPageHasBeenOpened": false,
+          "articlesPageHasBeenOpened": true
+        },
+        "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
+      }
     },
     {
       "id": "2",
@@ -115,7 +136,28 @@
             "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
           ]
         }
-      ]
+      ],
+      "user": {
+        "id": "3",
+        "username": "manager",
+        "password": "111",
+        "age": 27,
+        "roles": [
+          "MANAGER"
+        ],
+        "features": {
+          "isV2": false,
+          "isArticleDetailsRatingEnabled": false,
+          "isProfileRatingEnabled": false
+        },
+        "jsonSettings": {
+          "theme": "app_dark_theme",
+          "isFirstVisit": true,
+          "settingsPageHasBeenOpened": false,
+          "articlesPageHasBeenOpened": true
+        },
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+      }
     },
     {
       "id": "4",

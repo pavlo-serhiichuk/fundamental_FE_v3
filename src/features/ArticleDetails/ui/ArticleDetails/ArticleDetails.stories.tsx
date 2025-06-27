@@ -1,7 +1,9 @@
 import { type Meta, type StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook/decorators/decorators'
-import { ArticleDetailsSchema } from '@/features/ArticleDetails/model/types/ArticleDetailsSchema'
-import { getArticleDetailsMockState } from '@/features/ArticleDetails/model/slice/articleState'
+import {
+  getArticleDetailsMockState,
+  ArticleDetailsSchema,
+} from '@/entities/Article'
 import { ArticleDetails } from './ArticleDetails'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
