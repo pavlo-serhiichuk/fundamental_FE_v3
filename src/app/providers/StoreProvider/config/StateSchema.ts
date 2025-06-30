@@ -18,7 +18,7 @@ import { FiltersSchema } from '@/entities/Filters'
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
 import { AddCommentSchema } from '@/entities/Comment'
 import { rtkApi } from '@/shared/api/rtkApi'
-import { ArticleDetailsSchema } from '@/entities/Article'
+import { ArticleEditSchema, ArticleCreateSchema } from '@/entities/Article'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -34,7 +34,8 @@ export interface StateSchema {
   addCommentForm?: AddCommentSchema
   articleDetailsPage?: ArticleDetailsPageSchema
   articlesPage?: ArticlesPageSchema
-  editArticle?: ArticleDetailsSchema
+  editArticle?: ArticleEditSchema
+  createArticle?: ArticleCreateSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

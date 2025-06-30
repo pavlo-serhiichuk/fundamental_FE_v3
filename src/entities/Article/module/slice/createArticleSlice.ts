@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById'
 import {
   Article,
   ArticleBlock,
@@ -8,9 +7,13 @@ import {
   ArticleTextBlock,
 } from '../types/article'
 import { ArticleBlockType } from '../consts/consts'
-import { ArticleEditSchema } from '../types/ArticleEditSchema'
+import { ArticleCreateSchema } from '../types/ArticleCreateSchema'
+import { newArticle } from './_articleState'
+import { createNewArticle } from '../services/createNewArticle/createNewArticle'
 
-const initialState: ArticleEditSchema = {}
+const initialState: ArticleCreateSchema = {
+  newArticle,
+}
 
 interface BlockParagraphAction {
   blockId?: string
@@ -32,8 +35,8 @@ interface NewArticleBlock {
 const findBlock = (blockId: string, blocks: ArticleBlock[]) =>
   blocks?.find((b) => b.id === blockId)
 
-export const editArticleSlice = createSlice({
-  name: 'editArticleSlice',
+export const createArticleSlice = createSlice({
+  name: 'createArticleSlice',
   initialState,
   reducers: {
     changeTextBlockParagraph: (
@@ -42,9 +45,10 @@ export const editArticleSlice = createSlice({
     ) => {
       const { blockId, paragraphId, paragraphValue } = action.payload
       if (!blockId || paragraphId === undefined) return
-      const block: ArticleTextBlock | undefined = state.editData?.blocks?.find(
-        (b) => b.id === blockId,
-      ) as ArticleTextBlock
+      const block: ArticleTextBlock | undefined =
+        state.newArticle?.blocks?.find(
+          (b) => b.id === blockId,
+        ) as ArticleTextBlock
       if (block) {
         if (block?.paragraphs.length && paragraphValue != null) {
           block.paragraphs[paragraphId] = paragraphValue
@@ -52,14 +56,10 @@ export const editArticleSlice = createSlice({
       }
     },
     editArticleTitle: (state, action: PayloadAction<string>) => {
-      if (state?.editData?.title) {
-        state.editData.title = action.payload
-      }
+      state.newArticle.title = action.payload
     },
     editArticleImage: (state, action: PayloadAction<string>) => {
-      if (state?.editData?.image) {
-        state.editData.image = action.payload
-      }
+      state.newArticle.image = action.payload
     },
     addBlock: (state, action: PayloadAction<NewArticleBlock>) => {
       const { blockIndex, blockType, isLastBlock } = action.payload
@@ -89,18 +89,19 @@ export const editArticleSlice = createSlice({
           } as ArticleImageBlock
           break
       }
+
       if (isLastBlock) {
-        state.editData?.blocks?.push(block)
+        state.newArticle?.blocks?.push(block)
       } else {
-        state.editData?.blocks?.splice(Number(blockIndex), 0, block)
+        state.newArticle?.blocks?.splice(Number(blockIndex), 0, block)
       }
     },
     deleteBlock: (state, action: PayloadAction<string>) => {
-      if (state.editData?.blocks?.length) {
-        const blockIndex = state.editData.blocks.findIndex(
+      if (state.newArticle?.blocks?.length) {
+        const blockIndex = state.newArticle.blocks.findIndex(
           (b) => b.id === action.payload,
         )
-        state.editData?.blocks.splice(blockIndex, 1)
+        state.newArticle?.blocks.splice(blockIndex, 1)
       }
     },
     addParagraph: (
@@ -108,9 +109,9 @@ export const editArticleSlice = createSlice({
       action: PayloadAction<{ blockId: string; blockType: ArticleBlockType }>,
     ) => {
       const { blockId, blockType } = action.payload
-      if (state.editData?.blocks?.length) {
+      if (state.newArticle?.blocks?.length) {
         const block: ArticleTextBlock | undefined =
-          state.editData?.blocks?.find(
+          state.newArticle?.blocks?.find(
             (b) => b.id === blockId,
           ) as ArticleTextBlock
         if (block) {
@@ -122,9 +123,10 @@ export const editArticleSlice = createSlice({
       const { blockId, title } = action.payload
       if (!blockId || title === undefined) return
 
-      const block: ArticleTextBlock | undefined = state.editData?.blocks?.find(
-        (b) => b.id === blockId,
-      ) as ArticleTextBlock
+      const block: ArticleTextBlock | undefined =
+        state.newArticle?.blocks?.find(
+          (b) => b.id === blockId,
+        ) as ArticleTextBlock
       if (block) {
         block.title = title // immer lets you mutate directly
       }
@@ -134,8 +136,8 @@ export const editArticleSlice = createSlice({
       action: PayloadAction<{ blockId: string; src?: string; title?: string }>,
     ) => {
       const { blockId, src, title } = action.payload
-      if (state.editData?.blocks?.length) {
-        const block = state.editData?.blocks?.find(
+      if (state.newArticle?.blocks?.length) {
+        const block = state.newArticle?.blocks?.find(
           (b) => b.id === blockId,
         ) as ArticleImageBlock
         if (block && src !== undefined) {
@@ -152,43 +154,37 @@ export const editArticleSlice = createSlice({
       action: PayloadAction<{ blockId: string; code: string }>,
     ) => {
       const { blockId, code } = action.payload
-      if (state.editData?.blocks?.length) {
+      if (state.newArticle?.blocks?.length) {
         const block = findBlock(
           blockId,
-          state.editData.blocks,
+          state.newArticle.blocks,
         ) as ArticleCodeBlock
         if (block) {
           block.code = code
         }
       }
     },
-    resetArticle: (state) => {
-      if (state.editData && state.data) {
-        state.editData = state.data
-      }
-    },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticleById.pending, (state) => {
+      .addCase(createNewArticle.pending, (state) => {
         state.error = undefined
         state.isLoading = true
       })
       .addCase(
-        fetchArticleById.fulfilled,
+        createNewArticle.fulfilled,
         (state, action: PayloadAction<Article>) => {
-          console.log('action.payload', action.payload)
           state.isLoading = false
-          state.data = action.payload
-          state.editData = action.payload
+          state.newArticle = action.payload
+          state.newArticle = action.payload
         },
       )
-      .addCase(fetchArticleById.rejected, (state, action) => {
+      .addCase(createNewArticle.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload
       })
   },
 })
 
-export const { actions: editArticleActions, reducer: editArticleReducer } =
-  editArticleSlice
+export const { actions: createArticleActions, reducer: createArticleReducer } =
+  createArticleSlice

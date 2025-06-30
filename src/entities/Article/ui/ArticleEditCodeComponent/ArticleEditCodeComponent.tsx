@@ -6,21 +6,26 @@ import { Card } from '@/shared/ui/V2/Card'
 import { getVStackString } from '@/shared/ui/stationary/Stack'
 import { editArticleActions } from '../../module/slice/editArticleSlice'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { createArticleActions } from '../../module/slice/createArticleSlice'
 
 interface ArticleBlockCodeComponentProps {
   className?: string
   block: ArticleCodeBlock
+  isCreate?: boolean
 }
 
 export const ArticleEditCodeComponent: FC<ArticleBlockCodeComponentProps> = (
   props,
 ) => {
-  const { className, block } = props
+  const { className, block, isCreate } = props
   const dispatch = useAppDispatch()
+  const { setCode, deleteBlock } = isCreate
+    ? createArticleActions
+    : editArticleActions
 
   const onChange = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
     dispatch(
-      editArticleActions.setCode({
+      setCode({
         blockId: block.id,
         code: e.target.value,
       }),
@@ -29,7 +34,7 @@ export const ArticleEditCodeComponent: FC<ArticleBlockCodeComponentProps> = (
 
   const onDeleteBlock = () => {
     if (block?.id) {
-      dispatch(editArticleActions.deleteBlock(block.id))
+      dispatch(deleteBlock(block.id))
     }
   }
 

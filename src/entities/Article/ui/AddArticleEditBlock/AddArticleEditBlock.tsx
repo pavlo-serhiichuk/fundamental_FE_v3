@@ -7,29 +7,47 @@ import { Button } from '@/shared/ui/V2/Button'
 import { ArticleBlockType } from '../../module/consts/consts'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { editArticleActions } from '../../module/slice/editArticleSlice'
+import { createArticleActions } from '../../module/slice/createArticleSlice'
 
 interface AddArticleEditBlockProps {
   className?: string
-  blockId?: string
   blockIndex: number
+  isLastBlock?: boolean
+  isCreate?: boolean
 }
 
 export const AddArticleEditBlock = (props: AddArticleEditBlockProps) => {
-  const { className, blockId, blockIndex } = props
+  const { className, blockIndex, isLastBlock = false, isCreate = false } = props
   const { t } = useTranslation()
   const [isAddArticleEditBlock, setIsAddArticleEditBlock] = useState(false)
   const dispatch = useAppDispatch()
-
+  const { addBlock } = isCreate ? createArticleActions : editArticleActions
   const onToggle = () => {
     setIsAddArticleEditBlock(!isAddArticleEditBlock)
   }
 
   const onAddBlock = useCallback(
     (type: ArticleBlockType) => () => {
-      dispatch(editArticleActions.addBlock({ blockType: type, blockIndex }))
+      if (isCreate) {
+        dispatch(
+          addBlock({
+            blockType: type,
+            blockIndex,
+            isLastBlock,
+          }),
+        )
+      } else {
+        dispatch(
+          addBlock({
+            blockType: type,
+            blockIndex,
+            isLastBlock,
+          }),
+        )
+      }
       setIsAddArticleEditBlock(false)
     },
-    [],
+    [dispatch],
   )
 
   return (

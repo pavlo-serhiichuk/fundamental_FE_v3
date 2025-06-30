@@ -1,6 +1,7 @@
 import { type FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { cls } from '@/shared/lib/cls/cls'
 import { SignInModal } from '@/features/SignIn'
 import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button'
@@ -12,6 +13,7 @@ import * as s from './Header.module.scss'
 import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Icon } from '@/shared/ui/V2/Icon'
 import { Button } from '@/shared/ui/V2/Button'
+import { getRouteArticleCreate } from '@/shared/const/routers'
 
 interface HeaderProps {
   className?: string
@@ -22,6 +24,7 @@ export const Header: FC<HeaderProps> = (props) => {
   const authData = useSelector(getUserAuthData)
   const { t } = useTranslation()
   const [isSignInModalOpen, setIsSignInModalOpen] = useState(false)
+  const navigate = useNavigate()
 
   const onCloseSignInModal = () => {
     setIsSignInModalOpen(false)
@@ -31,6 +34,10 @@ export const Header: FC<HeaderProps> = (props) => {
     setIsSignInModalOpen(true)
   }
 
+  const onOpenCreateArticlePage = () => {
+    navigate(getRouteArticleCreate())
+  }
+
   if (authData) {
     return (
       <ToggleFeature
@@ -38,7 +45,12 @@ export const Header: FC<HeaderProps> = (props) => {
         on={
           <header className={cls(s.HeaderV2, {}, [className])}>
             <div className={s.linksV2}>
-              <Icon Svg={EditIcon} height={38} width={38} />
+              <Icon
+                Svg={EditIcon}
+                height={38}
+                width={38}
+                onClick={onOpenCreateArticlePage}
+              />
               <NotificationsButton />
               <AvatarDropdown />
             </div>

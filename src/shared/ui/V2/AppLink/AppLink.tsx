@@ -1,4 +1,4 @@
-import { Children, type FC } from 'react'
+import { type FC } from 'react'
 import { NavLink, type LinkProps } from 'react-router-dom'
 import { cls } from '@/shared/lib/cls/cls'
 import * as s from './AppLink.module.scss'
@@ -14,13 +14,14 @@ interface AppLinkProps extends LinkProps {
   theme?: AppLinkThemes
   to: string
   isActive?: boolean
+  'data-testid'?: string
 }
 
 export const AppLink: FC<AppLinkProps> = (props) => {
   const {
+    to,
     className = '',
     theme = 'content',
-    to,
     children,
     isActive,
     ...otherProps
@@ -31,8 +32,7 @@ export const AppLink: FC<AppLinkProps> = (props) => {
       className={cls(s.AppLink, {}, [className, s[theme]])}
       {...otherProps}
     >
-      {/* eslint-disable-next-line react/jsx-no-useless-fragment */}
-      {Children.only(<>{children}</>)}
+      {children}
     </NavLink>
   )
 }

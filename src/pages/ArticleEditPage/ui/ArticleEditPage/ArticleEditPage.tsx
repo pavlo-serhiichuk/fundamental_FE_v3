@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react'
+import { memo, useCallback, useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -15,6 +15,8 @@ import {
   renderEditBlocks,
   editArticleReducer,
   getEditArticleData,
+  AddArticleEditBlock,
+  deleteArticleById,
 } from '@/entities/Article'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
@@ -26,6 +28,7 @@ import { Modal } from '@/shared/ui/V2/Modal'
 import { ArticleDetails } from '@/features/ArticleDetails'
 import {
   getRouteArticleDetails,
+  getRouteArticles,
   getRouteForbidden,
 } from '@/shared/const/routers'
 import { getUserAuthData } from '@/entities/User'
@@ -68,7 +71,7 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     },
     [dispatch],
   )
-  const onChangeTitle = useCallback(
+  const onChangeArticleTitle = useCallback(
     (value: string) => {
       dispatch(editArticleActions.editArticleTitle(value))
     },
@@ -81,7 +84,25 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   const onSave = useCallback(() => {
     dispatch(editArticleById())
     navigate(getRouteArticleDetails(articleId))
+  }, [dispatch, editArticleById, getRouteArticleDetails, articleId])
+
+  const onDelete = useCallback(() => {
+    dispatch(deleteArticleById())
+    navigate(getRouteArticles())
+  }, [dispatch, editArticleById, getRouteArticleDetails, articleId])
+
+  const onCancel = useCallback(() => {
+    navigate(getRouteArticleDetails(articleId))
+  }, [dispatch, getRouteArticleDetails, articleId])
+
+  const onReset = useCallback(() => {
+    dispatch(editArticleActions.resetArticle())
   }, [dispatch])
+
+  const blocksLength = useMemo(
+    () => editArticleData?.blocks?.length || 0,
+    [editArticleData],
+  )
 
   return (
     <DynamicReducerLoader reducers={reducers}>
@@ -95,15 +116,18 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
         <ArticleEditCreateHeader
           data={editArticleData}
           onChangeArticleImage={onChangeArticleImage}
-          onChangeTitle={onChangeTitle}
+          onChangeTitle={onChangeArticleTitle}
         />
         <VStack gap="16" className={s.blocks}>
-          {editArticleData?.blocks?.map(renderEditBlocks)}
+          {editArticleData?.blocks?.map(renderEditBlocks(false))}
+          <AddArticleEditBlock blockIndex={blocksLength - 1} isLastBlock />
         </VStack>
         <ArticleEditCreateFooter
-          isCreate={false}
           onOpenPreview={onOpenModal}
           onSave={onSave}
+          onCancel={onCancel}
+          onReset={onReset}
+          onDelete={onDelete}
         />
       </Card>
     </DynamicReducerLoader>

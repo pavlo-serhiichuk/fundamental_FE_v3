@@ -6,7 +6,6 @@ import { Card } from '@/shared/ui/V2/Card'
 import { Article } from '../../module/types/article'
 
 interface ArticleEditCreateHeaderProps {
-  isCreate?: boolean
   data?: Article
   onChangeArticleImage?: (value: string) => void
   onChangeTitle?: (value: string) => void

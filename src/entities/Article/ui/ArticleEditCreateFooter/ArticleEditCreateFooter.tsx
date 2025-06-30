@@ -8,13 +8,24 @@ interface ArticleEditCreateFooterProps {
   className?: string
   onOpenPreview?: () => void
   onSave?: () => void
+  onCancel?: () => void
+  onDelete?: () => void
+  onReset?: () => void
   isCreate?: boolean
 }
 
 export const ArticleEditCreateFooter = (
   props: ArticleEditCreateFooterProps,
 ) => {
-  const { className, onOpenPreview, onSave } = props
+  const {
+    className,
+    onOpenPreview,
+    onSave,
+    onDelete,
+    onCancel,
+    onReset,
+    isCreate,
+  } = props
   const { t } = useTranslation()
   return (
     <div>
@@ -22,17 +33,24 @@ export const ArticleEditCreateFooter = (
         gap="16"
         className={cls(s.ArticleEditCreateFooter, {}, [className])}
       >
-        <Button theme="cancel" fullWidth>
+        {!isCreate && (
+          <Button theme="cancel" fullWidth onClick={onDelete}>
+            {t('Delete')}
+          </Button>
+        )}
+        <Button theme="cancel" fullWidth onClick={onCancel}>
           {t('Cancel')}
         </Button>
-        <Button theme="cancel" fullWidth>
-          {t('Reset')}
-        </Button>
-        <Button theme="accept" fullWidth onClick={onOpenPreview}>
+        {!isCreate && (
+          <Button theme="cancel" fullWidth onClick={onReset}>
+            {t('Reset')}
+          </Button>
+        )}
+        <Button fullWidth onClick={onOpenPreview}>
           {t('Preview')}
         </Button>
         <Button theme="accept" fullWidth onClick={onSave}>
-          {t('Edit')}
+          {t(isCreate ? 'Create' : 'Edit')}
         </Button>
       </HStack>
     </div>

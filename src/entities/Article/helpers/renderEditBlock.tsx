@@ -6,25 +6,26 @@ import { ArticleEditCodeComponent } from '../ui/ArticleEditCodeComponent/Article
 import { ArticleEditImageComponent } from '../ui/ArticleEditImageComponent/ArticleEditImageComponent'
 import { AddArticleEditBlock } from '../ui/AddArticleEditBlock/AddArticleEditBlock'
 
-export const renderEditBlocks = (block: ArticleBlock, index: number) => {
-  let result: ReactElement = <></>
-  switch (block.type) {
-    case ArticleBlockType.TEXT:
-      result = <ArticleEditTextComponent block={block} />
-      break
-    case ArticleBlockType.CODE:
-      result = <ArticleEditCodeComponent block={block} />
-      break
-    case ArticleBlockType.IMAGE:
-      result = <ArticleEditImageComponent block={block} />
-      break
-    default:
-      return null
+export const renderEditBlocks =
+  (isCreate: boolean) => (block: ArticleBlock, index: number) => {
+    let result: ReactElement = <div />
+    switch (block.type) {
+      case ArticleBlockType.TEXT:
+        result = <ArticleEditTextComponent block={block} isCreate={isCreate} />
+        break
+      case ArticleBlockType.CODE:
+        result = <ArticleEditCodeComponent block={block} isCreate={isCreate} />
+        break
+      case ArticleBlockType.IMAGE:
+        result = <ArticleEditImageComponent block={block} isCreate={isCreate} />
+        break
+      default:
+        return null
+    }
+    return (
+      <div key={block.id}>
+        <AddArticleEditBlock blockIndex={index} />
+        {result}
+      </div>
+    )
   }
-  return (
-    <div key={block.id}>
-      <AddArticleEditBlock blockId={block.id} blockIndex={index} />
-      {result}
-    </div>
-  )
-}

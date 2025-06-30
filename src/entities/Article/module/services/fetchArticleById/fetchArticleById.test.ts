@@ -3,7 +3,7 @@ import { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema'
 import { getArticleDetailsMockState } from '../../slice/_articleState'
 import { fetchArticleById } from './fetchArticleById'
 
-describe('editArticleById.test', () => {
+describe('createNewArticle.test', () => {
   test('success', async () => {
     const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
     const thunk = new TestAsyncThunk(fetchArticleById, {

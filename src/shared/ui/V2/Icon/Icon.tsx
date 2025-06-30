@@ -10,14 +10,16 @@ interface IconProps {
   onMouseLeave?: () => void
   onMouseEnter?: () => void
   onClick?: () => void
+  testId?: string
 }
 
 export const Icon: FC<IconProps> = memo((props: IconProps) => {
-  const { className, Svg, onClick, ...otherProps } = props
+  const { className, Svg, onClick, testId, ...otherProps } = props
 
   return (
     <Svg
       onClick={onClick || undefined}
+      data-testid={testId}
       className={cls(s.Icon, { [s.pointer]: Boolean(onClick) }, [className])}
       {...otherProps}
     />

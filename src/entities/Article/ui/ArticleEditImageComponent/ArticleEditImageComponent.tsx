@@ -8,20 +8,24 @@ import { Card } from '@/shared/ui/V2/Card'
 import { AppImage } from '@/shared/ui/stationary/AppImage'
 import { editArticleActions } from '../../module/slice/editArticleSlice'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
+import { createArticleActions } from '../../module/slice/createArticleSlice'
 
 interface ArticleBlockImageComponentProps {
   className?: string
   block: ArticleImageBlock
+  isCreate?: boolean
 }
 
 export const ArticleEditImageComponent = memo(
   (props: ArticleBlockImageComponentProps) => {
-    const { className, block } = props
+    const { className, block, isCreate } = props
     const dispatch = useAppDispatch()
-
+    const { editImageSource, deleteBlock } = isCreate
+      ? createArticleActions
+      : editArticleActions
     const onChangeSrc = (value: string) => {
       dispatch(
-        editArticleActions.editImageSource({
+        editImageSource({
           blockId: block.id,
           src: value,
         }),
@@ -30,7 +34,7 @@ export const ArticleEditImageComponent = memo(
 
     const onChangeName = useCallback((value: string) => {
       dispatch(
-        editArticleActions.editImageSource({
+        editImageSource({
           blockId: block.id,
           title: value,
         }),
@@ -39,7 +43,7 @@ export const ArticleEditImageComponent = memo(
 
     const onDeleteBlock = () => {
       if (block?.id) {
-        dispatch(editArticleActions.deleteBlock(block.id))
+        dispatch(deleteBlock(block.id))
       }
     }
 

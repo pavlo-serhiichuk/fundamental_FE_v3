@@ -8,22 +8,27 @@ import { Card } from '@/shared/ui/V2/Card'
 import { Button } from '@/shared/ui/V2/Button'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { editArticleActions } from '../../module/slice/editArticleSlice'
+import { createArticleActions } from '../../module/slice/createArticleSlice'
 
 interface ArticleEditComponentProps {
   className?: string
   block?: ArticleTextBlock
+  isCreate?: boolean
 }
 
 export const ArticleEditTextComponent = memo(
   (props: ArticleEditComponentProps) => {
-    const { className, block } = props
+    const { className, block, isCreate } = props
+    const { changeTextBlockTitle, changeTextBlockParagraph } = isCreate
+      ? createArticleActions
+      : editArticleActions
     const dispatch = useAppDispatch()
     // console.log('rerender')
 
     const onChangeBlockTitle = useCallback(
       (value: string) => {
         dispatch(
-          editArticleActions.changeTextBlockTitle({
+          changeTextBlockTitle({
             blockId: block?.id,
             title: value,
           }),
@@ -35,7 +40,7 @@ export const ArticleEditTextComponent = memo(
     const onChangeBlockParagraph = useCallback(
       (paragraphId: number) => (e: ChangeEvent<HTMLTextAreaElement>) => {
         dispatch(
-          editArticleActions.changeTextBlockParagraph({
+          changeTextBlockParagraph({
             blockId: block?.id,
             paragraphValue: e.target.value,
             paragraphId,

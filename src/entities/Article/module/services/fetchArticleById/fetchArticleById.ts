@@ -6,7 +6,7 @@ export const fetchArticleById = createAsyncThunk<
   Article,
   string,
   ThunkConfig<string>
->('articleDetails/editArticleById', async (articleId, thunkAPI) => {
+>('editArticle/fetchArticleById', async (articleId, thunkAPI) => {
   const { extra } = thunkAPI
   try {
     if (articleId) {
@@ -15,6 +15,7 @@ export const fetchArticleById = createAsyncThunk<
           _expand: 'user',
         },
       })
+      console.log('response', response.data)
       return response.data
     }
     throw new Error()

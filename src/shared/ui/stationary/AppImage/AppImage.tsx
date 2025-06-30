@@ -6,9 +6,11 @@ import React, {
   useState,
 } from 'react'
 import CubeIcon from '../../../assets/icons/_cube.svg'
-import { Icon } from '../../deprecated/Icon'
+import { Icon as IconDeprecated } from '../../deprecated/Icon'
 import ErrorFallbackImage from '../../../assets/images/errorFallbackImage.jpg'
 import AvatarImage from '../../../assets/images/avatarImage.png'
+import { ToggleFeature } from '@/shared/lib/features'
+import { Icon } from '@/shared/ui/V2/Icon'
 
 type FallbackImageType = 'image' | 'icon'
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
@@ -20,6 +22,7 @@ interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   width?: number
   height?: number
   fallbackImageType?: FallbackImageType
+  testId?: string
 }
 
 export const AppImage = memo((props: ImageProps) => {
@@ -32,6 +35,7 @@ export const AppImage = memo((props: ImageProps) => {
     width = 30,
     height = 30,
     fallbackImageType = 'image',
+    testId,
     ...otherProps
   } = props
   const [isLoading, setIsLoading] = useState(true)
@@ -55,16 +59,29 @@ export const AppImage = memo((props: ImageProps) => {
 
   if (hasError) {
     return fallbackImageType === 'icon' ? (
-      <Icon Svg={CubeIcon} width={width} height={height} />
+      <ToggleFeature
+        feature="isV2"
+        on={<Icon Svg={CubeIcon} width={width} height={height} />}
+        off={<IconDeprecated Svg={CubeIcon} width={width} height={height} />}
+      />
     ) : (
       <img
         src={isAvatar ? AvatarImage : ErrorFallbackImage}
         alt={alt}
         className={className}
+        data-testid={`${testId || 'AppImage'}.hasError`}
         {...otherProps}
       />
     )
   }
 
-  return <img src={src} alt={alt} className={className} {...otherProps} />
+  return (
+    <img
+      data-testid={testId || 'AppImage'}
+      src={src}
+      alt={alt}
+      className={className}
+      {...otherProps}
+    />
+  )
 })
