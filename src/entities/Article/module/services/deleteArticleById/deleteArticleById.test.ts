@@ -1,27 +1,25 @@
-// import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-// import { ArticleDetailsSchema } from '../../types/ArticleDetailsSchema'
-// import { getArticleDetailsMockState } from '../../slice/articleState'
-// import { createNewArticle } from './createNewArticle'
-//
-// describe('createNewArticle.test', () => {
-//   test('success', async () => {
-//     const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
-//     const thunk = new TestAsyncThunk(createNewArticle, {
-//       articleDetailsPage: { details: {} },
-//     })
-//     thunk.api.get.mockReturnValue(Promise.resolve({ data: mockData }))
-//     const result: any = await thunk.callThunk()
-//     expect(result.payload).toEqual(mockData)
-//     expect(result.meta.requestStatus).toEqual('fulfilled')
-//   })
-//
-//   test('error', async () => {
-//     const thunk = new TestAsyncThunk(createNewArticle, {
-//       articleDetailsPage: { details: {} },
-//     })
-//     // eslint-disable-next-line prefer-promise-reject-errors
-//     thunk.api.get.mockReturnValue(Promise.reject({ status: 403 }))
-//     const result: any = await thunk.callThunk('1')
-//     expect(result.meta.requestStatus).toBe('rejected')
-//   })
-// })
+import { mockEditArticleState } from '../../mocks/mockEditArticleState'
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import { deleteArticleById } from './deleteArticleById'
+
+describe('deleteArticleById', () => {
+  test('success', async () => {
+    const thunk = new TestAsyncThunk(deleteArticleById, {
+      editArticle: mockEditArticleState,
+    })
+    // @ts-ignore
+    thunk.api.delete.mockReturnValue({ data: {} })
+    const result = await thunk.callThunk()
+    expect(result.meta.requestStatus).toEqual('fulfilled')
+    expect(result.payload).toEqual({})
+  })
+
+  test('error', async () => {
+    const thunk = new TestAsyncThunk(deleteArticleById, {
+      editArticle: mockEditArticleState,
+    })
+    thunk.api.delete.mockReturnValue(Promise.reject({ status: 403 }))
+    const result: any = await thunk.callThunk()
+    expect(result.meta.requestStatus).toEqual('rejected')
+  })
+})

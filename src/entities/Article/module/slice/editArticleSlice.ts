@@ -177,7 +177,6 @@ export const editArticleSlice = createSlice({
       .addCase(
         fetchArticleById.fulfilled,
         (state, action: PayloadAction<Article>) => {
-          console.log('action.payload', action.payload)
           state.isLoading = false
           state.data = action.payload
           state.editData = action.payload

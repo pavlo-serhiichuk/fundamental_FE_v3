@@ -5,7 +5,7 @@
   "articles": [
     {
       "id": "1",
-      "title": "You should know how to become a true ninja and change the world!!",
+      "title": "You should know how to become a true ninja and change the world!!!!",
       "subtitle": "... and make others lives harder",
       "image": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
       "views": 10023,
@@ -158,30 +158,6 @@
         },
         "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
       }
-    },
-    {
-      "id": "4",
-      "title": "Warrior and change the game",
-      "subtitle": "... and make others lives harder",
-      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
-      "views": 123,
-      "created": "25.02.2022",
-      "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Ніндзя код",
-          "paragraphs": [
-            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
-            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
-          ]
-        }
-      ]
     },
     {
       "id": "5",
@@ -833,6 +809,12 @@
       "articleId": "2",
       "userId": "1",
       "id": "tf_UAaw"
+    },
+    {
+      "text": "saf",
+      "articleId": "2",
+      "userId": "1",
+      "id": "HpxZjZ0"
     }
   ],
   "users": [
@@ -1056,13 +1038,6 @@
       "feedback": "",
       "userId": "2",
       "id": "OiIiCIJ"
-    },
-    {
-      "articleId": "4",
-      "rate": 3,
-      "feedback": "",
-      "userId": "2",
-      "id": "tSm3uUS"
     },
     {
       "articleId": "2",

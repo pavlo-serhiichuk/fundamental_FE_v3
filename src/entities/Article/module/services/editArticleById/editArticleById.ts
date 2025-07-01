@@ -7,18 +7,18 @@ export const editArticleById = createAsyncThunk<
   Article,
   void,
   ThunkConfig<string>
->('articleDetails/editArticleById', async (_, thunkAPI) => {
+>('editArticle/editArticleById', async (_, thunkAPI) => {
   const { extra, getState } = thunkAPI
   const editedArticle = getEditArticleData(getState())
   try {
-    if (editedArticle?.id) {
-      const response = await extra.api.put(
-        `/articles/${editedArticle?.id}`,
-        editedArticle,
-      )
-      return response.data
+    if (!editedArticle?.id) {
+      throw new Error()
     }
-    throw new Error()
+    const response = await extra.api.put(
+      `/articles/${editedArticle?.id}`,
+      editedArticle,
+    )
+    return response.data
   } catch (e) {
     return thunkAPI.rejectWithValue('error')
   }

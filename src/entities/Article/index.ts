@@ -20,6 +20,7 @@ export type { ArticleDetailsSchema } from './module/types/ArticleDetailsSchema'
 export type { ArticleEditSchema } from './module/types/ArticleEditSchema'
 export type { ArticleCreateSchema } from './module/types/ArticleCreateSchema'
 export { mockArticleDetailsState } from './module/mocks/mockArticleDetailsState'
+export { mockEditArticleState } from './module/mocks/mockEditArticleState'
 export {
   articleDetailsActions,
   articleDetailsReducer,

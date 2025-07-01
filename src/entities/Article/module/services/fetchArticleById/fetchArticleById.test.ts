@@ -4,14 +4,20 @@ import { fetchArticleById } from './fetchArticleById'
 
 describe('createNewArticle.test', () => {
   test('success', async () => {
-    const mockData = mockArticleDetailsState
+    // ↓ - preparing
+    const mockData = mockArticleDetailsState.data
     const thunk = new TestAsyncThunk(fetchArticleById, {
       articleDetailsPage: { details: {} },
     })
     thunk.api.get.mockReturnValue(Promise.resolve({ data: mockData }))
+    // ↑
+    // ↓ - calling thunk
     const result: any = await thunk.callThunk('1')
+    // ↑
+    // ↓ - expecting
     expect(result.payload).toEqual(mockData)
     expect(result.meta.requestStatus).toEqual('fulfilled')
+    // ↑
   })
 
   test('error', async () => {
