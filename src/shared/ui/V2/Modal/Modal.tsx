@@ -14,7 +14,7 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-  const { className, children, isOpen, onClose } = props
+  const { className, children, isOpen, onClose, ...otherProps } = props
 
   const { isClosing, isMounted, close } = useModal({
     animationDelay: 300,
@@ -32,7 +32,10 @@ export const Modal: FC<ModalProps> = (props) => {
   }
 
   return (
-    <Portal container={document.getElementById('app-v2') || document.body}>
+    <Portal
+      container={document.getElementById('app-v2') || document.body}
+      {...otherProps}
+    >
       <div className={cls(s.Modal, mods, [className, theme])}>
         <Overlay onClick={close} />
         <div className={s.content}>{children}</div>

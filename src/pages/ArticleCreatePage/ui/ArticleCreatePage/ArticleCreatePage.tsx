@@ -64,9 +64,7 @@ export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
   }, [])
 
   const onSave = useCallback(() => {
-    console.log('save')
     dispatch(createNewArticle()).then((res: any) => {
-      console.log(res)
       navigate(getRouteArticleDetails(res.payload.id))
     })
   }, [dispatch, editArticleById, getRouteArticleDetails])
@@ -77,7 +75,11 @@ export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        data-testid="Modal.Preview"
+      >
         <div className={s.modalContent}>
           <ArticleDetails isPreview />
         </div>

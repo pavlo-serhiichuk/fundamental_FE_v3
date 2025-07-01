@@ -7,5 +7,8 @@
 }
 
 .modalContent {
-  display: flex;
+  overflow: scroll;
+  padding: 20px;
+  width: 700px;
+  height: 700px;
 }
