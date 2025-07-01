@@ -19,7 +19,7 @@ export { createNewArticle } from '@/entities/Article/module/services/createNewAr
 export type { ArticleDetailsSchema } from './module/types/ArticleDetailsSchema'
 export type { ArticleEditSchema } from './module/types/ArticleEditSchema'
 export type { ArticleCreateSchema } from './module/types/ArticleCreateSchema'
-export { getArticleDetailsMockState } from './module/slice/_articleState'
+export { mockArticleDetailsState } from './module/mocks/mockArticleDetailsState'
 export {
   articleDetailsActions,
   articleDetailsReducer,

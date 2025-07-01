@@ -3,14 +3,11 @@ import {
   StoreDecorator,
   ThemeDecorator,
 } from '@/shared/config/storybook/decorators/decorators'
-import {
-  getArticleDetailsMockState,
-  ArticleDetailsSchema,
-} from '@/entities/Article'
+import { mockArticleDetailsState } from '@/entities/Article'
 import ArticleDetailsPage from './ArticleDetailsPage'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const mockData: ArticleDetailsSchema = getArticleDetailsMockState()
+const mockData = mockArticleDetailsState
 const meta = {
   title: 'pages/ArticleDetailsPage',
   component: ArticleDetailsPage,

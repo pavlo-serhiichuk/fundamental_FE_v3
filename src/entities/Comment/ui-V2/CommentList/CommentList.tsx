@@ -8,7 +8,7 @@ import * as s from './CommentList.module.scss'
 
 interface CommentListProps {
   className?: string
-  comments: Comment[]
+  comments?: Comment[]
   isLoading?: boolean | undefined
 }
 
@@ -18,7 +18,10 @@ export const CommentList = (props: CommentListProps) => {
 
   if (isLoading || !comments) {
     return (
-      <div className={cls(s.CommentList, {}, [className])}>
+      <div
+        className={cls(s.CommentList, {}, [className])}
+        data-testid="CommentList.Loading"
+      >
         {t('Comments')}
         :
         <CommentCardSkeleton />
@@ -28,11 +31,14 @@ export const CommentList = (props: CommentListProps) => {
   }
 
   if (!comments.length) {
-    return <Text title={t('Article without comments')} />
+    return <Text title={t('Article without comments')} testId="NoComments" />
   }
 
   return (
-    <div className={cls(s.CommentList, {}, [className])}>
+    <div
+      className={cls(s.CommentList, {}, [className])}
+      data-testid="CommentList"
+    >
       <Text title={`${t('Comments')}:`} />
       {comments.map((comment) => (
         <CommentCard key={comment.id} comment={comment} />

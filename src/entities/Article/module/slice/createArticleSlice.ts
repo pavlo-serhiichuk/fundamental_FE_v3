@@ -8,11 +8,18 @@ import {
 } from '../types/article'
 import { ArticleBlockType } from '../consts/consts'
 import { ArticleCreateSchema } from '../types/ArticleCreateSchema'
-import { newArticle } from './_articleState'
 import { createNewArticle } from '../services/createNewArticle/createNewArticle'
 
 const initialState: ArticleCreateSchema = {
-  newArticle,
+  newArticle: {
+    title: '',
+    subtitle: '',
+    image: '',
+    views: 0,
+    created: '',
+    userId: '',
+    blocks: [],
+  },
 }
 
 interface BlockParagraphAction {

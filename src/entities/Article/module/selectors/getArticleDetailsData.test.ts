@@ -4,29 +4,25 @@ import {
   getArticleDetailsError,
   getArticleDetailsLoading,
 } from './getArticleDetailsData'
-import { getArticleDetailsMockState } from '../slice/_articleState'
-import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
+import { mockArticleDetailsState } from '../mocks/mockArticleDetailsState'
 
 describe('getArticleDetailsData.test', () => {
   test('get data', () => {
-    const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
+    const mockData = mockArticleDetailsState
     const state: DeepPartial<StateSchema> = {
       articleDetailsPage: { details: mockData },
     }
     expect(getArticleDetailsData(state as StateSchema)).toEqual(mockData.data)
   })
   test('get isLoading', () => {
-    const mockData = getArticleDetailsMockState(true) as ArticleDetailsSchema
+    const mockData = { ...mockArticleDetailsState, isLoading: true }
     const state: DeepPartial<StateSchema> = {
       articleDetailsPage: { details: mockData },
     }
     expect(getArticleDetailsLoading(state as StateSchema)).toBe(true)
   })
   test('get error', () => {
-    const mockData = getArticleDetailsMockState(
-      false,
-      'error',
-    ) as ArticleDetailsSchema
+    const mockData = { ...mockArticleDetailsState, error: 'error' }
     const state: DeepPartial<StateSchema> = {
       articleDetailsPage: { details: mockData },
     }
