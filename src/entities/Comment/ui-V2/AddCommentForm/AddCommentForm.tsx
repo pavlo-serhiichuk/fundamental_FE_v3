@@ -38,13 +38,18 @@ const AddCommentForm: FC<AddCommentFormProps> = (props) => {
   const onChangeComment = (value: string) => {
     dispatch(addCommentFormSliceActions.setText(value))
   }
+
   if (articleError) {
     return null
   }
 
   return (
     <DynamicReducerLoader reducers={reducers}>
-      <Card className={s.AddCommentForm} padding="16">
+      <Card
+        className={s.AddCommentForm}
+        padding="16"
+        testId="AddCommentForm.Card"
+      >
         <HStack gap="12" data-testid="AddCommentForm">
           <HStack gap="8" fullWidth align="center">
             <Avatar src={user?.avatar} alt={user?.username || ''} size={30} />
