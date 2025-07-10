@@ -2,19 +2,37 @@
   display: block;
 }
 
-.light {
+.app_light_theme {
   svg {
     fill: #a2d91f;
   }
 }
 
-.dark {
+.app_dark_theme {
   svg {
     fill: #f7fc2a;
   }
 }
 
-.green {
+.app_green_theme {
+  svg {
+    fill: #000;
+  }
+}
+
+.app_light_themeV2 {
+  svg {
+    fill: #a2d91f;
+  }
+}
+
+.app_dark_themeV2 {
+  svg {
+    fill: #f4f4f4;
+  }
+}
+
+.app_green_themeV2 {
   svg {
     fill: #000;
   }

@@ -1,13 +1,10 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {
-  getArticleDetailsMockState,
-  ArticleDetailsSchema,
-} from '@/features/ArticleDetails'
+import { mockArticleDetailsState } from '@/entities/Article'
 import { fetchArticlesList } from './fetchArticlesList'
 
 describe('fetchArticlesList.test', () => {
   test('success', async () => {
-    const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
+    const mockData = mockArticleDetailsState
     const thunk = new TestAsyncThunk(fetchArticlesList, {
       articlesPage: {},
       filters: {},

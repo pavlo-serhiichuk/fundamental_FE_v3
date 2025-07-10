@@ -5,5 +5,8 @@
   "Loading": "Loading...",
   "Page is not found": "Page is not found",
   "Sign in": "Sign in",
-  "userIsNotFound": "User is not found. Try latter"
+  "userIsNotFound": "User is not found. Try latter",
+  "{{count}} views_zero": "{{count}} views",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

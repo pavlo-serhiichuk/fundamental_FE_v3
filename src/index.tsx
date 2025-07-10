@@ -6,6 +6,7 @@ import { App } from './app/App'
 import { ThemeProvider } from './app/providers/ThemeProvider'
 import './shared/config/i18n/i18n'
 import { StoreProvider } from './app/providers/StoreProvider'
+import { CollapseProvider } from '@/app/providers/CollapseProvider/CollapseProvider'
 
 const container = document.getElementById('root')
 
@@ -20,8 +21,9 @@ root.render(
     <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
-          {/* <div>content</div> */}
-          <App />
+          <CollapseProvider>
+            <App />
+          </CollapseProvider>
         </ThemeProvider>
       </ErrorBoundary>
     </StoreProvider>

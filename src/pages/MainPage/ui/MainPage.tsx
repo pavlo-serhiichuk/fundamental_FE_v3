@@ -2,14 +2,17 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { Page } from '@/widgets/Page'
 import * as s from './MainPage.module.scss'
+import { Text } from '@/shared/ui/V2/Text'
 
 const MainPage = () => {
-  const { t } = useTranslation('main')
+  const { t } = useTranslation()
   return (
     <Page className={s.MainPage} data-testid="MainPage">
-      <div>{t('Main page')}</div>
-      <div>444</div>
-      {/* <Counter /> */}
+      <Text
+        size="text_size_l"
+        title={t('Main page')}
+        text={t('Here is a main page')}
+      />
     </Page>
   )
 }

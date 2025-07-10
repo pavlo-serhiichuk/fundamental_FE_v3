@@ -4,11 +4,19 @@ import AppRouter from '@/app/providers/router/ui/AppRouter'
 import {
   getRouteAbout,
   getRouteAdmin,
+  getRouteArticleCreate,
+  getRouteArticleEdit,
   getRouteArticles,
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/routers'
 import { UserRoles } from '@/entities/User'
+import { getAllFeatureFlags, setFeatureFlags } from '@/shared/lib/features'
+
+const initialState = { user: { authData: { roles: [UserRoles.USER] } } }
+const initialStateForAdmin = {
+  user: { authData: { roles: [UserRoles.ADMIN] } },
+}
 
 describe('AppRouter', () => {
   test('renders Main page', async () => {
@@ -17,7 +25,6 @@ describe('AppRouter', () => {
     })
     const page = await screen.findByTestId('MainPage')
     expect(page).toBeInTheDocument()
-    screen.debug()
   })
 
   test('renders About page', async () => {
@@ -26,7 +33,6 @@ describe('AppRouter', () => {
     })
     const page = await screen.findByTestId('AboutPage')
     expect(page).toBeInTheDocument()
-    screen.debug()
   })
 
   test('redirect not authed user to Main page', async () => {
@@ -35,7 +41,6 @@ describe('AppRouter', () => {
     })
     const page = await screen.findByTestId('MainPage')
     expect(page).toBeInTheDocument()
-    screen.debug()
   })
 
   test('render Profile for authed user', async () => {
@@ -48,6 +53,8 @@ describe('AppRouter', () => {
   })
 
   test('render Articles for authed user', async () => {
+    const currentFeatureFlags = getAllFeatureFlags()
+    setFeatureFlags({ ...currentFeatureFlags, isV2: false })
     renderTestComponent(<AppRouter />, {
       route: getRouteArticles(),
       initialState: { user: { authData: {} } },
@@ -59,7 +66,7 @@ describe('AppRouter', () => {
   test('render Admin panel for user without required role', async () => {
     renderTestComponent(<AppRouter />, {
       route: getRouteAdmin(),
-      initialState: { user: { authData: {} } },
+      initialState,
     })
     const page = await screen.findByTestId('ForbiddenPage')
     expect(page).toBeInTheDocument()
@@ -68,7 +75,7 @@ describe('AppRouter', () => {
   test('render Admin panel for user with required role', async () => {
     renderTestComponent(<AppRouter />, {
       route: getRouteAdmin(),
-      initialState: { user: { authData: { roles: [UserRoles.ADMIN] } } },
+      initialState: initialStateForAdmin,
     })
     const page = await screen.findByTestId('AdminPanelPage')
     expect(page).toBeInTheDocument()
@@ -77,7 +84,7 @@ describe('AppRouter', () => {
   test('render Admin panel for user with required role', async () => {
     renderTestComponent(<AppRouter />, {
       route: getRouteAdmin(),
-      initialState: { user: { authData: { roles: [UserRoles.ADMIN] } } },
+      initialState: initialStateForAdmin,
     })
     const page = await screen.findByTestId('AdminPanelPage')
     expect(page).toBeInTheDocument()
@@ -86,9 +93,27 @@ describe('AppRouter', () => {
   test('render not found page', async () => {
     renderTestComponent(<AppRouter />, {
       route: '/adsfs',
-      initialState: { user: { authData: { roles: [UserRoles.ADMIN] } } },
+      initialState: initialStateForAdmin,
     })
     const page = await screen.findByTestId('NotFoundPage')
+    expect(page).toBeInTheDocument()
+  })
+
+  test('render - "Create Article" page', async () => {
+    renderTestComponent(<AppRouter />, {
+      route: getRouteArticleCreate(),
+      initialState,
+    })
+    const page = await screen.findByTestId('ArticleCreatePage')
+    expect(page).toBeInTheDocument()
+  })
+
+  test('render - "Edit Article" page', async () => {
+    renderTestComponent(<AppRouter />, {
+      route: getRouteArticleEdit('1'),
+      initialState,
+    })
+    const page = await screen.findByTestId('ArticleEditPage')
     expect(page).toBeInTheDocument()
   })
 })

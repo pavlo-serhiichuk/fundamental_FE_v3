@@ -1,0 +1,67 @@
+.SidebarWrapper {
+  position: sticky;
+  margin: 20px;
+  height: 100%;
+}
+
+.Sidebar {
+  position: relative;
+  min-width: var(--sidebar-width-v2);
+  max-width: var(--sidebar-width-v2);
+  background-color: var(--secondary-bg-v2);
+  height: calc(100% - 40px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.collapsed {
+  min-width: var(--sidebar-width-collapsed-v2);
+  max-width: var(--sidebar-width-collapsed-v2);
+  width: var(--sidebar-width-collapsed-v2);
+}
+
+.collapseBtn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: block;
+  transform: rotate(90deg);
+}
+
+.btnIsCollapsed {
+  transform: rotate(-90deg);
+  right: 0;
+}
+
+.switchers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.switchersCollapsed {
+  flex-direction: column;
+  gap: 0;
+}
+
+.sidebarLang {
+  margin-bottom: 13px;
+}
+
+.appLogo {
+  margin: 15px 5px 10px;
+}
+
+.appLogoCollapsed {
+  margin: 15px 0 10px 5px;
+}

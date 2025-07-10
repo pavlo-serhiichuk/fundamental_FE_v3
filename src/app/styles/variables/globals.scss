@@ -6,6 +6,18 @@
   --sidebar-width-collapsed: 70px;
   --page-content-height: calc(100vh - var(--navbar-height) - 30px);
 
+  // sizes V2
+  --navbar-height-v2: 60px;
+  --border-radius-v2: 32px;
+  --sidebar-width-v2: 220px;
+  --sidebar-width-collapsed-v2: 55px;
+  --page-content-height-v2: 100vh;
+  --main-layout-sidebar-full-width: 264px;
+  --main-layout-sidebar-collapsed-width: 104px;
+  --main-layout-rightbar-width: 200px;
+  --content-layout-left-width: 100px;
+  --content-layout-right-width: 264px;
+
   // z-indexes
   --z-index-modal: 10;
 

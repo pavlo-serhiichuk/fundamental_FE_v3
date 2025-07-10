@@ -13,6 +13,9 @@ import { articleDetailsPageSlice } from '@/pages/ArticleDetailsPage'
 import { Theme } from '@/shared/types/theme'
 import i18nForTests from '../../../config/i18n/i18nForTests'
 import { ReducersList } from '../../../lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { CollapseProvider } from '@/app/providers/CollapseProvider/CollapseProvider'
+import { ThemeContext } from '../../../lib/context/ThemesContext'
+import { setFeatureFlags, getAllFeatureFlags } from '@/shared/lib/features'
 
 export const TranslationDecorator = (Story: any) => (
   // This catches the suspense from components not yet ready (still loading translations)
@@ -24,13 +27,29 @@ export const TranslationDecorator = (Story: any) => (
   </Suspense>
 )
 
-export const ThemeDecorator = (theme: Theme) => (StoryComponent: any) => (
-  <ThemeProvider initialTheme={theme}>
-    <div className={`app ${theme}`}>
-      <StoryComponent />
-    </div>
-  </ThemeProvider>
-)
+export const ThemeDecorator = (theme: Theme) => (StoryComponent: any) => {
+  const defaultFeatures = getAllFeatureFlags()
+  setFeatureFlags({ ...defaultFeatures, isV2: false })
+  return (
+    <ThemeContext.Provider value={{ theme }}>
+      <div className={`app ${theme}`}>
+        <StoryComponent />
+      </div>
+    </ThemeContext.Provider>
+  )
+}
+
+export const ThemeDecoratorV2 = (theme: Theme) => (StoryComponent: any) => {
+  const defaultFeatures = getAllFeatureFlags()
+  setFeatureFlags({ ...defaultFeatures, isV2: true })
+  return (
+    <ThemeContext.Provider value={{ theme }}>
+      <div className={`app-v2 ${theme}`}>
+        <StoryComponent />
+      </div>
+    </ThemeContext.Provider>
+  )
+}
 
 export const RouterDecorator = (StoryComponent: any) => (
   <BrowserRouter>
@@ -60,8 +79,8 @@ export const StoreDecorator =
     </StoreProvider>
   )
 
-export const PageContentDecorator = (StoryComponent: any) => (
-  <div className="page-content">
+export const CollapseProviderDecorator = (StoryComponent: any) => (
+  <CollapseProvider>
     <StoryComponent />
-  </div>
+  </CollapseProvider>
 )

@@ -1,0 +1,26 @@
+.AppLink {
+  padding: 5px 10px;
+  text-decoration: none;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.content {
+  color: var(--content-text-color);
+}
+
+.navigation {
+  color: var(--nav-text-color);
+}
+
+.navigationBorder {
+  color: var(--nav-text-color);
+  border: 2px solid var(--nav-border-v2);
+  border-radius: var(--border-radius-v2);
+}
+
+.contentBorder {
+  color: var(--content-text-color);
+  border: 2px solid var(--content-border-v2);
+  border-radius: var(--border-radius-v2);
+}

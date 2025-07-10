@@ -1,0 +1,47 @@
+.Button {
+  cursor: pointer;
+  color: var(--content-text-color-v2);
+  z-index: 1;
+  border-radius: var(--border-radius-v2);
+  font: var(--font-16-v2);
+  width: fit-content;
+}
+
+.default {
+  color: var(--content-text-color-v2);
+}
+
+.clear {
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.bordered,
+.accept,
+.cancel {
+  background: none;
+  border: 2px solid var(--content-text-color-v2);
+  padding: 4px 12px;
+  text-align: center;
+}
+
+.accept {
+  border: 2px solid var(--border-v2);
+}
+
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border: none;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.cancel {
+  border: 2px solid var(--color-error);
+}

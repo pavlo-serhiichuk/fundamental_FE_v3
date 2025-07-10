@@ -3,7 +3,7 @@ import { fetchSignIn } from '../thunks/fetchSignIn'
 import { getSignInInitialState } from './getSignInInitialState'
 import { type SignInSchema } from '../types/signInSchema'
 
-const initialState: SignInSchema = getSignInInitialState()
+const initialState: SignInSchema = getSignInInitialState(true)
 
 const signInSlice = createSlice({
   name: 'signIn',

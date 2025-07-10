@@ -1,7 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { AUTH_USER_DATA } from '@/shared/const/localStorage'
+import { LS_DESIGN_VERSION, USER_ID } from '@/shared/const/localStorage'
 import { User, UserSchema } from '../../module/types/UserSchema'
 import { setFeatureFlags } from '@/shared/lib/features'
+import { saveJsonSettings } from '../services/saveJsonSettings'
+import { initUserDataById } from '../services/initUserDataById'
 
 const initialState: UserSchema = {
   _inited: false,
@@ -13,26 +15,29 @@ export const userSlice = createSlice({
   reducers: {
     setAuthData: (state: UserSchema, action: PayloadAction<User>) => {
       state.authData = action.payload
-      if (action.payload.features) {
-        setFeatureFlags(action.payload.features)
-      }
-    },
-    initAuthData: (state: UserSchema) => {
-      const user = localStorage.getItem(AUTH_USER_DATA)
-      if (user) {
-        const json = JSON.parse(user)
-        state.authData = json
-        if (json?.features) {
-          console.log('json', json)
-          setFeatureFlags(json.features)
-        }
-      }
-      state._inited = true
+      setFeatureFlags(action.payload.features)
+      localStorage.setItem(USER_ID, JSON.stringify(action.payload.id))
     },
     logout: (state: UserSchema) => {
       state.authData = undefined
-      localStorage.removeItem(AUTH_USER_DATA)
+      localStorage.removeItem(USER_ID)
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(saveJsonSettings.fulfilled, (state, action) => {})
+      .addCase(
+        initUserDataById.fulfilled,
+        (state, action: PayloadAction<User>) => {
+          state.authData = action.payload
+          setFeatureFlags(action.payload?.features)
+          localStorage.setItem(
+            LS_DESIGN_VERSION,
+            JSON.stringify(action.payload?.features?.isV2 ? 'V2' : 'V1'),
+          )
+          state._inited = true
+        },
+      )
   },
 })
 

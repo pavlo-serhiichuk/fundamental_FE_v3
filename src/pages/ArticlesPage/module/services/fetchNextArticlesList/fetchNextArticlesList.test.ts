@@ -1,8 +1,5 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
-import {
-  getArticleDetailsMockState,
-  ArticleDetailsSchema,
-} from '@/features/ArticleDetails'
+import { mockArticleDetailsState } from '@/entities/Article'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 import { fetchNextArticlesList } from './fetchNextArticlesList'
 
@@ -10,7 +7,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList')
 
 describe('fetchNextArticlesList.test', () => {
   test('success', async () => {
-    const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
+    const mockData = mockArticleDetailsState
     const thunk = new TestAsyncThunk(fetchNextArticlesList, {
       articlesPage: {
         pageNumber: 2,
@@ -27,7 +24,7 @@ describe('fetchNextArticlesList.test', () => {
   })
 
   test('stopped', async () => {
-    const mockData = getArticleDetailsMockState() as ArticleDetailsSchema
+    const mockData = mockArticleDetailsState
     const thunk = new TestAsyncThunk(fetchNextArticlesList, {
       articlesPage: {
         pageNumber: 2,

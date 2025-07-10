@@ -1,0 +1,13 @@
+{
+  "About us": "Про нас",
+  "Go back": "Назад",
+  "Lang": "Укр",
+  "Loading": "Завантаження...",
+  "Page is not found": "Сторінка не знайдена",
+  "Sign in": "Увійти",
+  "userIsNotFound": "Тест",
+  "{{count}} views_zero": "{{count}} переглядів",
+  "{{count}} views_one": "{{count}} перегляд",
+  "{{count}} views_few": "{{count}} перегляди",
+  "{{count}} views_many": "{{count}} переглядів"
+}

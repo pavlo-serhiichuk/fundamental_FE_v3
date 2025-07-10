@@ -9,10 +9,10 @@ describe('ThemeSwitcher', () => {
   })
   test('switch', () => {
     renderTestComponent(<ThemeSwitcher />)
-    expect(screen.getByTestId('theme-switcher')).toHaveClass('light')
+    expect(screen.getByTestId('theme-switcher')).toHaveClass('app_light_theme')
     fireEvent.click(screen.getByTestId('theme-switcher'))
-    expect(screen.getByTestId('theme-switcher')).toHaveClass('green')
+    expect(screen.getByTestId('theme-switcher')).toHaveClass('app_green_theme')
     fireEvent.click(screen.getByTestId('theme-switcher'))
-    expect(screen.getByTestId('theme-switcher')).toHaveClass('dark')
+    expect(screen.getByTestId('theme-switcher')).toHaveClass('app_dark_theme')
   })
 })

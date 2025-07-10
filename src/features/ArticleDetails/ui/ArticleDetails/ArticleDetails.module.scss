@@ -1,7 +1,3 @@
-.ArticleDetails {
-  display: block;
-}
-
 .avatar {
   display: flex;
   justify-content: center;
@@ -15,4 +11,9 @@
 
 .title {
   margin: 20px 0;
+}
+
+.arrowIcon {
+  transform: rotate(90deg);
+  margin-left: -10px;
 }

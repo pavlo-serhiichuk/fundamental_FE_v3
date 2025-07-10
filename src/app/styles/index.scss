@@ -5,17 +5,22 @@
 @use 'variables/globals';
 @use 'fonts/fonts';
 
-.app,
-.app_modal,
-.app_drawer {
+.app {
   height: 100vh;
   overflow: scroll;
   font: var(--font-16);
   color: var(--content-text-color);
+  background-color: var(--content-bg);
 }
 
-.app {
-  background-color: var(--content-bg);
+.app-v2 {
+  font: var(--font-16-v2);
+  color: var(--content-text-color-v2);
+  background-color: var(--content-bg-v2);
+  font-optical-sizing: auto;
+  font-style:  normal;
+  font-variation-settings:
+          "wdth" 100;
 }
 
 .app-content {

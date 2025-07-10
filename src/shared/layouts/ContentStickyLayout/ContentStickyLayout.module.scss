@@ -1,0 +1,35 @@
+.ContentStickyLayout {
+  display: grid;
+  grid-template-areas: 'left content right';
+  grid-template-columns: min-content 1fr min-content;
+  position: relative;
+}
+
+.left {
+  grid-area: left;
+  margin-right: 20px;
+}
+
+.content {
+  grid-area: content;
+  max-width: 800px;
+  justify-self: center;
+  width: 95%;
+}
+
+.right {
+  grid-area: right;
+  max-width: 264px;
+}
+
+.left, .right {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.collapsed {
+  .content {
+    max-width: 1000px;
+  }
+}

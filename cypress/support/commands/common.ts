@@ -1,4 +1,4 @@
-import { AUTH_USER_DATA } from '../../../src/shared/const/localStorage'
+import { USER_ID } from '../../../src/shared/const/localStorage'
 import { selectByTestId } from '../../helpers/selectByTestId'
 import { User } from '../../../src/entities/User'
 
@@ -11,7 +11,7 @@ export const login = (
     body: { username, password },
     url: 'http://localhost:8000/login',
   }).then(({ body }) => {
-    window.localStorage.setItem(AUTH_USER_DATA, JSON.stringify(body))
+    window.localStorage.setItem(USER_ID, JSON.stringify(body))
     return body
   })
 }

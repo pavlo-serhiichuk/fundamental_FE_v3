@@ -8,7 +8,7 @@ import { Header } from './Header'
 import '@/app/styles/index.scss'
 
 const meta = {
-  title: 'widget/Header',
+  title: 'widgets/Header',
   component: Header,
   // parameters: {
   //   layout: 'centered',
@@ -30,7 +30,7 @@ export const Primary: Story = {
 
 export const PrimaryDark: Story = {
   args: {},
-  decorators: [ThemeDecorator('dark'), StoreDecorator({})],
+  decorators: [ThemeDecorator('app_dark_theme'), StoreDecorator({})],
 }
 
 export const PrimarySignedIn: Story = {

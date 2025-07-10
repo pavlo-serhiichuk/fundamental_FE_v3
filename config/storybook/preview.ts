@@ -1,15 +1,20 @@
 import type { Preview } from '@storybook/react'
 import '../../src/app/styles/index.scss'
 import '../../src/shared/config/i18n/i18nForTests'
-// @ts-ignore
 import {
   RouterDecorator,
   ThemeDecorator,
   TranslationDecorator,
-} from 'shared/config/storybook/decorators/decorators'
+  CollapseProviderDecorator,
+} from '../../src/shared/config/storybook/decorators/decorators'
 
 const preview: Preview = {
-  decorators: [ThemeDecorator('light'), TranslationDecorator, RouterDecorator],
+  decorators: [
+    ThemeDecorator('app_light_theme'),
+    TranslationDecorator,
+    RouterDecorator,
+    CollapseProviderDecorator,
+  ],
   parameters: {
     controls: {
       matchers: {

@@ -1,10 +1,15 @@
 .ChangeListView {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 
 .selected {
   svg {
     fill: var(--view-selected);
   }
+}
+
+.selectedV2 {
+    fill: var(--view-selected) !important;
 }

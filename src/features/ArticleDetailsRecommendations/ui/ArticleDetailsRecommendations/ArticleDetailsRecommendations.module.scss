@@ -1,7 +1,21 @@
+.ArticleDetailsRecommendations {
+  display: block;
+}
+
 .recommendationsList {
   padding: 20px 0;
   overflow-x: scroll;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  max-width: 1200px;
+}
+
+.recommendationsListV2 {
+  padding: 20px 0;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: calc(100vw - var(--main-layout-sidebar-full-width) - var(--main-layout-rightbar-width) - 284px );
 }

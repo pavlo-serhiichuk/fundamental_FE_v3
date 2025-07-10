@@ -1,0 +1,32 @@
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThynk/TestAsyncThunk'
+import { mockArticleDetailsState } from '../../mocks/mockArticleDetailsState'
+import { fetchArticleById } from './fetchArticleById'
+
+describe('createNewArticle.test', () => {
+  test('success', async () => {
+    // ↓ - preparing
+    const mockData = mockArticleDetailsState.data
+    const thunk = new TestAsyncThunk(fetchArticleById, {
+      articleDetailsPage: { details: {} },
+    })
+    thunk.api.get.mockReturnValue(Promise.resolve({ data: mockData }))
+    // ↑
+    // ↓ - calling thunk
+    const result: any = await thunk.callThunk('1')
+    // ↑
+    // ↓ - expecting
+    expect(result.payload).toEqual(mockData)
+    expect(result.meta.requestStatus).toEqual('fulfilled')
+    // ↑
+  })
+
+  test('error', async () => {
+    const thunk = new TestAsyncThunk(fetchArticleById, {
+      articleDetailsPage: { details: {} },
+    })
+    // eslint-disable-next-line prefer-promise-reject-errors
+    thunk.api.get.mockReturnValue(Promise.reject({ status: 403 }))
+    const result: any = await thunk.callThunk('1')
+    expect(result.meta.requestStatus).toBe('rejected')
+  })
+})

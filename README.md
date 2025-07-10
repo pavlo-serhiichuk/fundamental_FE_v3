@@ -61,7 +61,7 @@ Example:
 ```typescript jsx
 import React from 'react';
 import {ComponentStory, ComponentMeta, addDecorator} from '@storybook/react';
-import {AppLink, AppLinkTheme} from '@/shared/ui/AppLink'
+import {AppLink, AppLinkTheme} from '@/shared/ui-V2-deprecated-old/AppLink'
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import {Theme} from '@/shared/consts/theme'
 

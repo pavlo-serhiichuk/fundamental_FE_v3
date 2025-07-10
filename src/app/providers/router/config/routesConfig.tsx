@@ -11,13 +11,19 @@ import {
   AppRouteNames,
   getRouteAbout,
   getRouteAdmin,
+  getRouteArticleCreate,
   getRouteArticleDetails,
+  getRouteArticleEdit,
   getRouteArticles,
   getRouteForbidden,
   getRouteMain,
   getRouteProfile,
+  getRouteSettings,
 } from '@/shared/const/routers'
 import { RoutesConfigType } from '@/shared/types/router'
+import { SettingsPage } from '@/pages/SettingsPage'
+import { ArticleEditPage } from '@/pages/ArticleEditPage'
+import { ArticleCreatePage } from '@/pages/ArticleCreatePage'
 
 export const routesConfig: RoutesConfigType = {
   [AppRouteNames.MAIN]: {
@@ -43,6 +49,16 @@ export const routesConfig: RoutesConfigType = {
     element: <ArticleDetailsPage />,
     authOnly: true,
   },
+  [AppRouteNames.ARTICLE_EDIT]: {
+    path: getRouteArticleEdit(':id'),
+    element: <ArticleEditPage />,
+    authOnly: true,
+  },
+  [AppRouteNames.ARTICLE_CREATE]: {
+    path: getRouteArticleCreate(),
+    element: <ArticleCreatePage />,
+    authOnly: true,
+  },
   [AppRouteNames.ADMIN_PANEL]: {
     path: getRouteAdmin(),
     element: <AdminPanelPage />,
@@ -52,6 +68,11 @@ export const routesConfig: RoutesConfigType = {
   [AppRouteNames.FORBIDDEN]: {
     path: getRouteForbidden(),
     element: <ForbiddenPage />,
+    authOnly: true,
+  },
+  [AppRouteNames.SETTINGS]: {
+    path: getRouteSettings(),
+    element: <SettingsPage />,
     authOnly: true,
   },
 

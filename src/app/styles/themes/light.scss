@@ -1,4 +1,4 @@
-.light {
+.app_light_theme {
   --content-bg: #fdfdf1;
   --content-bg-hover: #fefec6;
   --navbar-bg: #dddd17;
@@ -21,4 +21,28 @@
   --view-selected: #36c0c0;
   --popup-bg: #fefec6;
   --popup-bg-hover: #f0f089;
+
+  // V2
+  --secondary-bg-v2: #e5e5e5;
+  --accent-2-v2: #efefef;
+  --content-bg-v2: #fcfcfa;
+  --content-bg-hover-v2: #d5d5d5;
+  --navbar-bg-hover-v2: #cdcdcd;
+  --sidebar-bg-hover-v2: #efefef;
+  --content-text-color-v2: #4a4747;
+  --comment-text-color-v2: #000;
+  --nav-text-color-v2: #000;
+  --border-v2: #5fa028;
+  --content-border-v2: #6e6b6b;
+  --nav-border-v2: #000;
+  --input-bg-v2: #e1e1e1;
+  --edit-border-v2: #4ed7f2;
+  --skeleton-color-v2: #d5d5d5;
+  --skeleton-shadow-v2: #dad8d8;
+  --code-bg-v2: #fff;
+  --card-bg-v2: #e5e5e5;
+  --color-err-v2or: red;
+  --view-selected-v2: #36c0c0;
+  --popup-bg-v2: #dadada;
+  --popup-bg-hover-v2: #f4f4f4;
 }

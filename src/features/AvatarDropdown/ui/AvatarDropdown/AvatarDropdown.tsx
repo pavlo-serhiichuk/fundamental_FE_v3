@@ -8,9 +8,13 @@ import {
   getUserAuthData,
   userActions,
 } from '@/entities/User'
-import { Dropdown } from '@/shared/ui/Popups'
-import { Avatar } from '@/shared/ui/Avatar'
+import { Dropdown as DropdownDepricated } from '@/shared/ui/deprecated/Popups'
+import { Avatar as AvatarDepricated } from '@/shared/ui/deprecated/Avatar'
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/routers'
+import * as s from './AvatarDropdown.module.scss'
+import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
+import { Dropdown } from '@/shared/ui/V2/Popups'
+import { Avatar } from '@/shared/ui/V2/Avatar'
 
 interface AvatarDropdownProps {
   className?: string
@@ -56,12 +60,37 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
   ]
 
   return (
-    <Dropdown
-      items={items}
-      trigger={
-        <Avatar size={45} src={authData.avatar} alt={authData.username} />
+    <ToggleFeature
+      feature="isV2"
+      on={
+        <Dropdown
+          items={items}
+          dropdownClassName={s.dropdown}
+          trigger={
+            <Avatar
+              size={45}
+              src={authData.avatar}
+              alt={authData.username}
+              className={s.AvatarIcon}
+            />
+          }
+          direction="bottom left"
+        />
       }
-      direction="bottom left"
+      off={
+        <DropdownDepricated
+          items={items}
+          trigger={
+            <AvatarDepricated
+              size={45}
+              src={authData.avatar}
+              alt={authData.username}
+              className={s.AvatarIcon}
+            />
+          }
+          direction="bottom left"
+        />
+      }
     />
   )
 })

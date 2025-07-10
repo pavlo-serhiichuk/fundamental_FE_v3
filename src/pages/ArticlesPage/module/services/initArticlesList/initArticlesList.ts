@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type ThunkConfig } from '@/app/providers/StoreProvider'
-import { getListView } from '@/features/ChangeListView'
+import { getListView, ListView } from '@/features/ChangeListView'
 import {
   filtersActions,
   OrderByType,
@@ -18,7 +18,7 @@ export const initArticlesList = createAsyncThunk<
 >('articlesPage/initArticlesList', async (searchParams, thunkAPI) => {
   const { dispatch, getState } = thunkAPI
   const inited = getArticlesPageInited(getState())
-  const listView = getListView(getState())
+  const listView = localStorage.getItem('LIST_VIEW') || getListView(getState())
 
   if (!inited) {
     const orderByFromUrl = searchParams.get('orderBy')
@@ -33,7 +33,7 @@ export const initArticlesList = createAsyncThunk<
       dispatch(filtersActions.setSearchValue(searchValueFromUrl))
     if (topicTypeFromUrl)
       dispatch(filtersActions.setTopicType(topicTypeFromUrl as TopicType))
-    dispatch(articlesPageActions.initArticlesPageState(listView))
+    dispatch(articlesPageActions.initArticlesPageState(listView as ListView))
     dispatch(fetchArticlesList())
   }
 })

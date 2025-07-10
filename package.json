@@ -14,15 +14,16 @@
     "test:unit": "jest --config config/test/jest.config.ts",
     "test:e2e": "cypress open",
     "prettier": "npx prettier --write \"**/*.{ts,tsx,json}\"",
-    "lint:ts": "eslint \"**/*.{ts, tsx}\"",
-    "lint:ts:fix": "eslint \"**/*.{ts, tsx}\" --fix",
+    "lint:ts": "eslint \"./src/**/*.{ts, tsx}\"",
+    "lint:ts:fix": "eslint \"./src/**/*.{ts, tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build --config-dir ./config/storybook",
     "chromatic": "npx chromatic --project-token=chpt_7258454dcdf3fa1 --storybook-config-dir=config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "postinstall": "rm -rf node_modules/.cache"
+    "postinstall": "rm -rf node_modules/.cache",
+    "remove-feature": "npx ts-node ./scripts/remove-feature.ts"
   },
   "repository": {
     "type": "git",

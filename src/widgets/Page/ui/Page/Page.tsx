@@ -12,6 +12,7 @@ import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { TestProps } from '@/shared/types/tests'
 import * as s from './Page.module.scss'
+import { toggleFeatures } from '@/shared/lib/features'
 
 interface PageProps extends TestProps {
   className?: string
@@ -23,8 +24,8 @@ export const Page = memo((props: PageProps) => {
   const dispatch = useAppDispatch()
   const scroll = useSelector(getScrollRecoverScroll)
   const { pathname } = useLocation()
-  const wrapperRef = useRef(null) as RefObject<HTMLElement | null>
-  const triggerRef = useRef(null) as RefObject<HTMLElement | null>
+  const wrapperRef = useRef(null) as RefObject<HTMLElement>
+  const triggerRef = useRef(null) as RefObject<HTMLElement>
   const { className, children, onScrollEnd, ...otherProps } = props
 
   useInitialEffect(() => {
@@ -34,7 +35,11 @@ export const Page = memo((props: PageProps) => {
   })
 
   useInfiniteScroll({
-    wrapperRef,
+    wrapperRef: toggleFeatures({
+      name: 'isV2',
+      on: () => undefined,
+      off: () => wrapperRef,
+    }),
     triggerRef,
     callback: onScrollEnd,
   })
@@ -52,12 +57,16 @@ export const Page = memo((props: PageProps) => {
     <main
       onScroll={onScroll}
       ref={wrapperRef as LegacyRef<HTMLElement>}
-      className={cls(s.Page, {}, [className])}
+      className={cls(
+        toggleFeatures({ name: 'isV2', on: () => '', off: () => s.Page }),
+        {},
+        [className],
+      )}
       data-testid={props['data-testid']}
     >
       {children}
       {/* @ts-ignore */}
-      {onScrollEnd && <div className={s.trigger} ref={triggerRef} />}
+      {onScrollEnd ? <div className={s.trigger} ref={triggerRef} /> : null}
     </main>
   )
 })

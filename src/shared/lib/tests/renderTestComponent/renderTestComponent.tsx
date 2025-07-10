@@ -8,6 +8,7 @@ import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 import i18nForTests from '../../../config/i18n/i18nForTests'
 import { Theme } from '@/shared/types/theme'
 import '@/app/styles/index.scss'
+import { CollapseProvider } from '@/app/providers/CollapseProvider/CollapseProvider'
 
 export interface RenderTestComponentOptions {
   route?: string
@@ -23,18 +24,25 @@ export interface TestProviderProps {
 
 export function TestProvider(props: TestProviderProps) {
   const { children, options = {} } = props
-  const { route = '/', initialState, asyncReducers, theme = 'light' } = options
+  const {
+    route = '/',
+    initialState,
+    asyncReducers,
+    theme = 'app_light_theme',
+  } = options
 
   return (
     <MemoryRouter initialEntries={[route]}>
       <StoreProvider initialState={initialState} asyncReducers={asyncReducers}>
-        <ThemeProvider>
-          <I18nextProvider i18n={i18nForTests}>
-            <ThemeProvider initialTheme={theme}>
-              <div className={`app ${theme}`}>{children}</div>
-            </ThemeProvider>
-          </I18nextProvider>
-        </ThemeProvider>
+        <CollapseProvider>
+          <ThemeProvider>
+            <I18nextProvider i18n={i18nForTests}>
+              <ThemeProvider initialTheme={theme}>
+                <div className={`app ${theme}`}>{children}</div>
+              </ThemeProvider>
+            </I18nextProvider>
+          </ThemeProvider>
+        </CollapseProvider>
       </StoreProvider>
     </MemoryRouter>
   )

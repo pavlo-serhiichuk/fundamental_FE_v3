@@ -7,7 +7,7 @@
       "id": "1",
       "title": "You should know how to become a true ninja and change the world",
       "subtitle": "... and make others lives harder",
-      "image": "https://yt3.googleusercontent.com/ytc/AGIKgqND5OpZ3zBGI_CFfNpPWs1PDQu_OmNG2IFXPcxf=s900-c-k-c0x00ffffff-no-rj",
+      "image": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/396e9/MainBefore.jpg",
       "views": 10023,
       "created": "28.02.2022",
       "userId": "1",
@@ -18,7 +18,7 @@
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Ніндзя код",
+          "title": "Ніндзя код!!!",
           "paragraphs": [
             "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
             "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
@@ -69,7 +69,28 @@
             "Екзотична змінна у якості лічильника особоливо доречна, коли тіло циклу займає одну-дві сторінки (чим більше, тим краще). У такому випадку, ті, хто зануриться глибоко у код циклу, не зможуть швидко здогадатись, що змінна x насправді є лічильником."
           ]
         }
-      ]
+      ],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "111",
+        "age": 28,
+        "roles": [
+          "ADMIN"
+        ],
+        "features": {
+          "isV2": true,
+          "isArticleDetailsRatingEnabled": true,
+          "isProfileRatingEnabled": true
+        },
+        "jsonSettings": {
+          "theme": "app_green_theme",
+          "isFirstVisit": true,
+          "settingsPageHasBeenOpened": false,
+          "articlesPageHasBeenOpened": true
+        },
+        "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
+      }
     },
     {
       "id": "2",
@@ -78,7 +99,7 @@
       "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
       "views": 103,
       "created": "01.01.2022",
-      "userId": "1",
+      "userId": "2",
       "type": [
         "ECONOMICS"
       ],
@@ -101,7 +122,7 @@
       "image": "https://as1.ftcdn.net/v2/jpg/03/46/38/58/1000_F_346385816_skdGVJfU6LGlMIZymOwOzhVeSJLSLeH4.jpg",
       "views": 1033,
       "created": "10.02.2022",
-      "userId": "1",
+      "userId": "3",
       "type": [
         "SCIENCE"
       ],
@@ -115,31 +136,28 @@
             "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
           ]
         }
-      ]
-    },
-    {
-      "id": "4",
-      "title": "Warrior and change the game",
-      "subtitle": "... and make others lives harder",
-      "image": "https://t4.ftcdn.net/jpg/05/72/75/99/360_F_572759975_8Tku6l3E3PAytqoLLRij9xwt1vybvbbi.jpg",
-      "views": 123,
-      "created": "25.02.2022",
-      "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
       ],
-      "blocks": [
-        {
-          "id": "1",
-          "type": "TEXT",
-          "title": "Ніндзя код",
-          "paragraphs": [
-            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код.\n\nГуру, що перевіряють код, шукають їх у тестових завданнях.\n\nПочатківці іноді використовують їх краще за ніндзя-програмістів.\n\nУважно перечитайте ці хитрощі і вирішіть хто ви є — ніндзя, початківець, чи може гуру перевірки коду?",
-            "Ніндзя-програмісти минулого використовували деякі хитрощі, щоб загострити розум тих, хто буде підтримувати їх код."
-          ]
-        }
-      ]
+      "user": {
+        "id": "3",
+        "username": "manager",
+        "password": "111",
+        "age": 27,
+        "roles": [
+          "MANAGER"
+        ],
+        "features": {
+          "isV2": false,
+          "isArticleDetailsRatingEnabled": false,
+          "isProfileRatingEnabled": false
+        },
+        "jsonSettings": {
+          "theme": "app_dark_theme",
+          "isFirstVisit": true,
+          "settingsPageHasBeenOpened": false,
+          "articlesPageHasBeenOpened": true
+        },
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
+      }
     },
     {
       "id": "5",
@@ -779,6 +797,24 @@
       "articleId": "1",
       "userId": "1",
       "id": "qy9k1Z9"
+    },
+    {
+      "text": "new ac",
+      "articleId": "2",
+      "userId": "1",
+      "id": "IIsJ6Z4"
+    },
+    {
+      "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet blanditiis exercitationem fugit laboriosam laudantium quas similique voluptatem. Beatae consequuntur dignissimos ea minima, mollitia porro quibusdam quos repellat voluptates? Aliquam asperiores eaque enim libero magnam natus nihil quam quos velit voluptate? Ab modi mollitia nobis perferendis ratione repellat velit. Accusamus animi doloribus dolorum esse est illo laboriosam, maxime reprehenderit voluptatum. Aspernatur assumenda at commodi eos est itaque labore laudantium nemo, nisi quae quasi qui sed soluta? Alias aliquam beatae, blanditiis consequuntur corporis cumque dolor fugit inventore, iusto laboriosam magnam modi optio quas quidem, repellat repellendus sint suscipit tempora veniam voluptatum!",
+      "articleId": "2",
+      "userId": "1",
+      "id": "tf_UAaw"
+    },
+    {
+      "text": "saf",
+      "articleId": "2",
+      "userId": "1",
+      "id": "HpxZjZ0"
     }
   ],
   "users": [
@@ -791,8 +827,15 @@
         "ADMIN"
       ],
       "features": {
+        "isV2": true,
         "isArticleDetailsRatingEnabled": true,
         "isProfileRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_green_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
@@ -805,8 +848,15 @@
         "USER"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": false,
         "isProfileRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
@@ -819,8 +869,15 @@
         "MANAGER"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": false,
         "isProfileRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDRWz_yYKLPTPmQyi68-hxmKFZWBu1RJkPow&s"
     },
@@ -834,8 +891,15 @@
         "MANAGER"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": false,
         "isProfileRatingEnabled": false
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": false
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     },
@@ -850,8 +914,15 @@
         "ADMIN"
       ],
       "features": {
+        "isV2": false,
         "isArticleDetailsRatingEnabled": true,
         "isProfileRatingEnabled": true
+      },
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "isFirstVisit": true,
+        "settingsPageHasBeenOpened": false,
+        "articlesPageHasBeenOpened": true
       },
       "avatar": "https://cdn-icons-png.flaticon.com/512/6858/6858578.png"
     }
@@ -860,12 +931,12 @@
     {
       "id": "1",
       "firstname": "Adminator",
-      "lastname": "Adminovych2",
-      "age": 28,
-      "country": "Italy",
+      "lastname": "Adminovych",
+      "age": 29,
+      "country": "Poland",
       "currency": "USD",
       "username": "admin",
-      "city": "Irpin",
+      "city": "Bucha",
       "avatar": "https://i.guim.co.uk/img/static/sys-images/Film/Pix/pictures/2009/12/17/1261051924334/Scene-from-Avatar-2009-001.jpg?width=465&dpr=1&s=none&crop=none"
     },
     {
@@ -967,13 +1038,6 @@
       "feedback": "",
       "userId": "2",
       "id": "OiIiCIJ"
-    },
-    {
-      "articleId": "4",
-      "rate": 3,
-      "feedback": "",
-      "userId": "2",
-      "id": "tSm3uUS"
     },
     {
       "articleId": "2",

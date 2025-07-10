@@ -1,0 +1,32 @@
+.Drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+  font: var(--font-16-v2);
+}
+
+.opened {
+  pointer-events: auto;
+  opacity: 1;
+  z-index: var(--z-index-modal);
+}
+
+
+.sheet {
+  z-index: 100;
+  position: fixed;
+  left: 2vw;
+  height: calc(100vh + 100px);
+  width: 96vw;
+  border-radius: 12px 12px 0;
+  background: var(--content-bg-v2);
+  touch-action: none;
+  padding: 15px;
+}

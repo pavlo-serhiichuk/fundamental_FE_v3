@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/deprecated/Button'
 import { useCounterActions } from '../../module/slice/counterSlice'
 import { useGetCounter } from '../../module/selectors/getCounter'
 

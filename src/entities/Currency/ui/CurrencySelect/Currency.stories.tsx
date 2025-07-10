@@ -30,5 +30,5 @@ export const DefaultDark: Story = {
   args: {
     value: 'USD',
   },
-  decorators: [ThemeDecorator('dark')],
+  decorators: [ThemeDecorator('app_dark_theme')],
 }

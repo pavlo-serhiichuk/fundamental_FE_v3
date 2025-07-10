@@ -9,7 +9,7 @@ import {
   useRateProfile,
 } from '../../api/profileRatingApi'
 import * as s from './ProfileRating.module.scss'
-import { Skeleton } from '@/shared/ui/Skeleton'
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton'
 
 export interface ProfileRatingProps {
   className?: string
