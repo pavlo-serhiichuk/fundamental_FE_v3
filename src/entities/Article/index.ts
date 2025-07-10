@@ -50,4 +50,4 @@ export {
 } from './module/selectors/getCreateArticleData'
 export { ArticleEditCreateFooter } from './ui/ArticleEditCreateFooter/ArticleEditCreateFooter'
 export { ArticleEditCreateHeader } from './ui/ArticleEditCreateHeader/ArticleEditCreateHeader'
-export { AddArticleEditBlock } from './ui/AddArticleEditBlock/AddArticleEditBlock'
+export { AddArticleCreateEditBlock } from '@/entities/Article/ui/AddArticleCreateEditBlock/AddArticleCreateEditBlock'

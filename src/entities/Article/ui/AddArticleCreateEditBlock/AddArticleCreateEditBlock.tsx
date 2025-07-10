@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useCallback, useState } from 'react'
 import { cls } from '@/shared/lib/cls/cls'
-import * as s from './AddArticleEditBlock.module.scss'
+import * as s from './AddArticleCreateEditBlock.module.scss'
 import { HStack } from '@/shared/ui/stationary/Stack'
 import { Button } from '@/shared/ui/V2/Button'
 import { ArticleBlockType } from '../../module/consts/consts'
@@ -16,7 +16,7 @@ interface AddArticleEditBlockProps {
   isCreate?: boolean
 }
 
-export const AddArticleEditBlock = (props: AddArticleEditBlockProps) => {
+export const AddArticleCreateEditBlock = (props: AddArticleEditBlockProps) => {
   const { className, blockIndex, isLastBlock = false, isCreate = false } = props
   const { t } = useTranslation()
   const [isAddArticleEditBlock, setIsAddArticleEditBlock] = useState(false)
@@ -55,13 +55,18 @@ export const AddArticleEditBlock = (props: AddArticleEditBlockProps) => {
       className={cls(s.AddArticleEditBlock, {}, [className])}
       justify="center"
       gap="10"
+      data-testid="AddArticleCreateEditBlock"
     >
       {isAddArticleEditBlock ? (
         <>
           <Button theme="cancel" onClick={onToggle}>
             {t('Cancel')}
           </Button>
-          <Button theme="accept" onClick={onAddBlock(ArticleBlockType.TEXT)}>
+          <Button
+            theme="accept"
+            onClick={onAddBlock(ArticleBlockType.TEXT)}
+            testId="AddTextBlock"
+          >
             + {t('text')}
           </Button>
           <Button theme="accept" onClick={onAddBlock(ArticleBlockType.CODE)}>
@@ -72,7 +77,7 @@ export const AddArticleEditBlock = (props: AddArticleEditBlockProps) => {
           </Button>
         </>
       ) : (
-        <Button onClick={onToggle} theme="accept">
+        <Button onClick={onToggle} theme="accept" testId="AddBlock">
           + {t('Add block')}
         </Button>
       )}

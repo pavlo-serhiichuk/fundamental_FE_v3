@@ -21,6 +21,7 @@ export const ArticleEditCreateHeader = (
       bgType="secondary"
       padding="20"
       className={getVStackString({ gap: '16' })}
+      testId="ArticleEditCreateHeader"
     >
       <Avatar
         src={data?.image || ''}
@@ -32,11 +33,13 @@ export const ArticleEditCreateHeader = (
         value={data?.image}
         onChange={onChangeArticleImage}
         label="Article image"
+        testId="Input.ArticleSource"
       />
       <Input
         value={data?.title}
         onChange={onChangeTitle}
         label="Article title"
+        testId="Input.ArticleTitle"
       />
     </Card>
   )

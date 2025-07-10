@@ -148,7 +148,7 @@ export const ProfileCardEdit: FC<EditProfileCardProps> = () => {
             placeholder={t('Your city...')}
             label={t('City')}
             onChange={onChangeCity}
-            testId="Input.Age"
+            testId="Input.City"
           />
         </VStack>
         <VStack gap="10" fullWidth>

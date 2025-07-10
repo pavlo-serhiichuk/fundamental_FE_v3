@@ -74,12 +74,14 @@ export const ArticleEditTextComponent = memo(
         className={getVStackString({ gap: '16' })}
         onClose={onDeleteBlock}
         withCloseIcon
+        testId="ArticleEditTextComponent"
       >
         <VStack className={cls('', {}, [className])} gap="10">
           <Input
             value={block?.title}
             label="Block title"
             onChange={onChangeBlockTitle}
+            testId="ArticleEditTextComponent.InputTitle"
           />
           {block?.paragraphs.map((paragraph, index) => (
             <textarea

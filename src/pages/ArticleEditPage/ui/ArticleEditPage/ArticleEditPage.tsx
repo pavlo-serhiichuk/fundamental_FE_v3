@@ -15,7 +15,7 @@ import {
   renderEditBlocks,
   editArticleReducer,
   getEditArticleData,
-  AddArticleEditBlock,
+  AddArticleCreateEditBlock,
   deleteArticleById,
 } from '@/entities/Article'
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
@@ -111,7 +111,11 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
           <ArticleDetails isPreview />
         </div>
       </Modal>
-      <Card className={cls(s.ArticleEditPage, {}, [className])} padding="20">
+      <Card
+        className={cls(s.ArticleEditPage, {}, [className])}
+        padding="20"
+        testId="ArticleEditPage"
+      >
         <Text title={t('Edit article:')} className={s.pageTitle} />
         <ArticleEditCreateHeader
           data={editArticleData}
@@ -120,7 +124,10 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
         />
         <VStack gap="16" className={s.blocks}>
           {editArticleData?.blocks?.map(renderEditBlocks(false))}
-          <AddArticleEditBlock blockIndex={blocksLength - 1} isLastBlock />
+          <AddArticleCreateEditBlock
+            blockIndex={blocksLength - 1}
+            isLastBlock
+          />
         </VStack>
         <ArticleEditCreateFooter
           onOpenPreview={onOpenModal}

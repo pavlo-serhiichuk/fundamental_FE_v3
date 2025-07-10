@@ -4,12 +4,13 @@ import { ArticleBlockType } from '../module/consts/consts'
 import { ArticleEditTextComponent } from '../ui/ArticleEditTextComponent/ArticleEditTextComponent'
 import { ArticleEditCodeComponent } from '../ui/ArticleEditCodeComponent/ArticleEditCodeComponent'
 import { ArticleEditImageComponent } from '../ui/ArticleEditImageComponent/ArticleEditImageComponent'
-import { AddArticleEditBlock } from '../ui/AddArticleEditBlock/AddArticleEditBlock'
+import { AddArticleCreateEditBlock } from '../ui/AddArticleCreateEditBlock/AddArticleCreateEditBlock'
 
 export const renderEditBlocks =
   (isCreate: boolean) => (block: ArticleBlock, index: number) => {
     let result: ReactElement = <div />
-    switch (block.type) {
+    const { type } = block
+    switch (type) {
       case ArticleBlockType.TEXT:
         result = <ArticleEditTextComponent block={block} isCreate={isCreate} />
         break
@@ -24,7 +25,7 @@ export const renderEditBlocks =
     }
     return (
       <div key={block.id}>
-        <AddArticleEditBlock blockIndex={index} />
+        <AddArticleCreateEditBlock blockIndex={index} />
         {result}
       </div>
     )

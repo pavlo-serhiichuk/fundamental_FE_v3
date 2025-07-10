@@ -1,16 +1,14 @@
 import { memo, useCallback, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { cls } from '@/shared/lib/cls/cls'
 import * as s from './ArticleCreatePage.module.scss'
 import {
-  AddArticleEditBlock,
+  AddArticleCreateEditBlock,
   ArticleEditCreateFooter,
   ArticleEditCreateHeader,
   createArticleActions,
   createArticleReducer,
-  editArticleActions,
   editArticleById,
   getCreateArticleData,
   renderEditBlocks,
@@ -37,10 +35,9 @@ const reducers: ReducersList = {
   createArticle: createArticleReducer,
 }
 
-export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
+const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
   const { className } = props
   const navigate = useNavigate()
-  const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const newArticle = useSelector(getCreateArticleData)
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -67,11 +64,11 @@ export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
     dispatch(createNewArticle()).then((res: any) => {
       navigate(getRouteArticleDetails(res.payload.id))
     })
-  }, [dispatch, editArticleById, getRouteArticleDetails])
+  }, [navigate, dispatch])
 
   const onCancel = useCallback(() => {
     navigate(getRouteArticles())
-  }, [dispatch, getRouteArticleDetails])
+  }, [navigate])
 
   return (
     <DynamicReducerLoader reducers={reducers}>
@@ -84,7 +81,11 @@ export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
           <ArticleDetails isPreview />
         </div>
       </Modal>
-      <Card className={cls(s.ArticleCreatePage, {}, [className])} padding="20">
+      <Card
+        className={cls(s.ArticleCreatePage, {}, [className])}
+        padding="20"
+        testId="ArticleCreatePage"
+      >
         <ArticleEditCreateHeader
           data={newArticle}
           onChangeArticleImage={onChangeArticleImage}
@@ -92,7 +93,7 @@ export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
         />
         <VStack gap="16" className={s.blocks}>
           {newArticle?.blocks?.map(renderEditBlocks(true))}
-          <AddArticleEditBlock
+          <AddArticleCreateEditBlock
             blockIndex={blocksLength - 1}
             isLastBlock
             isCreate
@@ -108,3 +109,5 @@ export const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
     </DynamicReducerLoader>
   )
 })
+
+export default ArticleCreatePage

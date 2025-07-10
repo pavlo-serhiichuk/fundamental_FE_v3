@@ -1,5 +1,5 @@
 import { type Meta, type StoryObj } from '@storybook/react'
-import { ArticleCreatePage } from './ArticleCreatePage'
+import ArticleCreatePage from './ArticleCreatePage'
 
 const meta = {
   title: 'features/ArticleCreatePage',

@@ -832,7 +832,7 @@
         "isProfileRatingEnabled": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_green_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpened": false,
         "articlesPageHasBeenOpened": true

@@ -32,6 +32,7 @@ export const ArticleEditCreateFooter = (
       <HStack
         gap="16"
         className={cls(s.ArticleEditCreateFooter, {}, [className])}
+        data-testid="ArticleEditCreateFooter"
       >
         {!isCreate && (
           <Button theme="cancel" fullWidth onClick={onDelete}>
