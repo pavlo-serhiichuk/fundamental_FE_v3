@@ -10,6 +10,7 @@ import { saveJsonSettings } from '@/entities/User'
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/ToggleFeature'
 import { Icon } from '@/shared/ui/V2/Icon'
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon'
 
 interface ThemeSwitcherProps {
   className?: string
@@ -36,15 +37,7 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
           theme="clear"
           onClick={handleToggleTheme}
           data-testid="theme-switcher"
-          className={cls(
-            s.ThemeSwitcher,
-            {
-              [s.lightV2]: theme === 'app_light_theme',
-              [s.darkV2]: theme === 'app_dark_theme',
-              [s.greenV2]: theme === 'app_green_theme',
-            },
-            [className],
-          )}
+          className={cls(s.ThemeSwitcher, {}, [className, s[`${theme}V2`]])}
         >
           <Icon Svg={ThemeCircle} width={40} height={40} />
         </Button>
@@ -54,17 +47,9 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
           theme="clear"
           onClick={handleToggleTheme}
           data-testid="theme-switcher"
-          className={cls(
-            s.ThemeSwitcher,
-            {
-              [s.light]: theme === 'app_light_theme',
-              [s.dark]: theme === 'app_dark_theme',
-              [s.green]: theme === 'app_green_theme',
-            },
-            [className],
-          )}
+          className={cls(s.ThemeSwitcher, {}, [className, s[theme]])}
         >
-          <ThemeCircleDepricated />
+          <IconDeprecated Svg={ThemeCircleDepricated} width={40} height={40} />
         </ButtonDepricated>
       }
     />

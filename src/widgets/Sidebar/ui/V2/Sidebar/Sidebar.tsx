@@ -22,7 +22,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   const { className } = props
   const { collapsed = false, setCollapsed } = useContext(CollapseContext)
   const sidebarItems = useSelector(getSidebarItems)
-
+  console.log('collapsed', collapsed)
   const onToggle = () => {
     setCollapsed?.(!collapsed)
   }
