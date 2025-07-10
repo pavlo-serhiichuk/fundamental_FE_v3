@@ -1,6 +1,7 @@
 import { type FC } from 'react'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/cls/cls'
 import { ArticleDetailsComments } from '@/features/ArticleDetailsComments'
 import { Page } from '@/widgets/Page'
@@ -17,6 +18,14 @@ import { ToggleFeature } from '@/shared/lib/features/components/ToggleFeature/To
 import { ContentStickyLayout } from '@/shared/layouts/ContentStickyLayout'
 import { Card } from '@/shared/ui/V2/Card'
 import { ArticleDetailsRightbar } from '@/features/ArticleDetailsRightbar'
+import {
+  fetchArticleById,
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsLoading,
+} from '@/entities/Article'
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 
 interface ArticlesPageProps {
   className?: string
@@ -30,6 +39,16 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props
   const { t } = useTranslation()
   const { id: articleId } = useParams<{ id: string | undefined }>()
+  const articleDetails = useSelector(getArticleDetailsData)
+  const isLoading = useSelector(getArticleDetailsLoading)
+  const error = useSelector(getArticleDetailsError)
+  const dispatch = useAppDispatch()
+
+  useInitialEffect(() => {
+    if (articleId) {
+      dispatch(fetchArticleById(articleId))
+    }
+  })
 
   if (!articleId) return null
 
@@ -45,7 +64,11 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
                 data-testid="ArticleDetailsPage"
               >
                 <Card padding="32" bgType="secondary">
-                  <ArticleDetails articleId={articleId} />
+                  <ArticleDetails
+                    articleDetails={articleDetails}
+                    isLoading={isLoading}
+                    error={error}
+                  />
                   <ArticleDetailsRecommendations />
                   <ToggleFeature
                     feature="isArticleDetailsRatingEnabled"
@@ -68,7 +91,11 @@ const ArticleDetailsPage: FC<ArticlesPageProps> = (props) => {
             className={cls('', {}, [className])}
             data-testid="ArticleDetailsPage"
           >
-            <ArticleDetails articleId={articleId} />
+            <ArticleDetails
+              articleDetails={articleDetails}
+              isLoading={isLoading}
+              error={error}
+            />
             <ArticleDetailsRecommendations />
             <ToggleFeature
               feature="isArticleDetailsRatingEnabled"

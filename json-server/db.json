@@ -5,9 +5,9 @@
   "articles": [
     {
       "id": "1",
-      "title": "You should know how to become a true ninja and change the world!!!!",
+      "title": "You should know how to become a true ninja and change the world",
       "subtitle": "... and make others lives harder",
-      "image": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg",
+      "image": "https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/396e9/MainBefore.jpg",
       "views": 10023,
       "created": "28.02.2022",
       "userId": "1",
@@ -84,7 +84,7 @@
           "isProfileRatingEnabled": true
         },
         "jsonSettings": {
-          "theme": "app_light_theme",
+          "theme": "app_green_theme",
           "isFirstVisit": true,
           "settingsPageHasBeenOpened": false,
           "articlesPageHasBeenOpened": true

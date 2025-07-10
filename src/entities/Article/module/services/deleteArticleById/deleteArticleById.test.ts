@@ -18,7 +18,7 @@ describe('deleteArticleById', () => {
     const thunk = new TestAsyncThunk(deleteArticleById, {
       editArticle: mockEditArticleState,
     })
-    thunk.api.delete.mockReturnValue(Promise.reject({ status: 403 }))
+    thunk.api.delete.mockReturnValue(Promise.reject(new Error('status: 403')))
     const result: any = await thunk.callThunk()
     expect(result.meta.requestStatus).toEqual('rejected')
   })

@@ -15,7 +15,11 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const WithData: Story = {}
+export const WithData: Story = {
+  args: {
+    articleDetails: mockData.data,
+  },
+}
 
 export const IsLoading: Story = {
   decorators: [

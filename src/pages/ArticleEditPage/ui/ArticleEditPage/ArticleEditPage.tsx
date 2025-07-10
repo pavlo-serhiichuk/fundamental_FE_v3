@@ -108,7 +108,7 @@ export const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     <DynamicReducerLoader reducers={reducers}>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <div className={s.modalContent}>
-          <ArticleDetails isPreview />
+          <ArticleDetails isPreview articleDetails={editArticleData} />
         </div>
       </Modal>
       <Card

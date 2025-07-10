@@ -95,6 +95,8 @@ export const createArticleSlice = createSlice({
             src: '',
           } as ArticleImageBlock
           break
+        default:
+          block = {} as ArticleTextBlock
       }
 
       if (isLastBlock) {

@@ -1,28 +1,18 @@
-import { memo, useMemo } from 'react'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import ArrowIcon from '@/shared/assets/icons/arrowdown.svg'
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text'
 import { Text } from '@/shared/ui/V2/Text'
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar'
-import { useInitialEffect } from '@/shared/hooks/useInitialEffect'
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch'
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon'
 import { Button as ButtonDeprecated } from '@/shared/ui/deprecated/Button'
-import {
-  getArticleDetailsData,
-  getArticleDetailsError,
-  getArticleDetailsLoading,
-  fetchArticleById,
-  renderBlocks,
-  getEditArticleData,
-} from '@/entities/Article'
+import { Article, renderBlocks } from '@/entities/Article'
 import { ArticleDetailsSkeleton } from './ArticleDetailsSkeleton'
 import * as s from './ArticleDetails.module.scss'
-import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/routers'
+import { getRouteArticles } from '@/shared/const/routers'
 import { ToggleFeature } from '@/shared/lib/features'
 import { Button } from '@/shared/ui/V2/Button'
 import { Avatar } from '@/shared/ui/V2/Avatar'
@@ -31,30 +21,16 @@ import { HStack } from '@/shared/ui/stationary/Stack'
 
 interface ArticleDetailsProps {
   className?: string
-  articleId?: string
   isPreview?: boolean
+  articleDetails?: Article
+  isLoading?: boolean
+  error?: string
 }
 
 export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { t } = useTranslation()
-  const dispatch = useAppDispatch()
-  const articleDetails = useSelector(getArticleDetailsData)
-  const editArticleData = useSelector(getEditArticleData)
-  const isLoading = useSelector(getArticleDetailsLoading)
-  const error = useSelector(getArticleDetailsError)
-  const { className, articleId, isPreview } = props
+  const { className, isPreview, articleDetails, isLoading, error } = props
   const navigate = useNavigate()
-
-  const actualArticle = useMemo(
-    () => (isPreview ? editArticleData : articleDetails),
-    [isPreview, editArticleData, articleDetails],
-  )
-
-  useInitialEffect(() => {
-    if (articleId && !isPreview) {
-      dispatch(fetchArticleById(articleId))
-    }
-  })
 
   const onClick = () => {
     navigate(getRouteArticles())
@@ -81,9 +57,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
             }
           />
         )
-      case isLoading || !actualArticle:
+      case isLoading || !articleDetails:
         return <ArticleDetailsSkeleton />
-      case Boolean(actualArticle):
+      case Boolean(articleDetails):
         return (
           <ToggleFeature
             feature="isV2"
@@ -104,17 +80,17 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 )}
                 <Avatar
                   size={200}
-                  src={actualArticle?.image}
-                  alt={actualArticle?.title}
+                  src={articleDetails?.image}
+                  alt={articleDetails?.title}
                   className={s.avatar}
                 />
                 <Text
                   size="text_size_l"
-                  title={actualArticle?.title}
-                  text={actualArticle?.subtitle}
+                  title={articleDetails?.title}
+                  text={articleDetails?.subtitle}
                   className={s.title}
                 />
-                {actualArticle?.blocks?.map(renderBlocks)}
+                {articleDetails?.blocks?.map(renderBlocks)}
               </div>
             }
             off={

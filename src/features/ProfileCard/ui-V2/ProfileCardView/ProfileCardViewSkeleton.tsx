@@ -8,7 +8,7 @@ interface ProfileCardProps {
 
 export const ProfileCardViewSkeleton = (props: ProfileCardProps) => {
   return (
-    <Card>
+    <Card bgType="secondary">
       <div className={s.header}>
         <Skeleton height={70} width={70} radius="50%" />
         <Skeleton height={20} width={100} />

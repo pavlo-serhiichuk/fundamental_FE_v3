@@ -46,6 +46,8 @@ const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
     () => newArticle?.blocks?.length || 1,
     [newArticle],
   )
+  const blockIndex = useMemo(() => blocksLength - 1, [blocksLength])
+
   const onChangeArticleImage = (value: string) => {
     dispatch(createArticleActions.editArticleImage(value))
   }
@@ -78,7 +80,7 @@ const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
         data-testid="Modal.Preview"
       >
         <div className={s.modalContent}>
-          <ArticleDetails isPreview />
+          <ArticleDetails isPreview articleDetails={newArticle} />
         </div>
       </Modal>
       <Card
@@ -94,7 +96,7 @@ const ArticleCreatePage = memo((props: ArticleCreatePageProps) => {
         <VStack gap="16" className={s.blocks}>
           {newArticle?.blocks?.map(renderEditBlocks(true))}
           <AddArticleCreateEditBlock
-            blockIndex={blocksLength - 1}
+            blockIndex={blockIndex - 1}
             isLastBlock
             isCreate
           />

@@ -88,6 +88,8 @@ export const editArticleSlice = createSlice({
             src: '',
           } as ArticleImageBlock
           break
+        default:
+          block = {} as ArticleTextBlock
       }
       if (isLastBlock) {
         state.editData?.blocks?.push(block)
